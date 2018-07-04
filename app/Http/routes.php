@@ -5,6 +5,17 @@
 
 Route::get('/','HomeController@index');
 
+/**
+ * Employee Controller
+ */
+Route::get('/employees', 'EmployeeController@index');
+Route::get('/employees/create', 'EmployeeController@create');
+Route::post('/employees/create','EmployeeController@store'); //store
+Route::get('/employees/{employee}/edit', 'EmployeeController@edit'); //edit
+Route::put('/employees/{employee}', 'EmployeeController@update'); //update
+Route::patch('/employees/{employee}', 'EmployeeController@update'); //update
+Route::delete('/employees/{employee}', 'EmployeeController@destroy'); //delete
+
 
 Route::get('/agent/tasks', 'AgentTaskController@index');
 Route::get('/agent/tasks/create', 'AgentTaskController@create');
