@@ -31,6 +31,10 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
+
+            @foreach($menus as $menu)
+                <li><a href="{{ $menu->url }}"><i class="{{ $menu->icon }}"></i> <span>{{ $menu->title }}</span></a></li>
+            @endforeach
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="/dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li><a href="/articles"><i class="fa fa-sticky-note"></i> <span>Articles</span></a></li>

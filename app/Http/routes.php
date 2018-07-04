@@ -4,6 +4,8 @@
  */
 
 Route::get('/','HomeController@index');
+
+
 Route::get('/agent/tasks', 'AgentTaskController@index');
 Route::get('/agent/tasks/create', 'AgentTaskController@create');
 Route::post('/agent/tasks/create','AgentTaskController@store'); //store
@@ -52,6 +54,14 @@ Route::patch('/admins/{admin}', 'AdminController@update'); //update
 Route::delete('/admins/{admin}', 'AdminController@destroy'); //delete
 
 
+Route::get('/menus', 'MenuController@index');
+Route::get('/menus/create', 'MenuController@create');
+Route::post('/menus/create','MenuController@store'); //store
+Route::get('/menus/{menu}/edit', 'MenuController@edit'); //edit
+Route::put('/menus/{menu}', 'MenuController@update'); //update
+Route::patch('/menus/{menu}', 'MenuController@update'); //update
+Route::delete('/menus/{menu}', 'MenuController@destroy'); //delete
+
 
 
 Route::get('/articles', 'ArticleController@index');  //index
@@ -67,7 +77,6 @@ Route::delete('/articles/{article}', 'ArticleController@destroy'); //delete
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
 
 
 //Admin Auth Controller
@@ -80,7 +89,7 @@ Route::get('/home', 'HomeController@index');
     Route::get('/admin/register', 'AdminAuth\AuthController@showRegistrationForm');
     Route::post('/admin/register', 'AdminAuth\AuthController@register');
 
-    Route::get('/dashboard', 'AdminController@dashboard');
+    Route::get('/admin', 'DashboardController@index');
 
     Route::post('admin/password/email', 'AdminAuth\PasswordController@sendResetLinkEmail');
     Route::post('admin/password/reset', 'AdminAuth\PasswordController@reset');

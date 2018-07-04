@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Role;
-
+use App\Menu;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -16,6 +16,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('admin.admins.form',function($view){
             $view->with('role_lists',Role::lists('name','id'));
+        });
+
+        view()->composer('layouts.admin.partials.main-sidebar',function($view){
+            $view->with('menus',Menu::all());
         });
     }
 

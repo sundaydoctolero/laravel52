@@ -19,9 +19,7 @@ class AdminController extends Controller
         $this->middleware('admin');
     }
 
-    public function dashboard(){
-        return view('admin.dashboard');
-    }
+
 
     public function index(){
         $admins = Admin::all();
