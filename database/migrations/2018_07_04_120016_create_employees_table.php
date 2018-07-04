@@ -30,7 +30,7 @@ class CreateEmployeesTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->integer('dept_id')->unsigned();
+            $table->integer('department_id')->unsigned();
 
         });
 

@@ -26,8 +26,8 @@ class AdminRequest extends Request
         return [
             'name' => 'required',
             'username'=>'required|unique:users,username',
-            'email'=>'required|email|unique:users,email',
-            'password'=>'sometimes|confirmed',
+            'email' => 'required|unique:users,email'.$request->user_id,
+            'password'=>'required|confirmed',
             'role_list' =>'required'
         ];
     }

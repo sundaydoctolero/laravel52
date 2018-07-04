@@ -20,7 +20,6 @@ class AdminController extends Controller
     }
 
 
-
     public function index(){
         $admins = Admin::all();
         return view('admin.admins.index',compact('admins'));

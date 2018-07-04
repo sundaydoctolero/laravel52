@@ -24,7 +24,8 @@ class UpdateAdminRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'role_list' =>'required'
         ];
     }
 }

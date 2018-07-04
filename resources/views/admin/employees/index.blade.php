@@ -41,7 +41,7 @@
                         <td>{{ $employee->id  }}</td>
                         <td>{{ $employee->name }}</td>
                         <td>{{ $employee->email }}</td>
-                        <td>{{ $employee->employee->dept_id }}</td>
+                        <td>{{ $employee->employee->department->dept_name }}</td>
                         <td>{{ $employee->employee->firstname }}</td>
                         <td>{{ $employee->employee->lastname }}</td>
                         <td>{{ $employee->employee->birthdate }}</td>

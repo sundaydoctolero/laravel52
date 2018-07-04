@@ -5,14 +5,14 @@
     {!! Form::label('lastname', 'Lastname') !!}
     {!! Form::text('lastname',null,['class'=>'form-control']) !!}
 
-    {!! Form::label('dept_id', 'Department') !!}
-    {!! Form::select('dept_id',\App\Department::lists('dept_name','id'),null,['class'=>'form-control']) !!}
+    {!! Form::label('department_id', 'Department') !!}
+    {!! Form::select('department_id',\App\Department::lists('dept_name','id'),null,['class'=>'form-control','placeholder'=>'Select Department']) !!}
 
     {!! Form::label('birthdate', 'Birth Date') !!}
     {!! Form::date('birthdate',null,['class'=>'form-control']) !!}
 
     {!! Form::label('gender', 'Gender') !!}
-    {!! Form::text('gender',null,['class'=>'form-control']) !!}
+    {!! Form::select('gender',['Male'=>'Male','Female'=>'Female'],null,['class'=>'form-control']) !!}
 
     {!! Form::label('contact', 'Contact') !!}
     {!! Form::text('contact',null,['class'=>'form-control']) !!}

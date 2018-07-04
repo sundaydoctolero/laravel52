@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request){
         $user = User::create($request->all());
-        $user->employee()->save(new Employee());
+        $user->employee()->save(new Employee(['department_id'=>1]));
 
         $this->saveImage($request->file('user_photo'));
         return redirect('/users');
