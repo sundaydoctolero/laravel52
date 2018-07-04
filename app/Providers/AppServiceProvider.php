@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('layouts.admin.partials.main-sidebar',function($view){
-            $view->with('menus',Menu::all());
+            $view->with('menus',Menu::orderBy('title','asc')->get());
         });
     }
 

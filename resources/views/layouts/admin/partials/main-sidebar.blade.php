@@ -31,10 +31,6 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-
-            @foreach($menus as $menu)
-                <li><a href="{{ $menu->url }}"><i class="{{ $menu->icon }}"></i> <span>{{ $menu->title }}</span></a></li>
-            @endforeach
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="/dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li><a href="/articles"><i class="fa fa-sticky-note"></i> <span>Articles</span></a></li>
@@ -46,11 +42,12 @@
               </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/users">Employees</a></li>
-                    <li><a href="/admins">User</a></li>
-                    <li><a href="/roles">Roles</a></li>
+                    @foreach($menus as $menu)
+                        <li><a href="{{ $menu->url }}"><i class="{{ $menu->icon }}"></i> <span>{{ $menu->title }}</span></a></li>
+                    @endforeach
                 </ul>
             </li>
+
         </ul>
         <!-- /.sidebar-menu -->
     </section>

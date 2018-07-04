@@ -6,6 +6,17 @@
 Route::get('/','HomeController@index');
 
 /**
+ * Department Controller
+ */
+Route::get('/departments', 'DepartmentController@index');
+Route::get('/departments/create', 'DepartmentController@create');
+Route::post('/departments/create','DepartmentController@store'); //store
+Route::get('/departments/{department}/edit', 'DepartmentController@edit'); //edit
+Route::put('/departments/{department}', 'DepartmentController@update'); //update
+Route::patch('/departments/{department}', 'DepartmentController@update'); //update
+Route::delete('/departments/{department}', 'DepartmentController@destroy'); //delete
+
+/**
  * Employee Controller
  */
 Route::get('/employees', 'EmployeeController@index');
