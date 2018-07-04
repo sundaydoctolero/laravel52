@@ -33,7 +33,6 @@
             <li class="header">MAIN NAVIGATION</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-            <li><a href="/articles"><i class="fa fa-sticky-note"></i> <span>Articles</span></a></li>
             <li><a href="/tasks"><i class="fa fa-sticky-note"></i> <span>Task</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-server"></i> <span>Setup</span>

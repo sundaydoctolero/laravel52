@@ -84,19 +84,9 @@ Route::put('/menus/{menu}', 'MenuController@update'); //update
 Route::patch('/menus/{menu}', 'MenuController@update'); //update
 Route::delete('/menus/{menu}', 'MenuController@destroy'); //delete
 
-
-
-Route::get('/articles', 'ArticleController@index');  //index
-Route::get('/articles/create','ArticleController@create'); //create
-Route::get('/articles/{article}', 'ArticleController@show'); //show
-Route::post('/articles/create','ArticleController@store'); //store
-Route::get('/articles/{article}/edit', 'ArticleController@edit'); //edit
-Route::put('/articles/{article}', 'ArticleController@update'); //update
-Route::patch('/articles/{article}', 'ArticleController@update'); //update
-Route::delete('/articles/{article}', 'ArticleController@destroy'); //delete
-
-//Route::resource('/articles','ArticleController');
-
+/**
+ * Auth Controller
+ */
 Route::auth();
 
 
