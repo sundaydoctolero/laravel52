@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Staff Login | Software</title>
 
+
     <!-- CSS -->
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic">
     <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
@@ -16,7 +18,8 @@
     <link rel="stylesheet" href="{{ asset('bower_components/login/awesome-bootstrap-checkbox.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/login/style.css') }}">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -24,7 +27,8 @@
     <![endif]-->
 
     <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="{{ asset('bower_components/login/icons/favicon.png') }}">
+    <!-- Logo -->
+    <link rel="shortcut icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('bower_components/login/icons/apple-touch-icon-144-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('bower_components/login/icons/apple-touch-icon-114-precomposed.png') }}">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('bower_components/login/icons/apple-touch-icon-72-precomposed.png') }}">
@@ -65,7 +69,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 l-form-1 section-description wow fadeIn">
-                <h1>CCC | DMSI</h1>
+                <h1><img src="{{ asset('images/logo/main-logo.png') }}" /></h1>
             </div>
         </div>
         <div class="row">

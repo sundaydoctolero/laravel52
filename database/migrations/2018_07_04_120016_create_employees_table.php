@@ -14,7 +14,6 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
             $table->string('firstname');
             $table->string('lastname');
             $table->date('birthdate');
@@ -25,7 +24,17 @@ class CreateEmployeesTable extends Migration
             $table->date('date_hired');
             $table->date('date_left');
             $table->timestamps();
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
+            $table->integer('dept_id')->unsigned();
+
         });
+
+
     }
 
     /**

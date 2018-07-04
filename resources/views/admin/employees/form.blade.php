@@ -5,6 +5,9 @@
     {!! Form::label('lastname', 'Lastname') !!}
     {!! Form::text('lastname',null,['class'=>'form-control']) !!}
 
+    {!! Form::label('dept_id', 'Department') !!}
+    {!! Form::select('dept_id',\App\Department::lists('dept_name','id'),null,['class'=>'form-control']) !!}
+
     {!! Form::label('birthdate', 'Birth Date') !!}
     {!! Form::date('birthdate',null,['class'=>'form-control']) !!}
 

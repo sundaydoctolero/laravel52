@@ -11,6 +11,8 @@ use App\Employee;
 
 use App\Http\Requests\EmployeeRequest;
 
+use App\User;
+
 
 
 
@@ -25,7 +27,7 @@ class EmployeeController extends Controller
 
     public function index()
     {
-        $employees = Employee::all();
+        $employees = User::with('employee')->get();
         return view('admin.employees.index',compact('employees'));
     }
 

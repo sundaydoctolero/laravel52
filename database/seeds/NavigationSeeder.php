@@ -19,7 +19,7 @@ class NavigationSeeder extends Seeder
         $menu->save();
 
         $menu = new Menu();
-        $menu->title = 'Employee';
+        $menu->title = 'User';
         $menu->url = '/users';
         $menu->icon = 'fa fa-anchor';
         $menu->save();
@@ -39,6 +39,12 @@ class NavigationSeeder extends Seeder
         $menu = new Menu();
         $menu->title = 'Role';
         $menu->url = '/roles';
+        $menu->icon = 'fa fa-anchor';
+        $menu->save();
+
+        $menu = new Menu();
+        $menu->title = 'Navigation';
+        $menu->url = '/menus';
         $menu->icon = 'fa fa-anchor';
         $menu->save();
     }

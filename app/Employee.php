@@ -9,6 +9,15 @@ class Employee extends Model
     protected $tables = 'employees';
 
     protected $fillable = [
-        'firstname','lastname','birthdate','gender','contact','address','designation','date_hired','date_left'
+        'dept_id','firstname','lastname','birthdate','gender','contact','address','designation','date_hired','date_left'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function department(){
+        return $this->hasOne('App\Department');
+    }
 }

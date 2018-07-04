@@ -16,6 +16,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+
     public function setPasswordAttribute($value){
         $this->attributes['password'] = bcrypt($value);
     }
@@ -30,6 +32,10 @@ class User extends Authenticatable
 
     public function setUserPhotoAttribute($value){
         $this->attributes['user_photo'] = $value->getClientOriginalName();
+    }
+
+    public function employee(){
+        return $this->hasOne('App\Employee');
     }
 
 

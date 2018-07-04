@@ -5,7 +5,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><a href="/employees/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Employee</button></a></h3>
+                <h3 class="box-title"></h3>
 
                 <div class="box-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -21,9 +21,11 @@
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
                     <tbody><tr>
-                        <th>ID</th>
-
-                        <th>First Name</th>
+                        <th>No.</th>
+                        <th>Display Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>FirstName</th>
                         <th>Last Name</th>
                         <th>Birthdate</th>
                         <th>Gender</th>
@@ -32,25 +34,25 @@
                         <th>Designation</th>
                         <th>Date Hired</th>
                         <th>Date Left</th>
+                        <th>Actions</th>
                     </tr>
                     @foreach($employees as $employee)
                     <tr>
-                        <td>{{ $employee->id }}</td>
-                        <td>{{ $employee->firstname }}</td>
-                        <td>{{ $employee->lastname }}</td>
-                        <td>{{ $employee->birthdate }}</td>
-                        <td>{{ $employee->gender }}</td>
-                        <td>{{ $employee->contact }}</td>
-                        <td>{{ $employee->address }}</td>
-                        <td>{{ $employee->designation }}</td>
-                        <td>{{ $employee->date_hired }}</td>
-                        <td>{{ $employee->date_left }}</td>
+                        <td>{{ $employee->id  }}</td>
+                        <td>{{ $employee->name }}</td>
+                        <td>{{ $employee->email }}</td>
+                        <td>{{ $employee->employee->dept_id }}</td>
+                        <td>{{ $employee->employee->firstname }}</td>
+                        <td>{{ $employee->employee->lastname }}</td>
+                        <td>{{ $employee->employee->birthdate }}</td>
+                        <td>{{ $employee->employee->gender }}</td>
+                        <td>{{ $employee->employee->contact }}</td>
+                        <td>{{ $employee->employee->address }}</td>
+                        <td>{{ $employee->employee->designation }}</td>
+                        <td>{{ $employee->employee->date_hired }}</td>
+                        <td>{{ $employee->employee->date_left }}</td>
                         <td>
-                            <a href="employees/{{ $employee->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
-                            {!! Form::model($employee,['method'=>'DELETE','url' => '/employees/'.$employee->id,'style'=>'display:inline']) !!}
-                            {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
-
-                            {!! Form::close() !!}
+                            <a href="employees/{{ $employee->employee->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                         </td>
                     </tr>
                     @endforeach

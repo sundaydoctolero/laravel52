@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Employee;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,7 +29,9 @@ class UserController extends Controller
     }
 
     public function store(UserRequest $request){
-        User::create($request->all());
+        $user = User::create($request->all());
+        $user->employee()->save(new Employee());
+
         $this->saveImage($request->file('user_photo'));
         return redirect('/users');
     }
