@@ -143,6 +143,18 @@ Route::patch('/workstations/{workstation}', 'WorkstationController@update'); //u
 Route::delete('/workstations/{workstation}', 'WorkstationController@destroy'); //delete
 
 /**
+ * About Controller
+ */
+Route::get('abouts', 'AboutController@index');
+route::get('/abouts/create', 'AboutController@create');
+Route::get('/abouts/{about}','AboutController@show');
+route::post('/abouts/create', 'AboutController@store');
+route::get('/abouts/{about}/edit','AboutController@edit');
+Route::put('/abouts/{about}/update','AboutController@update');
+Route::patch('/abouts/{about}/update','AboutController@update');
+Route::get('/abouts/{about}/delete','AboutController@destroy');
+
+/**
  * Auth Controller
  */
 Route::auth();
