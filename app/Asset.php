@@ -11,5 +11,5 @@ class Asset extends Model
     protected $fillable = [
         'quantity','item_name','description','item_brand','item_no','status','remarks','serial_no'
     ];
-    
+
 }

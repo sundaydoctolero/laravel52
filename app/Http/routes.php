@@ -120,6 +120,17 @@ Route::patch('/assets/{asset}', 'AssetController@update'); //update
 Route::delete('/assets/{asset}', 'AssetController@destroy'); //delete
 
 /**
+ * Backups Controler
+ */
+Route::get('/backups', 'BackupController@index');
+Route::get('/backups/create', 'BackupController@create');
+Route::post('/backups/create','BackupController@store'); //store
+Route::get('/backups/{backup}/edit', 'BackupController@edit'); //edit
+Route::put('/backups/{backup}', 'BackupController@update'); //update
+Route::patch('/backups/{backup}', 'BackupController@update'); //update
+Route::delete('/backups/{backup}', 'BackupController@destroy'); //delete
+
+/**
  * Auth Controller
  */
 Route::auth();
