@@ -24,6 +24,9 @@
                         <th>ID</th>
                         <th>Task Name</th>
                         <th>Description</th>
+                        <th>Status</th>
+                        <th>Comments</th>
+                        <th>Check By</th>
                         <th>Completion Date</th>
                         <th>Created Since</th>
                         <th>Action</th>
@@ -33,6 +36,9 @@
                         <td>{{ $result->id }}</td>
                         <td>{{ $result->task_name }}</td>
                         <td>{{ $result->description }}</td>
+                        <td>{{ $result->status }}</td>
+                        <td>{{ $result->comments }}</td>
+                        <td>{{ $result->admin['name'] }}</td>
                         <td>{{ $result->completion_date }}</td>
                         <td>{{ $result->created_at->diffforHumans() }}</td>
                         <td>

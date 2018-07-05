@@ -25,6 +25,8 @@
                         <th>Employee Name</th>
                         <th>Task Name</th>
                         <th>Description</th>
+                        <th>Comments</th>
+                        <th>Check By</th>
                         <th>Completion Date</th>
                         <th>Created Since</th>
                         <th>Action</th>
@@ -35,6 +37,8 @@
                         <td>{{ $task->user['name'] }}</td>
                         <td>{{ $task->task_name }}</td>
                         <td>{{ $task->description }}</td>
+                        <td>{{ $task->comments }}</td>
+                        <td>{{ $task->admin['name'] }}</td>
                         <td>{{ $task->completion_date }}</td>
                         <td>{{ $task->created_at->diffforHumans() }}</td>
                         <td>

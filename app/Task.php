@@ -9,11 +9,15 @@ class Task extends Model
     protected $tables = 'tasks';
 
     protected $fillable = [
-        'task_name','description','completion_date'
+        'task_name','description','completion_date','status','comments','admin_id'
     ];
 
     public function user(){
         return $this->belongsTo('App\User');
+    }
+
+    public function admin(){
+        return $this->belongsTo('App\Admin');
     }
 
 }

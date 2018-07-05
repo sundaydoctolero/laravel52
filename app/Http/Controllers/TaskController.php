@@ -50,7 +50,7 @@ class TaskController extends Controller
 
     public function update(TaskRequest $request, Task $task)
     {
-        $task->update($request->all());
+        $task->update($request->all()+['admin_id'=>auth()->guard('admin')->user()->id]);
         return redirect('/tasks');
     }
 
