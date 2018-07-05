@@ -130,6 +130,18 @@ Route::put('/backups/{backup}', 'BackupController@update'); //update
 Route::patch('/backups/{backup}', 'BackupController@update'); //update
 Route::delete('/backups/{backup}', 'BackupController@destroy'); //delete
 
+
+/**
+ * Workstation Controler
+ */
+Route::get('/workstations', 'WorkstationController@index');
+Route::get('/workstations/create', 'WorkstationController@create');
+Route::post('/workstations/create','WorkstationController@store'); //store
+Route::get('/workstations/{workstation}/edit', 'WorkstationController@edit'); //edit
+Route::put('/workstations/{workstation}', 'WorkstationController@update'); //update
+Route::patch('/workstations/{workstation}', 'WorkstationController@update'); //update
+Route::delete('/workstations/{workstation}', 'WorkstationController@destroy'); //delete
+
 /**
  * Auth Controller
  */

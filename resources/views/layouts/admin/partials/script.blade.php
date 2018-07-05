@@ -12,9 +12,9 @@
     $(document).ready(function(){
         $('#role_list').select2();
 
-        $(".btn-danger").click(function(){
-            $(".modal").modal();
-            return false;
-        });
+        //$(".btn-danger").click(function(){
+          //  $(".modal").modal();
+           // return false;
+        //});
     })
 </script>
