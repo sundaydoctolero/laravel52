@@ -175,6 +175,15 @@ Route::get('/contacts/{contact}/edit', 'ContactController@edit'); //edit
 Route::put('/contacts/{contact}', 'ContactController@update'); //update
 Route::patch('/contacts/{contact}', 'ContactController@update'); //update
 Route::delete('/contacts/{contact}', 'ContactController@destroy'); //delete
+
+/**
+ * Profile Controller
+ */
+
+Route::get('/myprofile/{employee}/edit', 'ProfileController@edit'); //edit
+Route::put('/myprofile/{employee}', 'ProfileController@update'); //update
+Route::patch('/myprofile/{employee}', 'ProfileController@update'); //update
+
 /**
  * Auth Controller
  */

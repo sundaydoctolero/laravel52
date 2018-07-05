@@ -19,11 +19,15 @@ class User extends Authenticatable
 
 
     public function setPasswordAttribute($value){
-        $this->attributes['password'] = bcrypt($value);
+        if($value != ''){
+            $this->attributes['password'] = bcrypt($value);
+        }
     }
 
     public function setConfirmPasswordAttribute($value){
-        $this->attributes['confirm_password'] = bcrypt($value);
+        if($value != '') {
+            $this->attributes['confirm_password'] = bcrypt($value);
+        }
     }
 
     public function tasks(){
