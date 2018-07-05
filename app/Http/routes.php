@@ -155,6 +155,17 @@ Route::patch('/abouts/{about}/update','AboutController@update');
 Route::get('/abouts/{about}/delete','AboutController@destroy');
 
 /**
+ * Login Controller
+ */
+Route::get('/logins', 'LoginController@index');
+Route::get('/logins/create', 'LoginController@create');
+Route::post('/logins/create','LoginController@store'); //store
+Route::get('/logins/{login}/edit', 'LoginController@edit'); //edit
+Route::put('/logins/{login}', 'LoginController@update'); //update
+Route::patch('/logins/{login}', 'LoginController@update'); //update
+Route::delete('/logins/{login}', 'LoginController@destroy'); //delete
+
+/**
  * Auth Controller
  */
 Route::auth();
