@@ -166,6 +166,16 @@ Route::patch('/logins/{login}', 'LoginController@update'); //update
 Route::delete('/logins/{login}', 'LoginController@destroy'); //delete
 
 /**
+ * Contact Controller
+ */
+Route::get('/contacts', 'ContactController@index');
+Route::get('/contacts/create', 'ContactController@create');
+Route::post('/contacts/create','ContactController@store'); //store
+Route::get('/contacts/{contact}/edit', 'ContactController@edit'); //edit
+Route::put('/contacts/{contact}', 'ContactController@update'); //update
+Route::patch('/contacts/{contact}', 'ContactController@update'); //update
+Route::delete('/contacts/{contact}', 'ContactController@destroy'); //delete
+/**
  * Auth Controller
  */
 Route::auth();
