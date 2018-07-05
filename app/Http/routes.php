@@ -108,6 +108,18 @@ Route::patch('/passwords/{password}', 'PasswordController@update'); //update
 Route::delete('/passwords/{password}', 'PasswordController@destroy'); //delete
 
 /**
+ * Assets Controller
+ */
+Route::get('/assets', 'AssetController@index');
+Route::get('/assets/create', 'AssetController@create');
+Route::get('/assets/{asset}', 'AssetController@show'); //show
+Route::post('/assets/create','AssetController@store'); //store
+Route::get('/assets/{asset}/edit', 'AssetController@edit'); //edit
+Route::put('/assets/{asset}', 'AssetController@update'); //update
+Route::patch('/assets/{asset}', 'AssetController@update'); //update
+Route::delete('/assets/{asset}', 'AssetController@destroy'); //delete
+
+/**
  * Auth Controller
  */
 Route::auth();
