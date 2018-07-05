@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class AdminRequest extends Request
+class PasswordRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,11 @@ class AdminRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required',
-            'username'=>'required|unique:users,username',
-            'email' => 'required|unique:users,email',
-            'password'=>'required|confirmed',
-            'role_list' =>'required'
+            'product_key'=>'required',
+            'user_name'=>'required',
+            'password'=>'required',
+            'description'=>'required',
+            'account_name'=>'required',
         ];
     }
 }

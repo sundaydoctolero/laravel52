@@ -25,6 +25,9 @@ class UpdateAdminRequest extends Request
     {
         return [
             'name' => 'required',
+            'username'=>'required|unique:users,username',
+            'email' => 'required|unique:users,email',
+            'password'=>'sometimes|confirmed',
             'role_list' =>'required'
         ];
     }

@@ -84,6 +84,29 @@ Route::put('/menus/{menu}', 'MenuController@update'); //update
 Route::patch('/menus/{menu}', 'MenuController@update'); //update
 Route::delete('/menus/{menu}', 'MenuController@destroy'); //delete
 
+
+/**
+ * Permission Controller
+ */
+Route::get('/permissions', 'PermissionController@index');
+Route::get('/permissions/create', 'PermissionController@create');
+Route::post('/permissions/create','PermissionController@store'); //store
+Route::get('/permissions/{permission}/edit', 'PermissionController@edit'); //edit
+Route::put('/permissions/{permission}', 'PermissionController@update'); //update
+Route::patch('/permissions/{permission}', 'PermissionController@update'); //update
+Route::delete('/permissions/{permission}', 'PermissionController@destroy'); //delete
+
+/**
+ * Password Controller
+ */
+Route::get('/passwords', 'PasswordController@index');
+Route::get('/passwords/create', 'PasswordController@create');
+Route::post('/passwords/create','PasswordController@store'); //store
+Route::get('/passwords/{password}/edit', 'PasswordController@edit'); //edit
+Route::put('/passwords/{password}', 'PasswordController@update'); //update
+Route::patch('/passwords/{password}', 'PasswordController@update'); //update
+Route::delete('/passwords/{password}', 'PasswordController@destroy'); //delete
+
 /**
  * Auth Controller
  */
