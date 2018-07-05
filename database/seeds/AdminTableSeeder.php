@@ -18,7 +18,28 @@ class AdminTableSeeder extends Seeder
         $admin = new Admin();
         $admin->name = 'System Admin';
         $admin->username = "sysadmin";
-        $admin->email = 'admin@example.com';
+        $admin->email = 'sysadmin@cccdms.com';
+        $admin->password = 'admin';
+        $admin->save();
+
+        $admin = new Admin();
+        $admin->name = 'System Admin';
+        $admin->username = "support";
+        $admin->email = 'support@cccdms.com';
+        $admin->password = 'marlonf1';
+        $admin->save();
+
+        $admin = new Admin();
+        $admin->name = 'System Admin';
+        $admin->username = "techmanos";
+        $admin->email = 'techmanos@cccdms.com';
+        $admin->password = 'PlacidoD2014';
+        $admin->save();
+
+        $admin = new Admin();
+        $admin->name = 'System Admin';
+        $admin->username = "tech_support";
+        $admin->email = 'techsupport@cccdms.com';
         $admin->password = 'admin';
         $admin->save();
 
