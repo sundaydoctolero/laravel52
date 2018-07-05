@@ -17,11 +17,14 @@ class CreateTasksTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('task_name');
             $table->string('description');
+            $table->string('status')->default('Open');
+            $table->string('comments');
             $table->date('completion_date');
             $table->timestamps();
-
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('admin_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
