@@ -26,6 +26,7 @@
                         <th>Task Name</th>
                         <th>Description</th>
                         <th>Comments</th>
+                        <th>Status</th>
                         <th>Check By</th>
                         <th>Completion Date</th>
                         <th>Created Since</th>
@@ -37,16 +38,13 @@
                         <td>{{ $task->user['name'] }}</td>
                         <td>{{ $task->task_name }}</td>
                         <td>{{ $task->description }}</td>
+                        <td>{{ $task->status }}</td>
                         <td>{{ $task->comments }}</td>
                         <td>{{ $task->admin['name'] }}</td>
                         <td>{{ $task->completion_date }}</td>
                         <td>{{ $task->created_at->diffforHumans() }}</td>
                         <td>
                             <a href="tasks/{{ $task->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
-                            {!! Form::model($task,['method'=>'DELETE','url' => '/tasks/'.$task->id,'style'=>'display:inline']) !!}
-                            {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
-
-                            {!! Form::close() !!}
                         </td>
                     </tr>
                     @endforeach
