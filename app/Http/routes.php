@@ -81,6 +81,7 @@ Route::get('/admins/{admin}/edit', 'AdminController@edit'); //edit
 Route::put('/admins/{admin}', 'AdminController@update'); //update
 Route::patch('/admins/{admin}', 'AdminController@update'); //update
 Route::delete('/admins/{admin}', 'AdminController@destroy'); //delete
+Route::patch('/admins/{admin}/reset_default_password', 'AdminController@reset'); //update reset password
 
 /**
  * Menu Controller

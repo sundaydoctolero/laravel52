@@ -45,8 +45,8 @@
                         <td>{{ $admin->created_at->diffforHumans() }}</td>
                         <td>
                             <a href="admins/{{ $admin ->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
-                            {!! Form::model($admin,['method'=>'DELETE','url' => '/admins/'.$admin->id,'style'=>'display:inline']) !!}
-                            {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+                            {!! Form::model($admin,['method'=>'PATCH','url' => '/admins/'.$admin->id.'/reset_default_password','style'=>'display:inline']) !!}
+                            {{ Form::button('<i class="fa fa-rotate-left"></i> Reset Password', ['type' => 'submit', 'class' => 'btn btn-warning btn-sm'] )  }}
 
                             {!! Form::close() !!}
                         </td>

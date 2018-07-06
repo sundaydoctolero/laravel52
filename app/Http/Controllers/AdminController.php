@@ -48,6 +48,12 @@ class AdminController extends Controller
         return redirect('/admins');
     }
 
+    public function reset(Admin $admin){
+        $admin->update(['password'=>'ccc123!@#']);
+        flash('Admin reset to ccc123!@# for'.$admin->name)->success()->important();
+        return redirect('/admins');
+    }
+
     public function destroy(Admin $admin){
         $admin->delete();
         return redirect('/admins');
