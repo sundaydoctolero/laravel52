@@ -33,12 +33,12 @@
             <li class="header">MAIN NAVIGATION</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-            <li><a href="/tasks"><i class="fa fa-sticky-note"></i> <span>Task &nbsp &nbsp</span><small class="label label-danger">{{ $tasks_pending }}</small><small class="label label-success">{{ $tasks_open }}</small></a></li>
-            <li class="active"><a href="/contacts"><i class="fa fa-anchor"></i> <span>Contacts</span></a></li>
-            <li class="active"><a href="/assets"><i class="fa fa-anchor"></i> <span>Manage Assets</span></a></li>
-            <li class="active"><a href="/passwords"><i class="fa fa-anchor"></i> <span>Manage Passwords</span></a></li>
+            <li><a href="/tasks"><i class="fa fa-flag-o"></i> <span>Task &nbsp &nbsp</span><small class="label label-danger">{{ $tasks_pending }}</small><small class="label label-success">{{ $tasks_open }}</small></a></li>
+            <li class="active"><a href="/contacts"><i class="fa fa-phone"></i> <span>Contacts</span></a></li>
+            <li class="active"><a href="/assets"><i class="fa fa-diamond"></i> <span>Manage Assets</span></a></li>
+            <li class="active"><a href="/passwords"><i class="fa fa-unlock"></i> <span>Manage Passwords</span></a></li>
             <li class="treeview">
-                <a href="#"><i class="fa fa-server"></i> <span>Setup</span>
+                <a href="#"><i class="fa fa-gear"></i> <span>Setup</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
