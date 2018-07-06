@@ -13,11 +13,16 @@
         $('#role_list').select2();
 
         $(".btn-danger").click(function(){
-            confirm("Are you sure you want to delete?");
+            //confirm("Are you sure you want to delete?");
           //  $(".modal").modal();
            // return false;
         });
 
+        $(".btn-warning").click(function(){
+            //confirm("Are you sure you want to reset the password?");
+            //  $(".modal").modal();
+            // return false;
+        });
 
     })
 </script>
