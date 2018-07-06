@@ -6,6 +6,16 @@
 Route::get('/','HomeController@index');
 
 /**
+ * Agent Task Controller
+ */
+Route::get('/agent/tasks', 'AgentTaskController@index');
+Route::get('/agent/tasks/create', 'AgentTaskController@create');
+Route::post('/agent/tasks/create','AgentTaskController@store'); //store
+Route::get('/agent/tasks/{task}/edit', 'AgentTaskController@edit'); //edit
+Route::put('/agent/tasks/{task}', 'AgentTaskController@update'); //update
+Route::patch('/agent/tasks/{task}', 'AgentTaskController@update'); //update
+
+/**
  * Department Controller
  */
 Route::get('/departments', 'DepartmentController@index');
@@ -27,19 +37,9 @@ Route::put('/employees/{employee}', 'EmployeeController@update'); //update
 Route::patch('/employees/{employee}', 'EmployeeController@update'); //update
 Route::delete('/employees/{employee}', 'EmployeeController@destroy'); //delete
 
-
-Route::get('/agent/tasks', 'AgentTaskController@index');
-Route::get('/agent/tasks/create', 'AgentTaskController@create');
-Route::post('/agent/tasks/create','AgentTaskController@store'); //store
-Route::get('/agent/tasks/{task}/edit', 'AgentTaskController@edit'); //edit
-Route::put('/agent/tasks/{task}', 'AgentTaskController@update'); //update
-Route::patch('/agent/tasks/{task}', 'AgentTaskController@update'); //update
-
-
 /**
  * Admin Controller
  */
-
 Route::get('/roles', 'RoleController@index');
 Route::get('/roles/create', 'RoleController@create');
 Route::post('/roles/create','RoleController@store'); //store
@@ -48,7 +48,9 @@ Route::put('/roles/{role}', 'RoleController@update'); //update
 Route::patch('/roles/{role}', 'RoleController@update'); //update
 Route::delete('/roles/{role}', 'RoleController@destroy'); //delete
 
-
+/**
+ * Admin Task Controller
+ */
 Route::get('/tasks', 'TaskController@index');
 Route::get('/tasks/create', 'TaskController@create');
 Route::post('/tasks/create','TaskController@store'); //store
@@ -57,16 +59,21 @@ Route::put('/tasks/{task}', 'TaskController@update'); //update
 Route::patch('/tasks/{task}', 'TaskController@update'); //update
 Route::delete('/tasks/{task}', 'TaskController@destroy'); //delete
 
-
+/**
+ * Admin Page User Controller
+ */
 Route::get('/users', 'UserController@index');
 Route::get('/users/create', 'UserController@create');
 Route::post('/users/create','UserController@store'); //store
 Route::get('/users/{user}/edit', 'UserController@edit'); //edit
 Route::put('/users/{user}', 'UserController@update'); //update
 Route::patch('/users/{user}', 'UserController@update'); //update
+Route::patch('/users/{user}/reset_default_password', 'UserController@reset'); //update reset password
 Route::delete('/users/{user}', 'UserController@destroy'); //delete
 
-
+/**
+ * Admin Controller
+ */
 Route::get('/admins', 'AdminController@index');
 Route::get('/admins/create', 'AdminController@create');
 Route::post('/admins/create','AdminController@store'); //store
@@ -75,7 +82,9 @@ Route::put('/admins/{admin}', 'AdminController@update'); //update
 Route::patch('/admins/{admin}', 'AdminController@update'); //update
 Route::delete('/admins/{admin}', 'AdminController@destroy'); //delete
 
-
+/**
+ * Menu Controller
+ */
 Route::get('/menus', 'MenuController@index');
 Route::get('/menus/create', 'MenuController@create');
 Route::post('/menus/create','MenuController@store'); //store
@@ -83,7 +92,6 @@ Route::get('/menus/{menu}/edit', 'MenuController@edit'); //edit
 Route::put('/menus/{menu}', 'MenuController@update'); //update
 Route::patch('/menus/{menu}', 'MenuController@update'); //update
 Route::delete('/menus/{menu}', 'MenuController@destroy'); //delete
-
 
 /**
  * Permission Controller
@@ -129,7 +137,6 @@ Route::get('/backups/{backup}/edit', 'BackupController@edit'); //edit
 Route::put('/backups/{backup}', 'BackupController@update'); //update
 Route::patch('/backups/{backup}', 'BackupController@update'); //update
 Route::delete('/backups/{backup}', 'BackupController@destroy'); //delete
-
 
 /**
  * Workstation Controler
@@ -179,7 +186,6 @@ Route::delete('/contacts/{contact}', 'ContactController@destroy'); //delete
 /**
  * Profile Controller
  */
-
 Route::get('/myprofile/{employee}/edit', 'ProfileController@edit'); //edit
 Route::put('/myprofile/{employee}', 'ProfileController@update'); //update
 Route::patch('/myprofile/{employee}', 'ProfileController@update'); //update
@@ -188,8 +194,6 @@ Route::patch('/myprofile/{employee}', 'ProfileController@update'); //update
  * Auth Controller
  */
 Route::auth();
-
-
 
 //Admin Auth Controller
     Route::get('/admin/login', 'AdminAuth\AuthController@showLoginForm');

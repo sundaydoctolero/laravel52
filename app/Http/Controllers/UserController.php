@@ -46,6 +46,12 @@ class UserController extends Controller
         return redirect('/users');
     }
 
+    public function reset(User $user){
+        $user->update(['password'=>'1234']);
+        flash('Password has been reset to 1234 for '.$user->name)->success();
+        return redirect('/users');
+    }
+
     public function destroy(User $user){
         $user->delete();
         return redirect('/users');

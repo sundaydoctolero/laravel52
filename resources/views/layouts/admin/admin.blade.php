@@ -13,6 +13,8 @@
         @include('layouts.admin.partials.section')
 
         <section class="content container-fluid"> <!-- Main content -->
+            @include('flash::message')
+
             @yield('main-content')
         </section>
 

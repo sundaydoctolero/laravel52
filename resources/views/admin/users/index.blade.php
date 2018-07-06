@@ -39,9 +39,8 @@
                         <td>{{ $user->created_at->diffforHumans() }}</td>
                         <td>
                             <a href="users/{{ $user->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
-                            {!! Form::model($user,['method'=>'DELETE','url' => '/users/'.$user->id,'style'=>'display:inline']) !!}
-                            {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
-
+                            {!! Form::model($user,['method'=>'PATCH','url' => '/users/'.$user->id.'/reset_default_password','style'=>'display:inline']) !!}
+                            {{ Form::button('<i class="fa fa-rotate-left"></i> Reset Password', ['type' => 'submit', 'class' => 'btn btn-warning btn-sm'] )  }}
                             {!! Form::close() !!}
                         </td>
                     </tr>
