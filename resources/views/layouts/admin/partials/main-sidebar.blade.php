@@ -34,6 +34,8 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li><a href="/tasks"><i class="fa fa-sticky-note"></i> <span>Task &nbsp &nbsp</span><small class="label label-success">{{ $tasks_count }}</small></a></li>
+            <li class="active"><a href="/contacts"><i class="fa fa-anchor"></i> <span>Contacts</span></a></li>
+            <li class="active"><a href="/assets"><i class="fa fa-anchor"></i> <span>Manage Assets</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-server"></i> <span>Setup</span>
             <span class="pull-right-container">
