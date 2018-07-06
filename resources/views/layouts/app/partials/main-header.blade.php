@@ -1,7 +1,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="refresh" content="30">
     <title>Task Management System</title>
     <!-- Icon -->
     <link rel="shortcut icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
