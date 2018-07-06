@@ -25,8 +25,8 @@
                         <th>Employee Name</th>
                         <th>Task Name</th>
                         <th>Description</th>
-                        <th>Comments</th>
                         <th>Status</th>
+                        <th>Comments</th>
                         <th>Check By</th>
                         <th>Completion Date</th>
                         <th>Created Since</th>
