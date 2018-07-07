@@ -38,6 +38,7 @@
             <li class="{{ setActive('contacts') }}"><a href="/contacts"><i class="fa fa-phone"></i> <span>Contacts</span></a></li>
             <li class="{{ setActive('assets') }}"><a href="/assets"><i class="fa fa-diamond"></i> <span>Manage Assets</span></a></li>
             <li class="{{ setActive('passwords') }}"><a href="/passwords"><i class="fa fa-unlock"></i> <span>Manage Passwords</span></a></li>
+            <li class="{{ setActive('workstations') }}"><a href="/workstations"><i class="fa fa-tv"></i> <span>Workstations</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-gear"></i> <span>Setup</span>
             <span class="pull-right-container">

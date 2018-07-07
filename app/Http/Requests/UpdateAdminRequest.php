@@ -23,10 +23,12 @@ class UpdateAdminRequest extends Request
      */
     public function rules()
     {
+
+
         return [
             'name' => 'required',
             'username'=>'required|unique:users,username',
-            'email' => 'required|unique:users,email',
+            'email' => 'required|email',
             'password'=>'sometimes|confirmed',
             'role_list' =>'required'
         ];

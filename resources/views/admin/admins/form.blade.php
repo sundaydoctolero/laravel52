@@ -9,10 +9,10 @@
     {!! Form::text('email',null,['class'=>'form-control','required'=>'true']) !!}
 
     {!! Form::label('password', 'Password') !!}
-    {!! Form::password('password',['class'=>'form-control','required'=>'true']) !!}
+    {!! Form::password('password',['class'=>'form-control']) !!}
 
     {!! Form::label('password_confirmation', 'Confirm Password') !!}
-    {!! Form::password('password_confirmation',['class'=>'form-control','required'=>'true']) !!}
+    {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
 
     {!! Form::label('user_photo', 'Upload Image') !!}
     {!! Form::file('user_photo') !!}
