@@ -9,7 +9,7 @@ class Task extends Model
     protected $tables = 'tasks';
 
     protected $fillable = [
-        'task_name','description','completion_date','status','comments','admin_id'
+        'task_name','description','completion_date','status','comments','admin_id','user_id'
     ];
 
     public function user(){
