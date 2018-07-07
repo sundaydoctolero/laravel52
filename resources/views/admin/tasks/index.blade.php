@@ -38,7 +38,16 @@
                         <td>{{ $task->user['name'] }}</td>
                         <td>{{ $task->task_name }}</td>
                         <td>{{ $task->description }}</td>
-                        <td>{{ $task->status }}</td>
+                        <td>
+                            @if($task->status == 'Pending')
+                                <span class="badge bg-red">{{ $task->status }}</span>
+                            @elseif($task->status == 'Open')
+                                <span class="badge bg-green">{{ $task->status }}</span>
+                            @else
+                                <span class="badge bg-blue">{{ $task->status }}</span>
+                            @endif
+
+                        </td>
                         <td>{{ $task->comments }}</td>
                         <td>{{ $task->admin['name'] }}</td>
                         <td>{{ $task->completion_date }}</td>
