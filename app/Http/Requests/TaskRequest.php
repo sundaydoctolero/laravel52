@@ -27,7 +27,7 @@ class TaskRequest extends Request
             'task_name' =>'required',
             'description' =>'required',
             'completion_date' =>'sometimes|required',
-            'commments'=>'required'
+            'comments'=>'required'
         ];
     }
 }
