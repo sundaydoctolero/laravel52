@@ -15,7 +15,7 @@
     {!! Form::text('lastname',null,['class'=>'form-control']) !!}
 
     {!! Form::label('department_id', 'Department') !!}
-    {!! Form::select('department_id',\App\Department::lists('dept_name','id'),null,['class'=>'form-control','placeholder'=>'Select Department']) !!}
+    {!! Form::select('department_id',$department_lists,null,['class'=>'form-control','placeholder'=>'Select Department']) !!}
 
     {!! Form::label('birthdate', 'Birth Date') !!}
     {!! Form::date('birthdate',null,['class'=>'form-control']) !!}

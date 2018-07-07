@@ -10,7 +10,7 @@
                     <div class="box-body">
                         {!! Form::open(['url' => '/tasks/create']) !!}
                         {!! Form::label('user_id', 'Employee') !!}
-                        {!! Form::select('user_id',\App\User::lists('name','id'),null,['class'=>'form-control']) !!}
+                        {!! Form::select('user_id',$user_lists,null,['class'=>'form-control']) !!}
 
                         @include('admin.tasks.form',['buttonlabel' => 'Add Task'])
                     </div>
