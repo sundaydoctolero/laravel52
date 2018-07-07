@@ -32,11 +32,11 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-            <li><a href="/tasks"><i class="fa fa-flag-o"></i> <span>Task &nbsp &nbsp</span><small class="label label-danger pull-right">{{ $tasks_pending }}</small><small class="label label-success pull-right">{{ $tasks_open }}</small></a></li>
-            <li class="active"><a href="/contacts"><i class="fa fa-phone"></i> <span>Contacts</span></a></li>
-            <li class="active"><a href="/assets"><i class="fa fa-diamond"></i> <span>Manage Assets</span></a></li>
-            <li class="active"><a href="/passwords"><i class="fa fa-unlock"></i> <span>Manage Passwords</span></a></li>
+            <li class="{{ setActive('admin')  }}"><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+            <li class="{{ setActive('tasks') }}"><a href="/tasks"><i class="fa fa-flag-o"></i> <span>Task &nbsp &nbsp</span><small class="label label-danger pull-right">{{ $tasks_pending }}</small><small class="label label-success pull-right">{{ $tasks_open }}</small></a></li>
+            <li class="{{ setActive('contacts') }}"><a href="/contacts"><i class="fa fa-phone"></i> <span>Contacts</span></a></li>
+            <li class="{{ setActive('assets') }}"><a href="/assets"><i class="fa fa-diamond"></i> <span>Manage Assets</span></a></li>
+            <li class="{{ setActive('passwords') }}"><a href="/passwords"><i class="fa fa-unlock"></i> <span>Manage Passwords</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-gear"></i> <span>Setup</span>
             <span class="pull-right-container">
