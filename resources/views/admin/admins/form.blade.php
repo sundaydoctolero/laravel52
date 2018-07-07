@@ -1,24 +1,24 @@
     {{ csrf_field() }}
     {!! Form::label('username', 'Username') !!}
-    {!! Form::text('username',null,['class'=>'form-control']) !!}
+    {!! Form::text('username',null,['class'=>'form-control','required'=>'true']) !!}
 
     {!! Form::label('name', 'Name') !!}
-    {!! Form::text('name',null,['class'=>'form-control']) !!}
+    {!! Form::text('name',null,['class'=>'form-control','required'=>'true']) !!}
 
     {!! Form::label('email', 'Email') !!}
-    {!! Form::text('email',null,['class'=>'form-control']) !!}
+    {!! Form::text('email',null,['class'=>'form-control','required'=>'true']) !!}
 
     {!! Form::label('password', 'Password') !!}
-    {!! Form::password('password',['class'=>'form-control']) !!}
+    {!! Form::password('password',['class'=>'form-control','required'=>'true']) !!}
 
     {!! Form::label('password_confirmation', 'Confirm Password') !!}
-    {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
+    {!! Form::password('password_confirmation',['class'=>'form-control','required'=>'true']) !!}
 
     {!! Form::label('user_photo', 'Upload Image') !!}
     {!! Form::file('user_photo') !!}
     <div class="form-group">
     {!! Form::label('role_list', 'Roles') !!}
-    {!! Form::select('role_list[]', $role_lists, null, ['class'=>'form-control','id'=>'role_list','multiple'=>'true']) !!}
+    {!! Form::select('role_list[]', $role_lists, null, ['class'=>'form-control','required'=>'true','id'=>'role_list','multiple'=>'true']) !!}
 
     </div>
 
