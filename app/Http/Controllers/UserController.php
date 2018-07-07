@@ -48,7 +48,7 @@ class UserController extends Controller
 
     public function reset(User $user){
         $user->update(['password'=>'1234']);
-        flash('Password has been reset to 1234 for '.$user->name)->success();
+        flash('Password has been reset to 1234 for '.$user->username)->success();
         return redirect('/users');
     }
 

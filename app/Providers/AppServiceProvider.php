@@ -27,7 +27,6 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layouts.admin.partials.main-sidebar',function($view){
             $view->with('menus',Menu::orderBy('title','asc')->get());
             $view->with('tasks_open',Task::where('status','Open')->get()->count());
-            $view->with('menus',Menu::orderBy('title','asc')->get());
             $view->with('tasks_pending',Task::where('status','Pending')->get()->count());
         });
 
