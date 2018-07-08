@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class TaskRequest extends Request
+class JobNumberRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,10 @@ class TaskRequest extends Request
      */
     public function rules()
     {
-        return [
-            'task_name' =>'required',
-            'description' =>'required',
-            'completion_date' =>'sometimes|required',
-            'comments'=>'sometimes'
-        ];
+             return [
+                 'job_number_id'=>'required|digits:4',
+                 'job_number_description' =>'required',
+                 'month_of' =>'required',
+             ];
     }
 }

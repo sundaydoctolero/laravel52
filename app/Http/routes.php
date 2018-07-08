@@ -192,6 +192,17 @@ Route::put('/myprofile/{employee}', 'ProfileController@update'); //update
 Route::patch('/myprofile/{employee}', 'ProfileController@update'); //update
 
 /**
+ * Job Numbers Controller
+ */
+Route::get('jobnumbers', 'JobNumberController@index');
+Route::get('jobnumbers/create', 'JobNumberController@create');
+Route::post('jobnumbers/create','JobNumberController@store'); //store
+Route::get('jobnumbers/{jobnumber}/edit', 'JobNumberController@edit'); //edit
+Route::put('jobnumbers/{jobnumber}', 'JobNumberController@update'); //update
+Route::patch('jobnumbers/{jobnumber}', 'JobNumberController@update'); //update
+Route::delete('/jobnumbers/{jobnumber}', 'JobNumberController@destroy'); //delete
+
+/**
  * Auth Controller
  */
 Route::auth();
