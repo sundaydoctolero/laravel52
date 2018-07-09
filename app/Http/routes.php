@@ -223,6 +223,17 @@ Route::put('/tsheets/{tsheet}', 'TsheetController@update'); //update
 Route::patch('/tsheets/{tsheet}', 'TsheetController@update'); //update
 
 /**
+ * State Controller
+ */
+Route::get('/states', 'StateController@index');
+Route::get('/states/create', 'StateController@create');
+Route::post('/states/create','StateController@store'); //store
+Route::get('/states/{state}/edit', 'StateController@edit'); //edit
+Route::put('/states/{state}', 'StateController@update'); //update
+Route::patch('/states/{state}', 'StateController@update'); //update
+Route::delete('/states/{state}', 'StateController@destroy'); //delete
+
+/**
  * Auth Controller
  */
 Route::auth();
