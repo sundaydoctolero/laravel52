@@ -12,6 +12,8 @@
     $(document).ready(function(){
         $('#role_list').select2();
 
+        $('#permission_list').select2();
+
         $(".btn-danger").click(function(){
             //confirm("Are you sure you want to delete?");
           //  $(".modal").modal();

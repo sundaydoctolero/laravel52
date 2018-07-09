@@ -25,6 +25,7 @@
                         <th>Name</th>
                         <th>Display Name</th>
                         <th>Description</th>
+                        <th>Permission</th>
                         <th>Action</th>
                     </tr>
                     @foreach($roles as $role)
@@ -33,6 +34,11 @@
                         <td>{{ $role->name }}</td>
                         <td>{{ $role->display_name }}</td>
                         <td>{{ $role->description }}</td>
+                        <td>
+                            @foreach($role->permissions as $permission)
+                                <small class="label label-success">{{ $permission->name }}</small>
+                            @endforeach
+                        </td>
                         <td>
                             <a href="roles/{{ $role->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                             {!! Form::model($role,['method'=>'DELETE','url' => '/roles/'.$role->id,'style'=>'display:inline']) !!}

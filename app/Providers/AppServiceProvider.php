@@ -10,6 +10,7 @@ use App\User;
 use App\Department;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use App\Permission;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('admin.admins.form',function($view){
             $view->with('role_lists',Role::lists('name','id'));
+        });
+
+        view()->composer('admin.roles.form',function($view){
+            $view->with('permission_lists',Permission::lists('display_name','id'));
         });
 
         view()->composer('layouts.admin.partials.main-sidebar',function($view){

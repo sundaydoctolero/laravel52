@@ -26,6 +26,8 @@ class RoleRequest extends Request
         return [
             'name'=>'required',
             'display_name' =>'required',
+            'description' =>'required',
+            'permission_list' =>'required',
         ];
     }
 }

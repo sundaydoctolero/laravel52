@@ -33,6 +33,7 @@ class RoleController extends Controller
     public function store(RoleRequest $request)
     {
         $role = Role::create($request->all());
+        $role->permissions()->attach($request->permission_list);
         return redirect('/roles');
     }
 
@@ -52,6 +53,7 @@ class RoleController extends Controller
     public function update(RoleRequest $request, Role $role)
     {
         $role->update($request->all());
+        $role->permissions()->sync($request->permission_list);
         return redirect('/roles');
     }
 
