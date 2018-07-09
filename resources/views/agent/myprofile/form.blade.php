@@ -1,6 +1,6 @@
     {{ csrf_field() }}
     {!! Form::label('name', 'Display Name') !!}
-    {!! Form::text('name',auth()->user()->name,['class'=>'form-control','require'->'true']) !!}
+    {!! Form::text('name',auth()->user()->name,['class'=>'form-control','require'=>'true']) !!}
 
     {!! Form::label('username', 'Username') !!}
     {!! Form::text('username',auth()->user()->username,['class'=>'form-control','required'=>'true']) !!}

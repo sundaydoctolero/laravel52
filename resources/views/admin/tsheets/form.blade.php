@@ -1,0 +1,26 @@
+    {{ csrf_field() }}
+
+    <div class="form-group">
+        {!! Form::label('jobnumber_id', 'Job Number') !!}
+        {!! Form::select('jobnumber_id',\App\JobNumber::lists('job_number_description','id'),null,['class'=>'form-control','required'=>'true','placeholder'=>'Select Job Number']) !!}
+    </div>
+
+    {!! Form::label('start_time', 'Start Time') !!}
+    {!! Form::text('start_time',null,['class'=>'form-control','required']) !!}
+
+    {!! Form::label('end_time', 'End Time') !!}
+    {!! Form::text('end_time',null,['class'=>'form-control','required']) !!}
+
+    {!! Form::label('total_records', 'Records') !!}
+    {!! Form::number('total_records',null,['class'=>'form-control']) !!}
+
+    {!! Form::label('remarks', 'Remarks') !!}
+    {!! Form::text('remarks',null,['class'=>'form-control']) !!}
+
+    <hr>
+    {!! Form::submit($buttonlabel,['class'=>'btn btn-primary form-control']) !!}
+
+    {!! Form::close() !!}
+
+    @include('errors.error')
+

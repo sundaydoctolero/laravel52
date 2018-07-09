@@ -12,5 +12,9 @@ class JobNumber extends Model
         'job_number_id','job_number_description','month_of'
     ];
 
+    public function tsheets(){
+        return $this->hasMany('App\Tsheet');
+    }
+
 }
 

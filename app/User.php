@@ -34,6 +34,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Task');
     }
 
+    public function tsheets(){
+        return $this->hasMany('App\Tsheet');
+    }
+
     public function setUserPhotoAttribute($value){
         $this->attributes['user_photo'] = $value->getClientOriginalName();
     }

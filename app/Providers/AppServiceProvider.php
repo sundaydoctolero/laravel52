@@ -39,6 +39,11 @@ class AppServiceProvider extends ServiceProvider
            $view->with('user_lists',User::lists('name','id'));
         });
 
+        view()->composer('admin.tsheets.create',function($view){
+            $view->with('user_lists',User::lists('name','id'));
+        });
+
+
         view()->composer('agent.myprofile.form',function($view){
             $view->with('department_lists',Department::lists('dept_name','id'));
         });

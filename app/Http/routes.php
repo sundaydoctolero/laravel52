@@ -203,6 +203,26 @@ Route::patch('jobnumbers/{jobnumber}', 'JobNumberController@update'); //update
 Route::delete('/jobnumbers/{jobnumber}', 'JobNumberController@destroy'); //delete
 
 /**
+ * Agent Tsheet Controller
+ */
+Route::get('/agent/tsheets', 'AgentTsheetController@index');
+Route::get('/agent/tsheets/create', 'AgentTsheetController@create');
+Route::post('/agent/tsheets/create','AgentTsheetController@store'); //store
+Route::get('/agent/tsheets/{tsheet}/edit', 'AgentTsheetController@edit'); //edit
+Route::put('/agent/tsheets/{tsheet}', 'AgentTsheetController@update'); //update
+Route::patch('/agent/tsheets/{tsheet}', 'AgentTsheetController@update'); //update
+
+/**
+ * Admin Tsheet Controller
+ */
+Route::get('/tsheets', 'TsheetController@index');
+Route::get('/tsheets/create', 'TsheetController@create');
+Route::post('/tsheets/create','TsheetController@store'); //store
+Route::get('/tsheets/{tsheet}/edit', 'TsheetController@edit'); //edit
+Route::put('/tsheets/{tsheet}', 'TsheetController@update'); //update
+Route::patch('/tsheets/{tsheet}', 'TsheetController@update'); //update
+
+/**
  * Auth Controller
  */
 Route::auth();
