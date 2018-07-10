@@ -18,6 +18,15 @@ class CreateStatesTable extends Migration
             $table->string('state');
             $table->timestamps();
         });
+
+        Schema::create('publication_state', function (Blueprint $table) {
+            $table->integer('publication_id')->unsigned()->index();
+            $table->foreign('publication_id')->references('id')->on('publications')->onDelete('cascade');
+
+            $table->integer('state_id')->unsigned()->index();
+            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,5 +37,6 @@ class CreateStatesTable extends Migration
     public function down()
     {
         Schema::drop('states');
+        Schema::drop('publication_state');
     }
 }

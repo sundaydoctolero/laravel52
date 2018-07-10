@@ -24,15 +24,6 @@ class CreatePublicationsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('publication_state', function (Blueprint $table) {
-            $table->integer('publication_id')->unsigned()->index();
-            $table->foreign('publication_id')->references('id')->on('publications')->onDelete('cascade');
-
-            $table->integer('state_id')->unsigned()->index();
-            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
-            $table->timestamps();
-        });
-
 
     }
 
@@ -44,6 +35,6 @@ class CreatePublicationsTable extends Migration
     public function down()
     {
         Schema::drop('publications');
-        Schema::drop('publication_state');
+
     }
 }
