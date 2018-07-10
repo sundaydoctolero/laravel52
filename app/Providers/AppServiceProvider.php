@@ -54,9 +54,22 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('admin.publications.form',function($view){
-            $issues = ['Weekly'=>'Weekly','Monthly'=>'Monthly'];
+            $issues = ['Daily'=>'Daily',
+                        'Weekly'=>'Weekly',
+                        'Monthly'=>'Monthly',
+                        'Bi-Weekly'=>'Bi-Weekly',
+                        'Fornightly'=>'Fornightly',
+                        'Quarterly'=>'Quarterly',
+                        'Annualy'=>'Annualy'
+                        ];
             $view->with('pub_issues',$issues);
-            $types = ['Tier1'=>'Tier1','Tier2'=>'Tier2'];
+            $types = ['Tier1'=>'Tier1',
+                        'Tier2'=>'Tier2',
+                        'Tier3'=>'Tier3',
+                        'Regular'=>'Regular',
+                        'Email'=>'Email',
+                        'Hard Copy'=>'Hard Copy'
+                    ];
             $view->with('pub_types',$types);
             $view->with('state_lists',State::lists('state_code','id'));
         });
