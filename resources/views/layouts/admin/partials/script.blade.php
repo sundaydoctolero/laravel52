@@ -14,6 +14,8 @@
 
         $('#permission_list').select2();
 
+        $('#state_list').select2();
+
         $(".btn-danger").click(function(){
             //confirm("Are you sure you want to delete?");
           //  $(".modal").modal();

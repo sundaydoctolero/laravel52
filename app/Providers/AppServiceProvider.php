@@ -8,6 +8,7 @@ use App\Menu;
 use App\Task;
 use App\User;
 use App\Department;
+use App\State;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Permission;
@@ -51,6 +52,15 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('old_password', function ($attribute, $value, $parameters, $validator) {
             return Hash::check($value, current($parameters));
         });
+
+        view()->composer('admin.publications.form',function($view){
+            $issues = ['Weekly'=>'Weekly','Monthly'=>'Monthly'];
+            $view->with('pub_issues',$issues);
+            $types = ['Tier1'=>'Tier1','Tier2'=>'Tier2'];
+            $view->with('pub_types',$types);
+            $view->with('state_lists',State::lists('state_code','id'));
+        });
+
     }
 
     /**

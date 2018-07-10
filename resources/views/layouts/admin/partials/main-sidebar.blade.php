@@ -61,6 +61,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/states') }}"><i class="fa fa-anchor"></i> <span>States</span></a></li>
+                    <li><a href="{{ url('/publications') }}"><i class="fa fa-anchor"></i> <span>Publications</span></a></li>
                 </ul>
             </li>
 

@@ -234,6 +234,17 @@ Route::patch('/states/{state}', 'StateController@update'); //update
 Route::delete('/states/{state}', 'StateController@destroy'); //delete
 
 /**
+ * Publication Controller
+ */
+Route::get('/publications', 'PublicationController@index');
+Route::get('/publications/create', 'PublicationController@create');
+Route::post('/publications/create','PublicationController@store'); //store
+Route::get('/publications/{publication}/edit', 'PublicationController@edit'); //edit
+Route::put('/publications/{publication}', 'PublicationController@update'); //update
+Route::patch('/publications/{publication}', 'PublicationController@update'); //update
+Route::delete('/publications/{publication}', 'PublicationController@destroy'); //delete
+
+/**
  * Auth Controller
  */
 Route::auth();

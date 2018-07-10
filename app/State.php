@@ -11,4 +11,8 @@ class State extends Model
     protected $fillable = [
         'state_code','state',
     ];
+
+    public function publications(){
+        return $this->belongsToMany('App\Publication');
+    }
 }

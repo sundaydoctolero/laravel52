@@ -29,9 +29,9 @@ class StateController extends Controller
     }
 
 
-    public function store(StateRequest $state)
+    public function store(StateRequest $request)
     {
-        $state = State::create($state->all());
+        $state = State::create($request->all());
         return redirect('/states');
     }
 
