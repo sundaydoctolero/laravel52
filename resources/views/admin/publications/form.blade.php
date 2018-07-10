@@ -1,5 +1,10 @@
     {{ csrf_field() }}
 
+    <div class="form-group">
+        {!! Form::label('state_lists', 'State') !!}
+        {!! Form::select('state_list[]', $state_lists, null, ['class'=>'form-control','required'=>'true','id'=>'state_list','multiple'=>'true']) !!}
+    </div>
+
     {!! Form::label('publication_name', 'Publication Name') !!}
     {!! Form::text('publication_name',null,['class'=>'form-control','required'=>'true']) !!}
 
@@ -18,10 +23,7 @@
     {!! Form::label('password', 'Password') !!}
     {!! Form::text('password',null,['class'=>'form-control','required'=>'true']) !!}
 
-    <div class="form-group">
-        {!! Form::label('state_lists', 'State') !!}
-        {!! Form::select('state_list[]', $state_lists, null, ['class'=>'form-control','required'=>'true','id'=>'state_list','multiple'=>'true']) !!}
-    </div>
+
 
     {!! Form::label('publication_type', 'Type Of Publication') !!}
     {!! Form::select('publication_type',$pub_types,null,['class'=>'form-control','required'=>'true']) !!}
