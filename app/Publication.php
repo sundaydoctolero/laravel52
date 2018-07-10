@@ -9,7 +9,7 @@ class Publication extends Model
     protected $tables = 'publications';
 
     protected $fillable = [
-        'publication_name','website','issue','username','password','publication_type',
+        'publication_name','website','issue','username','password','publication_type','day_due_out'
     ];
 
     public function states(){

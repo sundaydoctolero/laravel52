@@ -9,6 +9,9 @@
     {!! Form::label('issue', 'Issue') !!}
     {!! Form::select('issue',$pub_issues,null,['class'=>'form-control','required'=>'true']) !!}
 
+    {!! Form::label('day_due_out', 'Day Due Out') !!}
+    {!! Form::text('day_due_out',null,['class'=>'form-control','required'=>'true']) !!}
+
     {!! Form::label('username', 'Username') !!}
     {!! Form::text('username',null,['class'=>'form-control','required'=>'true']) !!}
 

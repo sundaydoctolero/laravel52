@@ -25,10 +25,10 @@
                         <th>States</th>
                         <th>Publication Name</th>
                         <th>Website URL</th>
-                        <th>Issue Date</th>
+                        <th>Issue</th>
+                        <th>Day Due Out</th>
                         <th>Username</th>
                         <th>Password</th>
-                        <th>State</th>
                         <th>Publication Type</th>
                         <th>Action</th>
 
@@ -46,9 +46,9 @@
                         <td>{{ $publication->publication_name }}</td>
                         <td>{{ $publication->website }}</td>
                         <td>{{ $publication->issue }}</td>
+                        <td>{{ $publication->day_due_out }}</td>
                         <td>{{ $publication->username }}</td>
                         <td>{{ $publication->password }}</td>
-                        <td>{{ $publication->state }}</td>
                         <td>{{ $publication->publication_type }}</td>
 
                         <td>

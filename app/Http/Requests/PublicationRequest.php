@@ -31,6 +31,7 @@ class PublicationRequest extends Request
             'password' =>'required',
             'state_list' =>'required',
             'publication_type' =>'required',
+            'day_due_out' =>'required'
         ];
     }
 }
