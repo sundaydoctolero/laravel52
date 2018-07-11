@@ -13,6 +13,7 @@ class TaskController extends Controller
     public function __construct()
     {
         $this->middleware('admin');
+        $this->middleware('roles:Admin,Normal Admin');
     }
 
 

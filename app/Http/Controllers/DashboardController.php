@@ -12,9 +12,10 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->middleware('admin');
+        $this->middleware('roles:Admin,User');
     }
 
-    public function index(){
-        return view('admin.dashboard');
+    public function index(Request $request){
+          return view('admin.dashboard');
     }
 }

@@ -7,6 +7,9 @@
 <script src="{{ asset('bower_components/admin-lte/dist/js/adminlte.min.js') }}"></script>
 <!-- Select2 -->
 <script src="{{ asset('bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+<!-- DataTables -->
+<script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 
 <script>
     $(document).ready(function(){
@@ -27,6 +30,17 @@
             //  $(".modal").modal();
             // return false;
         });
+
+
+        $('#results_table').DataTable({
+            'paging'      : true,
+            'lengthChange': true,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
+
 
     })
 </script>

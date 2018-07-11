@@ -1,12 +1,27 @@
     {{ csrf_field() }}
-    {!! Form::label('firstname', 'Firstname') !!}
-    {!! Form::text('firstname',null,['class'=>'form-control','required'=>'true']) !!}
+    <div class="row">
+        <div class="form-group">
+            {!! Form::label('firstname', 'Firstname',['class'=>"col-md-1 col-md-offset-1 control-label"]) !!}
+            <div class="col-md-3">
+                {!! Form::text('firstname',null,['class'=>'form-control','required'=>'true']) !!}
+            </div>
+            {!! Form::label('lastname', 'Lastname',['class'=>'col-md-1 col-md-offset-1']) !!}
+            <div class="col-md-3">
+            {!! Form::text('lastname',null,['class'=>'form-control','required'=>'true']) !!}
+            </div>
+        </div>
+    </div>
 
-    {!! Form::label('lastname', 'Lastname') !!}
-    {!! Form::text('lastname',null,['class'=>'form-control','required'=>'true']) !!}
+    <div class="row">
+        <div class="form-group">
+            {!! Form::label('department_id', 'Department',['class'=>'col-md-1 col-md-offset-1 control-label']) !!}
+            <div class="col-md-3">
+                {!! Form::select('department_id',\App\Department::lists('dept_name','id'),null,['class'=>'form-control','required'=>'true','placeholder'=>'Select Department']) !!}
+            </div>
 
-    {!! Form::label('department_id', 'Department') !!}
-    {!! Form::select('department_id',\App\Department::lists('dept_name','id'),null,['class'=>'form-control','required'=>'true','placeholder'=>'Select Department']) !!}
+        </div>
+    </div>
+
 
     {!! Form::label('birthdate', 'Birth Date') !!}
     {!! Form::date('birthdate',null,['class'=>'form-control','required'=>'true']) !!}
