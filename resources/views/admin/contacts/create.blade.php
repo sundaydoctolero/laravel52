@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Add New Contact'])
+@extends('layouts.admin.admin',['logo'=>'','page_header' => ''])
 
 @section('main-content')
         <div class="row">
@@ -9,6 +9,12 @@
                     </div>
                     <div class="box-body">
                         {!! Form::open(['url' => '/contacts/create']) !!}
+                        <div class = "col-md-offset-1">
+                            <font size = "16" face = "microsoft sans serif"> <h1 class = "fa fa-user-plus">&nbsp<tt>Add New Contact</tt></h1></font>
+                        </div>
+                        <hr>
+
+
                         @include('admin.contacts.form',['buttonlabel' => 'Add Contact'])
                     </div>
                     <div class="box-footer">

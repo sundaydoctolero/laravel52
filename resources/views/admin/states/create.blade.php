@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Add New State'])
+@extends('layouts.admin.admin',['page_header' => '', 'logo'=> ''])
 
 @section('main-content')
         <div class="row">
@@ -9,6 +9,10 @@
                     </div>
                     <div class="box-body">
                         {!! Form::open(['url' => '/states/create']) !!}
+                        <div class = "col-md-offset-1">
+                            <font size = "16" face = "microsoft sans serif"> <h1 class = "fa fa-plus-circle">&nbsp<tt>Add States</tt></h1></font>
+                        </div>
+                        <hr>
                         @include('admin.states.form',['buttonlabel' => 'Add State'])
                     </div>
                     <div class="box-footer">

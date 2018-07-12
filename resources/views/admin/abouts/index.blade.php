@@ -1,25 +1,19 @@
 @extends('layouts.admin.admin',['page_header' => 'Abouts'])
 
 @section('main-content')
-    <div class = "row">
+    <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title"><a href= "/abouts/create"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-plus"></i>Add New Record</button></a></h3>
-
-                    <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
+                    <div class="box-title">
+                        <h3 class="box-title"><a href="/abouts/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Menu</button></a></h3>
                     </div>
                 </div>
-                <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                        <tbody><tr>
+                <div class="box-body">
+                    <table id="results_table" class="table table-bordered table-hover">
+                        <thead>
+
+                        <tr>
                             <th>ID</th>
                             <th>Site name</th>
                             <th>Company Name</th>
@@ -30,6 +24,8 @@
 
                             <th>Action</th>
                         </tr>
+                        </thead>
+                        <tbody>
                         @foreach($abouts as $about)
                             <tr>
 
@@ -49,13 +45,15 @@
                                 </td>
                             </tr>
                         @endforeach
-                        </tbody></table>
-
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
                 </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
     </div>
+
+
 @endsection
 

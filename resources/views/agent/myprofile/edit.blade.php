@@ -10,11 +10,11 @@
                 </div>
                 <div class="box-body">
                     {!!
-                   Form::model($employee,['method'=>'PATCH','url' => '/myprofile/'.$employee->id,'enctype'=>'multipart/form-data']) !!}
+                   Form::model($employee,['method'=>'PATCH','url' => '/myprofile/'.$employee->id,'enctype'=>'multipart/form-data','class'=>'form-horizontal']) !!}
 
                     <div class = "col-md-offset-1">
 
-                   <font size = "16"> <h1 class = "fa fa-user-circle-o"><tt>&nbspProfile</tt></h1></font>
+                   <font face = "microsoft sans serif" size = "16"> <h1 class = "fa fa-user-circle-o"><tt>&nbspProfile</tt></h1></font>
 
                     </div>
                     <hr>

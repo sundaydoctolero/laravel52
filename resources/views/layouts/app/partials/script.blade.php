@@ -10,6 +10,9 @@
 <script src="{{ asset('bower_components/admin-lte/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('bower_components/admin-lte/dist/js/demo.js') }}"></script>
+<!-- DataTables -->
+<script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 
 <script>
     $('#flash-overlay-modal').modal();
@@ -17,4 +20,13 @@
 
 <script>
     $('div.alert').not('.alert-important').delay(2000).fadeOut(1000);
+
+    $('#results_table').DataTable({
+        'paging'      : true,
+        'lengthChange': true,
+        'searching'   : true,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false
+    })
 </script>

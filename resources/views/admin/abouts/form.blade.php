@@ -1,6 +1,11 @@
 
     {{csrf_field()}}
+
+    <div class = "container" >
+        <tt>
     <font color = #db7093>
+
+
   {!! Form::label('site_name','Site Name') !!}
     {!! Form::text('site_name',null, ['class' => 'form-control','required'=>'true']) !!}
 
@@ -28,6 +33,8 @@
 
     </font>
 
+            </tt>
+        </div>
 <br>
   @include('errors.error' )
 

@@ -1,34 +1,12 @@
-@extends('layouts.admin.admin',['page_header' => 'Contacts'])
+@extends('layouts.admin.admin',['logo' =>'fa fa-address-book','page_header' => 'Contacts'])
 
 @section('main-content')
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-warning">
-                <div class="panel-heading">Filter Form</div>
-                <div class="panel-body">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label>Filter By</label>
-                            <input type="text" class="form-control" value="" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>sample</label>
-                            <input type="text" class="form-control" value="" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
                     <div class="box-title">
-                        <h3 class="box-title"><a href="/contacts/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Contact</button></a></h3>
+                        <h3 class="box-title"><a href="/contacts/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Menu</button></a></h3>
                     </div>
                 </div>
                 <div class="box-body">
@@ -81,4 +59,9 @@
             </div>
         </div>
     </div>
+
+
+
+
+
 @endsection

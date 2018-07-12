@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Modify State'])
+@extends('layouts.admin.admin',['page_header' => '', 'logo' => ''])
 
 @section('main-content')
     <div class="row">
@@ -9,6 +9,10 @@
                 </div>
                 <div class="box-body">
                     {!! Form::model($state,['method'=>'PATCH','url' => '/states/'.$state->id]) !!}
+                    <div class = "col-md-offset-1">
+                        <font size = "16" face = "microsoft sans serif"> <h1 class = "fa fa-edit">&nbsp<tt>Modify States</tt></h1></font>
+                    </div>
+                    <hr>
                     @include('admin.states.form',['buttonlabel'=>'Update State'])
                 </div>
                 <div class="box-footer">

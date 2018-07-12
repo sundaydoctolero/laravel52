@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Modify Publication'])
+@extends('layouts.admin.admin',['page_header' => '', 'logo'=>''])
 
 @section('main-content')
     <div class="row">
@@ -9,6 +9,10 @@
                 </div>
                 <div class="box-body">
                     {!! Form::model($publication,['method'=>'PATCH','url' => '/publications/'.$publication->id]) !!}
+                    <div class = "col-md-offset-1">
+                        <font size = "16" face = "microsoft sans serif"> <h1 class = "fa fa-edit">&nbsp<tt>Modify Publication</tt></h1></font>
+                    </div>
+                    <hr>
                     @include('admin.publications.form',['buttonlabel'=>'Update Publication'])
                 </div>
                 <div class="box-footer">

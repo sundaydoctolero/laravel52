@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Assets'])
+@extends('layouts.admin.admin',['logo'=>'fa fa-diamond','page_header' => 'Assets'])
 
 @section('main-content')
     <div class="row">
@@ -6,7 +6,7 @@
             <div class="box">
                 <div class="box-header">
                     <div class="box-title">
-                        <h3 class="box-title"><a href="/assets/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Menu</button></a></h3>
+                        <h3 class="box-title"><a href="/assets/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Asset</button></a></h3>
                     </div>
                 </div>
                 <div class="box-body">
