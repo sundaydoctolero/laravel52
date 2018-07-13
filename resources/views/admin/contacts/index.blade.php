@@ -1,6 +1,31 @@
 @extends('layouts.admin.admin',['logo' =>'fa fa-address-book','page_header' => 'Contacts'])
 
 @section('main-content')
+    @foreach($contacts as $contact)
+        <div class="row">
+            <div class="col-md-2 col-md-offset-2">
+                <img src="{{ asset('images/userprofile/user.png') }}" width="200px"/>
+            </div>
+            <div class="col-md-8">
+                <h3>{{ $contact->lastname.', '.$contact->firstname }}</h3>
+                <h4>{{ $contact->address }}</h4>
+                <br>
+                <h5>{{ $contact->mobile_1 }}</h5>
+                <h5>{{ $contact->company_name }}</h5>
+                <h5>{{ $contact->email }}</h5>
+                <a href="contacts/{{ $contact->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
+                {!! Form::model($contact,['method'=>'DELETE','url' => '/contacts/'.$contact->id,'style'=>'display:inline']) !!}
+                {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+
+                {!! Form::close() !!}
+            </div>
+        </div>
+
+        <hr>
+    @endforeach
+
+
+
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
