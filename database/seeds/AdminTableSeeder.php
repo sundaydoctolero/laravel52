@@ -22,6 +22,9 @@ class AdminTableSeeder extends Seeder
         $admin->password = 'admin';
         $admin->save();
 
+        $admin->roles()->attach('1');
+
+
         $admin = new Admin();
         $admin->name = 'System Admin';
         $admin->username = "support";
@@ -43,16 +46,11 @@ class AdminTableSeeder extends Seeder
         $admin->password = 'admin';
         $admin->save();
 
-
         $admin = new User();
         $admin->name = 'user';
         $admin->username = "user";
         $admin->email = 'user@example.com';
         $admin->password = 'user';
         $admin->save();
-
-        $admin->employee()->save(new Employee(['department_id' => 1]));
-
-
     }
 }
