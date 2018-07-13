@@ -1,7 +1,7 @@
 <?php
 function setActive($path)
 {
-    return 'contacts' == 'admin' ? 'active' : '';
+    return request()->path() == $path ? 'active' : '';
 }
 
 function status_color($status){
