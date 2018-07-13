@@ -3,7 +3,7 @@
 @include('layouts.admin.partials.main-header')
 
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" style=background-color:powderblue>
 
     @include('layouts.admin.partials.header') <!-- Main Header -->
 

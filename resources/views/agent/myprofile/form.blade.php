@@ -59,9 +59,9 @@
                 </div>
             </div>
         </div>
-
-        <hr>
-
+            <div class = "col-md-11">
+            <hr style="width:1000px;height:2px; border:none; color:#000; background-color:#282B2E;">
+            </div>
         <div class="row">
             <div class="form-group">
                 <div class = "col-md-4 col-xs-6 col-md-offset-1">
@@ -92,8 +92,9 @@
             </div>
         </div>
 
-        <hr>
-
+            <div class = "col-md-11">
+                <hr style="width:1000px;height:2px; border:none; color:#000; background-color:#282B2E;">
+            </div>
         <div class="row">
             <div class="form-group">
                 <div class = "col-md-8 col-md-offset-1">
@@ -130,8 +131,9 @@
             </div>
         </div>
 
-        <hr>
-
+            <div class = "col-md-11">
+                <hr style="width:1000px;height:2px; border:none; color:#000; background-color:#282B2E;">
+            </div>
 </font>
     </tt>
         {!! Form::close() !!}

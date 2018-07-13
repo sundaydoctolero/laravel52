@@ -17,7 +17,6 @@
                             <th>Name</th>
                             <th>Display Name</th>
                             <th>Description</th>
-
                         </tr>
                         </thead>
                         <tbody>
@@ -36,7 +35,6 @@
                                 </td>
                             </tr>
                         @endforeach
-
                         </tbody>
                         <tfoot>
                         </tfoot>
