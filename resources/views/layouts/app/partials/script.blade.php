@@ -29,5 +29,6 @@
         'info'        : true,
         'autoWidth'   : false
     })
-
 </script>
+
+@stack('scripts')

@@ -40,6 +40,8 @@
             <li class="{{ setActive('passwords') }}"><a href="/passwords"><i class="fa fa-unlock"></i> <span>Manage Passwords</span></a></li>
             <li class="{{ setActive('workstations') }}"><a href="/workstations"><i class="fa fa-tv"></i> <span>Workstations</span></a></li>
             <li class="{{ setActive('tsheets') }}"><a href="/tsheets"><i class="fa fa-unlock"></i> <span>Manage Tsheet</span></a></li>
+            <li class="{{ setActive('downloads') }}"><a href="/downloads"><i class="fa fa-arrow-down"></i> <span>Manage Downloads</span></a></li>
+            <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Newspaper Reports</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-gear"></i> <span>Setup</span>
             <span class="pull-right-container">

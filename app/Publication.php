@@ -20,4 +20,8 @@ class Publication extends Model
         return $this->states->lists('id')->toArray();
     }
 
+    public function downloads(){
+        return $this->hasMany('App\Download');
+    }
+
 }

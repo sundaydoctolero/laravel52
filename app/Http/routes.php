@@ -245,6 +245,66 @@ Route::patch('/publications/{publication}', 'PublicationController@update'); //u
 Route::delete('/publications/{publication}', 'PublicationController@destroy'); //delete
 
 /**
+ * Download Controller
+ */
+Route::get('/downloads', 'DownloadController@index');
+Route::get('/downloads/create', 'DownloadController@create');
+Route::post('/downloads/create','DownloadController@store'); //store
+Route::get('/downloads/{download}/edit', 'DownloadController@edit'); //edit
+Route::put('/downloads/{download}', 'DownloadController@update'); //update
+Route::patch('/downloads/{download}', 'DownloadController@update'); //update
+Route::delete('/downloads/{download}', 'DownloadController@destroy'); //delete
+
+
+/**
+ * Agent Download Controller
+ */
+Route::get('/agent/downloads', 'AgentDownloadController@index');
+Route::get('/agent/downloads/create', 'AgentDownloadController@create');
+Route::post('/agent/downloads/create','AgentDownloadController@store'); //store
+Route::get('/agent/downloads/{download}/edit', 'AgentDownloadController@edit'); //edit
+Route::put('/agent/downloads/{download}', 'AgentDownloadController@update'); //update
+Route::patch('/agent/downloads/{download}', 'AgentDownloadController@update'); //update
+Route::delete('/agent/downloads/{download}', 'AgentDownloadController@destroy'); //delete
+
+/**
+ * Agent Entry Controller
+ */
+Route::get('/agent/entries', 'AgentEntryController@index');
+Route::get('/agent/entries/create', 'AgentEntryController@create');
+Route::post('/agent/entries/create','AgentEntryController@store'); //store
+Route::get('/agent/entries/{download}/edit', 'AgentEntryController@edit'); //edit
+Route::put('/agent/entries/{download}', 'AgentEntryController@update'); //update
+Route::patch('/agent/entries/{download}', 'AgentEntryController@update'); //update
+Route::delete('/agent/entries/{download}', 'AgentEntryController@destroy'); //delete
+Route::patch('/agent/entries/{download}/closed_pub', 'AgentEntryController@closed'); //closed publication
+
+/**
+ * Agent Output Controller
+ */
+Route::get('/agent/outputs', 'AgentOutputController@index');
+Route::get('/agent/outputs/create', 'AgentOutputController@create');
+Route::post('/agent/outputs/create','AgentOutputController@store'); //store
+Route::get('/agent/outputs/{download}/edit', 'AgentOutputController@edit'); //edit
+Route::put('/agent/outputs/{download}', 'AgentOutputController@update'); //update
+Route::patch('/agent/outputs/{download}', 'AgentOutputController@update'); //update
+Route::delete('/agent/outputs/{download}', 'AgentOutputController@destroy'); //delete
+
+
+/**
+ * Newspaper Report Controller
+ */
+Route::get('/newspaper_reports', 'NewspaperReportController@index');
+Route::get('/newspaper_reports/create', 'NewspaperReportController@create');
+Route::post('/newspaper_reports/create','NewspaperReportController@store'); //store
+Route::get('/newspaper_reports/{download}/edit', 'NewspaperReportController@edit'); //edit
+Route::put('/newspaper_reports/{download}', 'NewspaperReportController@update'); //update
+Route::patch('/newspaper_reports/{download}', 'NewspaperReportController@update'); //update
+Route::delete('/newspaper_reports/{download}', 'NewspaperReportController@destroy'); //delete
+
+
+
+/**
  * Auth Controller
  */
 Route::auth();

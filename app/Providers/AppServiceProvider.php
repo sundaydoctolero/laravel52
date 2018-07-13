@@ -12,6 +12,7 @@ use App\State;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Permission;
+use App\Publication;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -72,6 +73,37 @@ class AppServiceProvider extends ServiceProvider
                     ];
             $view->with('pub_types',$types);
             $view->with('state_lists',State::lists('state_code','id'));
+        });
+
+        view()->composer('admin.downloads.form',function($view){
+            $status = ['For Download'=>'For Download',
+                'Pending'=>'Pending',
+                'Not Updated'=>'Not Updated',
+                'For Query'=>'For Query',
+                'For Entry'=>'For Entry',
+                'For Output' => 'For Output'
+            ];
+
+            $view->with('publication_lists',Publication::lists('publication_name','id'));
+            $view->with('status_lists',$status);
+        });
+
+        view()->composer('agent.downloads.form',function($view){
+            $status = ['For Download'=>'For Download',
+                'Pending'=>'Pending',
+                'Not Updated'=>'Not Updated',
+                'For Query'=>'For Query',
+                'For Entry'=>'For Entry',
+                'For Output' => 'For Output'
+            ];
+
+            $view->with('publication_lists',Publication::lists('publication_name','id'));
+            $view->with('status_lists',$status);
+        });
+
+        view()->composer('agent.outputs.edit',function($view){
+            $status = ['Closed'=>'Closed'];
+            $view->with('status_lists',$status);
         });
 
     }

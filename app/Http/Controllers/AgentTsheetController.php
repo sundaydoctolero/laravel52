@@ -32,6 +32,7 @@ class AgentTsheetController extends Controller
 
     public function create()
     {
+
         return view($this->view_path.'.create');
     }
 
