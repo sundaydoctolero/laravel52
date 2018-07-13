@@ -5,7 +5,7 @@
             <font face = "microsoft sans serif">
                 <div class="row">
                     <div class="form-group">
-                        <div class = "col-md-8 col-md-offset-2">}
+                        <div class = "col-md-8 col-md-offset-2">
                             {!! Form::label('name', 'Name') !!}
                             {!! Form::text('name',null,['class'=>'form-control','required'=>'true']) !!}
                         </div>
