@@ -84,7 +84,7 @@ class AppServiceProvider extends ServiceProvider
                 'For Output' => 'For Output'
             ];
 
-            $view->with('publication_lists',Publication::lists('publication_name','id'));
+            $view->with('publication_lists',Publication::orderBy('publication_name')->lists('publication_name','id'));
             $view->with('status_lists',$status);
         });
 

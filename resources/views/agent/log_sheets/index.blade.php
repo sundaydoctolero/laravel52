@@ -38,16 +38,21 @@
                             <td>{{ $download->id }}</td>
                             <td>{{ $download->publication->publication_name }}</td>
                             <td>{{ $download->publication_date }}</td>
-                            <td>{{ $download->status }}</td>
+                            <td>
+                                @if($download->log_sheet->count() >= 1)
+                                    Ongoing
+                                @else
+                                    {{ $download->status }}
+                                @endif
+                            </td>
                             <td>{{ $download->pages }}</td>
                             <td>{{ $download->remarks }}</td>
                             <td>{{ $download->user_id }}</td>
                             <td>
                                 @foreach($download->log_sheet as $operator=> $key)
-                                    <small class="label label-success">{{ $key->operators }}</small>
+                                    <small class="label label-success">{{ $key->user_id }}</small>
                                 @endforeach
                             </td>
-                            <td></td>
                             <td>
                                 <a href="/agent/entries/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Get</button></a>
                             </td>

@@ -27,7 +27,7 @@ class AgentEntryController extends Controller
     public function index(){
         $downloads = Download::where('status','For Entry')->get();
         $downloads->load(['log_sheet' => function($query){
-            $query->groupBy('operators')->get();
+            $query->groupBy('user_id')->get();
         }]);
         return view($this->view_path.'.index',compact('downloads'));
     }
@@ -62,9 +62,19 @@ class AgentEntryController extends Controller
 
     public function closed(Download $download){
 
-        if($download->log_sheet->count() == 0){
+        $log_sheets = $download->log_sheet;
+
+
+
+
+        if($log_sheets->count() == 0){
             flash('Cannot be closed!!!')->warning()->important();
             return redirect()->back();
+        } else {
+            if($log_sheets->groupBy('batch_id')->count() != $log_sheets->where('status','Finished')->count()){
+                flash('Cannot be closed!!!')->warning()->important();
+                return redirect()->back();
+            }
         }
         $download->update(['status'=>'For Output']);
 

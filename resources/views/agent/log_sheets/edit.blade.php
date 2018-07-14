@@ -37,14 +37,14 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Sale Type</th>
+                    <th>Entry Date</th>
+                    <th>S / R<th>
                     <th>Operator</th>
                     <th>Batch ID</th>
                     <th>Start</th>
                     <th>End</th>
                     <th>Total Hours</th>
                     <th>Records</th>
-                    <th>Entry Date</th>
                     <th>Status</th>
                     <th>Remarks</th>
                     <th>Action</th>
@@ -53,17 +53,21 @@
                 <tbody>
                     @foreach($download->log_sheet as $log)
                         <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
+                            <td>{{ $log->entry_date }}</td>
                             <td>{{ $log->sale_rent }}</td>
-                            <td><small class="label label-success">{{ $log->user_id }}</small></td>
+                            <td>{{ $log->user_id }}</td>
                             <td>{{ $log->batch_id }}</td>
                             <td>{{ $log->start_time }}</td>
                             <td>{{ $log->end_time }}</td>
                             <td>{{ $log->total_time }}</td>
-                            <td>{{ $log->records }}</td>
-                            <td>{{ $log->entry_date }}</td>
-                            <td>{{ $log->status}}</td>
+                            <td align="right" width="40px">{{ $log->records }}</td>
+                            <td><small class="label label-{{ $log->status == 'Finished' ? 'success' : 'danger' }}">{{ $log->status}}</small></td>
                             <td>{{ $log->remarks }}</td>
-                            <td>[Modify]</td>
+                            <td>
+                                @if($log->user_id == auth()->user()->id)
+                                    [Modify]
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -72,16 +76,16 @@
                         <td colspan="11">..</td>
                     </tr>
                     <tr>
-                        {!! Form::model($download,['method'=>'PATCH','url' => '/agent/entries/'.$download->id]) !!}
+                        {!! Form::model($download,['method'=>'PATCH','url' => '/agent/entries/'.$download->id,'class'=>'form-horizontal']) !!}
                             {{ csrf_field() }}
-                        <td width="100px">
+                        <td>
+                            {!! Form::text('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control input-sm','readonly'=>'true']) !!}
+                        </td>
+                        <td colspan="2">
                             {!! Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
                         </td>
                         <td>
-                            {!! Form::text('operators',null,['class'=>'form-control input-sm','required'=>'true']) !!}
-                        </td>
-                        <td>
-                            {!! Form::text('batch_id',null,['class'=>'form-control input-sm','required'=>'true']) !!}
+                            {!! Form::text('batch_id',null,['class'=>'form-control input-sm','required'=>'true','pattern' => "[a-zA-Z0-9]{3}[_][0-9]{8}[_][sS|Rr][_][0-9]{2}"]) !!}
                         </td>
                         <td>
                             {!! Form::time('start_time',null,['class'=>'form-control input-sm','required'=>'true']) !!}
@@ -95,9 +99,7 @@
                         <td>
                             {!! Form::text('records',null,['class'=>'form-control input-sm','required'=>'true']) !!}
                         </td>
-                        <td>
-                            {!! Form::text('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control input-sm','readonly'=>'true']) !!}
-                        </td>
+
                         <td>
                             {!! Form::select('status',['Finished'=>'FIN','Unfinished'=>'UNF'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
                         </td>
@@ -105,7 +107,7 @@
                             {!! Form::text('remarks',null,['class'=>'form-control input-sm']) !!}
                         </td>
                         <td>
-                            <button type="submit" class="btn btn-primary btn-block btn-flat input-sm"><i class="fa fa-plus"></i>Add</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat input-sm"><i class="fa fa-plus"></i>Start</button>
                         </td>
                         {!! Form::close() !!}
                     </tr>

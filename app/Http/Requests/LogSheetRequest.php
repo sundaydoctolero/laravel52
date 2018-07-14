@@ -26,7 +26,6 @@ class LogSheetRequest extends Request
         return [
 
             'sale_rent' => 'required',
-            'operators' => 'required',
             'batch_id' => 'required',
             'start_time' => 'required',
             'end_time' => 'sometimes|required',
