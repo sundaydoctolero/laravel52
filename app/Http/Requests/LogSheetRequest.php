@@ -24,14 +24,9 @@ class LogSheetRequest extends Request
     public function rules()
     {
         return [
-
             'sale_rent' => 'required',
             'batch_id' => 'required',
-            'start_time' => 'required',
-            'end_time' => 'sometimes|required',
-            'total_time' => 'sometimes|required',
-            'records' => 'sometimes|required',
-            'status' => 'required',
+            'records' => 'sometimes',
             'remarks' => 'sometimes',
 
         ];

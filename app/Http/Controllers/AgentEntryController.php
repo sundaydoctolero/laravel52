@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -37,35 +38,44 @@ class AgentEntryController extends Controller
     }
 
     public function store(LogSheetRequest $request){
-
-
-        auth()->download()->log_sheets()->create($request->all()); //one to many
-        return redirect($this->url_path);
+        //auth()->download()->log_sheets()->create($request->all()); //one to many
+        //return redirect($this->url_path);
     }
 
     public function edit(Download $download){
         $download->load('log_sheet');
         return view($this->view_path.'.edit',compact('download'));
-
     }
 
-    public function update(Download $download,LogSheetRequest $request){
+    public function start_entry(Download $download,LogSheetRequest $request){
+        $request['start_time'] = Carbon::now();
         $download->log_sheet()->create($request->all() + ['user_id' => auth()->user()->id]);
         flash()->message('Added Successfully')->success();
         return redirect()->back();
     }
 
+    public function end_entry(LogSheet $logsheet,Request $request){
+        $request['end_time'] = Carbon::now();
+
+        $startTime = Carbon::parse($logsheet->start_time);
+        $finishTime = Carbon::parse($request->end_time);
+
+        $totalDuration = $finishTime->diff($startTime);
+        $request['total_time'] = $totalDuration->h.':'.$totalDuration->i.':'.$totalDuration->s;
+
+        $logsheet->update($request->all());
+        flash()->message('Record Updated')->success();
+        return redirect()->back();
+    }
+
     public function destroy(LogSheet $log_sheets){
-        $log_sheets->delete();
-        return redirect($this->url_path);
+        //$log_sheets->delete();
+        //return redirect($this->url_path);
     }
 
     public function closed(Download $download){
 
         $log_sheets = $download->log_sheet;
-
-
-
 
         if($log_sheets->count() == 0){
             flash('Cannot be closed!!!')->warning()->important();

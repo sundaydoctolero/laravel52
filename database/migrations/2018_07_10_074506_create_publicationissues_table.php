@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreatePublicationIssuesTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations.php art
      *
      * @return void
      */

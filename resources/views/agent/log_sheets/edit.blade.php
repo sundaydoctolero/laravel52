@@ -38,7 +38,7 @@
                 <thead>
                 <tr>
                     <th>Entry Date</th>
-                    <th>S / R<th>
+                    <th>S / R</th>
                     <th>Operator</th>
                     <th>Batch ID</th>
                     <th>Start</th>
@@ -65,7 +65,11 @@
                             <td>{{ $log->remarks }}</td>
                             <td>
                                 @if($log->user_id == auth()->user()->id)
-                                    [Modify]
+                                    @if($log->end_time == '00:00:00')
+                                        {!! Form::model($download,['method'=>'PATCH','url' => '/agent/entries/'.$log->id,'class'=>'form-inline']) !!}
+                                        {!! Form::submit('Stop',['class'=>'btn btn-danger input-sm']) !!}
+                                        {!! Form::close() !!}
+                                    @endif
                                 @endif
                             </td>
                         </tr>
@@ -73,13 +77,10 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="11">..</td>
-                    </tr>
-                    <tr>
-                        {!! Form::model($download,['method'=>'PATCH','url' => '/agent/entries/'.$download->id,'class'=>'form-horizontal']) !!}
+                        {!! Form::model($download,['method'=>'PUT','url' => '/agent/entries/'.$download->id,'class'=>'form-horizontal']) !!}
                             {{ csrf_field() }}
                         <td>
-                            {!! Form::text('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control input-sm','readonly'=>'true']) !!}
+                            {!! Form::hidden('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control input-sm','readonly'=>'true']) !!}
                         </td>
                         <td colspan="2">
                             {!! Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
@@ -88,23 +89,7 @@
                             {!! Form::text('batch_id',null,['class'=>'form-control input-sm','required'=>'true','pattern' => "[a-zA-Z0-9]{3}[_][0-9]{8}[_][sS|Rr][_][0-9]{2}"]) !!}
                         </td>
                         <td>
-                            {!! Form::time('start_time',null,['class'=>'form-control input-sm','required'=>'true']) !!}
-                        </td>
-                        <td>
-                            {!! Form::time('end_time',null,['class'=>'form-control input-sm','required'=>'true']) !!}
-                        </td>
-                        <td>
-                            {!! Form::time('total_time',null,['class'=>'form-control input-sm','required'=>'true']) !!}
-                        </td>
-                        <td>
-                            {!! Form::text('records',null,['class'=>'form-control input-sm','required'=>'true']) !!}
-                        </td>
-
-                        <td>
-                            {!! Form::select('status',['Finished'=>'FIN','Unfinished'=>'UNF'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
-                        </td>
-                        <td>
-                            {!! Form::text('remarks',null,['class'=>'form-control input-sm']) !!}
+                            {!! Form::text('remarks',null,['class'=>'form-control input-sm','placeholder'=>'Remarks']) !!}
                         </td>
                         <td>
                             <button type="submit" class="btn btn-primary btn-block btn-flat input-sm"><i class="fa fa-plus"></i>Start</button>

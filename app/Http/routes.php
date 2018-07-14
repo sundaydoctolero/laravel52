@@ -274,8 +274,8 @@ Route::get('/agent/entries', 'AgentEntryController@index');
 Route::get('/agent/entries/create', 'AgentEntryController@create');
 Route::post('/agent/entries/create','AgentEntryController@store'); //store
 Route::get('/agent/entries/{download}/edit', 'AgentEntryController@edit'); //edit
-Route::put('/agent/entries/{download}', 'AgentEntryController@update'); //update
-Route::patch('/agent/entries/{download}', 'AgentEntryController@update'); //update
+Route::put('/agent/entries/{download}', 'AgentEntryController@start_entry'); //update
+Route::patch('/agent/entries/{logsheet}', 'AgentEntryController@end_entry'); //update
 Route::delete('/agent/entries/{download}', 'AgentEntryController@destroy'); //delete
 Route::patch('/agent/entries/{download}/closed_pub', 'AgentEntryController@closed'); //closed publication
 

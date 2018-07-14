@@ -23,7 +23,7 @@ class CreateLogSheetsTable extends Migration
             $table->time('end_time');
             $table->time('total_time');
             $table->date('entry_date');
-            $table->string('records');
+            $table->integer('records')->unsigned();
             $table->string('status');
             $table->string('remarks');
             $table->timestamps();
