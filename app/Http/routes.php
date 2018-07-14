@@ -302,6 +302,17 @@ Route::put('/newspaper_reports/{download}', 'NewspaperReportController@update');
 Route::patch('/newspaper_reports/{download}', 'NewspaperReportController@update'); //update
 Route::delete('/newspaper_reports/{download}', 'NewspaperReportController@destroy'); //delete
 
+/**
+ * Publication Type Controller
+ */
+Route::get('/publicationtypes', 'PublicationTypeController@index');
+Route::get('/publicationtypes/create', 'PublicationTypeController@create');
+Route::post('/publicationtypes/create','PublicationTypeController@store'); //store
+Route::get('/publicationtypes/{publicationtype}/edit', 'PublicationTypeController@edit'); //edit
+Route::put('/publicationtypes/{publicationtype}', 'PublicationTypeController@update'); //update
+Route::patch('/publicationtypes/{publicationtype}', 'PublicationTypeController@update'); //update
+Route::delete('/publicationtypes/{publicationtype}', 'PublicationTypeController@destroy'); //delete
+
 
 
 /**

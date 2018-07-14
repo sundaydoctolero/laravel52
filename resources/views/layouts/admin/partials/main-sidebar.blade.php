@@ -58,6 +58,7 @@
                         <li><a href="{{ url('/states') }}"><i class="fa fa-anchor"></i> <span>States</span></a></li>
                         <li><a href="{{ url('/publications') }}"><i class="fa fa-anchor"></i> <span>Publications</span></a></li>
                         <li><a href="{{ url('/jobnumbers') }}"><i class="fa fa-anchor"></i> <span>Job Numbers</span></a></li>
+                        <li><a href="{{ url('/publicationtypes') }}"><i class="fa fa-anchor"></i> <span>Publication Type</span></a></li>
                     </ul>
                 </li>
             @endif
