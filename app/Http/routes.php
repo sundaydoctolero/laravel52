@@ -313,7 +313,17 @@ Route::put('/publicationtypes/{publicationtype}', 'PublicationTypeController@upd
 Route::patch('/publicationtypes/{publicationtype}', 'PublicationTypeController@update'); //update
 Route::delete('/publicationtypes/{publicationtype}', 'PublicationTypeController@destroy'); //delete
 
+/**
+ * Publication Issue Controller
+ */
 
+Route::get('/publicationissues', 'PublicationIssueController@index');
+Route::get('/publicationissues/create', 'PublicationIssueController@create');
+Route::post('/publicationissues/create','PublicationIssueController@store'); //store
+Route::get('/publicationissues/{publicationissue}/edit', 'PublicationIssueController@edit'); //edit
+Route::put('/publicationissues/{publicationissue}', 'PublicationIssueController@update'); //update
+Route::patch('/publicationissues/{publicationissue}', 'PublicationIssueController@update'); //update
+Route::delete('/publicationissues/{publicationissue}', 'PublicationIssueController@destroy'); //delete
 
 /**
  * Auth Controller
