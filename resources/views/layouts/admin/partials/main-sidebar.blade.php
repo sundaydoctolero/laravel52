@@ -40,9 +40,11 @@
             @endif
 
             <li class="{{ setActive('tsheets') }}"><a href="/tsheets"><i class="fa fa-unlock"></i> <span>Manage Tsheet</span></a></li>
-            <li class="{{ setActive('downloads') }}"><a href="/downloads"><i class="fa fa-arrow-down"></i> <span>Manage Downloads</span></a></li>
-            <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Newspaper Reports</span></a></li>
 
+            @if(auth()->guard('admin')->user()->hasRole('Newspaper'))
+                <li class="{{ setActive('downloads') }}"><a href="/downloads"><i class="fa fa-arrow-down"></i> <span>Manage Downloads</span></a></li>
+                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Newspaper Reports</span></a></li>
+            @endif
 
             <li class="{{ setActive('departments') }}"><a href="/departments"><i class="fa fa-arrow-down"></i> <span>Departments</span></a></li>
             <li class="{{ setActive('employees') }}"><a href="/departments"><i class="fa fa-arrow-down"></i> <span>Employees</span></a></li>

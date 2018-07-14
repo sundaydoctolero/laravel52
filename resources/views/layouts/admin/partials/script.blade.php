@@ -31,6 +31,7 @@
             // return false;
         });
 
+
         $('#results_table').DataTable({
             'paging'      : true,
             'lengthChange': true,
