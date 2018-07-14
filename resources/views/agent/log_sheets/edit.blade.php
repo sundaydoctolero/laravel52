@@ -1,5 +1,13 @@
 @extends('layouts.app.app',['page_header' => 'Modify Log-Sheet'])
 
+@section('css')
+    <style>
+        .table-hover>tfoot>tr>td{
+            padding:0;
+        }
+    </style>
+@endsection
+
 @section('main-content')
     <div class="row">
         <div class="col-xs-12">
@@ -25,8 +33,7 @@
         </div>
     </div>
     <div class="box box-solid box-info">
-
-        <div class="box-body table-responsive no-padding">
+        <div class="box-body table-responsive">
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -45,9 +52,9 @@
                 </thead>
                 <tbody>
                     @foreach($download->log_sheet as $log)
-                        <tr>
+                        <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
                             <td>{{ $log->sale_rent }}</td>
-                            <td>{{ $log->operators }}</td>
+                            <td><small class="label label-success">{{ $log->user_id }}</small></td>
                             <td>{{ $log->batch_id }}</td>
                             <td>{{ $log->start_time }}</td>
                             <td>{{ $log->end_time }}</td>
@@ -61,6 +68,9 @@
                     @endforeach
                 </tbody>
                 <tfoot>
+                    <tr>
+                        <td colspan="11">..</td>
+                    </tr>
                     <tr>
                         {!! Form::model($download,['method'=>'PATCH','url' => '/agent/entries/'.$download->id]) !!}
                             {{ csrf_field() }}
@@ -96,19 +106,12 @@
                         </td>
                         <td>
                             <button type="submit" class="btn btn-primary btn-block btn-flat input-sm"><i class="fa fa-plus"></i>Add</button>
-
                         </td>
                         {!! Form::close() !!}
                     </tr>
                 </tfoot>
             </table>
     </div>
-
-
-
-
-
-
 @endsection
 
 @push('scripts')
