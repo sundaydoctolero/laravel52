@@ -32,12 +32,17 @@ class AgentDownloadController extends Controller
     }
 
     public function store(DownloadRequest $request){
-        auth()->user()->downloads()->create($request->all()); //one to many
-        return redirect($this->url_path);
+        //auth()->user()->downloads()->create($request->all()); //one to many
+        //return redirect($this->url_path);
     }
 
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
+        if($download->status == 'For Entry' || $download->status == 'For Output'){
+            flash('Publication already downloaded')->warning();
+            return redirect()->back();
+        }
+
 
         if($download->locked_by == 0){
             $download->locked_by = auth()->user()->id;
@@ -68,8 +73,8 @@ class AgentDownloadController extends Controller
     }
 
     public function destroy(Download $download){
-        $download->delete();
-        return redirect($this->url_path);
+        //$download->delete();
+        //return redirect($this->url_path);
     }
 
 }

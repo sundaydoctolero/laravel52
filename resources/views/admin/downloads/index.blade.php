@@ -26,6 +26,7 @@
                         <th>Publication Date</th>
                         <th>Status</th>
                         <th>Pages</th>
+                        <th>No. of Batch</th>
                         <th>Remarks</th>
                         <th>Locked By</th>
                         <th>Check By</th>
@@ -38,6 +39,7 @@
                         <td>{{ $download->publication_date }}</td>
                         <td>{{ $download->status }}</td>
                         <td>{{ $download->pages }}</td>
+                        <td>{{ $download->no_of_batches }}</td>
                         <td>{{ $download->remarks }}</td>
                         <td>{{ $download->locked_by }}</td>
                         <td></td>

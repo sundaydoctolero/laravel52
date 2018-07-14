@@ -1,17 +1,23 @@
     {{ csrf_field() }}
 
-    <div class="form-group">
-        <div class="row">
-            {!! Form::label('publication_id', 'Publication Name',['class'=>'col-md-2 control-label col-md-offset-1']) !!}
-            <div class="col-md-3">
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <div class = "col-md-4 col-xm-1 col-md-offset-1">
+                {!! Form::label('publication_id', 'Publication Name :') !!}
                 {!! Form::select('publication_id',$publication_lists,null,['class'=>'form-control','required'=>'true']) !!}
             </div>
-            {!! Form::label('publication_date', 'Publication Date',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
-            <div class="col-md-3">
+            <div class = "col-md-3 col-xm-1">
+                {!! Form::label('publication_date', 'Publication Date :') !!}
                 {!! Form::date('publication_date',null,['class'=>'form-control','required'=>'true']) !!}
+            </div>
+            <div class = "col-md-3 col-xm-1">
+                {!! Form::label('no_of_batches', 'Batches :') !!}
+                {!! Form::text('no_of_batches',null,['class'=>'form-control','required'=>'true']) !!}
             </div>
         </div>
     </div>
+
 
     <div id="hide-form">
 
@@ -73,7 +79,7 @@
                 {!! Form::close() !!}
             </div>
         </div>
-
+</div>
 
 
 

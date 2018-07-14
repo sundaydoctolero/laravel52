@@ -11,7 +11,8 @@
             <div class="box box-solid box-info">
                 <div class="box-header">
                     <div class="col-md-offset-1">
-                        <h1><b>{{ $download->publication->publication_name.' | '.$download->publication_date }}</b></h1>
+                        <h1><b>{{ $download->publication->publication_name.' | '.$download->publication_date.' | '
+                                    .$download->publication->publication_code }}</b></h1>
                     </div>
                 </div>
                 <div class="box-body col-md-offset-1">
@@ -48,12 +49,28 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @foreach($log_sheets as $log)
+                        <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
+                            <td align="center">{{ $log->entry_date }}</td>
+                            <td align="center">{{ $log->sale_rent }}</td>
+                            <td align="center"><span class="badge bg-blue">{{ $log->user_id }}</span></td>
+                            <td align="center">{{ $log->batch_id }}</td>
+                            <td align="center">{{ $log->start_time }}</td>
+                            <td align="center">{{ $log->end_time }}</td>
+                            <td align="center">{{ $log->total_time }}</td>
+                            <td align="center">{{ $log->records }}</td>
+                            <td align="center"><small class="label label-{{ $log->status == 'Ongoing' ? 'warning' : ($log->status == 'Finished' ? 'success' : 'danger') }}">{{ $log->status }}</small></td>
+                            <td align="center">{{ $log->remarks }}</td>
+                            <td></td>
+                        </tr>
+                    @endforeach
+
                     @foreach($download->log_sheet as $log)
                         <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
                             <td align="center">{{ $log->entry_date }}</td>
                             <td align="center">{{ $log->sale_rent }}</td>
-                            <td align="center">{{ $log->user_id }}</td>
-                            <td align="center">{{ $log->batch_id }}</td>
+                            <td align="center"><span class="badge bg-green">{{ $log->user_id }}</span></td>
+                            <td align="center"><strong>{{ $log->batch_id }}</strong></td>
                             <td align="center">{{ $log->start_time }}</td>
                             <td align="center">{{ $log->end_time }}</td>
                             <td align="center">{{ $log->total_time }}</td>
@@ -62,7 +79,7 @@
                                     @if($log->end_time != '00:00:00')
                                         {{ $log->records }}
                                     @else
-                                        {!! Form::text('records',$log->records,['class'=>'form-control input-sm','required'=>'true']) !!}
+                                        {!! Form::text('records',$log->records == 0 ? '' : $log->records,['class'=>'form-control input-sm','required'=>'true']) !!}
                                     @endif
                                 </td>
                                 <td align="center">
@@ -101,7 +118,7 @@
                                 {{ csrf_field() }}
                                 {!! Form::hidden('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control input-sm','readonly'=>'true']) !!}
                                 {!! Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
-                                {!! Form::text('batch_id',null,['class'=>'form-control input-sm','required'=>'true','pattern' => "[a-zA-Z0-9]{3}[_][0-9]{8}[_][sS|Rr][_][0-9]{2}"]) !!}
+                                {!! Form::text('batch_id',null,['class'=>'form-control input-sm','required'=>'true','pattern' => "[0-9]{2}"]) !!}
                                 {!! Form::text('remarks',null,['class'=>'form-control input-sm','placeholder'=>'Remarks']) !!}
                                 {!! Form::submit('Start Entry',['class'=>'btn btn-success input-sm']) !!}
                                 {!! Form::close() !!}
@@ -114,7 +131,7 @@
                                     {{ csrf_field() }}
                                     {!! Form::hidden('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control','readonly'=>'true']) !!}
                                     {!! Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control','required'=>'true']) !!}
-                                    {!! Form::text('batch_id',null,['class'=>'form-control','required'=>'true','pattern' => "[a-zA-Z0-9]{3}[_][0-9]{8}[_][sS|Rr][_][0-9]{2}"]) !!}
+                                    {!! Form::text('batch_id',null,['class'=>'form-control','required'=>'true','pattern' => "[0-9]{2}"]) !!}
                                     {!! Form::text('remarks',null,['class'=>'form-control','placeholder'=>'Remarks']) !!}
                                     {!! Form::submit('Start Entry',['class'=>'btn btn-success']) !!}
                                     {!! Form::close() !!}

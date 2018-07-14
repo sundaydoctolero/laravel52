@@ -43,11 +43,28 @@ class AgentEntryController extends Controller
     }
 
     public function edit(Download $download){
-        $download->load('log_sheet');
-        return view($this->view_path.'.edit',compact('download'));
+        $download->load(['log_sheet' => function($query){
+           $query->where('user_id',auth()->user()->id)->get();
+        }]);
+
+        $log_sheets = Logsheet::where('download_id',$download->id)
+                ->where('user_id','<>',auth()->user()->id)
+                ->get();
+
+        //return $log_sheets;
+        return view($this->view_path.'.edit',compact('download','log_sheets'));
     }
 
     public function start_entry(Download $download,LogSheetRequest $request){
+
+        $request['status'] = 'Ongoing';
+
+        if($download->status != 'For Entry'){
+            flash('Batch already Closed!!!')->warning()->important();
+            return redirect('/agent/entries');
+        }
+
+        $request['batch_id'] = $download->publication->publication_code.'_'.str_replace('-','',$download->publication_date).'_'.substr($request->sale_rent,0,1).'_'.$request->batch_id;
         $request['start_time'] = Carbon::now();
         $download->log_sheet()->create($request->all() + ['user_id' => auth()->user()->id]);
         flash()->message('Added Successfully')->success();
@@ -78,11 +95,11 @@ class AgentEntryController extends Controller
         $log_sheets = $download->log_sheet;
 
         if($log_sheets->count() == 0){
-            flash('Cannot be closed!!!')->warning()->important();
+            flash('May nagtatype pa!!!')->warning()->important();
             return redirect()->back();
         } else {
             if($log_sheets->groupBy('batch_id')->count() != $log_sheets->where('status','Finished')->count()){
-                flash('Cannot be closed!!!')->warning()->important();
+                flash('May nagtatype pa!!!')->warning()->important();
                 return redirect()->back();
             }
         }

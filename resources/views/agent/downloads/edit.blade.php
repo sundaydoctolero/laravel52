@@ -6,7 +6,8 @@
             <div class="box box-solid box-primary">
                 <div class="box-header">
                     <div class="col-md-offset-1">
-                        <h1><b>{{ $download->publication->publication_name.' | '.$download->publication_date }}</b></h1>
+                        <h1><b>{{ $download->publication->publication_name.' | '.$download->publication_date.' | '
+                                    .$download->publication->publication_code }}</b></h1>
                     </div>
                 </div>
                 <div class="box-body col-md-offset-1">

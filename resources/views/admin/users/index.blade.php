@@ -15,10 +15,12 @@
                         <tr>
                             <th>ID</th>
                             <th>Photo</th>
+                            <th>Optr No.</th>
                             <th>Username</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Created Since</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -27,10 +29,12 @@
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 <td><img height="60px" src="{{ asset('images/userprofile/'.$user->user_photo) }}"></td>
+                                <td>{{ $user->operator_no }}</td>
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at->diffforHumans() }}</td>
+                                <td>{{ $user->status }}</td>
                                 <td>
                                     <a href="users/{{ $user->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                                     {!! Form::model($user,['method'=>'PATCH','url' => '/users/'.$user->id.'/reset_default_password','style'=>'display:inline']) !!}
