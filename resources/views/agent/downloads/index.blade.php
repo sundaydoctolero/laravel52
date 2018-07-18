@@ -28,8 +28,8 @@
                         <th>Status</th>
                         <th>Pages</th>
                         <th>Remarks</th>
-                        <th>Locked By</th>
-                        <th>Check By</th>
+                        <th>Ongoing Download By</th>
+                        <th>Checked By</th>
                         <th>Action</th>
                     </tr>
                     @foreach($downloads as $download)
@@ -40,8 +40,16 @@
                         <td>{{ $download->status }}</td>
                         <td>{{ $download->pages }}</td>
                         <td>{{ $download->remarks }}</td>
-                        <td>{{ $download->locked_by }}</td>
-                        <td>{{ $download->checked_by }}</td>
+                        <td>
+                            @foreach($download->operator_no as $operator)
+                                <small class="label label-success">{{ $operator->operator_no }}</small>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($download->operator_no_check as $operator)
+                                <small class="label label-success">{{ $operator->operator_no }}</small>
+                            @endforeach
+                        </td>
                         <td>
                             <a href="/agent/downloads/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Locked</button></a>
                         </td>

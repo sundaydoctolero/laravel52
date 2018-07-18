@@ -42,16 +42,28 @@
             <li class="{{ setActive('tsheets') }}"><a href="/tsheets"><i class="fa fa-unlock"></i> <span>Manage Tsheet</span></a></li>
 
             @if(auth()->guard('admin')->user()->hasRole('Newspaper'))
-                <li class="{{ setActive('downloads') }}"><a href="/downloads"><i class="fa fa-arrow-down"></i> <span>Manage Downloads</span></a></li>
-                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Newspaper Reports</span></a></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-gear"></i> <span>Manage Newspaper</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="{{ setActive('downloads') }}"><a href="/downloads"><i class="fa fa-arrow-down"></i> <span>Download</span></a></li>
+                        <li class="{{ setActive('dataentries') }}"><a href="/dataentries"><i class="fa fa-arrow-down"></i> <span>Data Entry</span></a></li>
+                        <li class="{{ setActive('outputs') }}"><a href="/outputs"><i class="fa fa-arrow-down"></i> <span>Output</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Delivered</span></a></li>
+                    </ul>
+                </li>
             @endif
+
+
+
 
             <li class="{{ setActive('departments') }}"><a href="/departments"><i class="fa fa-arrow-down"></i> <span>Departments</span></a></li>
             <li class="{{ setActive('employees') }}"><a href="/departments"><i class="fa fa-arrow-down"></i> <span>Employees</span></a></li>
 
             @if(auth()->guard('admin')->user()->hasRole('Newspaper'))
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-gear"></i> <span>Newspaper</span>
+                    <a href="#"><i class="fa fa-gear"></i> <span>Newspaper Setup</span>
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>    </span>
                     </a>
                     <ul class="treeview-menu">

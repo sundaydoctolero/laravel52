@@ -2,7 +2,7 @@
 
     <div class="form-group">
         {!! Form::label('jobnumber_id', 'Job Number') !!}
-        {!! Form::select('jobnumber_id',\App\JobNumber::lists('job_number_description','id'),null,['class'=>'form-control','required'=>'true','placeholder'=>'Select Job Number']) !!}
+        {!! Form::select('jobnumber_id',$job_numbers,null,['class'=>'form-control','required'=>'true','placeholder'=>'Select Job Number']) !!}
     </div>
 
     {!! Form::label('total_records', 'Records') !!}

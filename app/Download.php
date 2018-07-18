@@ -48,5 +48,20 @@ class Download extends Model
         return $this->hasMany('App\Output');
     }
 
+    public function operators(){
+        return $this->belongsToMany('App\User');
+    }
+
+    public function getOperatorListAttribute(){
+        return $this->operators->lists('id')->toArray();
+    }
+
+    public function getOperatorNoAttribute(){
+        return User::select('operator_no')->where('id',$this->locked_by)->get();
+    }
+
+    public function getOperatorNoCheckAttribute(){
+        return User::select('operator_no')->where('id',$this->checked_by)->get();
+    }
 
 }

@@ -257,6 +257,29 @@ Route::delete('/downloads/{download}', 'DownloadController@destroy'); //delete
 
 
 /**
+ * DataEntry Controller
+ */
+Route::get('/dataentries', 'DataEntryController@index');
+Route::get('/dataentries/create', 'DataEntryController@create');
+Route::post('/dataentries/create','DataEntryController@store'); //store
+Route::get('/dataentries/{download}/edit', 'DataEntryController@edit'); //edit
+Route::put('/dataentries/{download}', 'DataEntryController@update'); //update
+Route::patch('/dataentries/{download}', 'DataEntryController@update'); //update
+Route::delete('/dataentries/{download}', 'DataEntryController@destroy'); //delete
+
+/**
+ * Output Controller
+ */
+Route::get('/outputs', 'OutputController@index');
+Route::get('/outputs/create', 'OutputController@create');
+Route::post('/outputs/create','OutputController@store'); //store
+Route::get('/outputs/{download}/edit', 'OutputController@edit'); //edit
+Route::put('/outputs/{download}', 'OutputController@update'); //update
+Route::patch('/outputs/{download}', 'OutputController@update'); //update
+Route::delete('/outputs/{download}', 'OutputController@destroy'); //delete
+
+
+/**
  * Agent Download Controller
  */
 Route::get('/agent/downloads', 'AgentDownloadController@index');
@@ -278,6 +301,7 @@ Route::put('/agent/entries/{download}', 'AgentEntryController@start_entry'); //u
 Route::patch('/agent/entries/{logsheet}', 'AgentEntryController@end_entry'); //update
 Route::delete('/agent/entries/{download}', 'AgentEntryController@destroy'); //delete
 Route::patch('/agent/entries/{download}/closed_pub', 'AgentEntryController@closed'); //closed publication
+Route::patch('/agent/entries/{download}/back', 'AgentEntryController@back_to_entry'); //back to entry
 
 /**
  * Agent Output Controller
@@ -347,5 +371,14 @@ Route::auth();
     Route::get('admin/password/reset/{token?}', 'AdminAuth\PasswordController@showResetForm');
 
 
+
+/**
+ *
+ * Test Controller Only
+ */
+Route::get('/agent/deliveries','AgentDeliveryController@index');
+
+
+Route::get('/test','TestController@index');
 
 

@@ -50,5 +50,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Download');
     }
 
+    public function newspapers(){
+        return $this->belongsToMany('App\Download');
+    }
+
+
+
 
 }

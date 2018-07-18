@@ -8,6 +8,7 @@
         <li class='{{ setActive('agent/downloads')}}'><a href="/agent/downloads"><i class="fa fa-arrow-down"></i> Download </a></li>
         <li class='{{ setActive('agent/entries')}}'><a href="/agent/entries"><i class="fa fa-arrow-down"></i> Entry </a></li>
         <li class='{{ setActive('agent/outputs')}}'><a href="/agent/outputs"><i class="fa fa-arrow-up"></i> Output </a></li>
+        <li class='{{ setActive('agent/deliveries')}}'><a href="/agent/deliveries"><i class="fa fa-arrow-up"></i> Delivered </a></li>
     </ul>
 </div>
 <!-- /.navbar-collapse -->

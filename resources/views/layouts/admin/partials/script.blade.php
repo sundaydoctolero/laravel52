@@ -17,6 +17,8 @@
 
         $('#permission_list').select2();
 
+        $('#operator_list').select2();
+
         $('#state_list').select2();
 
         $(".btn-danger").click(function(){

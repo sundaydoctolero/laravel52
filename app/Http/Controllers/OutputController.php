@@ -11,11 +11,11 @@ use App\User;
 use App\Http\Requests\DownloadRequest;
 use App\Output;
 
-class DownloadController extends Controller
+class OutputController extends Controller
 {
-    public $view_path = 'admin.downloads';
+    public $view_path = 'admin.outputs';
 
-    public $url_path = '/downloads';
+    public $url_path = '/outputs';
 
     public function __construct()
     {
@@ -23,7 +23,7 @@ class DownloadController extends Controller
     }
 
     public function index(){
-        $downloads = Download::wherein('status',['For Download','Pending','For Query','Not Updated'])->get();
+        $downloads = Download::wherein('status',['For Output'])->get();
         return view($this->view_path.'.index',compact('downloads'));
     }
 
@@ -50,7 +50,7 @@ class DownloadController extends Controller
     }
 
     public function update(Download $download,DownloadRequest $request){
-       $download->update($request->all());
+        $download->update($request->all());
         if($request->operator_list){
             $download->operators()->sync($request->operator_list);
         } else {
@@ -63,5 +63,4 @@ class DownloadController extends Controller
         $download->delete();
         return redirect($this->url_path);
     }
-
 }

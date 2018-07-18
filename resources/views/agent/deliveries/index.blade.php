@@ -1,11 +1,11 @@
-@extends('layouts.app.app',['page_header' => 'Add Log-Sheet'])
+@extends('layouts.app.app',['page_header' => 'Outputs'])
 
 @section('main-content')
     <div class="row">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"></h3>
+                <h1 class="box-title"><i class="fa fa-arrow-up"></i><b> Deliveries</b> </h1>
 
                 <div class="box-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -27,35 +27,30 @@
                         <th>Publication Name</th>
                         <th>Publication Date</th>
                         <th>Status</th>
-                        <th>Pages</th>
+                        <th>Sale</th>
+                        <th>Rent</th>
+                        <th>Sequence From</th>
+                        <th>Sequence To</th>
                         <th>Remarks</th>
-                        <th>Operators</th>
-                        <th>Action</th>
+                        <th>Date Delivered</th>
+                        <th>Time Delivered</th>
                     </tr>
-
+                    @foreach($downloads as $download)
                         <tr>
                             <td>{{ $download->id }}</td>
                             <td>{{ $download->publication->publication_name }}</td>
                             <td>{{ $download->publication_date }}</td>
-                            <td>
-                                @if($download->log_sheet->count() >= 1)
-                                    Ongoing
-                                @else
-                                    {{ $download->status }}
-                                @endif
-                            </td>
-                            <td>{{ $download->pages }}</td>
+                            <td>{{ $download->status }}</td>
+                            <td>{{ $download->output->first()->sale_records }}</td>
+                            <td>{{ $download->output->first()->rent_records }}</td>
+                            <td>{{ $download->output->first()->sequence_from }}</td>
+                            <td>{{ $download->output->first()->sequence_to }}</td>
                             <td>{{ $download->remarks }}</td>
-                            <td>
-                                @foreach($download->log_sheet as $operator=> $key)
-                                    <small class="label label-success">{{ $key->user->operator_no }}</small>
-                                @endforeach
-                            </td>
-                            <td>
-                                <a href="/agent/entries/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Get</button></a>
-                            </td>
+                            <td>{{ substr($download->output->first()->created_at,0,10) }}</td>
+                            <td>{{ $download->output->first()->delivery_time }}</td>
+
                         </tr>
-                    
+                    @endforeach
                     </tbody></table>
             </div>
             <!-- /.box-body -->

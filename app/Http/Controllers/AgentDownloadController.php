@@ -71,10 +71,4 @@ class AgentDownloadController extends Controller
         $download->update($request->all());
         return redirect($this->url_path);
     }
-
-    public function destroy(Download $download){
-        //$download->delete();
-        //return redirect($this->url_path);
-    }
-
 }

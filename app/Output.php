@@ -17,8 +17,13 @@ class Output extends Model
         return $this->belongsTo('App\Download');
     }
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
     public function getTotalRecordsAttribute(){
         return $this->sale_records + $this->rent_records;
     }
+
 
 }

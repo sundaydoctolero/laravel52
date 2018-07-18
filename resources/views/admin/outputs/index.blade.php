@@ -1,11 +1,11 @@
-@extends('layouts.admin.admin',['page_header' => 'Add Downloads'])
+@extends('layouts.admin.admin',['page_header' => 'For Output'])
 
 @section('main-content')
     <div class="row">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><a href="/downloads/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Download</button></a></h3>
+                <h3 class="box-title"><button class="btn btn-success"><i class="fa fa-link"></i> Output</button></a></h3>
 
                 <div class="box-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -26,8 +26,10 @@
                         <th>Publication Date</th>
                         <th>Status</th>
                         <th>Pages</th>
+                        <th>No. of Batch</th>
+                        <th>Operators</th>
                         <th>Remarks</th>
-                        <th>Check By</th>
+                        <th>Locked By</th>
                         <th>Action</th>
                     </tr>
                     @foreach($downloads as $download)
@@ -37,10 +39,16 @@
                         <td>{{ $download->publication_date }}</td>
                         <td>{{ $download->status }}</td>
                         <td>{{ $download->pages }}</td>
+                        <td>{{ $download->no_of_batches }}</td>
+                        <td>
+                            @foreach($download->operators as $operator)
+                                <small class="label label-success">{{ $operator->operator_no }}</small>
+                            @endforeach
+                        </td>
                         <td>{{ $download->remarks }}</td>
                         <td>
-                            @foreach($download->operator_no_check as $operator)
-                                <small class="label label-success">{{ $operator->operator_no }}</small>
+                            @foreach($download->operator_no as $optr)
+                                <small class="label label-success">{{ $optr->operator_no }}</small>
                             @endforeach
                         </td>
                         <td>

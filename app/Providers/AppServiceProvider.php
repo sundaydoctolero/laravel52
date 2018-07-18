@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Permission;
 use App\Publication;
+use App\JobNumber;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -86,6 +88,7 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('publication_lists',Publication::orderBy('publication_name')->lists('publication_name','id'));
             $view->with('status_lists',$status);
+            $view->with('operator_lists',User::lists('operator_no','id'));
         });
 
         view()->composer('agent.downloads.form',function($view){
@@ -105,6 +108,13 @@ class AppServiceProvider extends ServiceProvider
             $status = ['Closed'=>'Closed'];
             $view->with('status_lists',$status);
         });
+
+        view()->composer('agent.tsheets.inline_form',function($view){
+            $view->with('job_numbers',JobNumber::where('month_of',Carbon::now()->startOfMonth()->toDateString())->lists('job_number_description','id'));
+        });
+
+
+
 
     }
 

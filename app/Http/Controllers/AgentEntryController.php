@@ -26,23 +26,55 @@ class AgentEntryController extends Controller
     }
 
     public function index(){
-        $downloads = Download::where('status','For Entry')->get();
-        $downloads->load(['log_sheet' => function($query){
-            $query->groupBy('user_id')->get();
-        }]);
-        return view($this->view_path.'.index',compact('downloads'));
+
+        $download = Download::where('status','For Entry')
+            ->where('locked_by',auth()->user()->id)->first();
+
+        if(!$download){
+            $download = Download::where('status','For Entry')
+                ->where('no_of_batches','>',1)
+                ->whereHas('operators',function($q){
+                    $q->where('operator_no',auth()->user()->operator_no);
+                })->first();
+
+            if(!$download){
+                $download = Download::where('status','For Entry')
+                    ->where('locked_by','=',0)
+                    ->where('no_of_batches',1)->first();
+            }
+        }
+
+
+
+        if($download){
+            $download->load(['log_sheet' => function($query){
+                $query->groupBy('user_id')->get();
+            }]);
+        } else {
+            return abort(545);
+        }
+
+
+        return view($this->view_path.'.index',compact('download'));
     }
 
     public function create(){
         return view($this->view_path.'.create');
     }
 
-    public function store(LogSheetRequest $request){
-        //auth()->download()->log_sheets()->create($request->all()); //one to many
-        //return redirect($this->url_path);
-    }
-
     public function edit(Download $download){
+
+
+        if($download->locked_by == 0){
+            if($download->no_of_batches == 1){
+                $download->update(['locked_by' => auth()->user()->id]);
+            }
+         } else {
+            if($download->locked_by != auth()->user()->id){
+                return redirect()->back();
+            }
+        }
+
         $download->load(['log_sheet' => function($query){
            $query->where('user_id',auth()->user()->id)->get();
         }]);
@@ -106,6 +138,11 @@ class AgentEntryController extends Controller
         $download->update(['status'=>'For Output']);
 
         return redirect($this->url_path);
+    }
+
+    public function back_to_entry(Download $download){
+        $download->update(['locked_by'=>0]);
+        return redirect('/agent/entries');
     }
 
 }
