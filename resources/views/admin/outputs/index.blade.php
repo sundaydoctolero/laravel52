@@ -5,22 +5,13 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><button class="btn btn-success"><i class="fa fa-link"></i> Output</button></a></h3>
-
-                <div class="box-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="box-title"><button class="btn btn-success"><i class="fa fa-link"></i> Output</button></h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
-                    <tbody><tr>
+            <div class="box-body">
+                <table id="results_table" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
                         <th>ID</th>
                         <th>Publication Name</th>
                         <th>Publication Date</th>
@@ -32,6 +23,8 @@
                         <th>Locked By</th>
                         <th>Action</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     @foreach($downloads as $download)
                     <tr>
                         <td>{{ $download->id }}</td>
@@ -58,11 +51,12 @@
                         </td>
                     </tr>
                     @endforeach
-                    </tbody></table>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
             </div>
-            <!-- /.box-body -->
         </div>
-        <!-- /.box -->
     </div>
     </div>
 @endsection

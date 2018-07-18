@@ -5,10 +5,9 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <div class="box-title">
-                        <h3 class="box-title"><a href="/passwords/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Menu</button></a></h3>
-                    </div>
+                    <h3 class="box-title"><a href="/passwords/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Password</button></a></h3>
                 </div>
+                <!-- /.box-header -->
                 <div class="box-body">
                     <table id="results_table" class="table table-bordered table-hover">
                         <thead>
@@ -22,7 +21,6 @@
                         </tr>
                         </thead>
                         <tbody>
-
                         @foreach($passwords as $password)
                             <tr>
                                 <td>{{ $password->id }}</td>
@@ -47,9 +45,5 @@
             </div>
         </div>
     </div>
-
-
-
-
 
 @endsection
