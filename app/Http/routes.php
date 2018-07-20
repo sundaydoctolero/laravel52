@@ -379,6 +379,17 @@ Route::auth();
 Route::get('/agent/deliveries','AgentDeliveryController@index');
 
 
-Route::get('/test','TestController@index');
+/**
+ * API Example
+ */
+
+
+
+Route::get('/api/v1/tests','TestController@index');
+
+Route::group(["prefix" => "api/v1"], function() {
+    Route::resource("tests", "TestController");
+});
+
 
 

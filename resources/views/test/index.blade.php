@@ -2,42 +2,25 @@
 
 
 @section('main-content')
-    <h1>Property</h1>
-    <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-            <div class="checkbox">
-                <label>
-                    <input name="db_name" type="checkbox" value="1">
-                    Air Conditioned
-                </label>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="1">
-                    Swimming Pool
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="1">
-                    Ducted Heating
-                </label>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="1">
-                    Ducted Vacuum
-                </label>
-            </div>
-        </div>
-    </div>
+    <a href="#" ng-click="addNewFeed()">Add New RSS Feed</a>
+    <table class="table table-hover" ng-table="tableParams">
+        <thead>
+            <th></th>
+        </thead>
+        <tr ng-repeat="row in $data track by row.id">
+            <td data-title="'Name'" sortable="'name'">sdf</td>
+            <td data-title="'Feed URL'" sortable="'url'">sdf</td>
+            <td data-title="'Actions'">
+                <a href="#" ng-click="editFeed(row) ">Edit</a>
+                <a href="#" ng-click="confirmDelete(row.id) ">Delete</a>
+            </td>
+        </tr>
+    </table>
 
 @endsection
+
+@push('scripts')
+
+
+
+@endpush

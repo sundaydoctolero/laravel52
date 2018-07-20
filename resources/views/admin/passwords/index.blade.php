@@ -18,6 +18,7 @@
                             <th>User Name</th>
                             <th>Password</th>
                             <th>Product Key</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,5 +46,4 @@
             </div>
         </div>
     </div>
-
 @endsection
