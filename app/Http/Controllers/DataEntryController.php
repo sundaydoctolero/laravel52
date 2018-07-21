@@ -27,22 +27,6 @@ class DataEntryController extends Controller
         return view($this->view_path.'.index',compact('downloads'));
     }
 
-    public function create(){
-        return view($this->view_path.'.create');
-    }
-
-    public function store(DownloadRequest $request){
-
-        $download = Download::create($request->all());
-        $download->output()->save(new Output());
-
-        if($request->no_of_batches > 1 ){
-            $random_user = User::inRandomOrder()->limit($request->no_of_batches)->lists('id')->toArray();
-            $download->operators()->attach($random_user);
-        }
-        return redirect($this->url_path);
-    }
-
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
         return view($this->view_path.'.edit',compact('download'));
@@ -50,17 +34,47 @@ class DataEntryController extends Controller
     }
 
     public function update(Download $download,DownloadRequest $request){
+
+
+        return "hello";
+        return $request->publication_date->format('m/d/Y');
+
+        $publication_details = Publication::find($request->publication_id);
+
+
+        foreach($publication_details->states as $state){
+            $body['state'] = $state->state_code;
+            $body['publication_name'] = $publication_details->publication_name;
+            $body['publication_date'] = Carbon::now()->format('d/m/Y');
+            $body['pages'] = '0';
+            $body['remarks'] = '';
+            $body['status'] = 'OPEN';
+            $body['download_id'] = auth()->guard('admin')->user()->operator_no;
+            $body['job_number'] = '1234';
+
+
+            $client = new \GuzzleHttp\Client();
+            $url = "127.0.0.1/odesv2.0/admin/downloads/process.php?action=save";
+
+
+            $response = $client->createRequest("POST", $url,['body'=>$body]);
+
+
+            $response = $client->send($response);
+
+
+            dd($response);
+
+        }
+
+        return "hello";
+
         $download->update($request->all());
         if($request->operator_list){
             $download->operators()->sync($request->operator_list);
         } else {
             $download->operators()->detach();
         }
-        return redirect($this->url_path);
-    }
-
-    public function destroy(Download $download){
-        $download->delete();
         return redirect($this->url_path);
     }
 }

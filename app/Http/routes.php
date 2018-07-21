@@ -260,8 +260,6 @@ Route::delete('/downloads/{download}', 'DownloadController@destroy'); //delete
  * DataEntry Controller
  */
 Route::get('/dataentries', 'DataEntryController@index');
-Route::get('/dataentries/create', 'DataEntryController@create');
-Route::post('/dataentries/create','DataEntryController@store'); //store
 Route::get('/dataentries/{download}/edit', 'DataEntryController@edit'); //edit
 Route::put('/dataentries/{download}', 'DataEntryController@update'); //update
 Route::patch('/dataentries/{download}', 'DataEntryController@update'); //update
@@ -271,8 +269,6 @@ Route::delete('/dataentries/{download}', 'DataEntryController@destroy'); //delet
  * Output Controller
  */
 Route::get('/outputs', 'OutputController@index');
-Route::get('/outputs/create', 'OutputController@create');
-Route::post('/outputs/create','OutputController@store'); //store
 Route::get('/outputs/{download}/edit', 'OutputController@edit'); //edit
 Route::put('/outputs/{download}', 'OutputController@update'); //update
 Route::patch('/outputs/{download}', 'OutputController@update'); //update

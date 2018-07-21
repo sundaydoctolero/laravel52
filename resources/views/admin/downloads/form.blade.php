@@ -11,10 +11,6 @@
                 {!! Form::label('publication_date', 'Publication Date :') !!}
                 {!! Form::date('publication_date',null,['class'=>'form-control','required'=>'true']) !!}
             </div>
-            <div class = "col-md-3 col-xm-1">
-                {!! Form::label('no_of_batches', 'Batches :') !!}
-                {!! Form::text('no_of_batches',null,['class'=>'form-control','required'=>'true']) !!}
-            </div>
         </div>
     </div>
 
@@ -69,17 +65,7 @@
         </div>
 
     </div> <!-- hidden form -->
-
-        <div class="row">
-            <div class="form-group">
-                <div class = "col-md-6 col-md-offset-3">
-                    {!! Form::label('permission', 'Operators') !!}
-                    {!! Form::select('operator_list[]', $operator_lists, null, ['class'=>'form-control','id'=>'operator_list','multiple'=>'true']) !!}
-                </div>
-            </div>
-        </div>
-
-        <hr>
+    <hr>
         <div class="form-group">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">

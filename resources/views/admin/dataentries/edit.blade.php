@@ -27,7 +27,7 @@
             <div class="col-xs-12">
                 <div class="box-header"></div>
                 <div class="box-body">
-                    {!! Form::model($download,['method'=>'PATCH','url' => '/downloads/'.$download->id]) !!}
+                    {!! Form::model($download,['method'=>'PATCH','url' => '/dataentries/'.$download->id]) !!}
                     @include('admin.downloads.form',['buttonlabel'=>'Update Download'])
                 </div>
                 <div class="box-footer">

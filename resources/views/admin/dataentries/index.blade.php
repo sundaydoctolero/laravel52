@@ -5,7 +5,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><a href="/downloads/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New For Entry</button></a></h3>
+                <h3 class="box-title"></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -46,9 +46,7 @@
                         </td>
                         <td>{{ $download->remarks }}</td>
                         <td>
-                            <a href="/downloads/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
-                            {!! Form::model($download,['method'=>'DELETE','url' => '/downloads/'.$download->id,'style'=>'display:inline']) !!}
-                            {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+                            <a href="/dataentries/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                         </td>
                     </tr>
                     @endforeach

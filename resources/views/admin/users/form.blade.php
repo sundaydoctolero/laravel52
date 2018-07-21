@@ -42,7 +42,7 @@
                         </div>
                         <div class = "col-md-3">
                             {!! Form::label('status', 'Status') !!}
-                            {!! Form::select('status',$status_lists,null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::select('status',['Active'=>'Active','Blocked'=>'Blocked'],null,['class'=>'form-control','required'=>'true']) !!}
                         </div>
                     </div>
                 </div>
