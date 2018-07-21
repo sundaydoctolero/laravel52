@@ -15,6 +15,7 @@ use App\Permission;
 use App\Publication;
 use App\JobNumber;
 use Carbon\Carbon;
+use App\Day;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -75,6 +76,7 @@ class AppServiceProvider extends ServiceProvider
                     ];
             $view->with('pub_types',$types);
             $view->with('state_lists',State::lists('state_code','id'));
+            $view->with('day_lists',Day::lists('day_name','id'));
         });
 
         view()->composer('admin.downloads.form',function($view){

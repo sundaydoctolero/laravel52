@@ -346,6 +346,17 @@ Route::patch('/publicationissues/{publicationissue}', 'PublicationIssueControlle
 Route::delete('/publicationissues/{publicationissue}', 'PublicationIssueController@destroy'); //delete
 
 /**
+ *Days Controller
+ */
+Route::get('/days', 'DayController@index');
+Route::get('/days/create', 'DayController@create');
+Route::post('/days/create','DayController@store'); //store
+Route::get('/days/{day}/edit', 'DayController@edit'); //edit
+Route::put('/days/{day}', 'DayController@update'); //update
+Route::patch('/days/{day}', 'DayController@update'); //update
+Route::delete('/days/{day}', 'DayController@destroy'); //delete
+
+/**
  * Auth Controller
  */
 Route::auth();

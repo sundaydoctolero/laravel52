@@ -66,15 +66,28 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="form-group">
                         <div class = "col-md-6 col-md-offset-3">
-                            {!! Form::label('day_due_out', 'Day Due Out') !!}
-                            {!! Form::text('day_due_out',null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::label('day_list', 'Day Due Out') !!}
+                            {!! Form::select('day_list[]', $day_lists, null, ['class'=>'form-control','required'=>'true','id'=>'permission_list','multiple'=>'true']) !!}
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class = "col-md-3 col-md-offset-3">
+                            {!! Form::label('job_number_code', 'Job Number Code') !!}
+                            {!! Form::text('job_number_code',null,['class'=>'form-control','required'=>'true']) !!}
+                        </div>
+                        <div class = "col-md-3">
+                            {!! Form::label('remarks', 'Remarks') !!}
+                            {!! Form::text('remarks',null,['class'=>'form-control','required'=>'true']) !!}
+                        </div>
+                    </div>
+                </div>
+
 
                 <br>
                 {!! Form::submit($buttonlabel,['class'=>'btn btn-primary col-md-2 col-md-offset-7']) !!}

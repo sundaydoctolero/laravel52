@@ -41,7 +41,11 @@
                                 <td>{{ $publication->publication_name }}</td>
                                 <td>{{ $publication->website }}</td>
                                 <td>{{ $publication->issue }}</td>
-                                <td>{{ $publication->day_due_out }}</td>
+                                <td>
+                                    @foreach($publication->days as $day)
+                                        <small>{{ $day->day_code.' |'}}</small>
+                                    @endforeach
+                                </td>
                                 <td>{{ $publication->username }}</td>
                                 <td>{{ $publication->password }}</td>
                                 <td>{{ $publication->publication_type }}</td>

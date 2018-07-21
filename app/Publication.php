@@ -9,11 +9,17 @@ class Publication extends Model
     protected $tables = 'publications';
 
     protected $fillable = [
-        'publication_name','website','issue','username','password','publication_type','day_due_out','publication_code','download_type'
+        'publication_name','website','issue','username','password','publication_type','day_due_out','publication_code','download_type',
+        'job_number_code','remarks'
+
     ];
 
     public function states(){
         return $this->belongsToMany('App\State');
+    }
+
+    public function days(){
+        return $this->belongsToMany('App\Day');
     }
 
     public function getStateListAttribute(){
@@ -23,5 +29,11 @@ class Publication extends Model
     public function downloads(){
         return $this->hasMany('App\Download');
     }
+
+    public function getdayListAttribute(){
+        return $this->days->lists('id')->toArray();
+    }
+
+
 
 }

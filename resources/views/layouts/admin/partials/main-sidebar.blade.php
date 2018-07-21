@@ -72,6 +72,7 @@
                         <li><a href="{{ url('/jobnumbers') }}"><i class="fa fa-anchor"></i> <span>Job Numbers</span></a></li>
                         <li><a href="{{ url('/publicationtypes') }}"><i class="fa fa-anchor"></i> <span>Publication Type Lookup</span></a></li>
                         <li><a href="{{ url('/publicationissues') }}"><i class="fa fa-anchor"></i> <span>Publication Issues Lookup</span></a></li>
+                        <li><a href="{{ url('/days') }}"><i class="fa fa-anchor"></i> <span>Publication Day Lookup</span></a></li>
                     </ul>
                 </li>
             @endif

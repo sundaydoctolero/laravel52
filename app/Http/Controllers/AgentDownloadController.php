@@ -84,7 +84,7 @@ class AgentDownloadController extends Controller
             $body['status'] = 'OPEN';
             $body['download_id'] = $download->user['operator_no'];
             $body['code'] = $download->publication->publication_code;
-            $body['job_number'] = 'NW';
+            $body['job_number'] = $download->publication->job_number_code;
 
             $client = new \GuzzleHttp\Client();
             $url = "127.0.0.1/api/admin/downloads/process.php?action=save";

@@ -33,6 +33,7 @@ class PublicationController extends Controller
     {
         $publication = Publication::create($request->all());
         $publication->states()->attach($request->state_list);
+        $publication->days()->attach($request->day_list);
         return redirect('/publications');
     }
 
@@ -53,6 +54,7 @@ class PublicationController extends Controller
     {
         $publication->update($request->all());
         $publication->states()->sync($request->state_list);
+        $publication->days()->sync($request->day_list);
         return redirect('/publications');
     }
 

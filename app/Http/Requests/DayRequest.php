@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class PublicationRequest extends Request
+class DayRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,8 @@ class PublicationRequest extends Request
     public function rules()
     {
         return [
-            'publication_name' =>'required',
-            'website' =>'required',
-            'issue' =>'required',
-            'username' =>'required',
-            'password' =>'required',
-            'state_list' =>'required',
-            'publication_type' =>'required',
-            'day_list'=>'required',
-            'job_number_code' =>'required'
+            'day_name'=>'required',
+            'day_code'=>'required'
         ];
     }
 }
