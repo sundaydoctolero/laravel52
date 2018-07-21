@@ -15,6 +15,7 @@
                         <th>ID</th>
                         <th>Publication Name</th>
                         <th>Publication Date</th>
+                        <th>Pub Type</th>
                         <th>Status</th>
                         <th>Pages</th>
                         <th>No. of Batch</th>
@@ -31,6 +32,7 @@
                         <td>{{ $download->id }}</td>
                         <td>{{ $download->publication->publication_name }}</td>
                         <td>{{ $download->publication_date }}</td>
+                        <td>{{ $download->publication->publication_type }}</td>
                         <td>{{ $download->status }}</td>
                         <td>{{ $download->pages }}</td>
                         <td>{{ $download->no_of_batches }}</td>

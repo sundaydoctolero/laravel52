@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Download extends Model
 {
@@ -39,6 +40,11 @@ class Download extends Model
 
         return $pages;
     }
+
+    public function getAustralianFormatAttribute(){
+        return Carbon::parse($this->publication_date)->format('d/m/Y');
+    }
+
 
     public function log_sheet(){
         return $this->hasMany('App\LogSheet');
