@@ -322,6 +322,9 @@ Route::put('/newspaper_reports/{download}', 'NewspaperReportController@update');
 Route::patch('/newspaper_reports/{download}', 'NewspaperReportController@update'); //update
 Route::delete('/newspaper_reports/{download}', 'NewspaperReportController@destroy'); //delete
 
+Route::get('/newspaper_reports/not_updated_reports', 'NewspaperReportController@not_updated_reports');
+Route::get('/newspaper_reports/delivered_reports', 'NewspaperReportController@delivered_reports');
+
 /**
  * Publication Type Controller
  */

@@ -51,6 +51,23 @@
                         <li class="{{ setActive('dataentries') }}"><a href="/dataentries"><i class="fa fa-arrow-down"></i> <span>Data Entry</span></a></li>
                         <li class="{{ setActive('outputs') }}"><a href="/outputs"><i class="fa fa-arrow-down"></i> <span>Output</span></a></li>
                         <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Delivered</span></a></li>
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-circle-o"></i> Reports
+                                <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/not_updated_reports"><i class="fa fa-arrow-down"></i> <span>Not Updated</span></a></li>
+                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/delivered_reports"><i class="fa fa-arrow-down"></i> <span>Delivered</span></a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
                     </ul>
                 </li>
             @endif

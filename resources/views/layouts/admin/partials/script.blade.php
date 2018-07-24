@@ -10,6 +10,8 @@
 <!-- DataTables -->
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('bower_components/datatables.net/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('bower_components/datatables.net/js/buttons.print.min.js') }}"></script>
 
 <script>
     $(document).ready(function(){
@@ -33,18 +35,16 @@
             // return false;
         });
 
-
         $('#results_table').DataTable({
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,
             'ordering'    : true,
             'info'        : true,
-            'autoWidth'   : false
-        })
+            'autoWidth'   : false,
+           });
 
-
-    })
+    });
 </script>
 
 @stack('scripts')

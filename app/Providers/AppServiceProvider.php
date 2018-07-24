@@ -16,6 +16,7 @@ use App\Publication;
 use App\JobNumber;
 use Carbon\Carbon;
 use App\Day;
+use App\Download;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('admin.admins.form',function($view){
             $view->with('role_lists',Role::lists('name','id'));
+        });
+
+        view()->composer('admin.newspaper_reports.not_updated_reports',function($view){
+            $view->with('status_lists',Download::lists('status','status'));
         });
 
         view()->composer('admin.roles.form',function($view){
