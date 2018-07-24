@@ -82,6 +82,14 @@
         <hr>
         <div class="form-group">
             <div class="row">
+                <div class="col-md-3">
+                    {!! Form::select('status',$status_lists,null,['class'=>'form-control','required'=>'true']) !!}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     {!! Form::submit($buttonlabel,['class'=>'col-md-1 btn btn-primary form-control ']) !!}
                 </div>

@@ -9,10 +9,9 @@
                     </div>
                     <div class="box-body">
                         {!! Form::open(['url' => '/agent/downloads/create']) !!}
-
                         @include('agent.downloads.form',['buttonlabel' => 'Add Download'])
                     </div>
-                    <div class="box-footer">
+                       <div class="box-footer">
 
                     </div>
                 </div>

@@ -3,9 +3,9 @@
 
     <div class="form-group">
         <div class="row">
-            {!! Form::label('website_update_at', 'Website Updated',['class'=>'col-md-2 control-label col-md-offset-1']) !!}
+            {!! Form::label('website_update_at', 'Website Updated At',['class'=>'col-md-2 control-label col-md-offset-1']) !!}
             <div class="col-md-2">
-                {!! Form::date('website_update_at',null,['class'=>'form-control']) !!}
+                {!! Form::date('website_update_at',null,['class'=>'form-control'    ]) !!}
             </div>
 
             {!! Form::label('website_update_at', 'Date Downloaded',['class'=>'col-md-2 control-label col-md-offset-1']) !!}
@@ -54,17 +54,14 @@
         </div>
     </div>
 
-
-    <hr>
     <div class="form-group">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                {!! Form::submit($buttonlabel,['class'=>'col-md-1 btn btn-primary form-control ']) !!}
+                {!! Form::submit($buttonlabel,['class'=>'col-md-1 btn btn-success form-control']) !!}
             </div>
                 {!! Form::close() !!}
         </div>
     </div>
-
 
     @include('errors.error')
 

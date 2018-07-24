@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Modify Downloads'])
+@extends('layouts.admin.admin',['page_header' => 'Modify Entries'])
 
 @section('main-content')
     <div class="row">
@@ -28,7 +28,7 @@
                 <div class="box-header"></div>
                 <div class="box-body">
                     {!! Form::model($download,['method'=>'PATCH','url' => '/dataentries/'.$download->id]) !!}
-                    @include('admin.downloads.form',['buttonlabel'=>'Update Download'])
+                    @include('admin.downloads.form',['buttonlabel'=>'Update Entries'])
                 </div>
                 <div class="box-footer">
 

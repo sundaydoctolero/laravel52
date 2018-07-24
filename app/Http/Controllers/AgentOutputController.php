@@ -29,15 +29,6 @@ class AgentOutputController extends Controller
         return view($this->view_path.'.index',compact('downloads'));
     }
 
-    public function create(){
-        return view($this->view_path.'.create');
-    }
-
-    public function store(DownloadRequest $request){
-        Download::create($request->all());
-        return redirect($this->url_path);
-    }
-
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
         $output = Output::findorfail($download->output->first()->id);

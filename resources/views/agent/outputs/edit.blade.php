@@ -1,102 +1,97 @@
 @extends('layouts.app.app',['page_header' => 'Modify Outputs'])
 
-@section('main-content')
-    <div>
-    <div class="form-group">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-solid box-primary">
-                    <div class="box-header">
-                        <div class="col-md-offset-1">
-                            <h1><b>{{ $download->publication->publication_name.' | '.$download->publication_date }}</b></h1>
-                        </div>
-                        <div class="row">
-                            <div class="box-body">
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-1">
-                                        <h3><a href="{{ $download->publication->website }}">{{ $download->publication->website }}</a></h3>
-                                        <h3>Username: {{ $download->publication->username }}</h3>
-                                        <h3>Password: {{ $download->publication->password }}</h3>
-                                    </div>
-                                    <div class="col-md-6">
-                                        {!! Form::model($output,['method'=>'PATCH','url' => '/agent/outputs/'.$download->id,'class'=>'form-horizontal']) !!}
-                                        {{ csrf_field() }}
+@section('css')
+    <style>
+        .custom-list{
+            padding:4px;
+        }
+    </style>
+@endsection
 
-                                            <div class="row">
-                                                <div class="form-group">
-                                                        {!! Form::label('sale_records', 'Sale ',['class'=>'col-md-4 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::text('sale_records',null,['class'=>'form-control control-label','required'=>'true']) !!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    {!! Form::label('rent_records', 'Rent :',['class'=>'col-md-4 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::text('rent_records',null,['class'=>'form-control control-label','required'=>'true']) !!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    {!! Form::label('total_records', 'Total',['class'=>'col-md-4 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::text('total_records',null,['class'=>'form-control control-label','readonly'=>'true']) !!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    {!! Form::label('sequence_from', 'Sequence From',['class'=>'col-md-4 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::text('sequence_from',null,['class'=>'form-control','required'=>'true']) !!}
-                                                    </div>
-                                                    {!! Form::label('sequence_to', 'To',['class'=>'col-md-2 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::text('sequence_to',null,['class'=>'form-control','required'=>'true']) !!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    {!! Form::label('output_date', 'Output Date',['class'=>'col-md-4 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::date('output_date',\Carbon\Carbon::now()->toDateString(),['class'=>'form-control']) !!}
-                                                    </div>
-                                                    {!! Form::label('status', 'Status',['class'=>'col-md-2 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::select('status',$status_lists,null,['class'=>'form-control','required'=>'true']) !!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    {!! Form::label('delivery_time', 'Delivery Time',['class'=>'col-md-4 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::text('delivery_time',null,['class'=>'form-control']) !!}
-                                                    </div>
-                                                    {!! Form::label('remarks', 'Remarks',['class'=>'col-md-2 control-label']) !!}
-                                                    <div class="col-md-3">
-                                                        {!! Form::text('remarks',null,['class'=>'form-control']) !!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-11 col-md-offset-1">
-                                                    <button type="submit" class="btn btn-danger form-control"><i class="fa fa-plus"></i>Closed</button>
-                                                </div>
-                                            </div>
-                                        {!! Form::close() !!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+@section('main-content')
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-solid box-primary">
+                <div class="box-header">
+                    <div class="col-md-offset-1">
+                        <h1>
+                            <strong>{{ $download->publication->publication_name}}</strong>
+                            <small class="label label-info"> {{$download->publication->publication_code }}{{ ' '.$download->publication_date }}</small>
+                        </h1>
+                    </div>
+                </div>
+                <div class="box-body" style="font-size: 16px">
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a target="_blank" href="{{ $download->publication->website }}">{{ $download->publication->website }}</a></li>
+                            <li class="list-group-item"><i>state : </i>
+                                @foreach($download->publication->states as $state)
+                                    <small class="label label-info">{{ $state->state_code }}</small>
+                                @endforeach
+                            </li>
+                            <li class="list-group-item"><i>username : </i>{{ $download->publication->username }}</li>
+                            <li class="list-group-item"><i>password : </i>{{ $download->publication->password }}</li>
+                            <li class="list-group-item"><i>issue : </i>
+                                {{ $download->publication->issue.' [ ' }}
+                                @foreach($download->publication->days as $day)
+                                    {{ $day->day_code.' | '}}
+                                @endforeach
+                                ]
+                            </li>
+                            <li class="list-group-item"><i>download instruction :</i> </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        {!! Form::model($output,['method'=>'PATCH','url' => '/agent/outputs/'.$download->id,'class'=>'form-inline','id'=>'frmClosed']) !!}
+                        {{ csrf_field() }}
+                        <ul class="list-group">
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('sale_records', 'Sale ',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::number('sale_records',$download->log_sheet->where('sale_rent','Sale')->sum('records'),['class'=>'form-control control-label','required'=>'true']) !!}
+                            </li>
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('rent_records', 'Rent :',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::number('rent_records',$download->log_sheet->where('sale_rent','Rent')->sum('records'),['class'=>'form-control control-label','required'=>'true']) !!}
+                            </li>
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('total_records', 'Total',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::text('total_records',null,['class'=>'form-control control-label','readonly'=>'true']) !!}
+                            </li>
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('sequence_from', 'Sequence',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::number('sequence_from',null,['class'=>'form-control','required'=>'true']) !!}
+                                {!! Form::number('sequence_to',null,['class'=>'form-control','required'=>'true','id'=>'sequence_to']) !!}
+                            </li>
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('output_date', 'Output Date',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::date('output_date',\Carbon\Carbon::now()->toDateString(),['class'=>'form-control']) !!}
+                                {!! Form::hidden('status','Closed',['class'=>'form-control','required'=>'true']) !!}
+                            </li>
+
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('delivery_time', 'Folder',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::text('delivery_time',null,['class'=>'form-control','required'=>'true']) !!}
+                            </li>
+
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('remarks', 'Remarks',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::text('remarks',null,['class'=>'form-control']) !!}
+                            </li>
+
+                            <li class="list-group-item custom-list">
+                                {!! Form::label('', '',['class'=>'col-md-3 control-label']) !!}
+                                {!! Form::submit('Closed Publication',['class'=>'btn btn-danger form-control']) !!}
+                            </li>
+                        </ul>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
         <div class="box box-solid box-info">
 
@@ -145,17 +140,44 @@
    <script>
        $( document ).ready(function() {
 
-           $("#sale_records").focus().select();
+           total_records();
 
            $( "#sale_records" ).keyup(function() {
-               var $total_records = parseInt($('#sale_records').val()) + parseInt($('#rent_records').val());
-               $('#total_records').val($total_records);
+               total_records();
            });
 
            $( "#rent_records" ).keyup(function() {
-               var $total_records = parseInt($('#sale_records').val()) + parseInt($('#rent_records').val());
-               $('#total_records').val($total_records);
+               total_records();
            });
+
+           $("#sale_records").focus().select();
+
+           $("#frmClosed").submit(function(e){
+               var sequence_total;
+               var total;
+               total = parseInt($('#sale_records').val()) + parseInt($('#rent_records').val());
+               sequence_total =  parseInt(parseInt($('#sequence_to').val()) -  parseInt($('#sequence_from').val()) + 1) ;
+
+
+               if(total === sequence_total){
+                   return true;
+               } else if(total == 0 ){
+                   if(parseInt($('#sequence_to').val()) == 0 && parseInt($('#sequence_from').val()) == 0 ){
+                       return true;
+                   } else {
+                       alert('Sequence From and To should be 0!!!')
+                       e.preventDefault();
+                   }
+               } else {
+                   alert('Total Records does not match with sequence numbers.!!!')
+                   e.preventDefault();
+               }
+           });
+
+           function total_records(){
+               total = parseInt($('#sale_records').val()) + parseInt($('#rent_records').val())
+               $('#total_records').val(total);
+           }
        });
    </script>
 @endpush

@@ -6,19 +6,39 @@
 @endsection
 
 @section('main-content')
+
     <div class="row">
         <div class="col-xs-12">
-            <div class="box box-solid box-info">
+            <div class="box box-solid box-primary">
                 <div class="box-header">
                     <div class="col-md-offset-1">
-                        <h1><b>{{ $download->publication->publication_name.' | '.$download->publication_date.' | '
-                                    .$download->publication->publication_code }}</b></h1>
+                        <h1>
+                            <strong>{{ $download->publication->publication_name}}</strong>
+                            <small class="label label-info"> {{$download->publication->publication_code }}{{ ' '.$download->publication_date }}</small>
+                        </h1>
                     </div>
                 </div>
-                <div class="box-body col-md-offset-1">
-                    <h3><a href="{{ $download->publication->website }}">{{ $download->publication->website }}</a></h3>
-                    <h3>Username: {{ $download->publication->username }}</h3>
-                    <h3>Password: {{ $download->publication->password }}</h3>
+                <div class="box-body" style="font-size: 16px">
+                    <div class="col-md-5 col-md-offset-1">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a target="_blank" href="{{ $download->publication->website }}">{{ $download->publication->website }}</a></li>
+                            <li class="list-group-item"><i>state : </i>
+                                @foreach($download->publication->states as $state)
+                                    <small class="label label-info">{{ $state->state_code }}</small>
+                                @endforeach
+                            </li>
+                            <li class="list-group-item"><i>username : </i>{{ $download->publication->username }}</li>
+                            <li class="list-group-item"><i>password : </i>{{ $download->publication->password }}</li>
+                            <li class="list-group-item"><i>issue : </i>
+                                {{ $download->publication->issue.' [ ' }}
+                                @foreach($download->publication->days as $day)
+                                    {{ $day->day_code.' | '}}
+                                @endforeach
+                                ]
+                            </li>
+                            <li class="list-group-item"><i>download instruction :</i> </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="box-footer">
                     <div class="col-md-6">
@@ -35,6 +55,7 @@
             </div>
         </div>
     </div>
+
     <div class="box box-solid box-info">
         <div class="box-body table-responsive">
             <table class="table table-hover">
