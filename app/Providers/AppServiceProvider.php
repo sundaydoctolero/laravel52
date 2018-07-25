@@ -98,6 +98,34 @@ class AppServiceProvider extends ServiceProvider
             $view->with('operator_lists',User::lists('operator_no','id'));
         });
 
+        view()->composer('admin.dataentries.form',function($view){
+            $status = ['For Download'=>'For Download',
+                'Pending'=>'Pending',
+                'Not Updated'=>'Not Updated',
+                'For Query'=>'For Query',
+                'For Entry'=>'For Entry',
+                'For Output' => 'For Output'
+            ];
+
+            $view->with('publication_lists',Publication::orderBy('publication_name')->lists('publication_name','id'));
+            $view->with('status_lists',$status);
+            $view->with('operator_lists',User::lists('operator_no','id'));
+        });
+
+        view()->composer('admin.outputs.edit',function($view){
+            $status = ['Closed'=>'Closed',
+                'For Download'=>'For Download',
+                'Pending'=>'Pending',
+                'Not Updated'=>'Not Updated',
+                'For Query'=>'For Query',
+                'For Entry'=>'For Entry',
+                'For Output' => 'For Output'
+            ];
+
+            $view->with('publication_lists',Publication::lists('publication_name','id'));
+            $view->with('status_lists',$status);
+        });
+
         view()->composer('agent.downloads.form',function($view){
             $status = ['For Download'=>'For Download',
                 'Pending'=>'Pending',

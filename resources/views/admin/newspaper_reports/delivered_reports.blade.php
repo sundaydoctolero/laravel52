@@ -8,7 +8,6 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <h3>Download Report</h3>
-
                                 {!! Form::open(['url' => '/newspaper_reports/delivered_reports','method'=>'GET','class'=>'form-horizontal']) !!}
                                     <div class="row">
                                         <div class="col-xs-12">
@@ -63,8 +62,6 @@
                             <tfoot>
                             </tfoot>
                         </table>
-
-
                     </div>
                     <div class="box-footer">
 
