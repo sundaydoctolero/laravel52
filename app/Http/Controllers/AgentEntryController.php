@@ -64,7 +64,6 @@ class AgentEntryController extends Controller
 
     public function edit(Download $download){
 
-
         if($download->locked_by == 0){
             if($download->no_of_batches == 1){
                 $download->update(['locked_by' => auth()->user()->id]);
@@ -82,6 +81,9 @@ class AgentEntryController extends Controller
         $log_sheets = Logsheet::where('download_id',$download->id)
                 ->where('user_id','<>',auth()->user()->id)
                 ->get();
+
+
+
 
         //return $log_sheets;
         return view($this->view_path.'.edit',compact('download','log_sheets'));

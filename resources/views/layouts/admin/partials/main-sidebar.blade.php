@@ -60,6 +60,7 @@
                             <ul class="treeview-menu">
                                 <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/not_updated_reports"><i class="fa fa-arrow-down"></i> <span>Not Updated</span></a></li>
                                 <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/delivered_reports"><i class="fa fa-arrow-down"></i> <span>Delivered</span></a></li>
+                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/generate_pub_details"><i class="fa fa-arrow-down"></i> <span>Generate Publication Details</span></a></li>
                             </ul>
                         </li>
 

@@ -137,4 +137,36 @@ class NewspaperExportController extends Controller
 
         })->export('xls');
     }
+
+    public function generate_pub_details(Request $request){
+
+        $closed = Download::where('status','Closed')
+            ->whereHas('output',function($q) use ($request){
+            $q->where('output_date',$request->output_date)
+                ->where('delivery_time',$request->delivery_time);
+        })->get();
+
+        $filename = 'publication details.txt';
+
+        $file = fopen('publication details.txt','w+');
+
+        foreach($closed as $close){
+            foreach($close->publication->states as $state){
+                fwrite($file,'Publication Name: '.$state->state_code.'_'.str_replace(' ','_',strtoupper($close->publication->publication_name))."\r\n");
+                fwrite($file,'Publication Date: '.$close->publication_date."\r\n");
+                fwrite($file,'Publication State: '.$state->state_code."\r\n\r\n");
+            }
+        }
+
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,"\t\t\t".'Total Publications : '.$closed->count()."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+
+        fclose($file);
+
+        $headers = array('Content-Type' => 'text/csv');
+        return response()->download('publication details.txt',$filename,$headers);
+    }
 }

@@ -9,6 +9,7 @@ use App\Http\Requests;
 use Carbon\Carbon;
 use App\Publication;
 use App\Download;
+use App\Output;
 
 class DownloadImportController extends Controller
 {
@@ -34,6 +35,7 @@ class DownloadImportController extends Controller
             //$download->no_of_batches = $publication->default_batch;
             $download->status = 'For Download';
             $download->save();
+            $download->output()->save(new Output());
         }
         flash('Batch Imports successful!!')->success();
         return redirect()->back();

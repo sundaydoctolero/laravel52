@@ -69,5 +69,14 @@ class NewspaperReportController extends Controller
         return view('admin.newspaper_reports.delivered_reports',compact('downloads'));
     }
 
+    public function generate_pub_details(Request $request){
+        $downloads = Download::where('status','Closed')
+            ->whereHas('output',function($q) use ($request){
+            $q->where('output_date',$request->output_date)
+                ->where('delivery_time',$request->delivery_time);
+        })->get();
+
+        return view('admin.newspaper_reports.publication_details',compact('downloads'));
+    }
 
 }

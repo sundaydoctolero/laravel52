@@ -32,6 +32,9 @@ class AgentOutputController extends Controller
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
         $output = Output::findorfail($download->output->first()->id);
+
+
+
         return view($this->view_path.'.edit',compact('download','output'));
     }
 

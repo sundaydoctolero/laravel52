@@ -1,0 +1,316 @@
+Publication Name: SA_VICTOR_HARBOR_TIMES
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_FRASER_COAST_CHRONICLE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_THE_MOSMAN_DAILY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: TAS_THE_MERCURY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_BARRY_PLANT_-_AGENT_BOOKLET
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_AGENT_BOOKLET_-_RT_EDGAR
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: WA_AGENT_BOOKLET_-_ACTON_MANDURAH
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_AGENT_BOOKLET_-_PLATINUM_PROPERTIES_SUNSHINE_COAST
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_AGENT_BOOKLET_-_TOM_OFFERMANN_REAL_ESTATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: SA_ADELAIDE'S_DAILY_INDEPENDENT_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_QUEST_-_ALBERT_&_LOGAN_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_QUEST_-_CITY_NORTH_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_QUEST_-_CITY_SOUTH_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_QUEST_-_CABOOLTURE_HERALD
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_QUEST_-_NORTH_LAKES_TIMES
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_QUEST_-_PINE_RIVERS_PRESS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_COOLUM_AND_NORTH_SHORE_ADVERTISER
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_BLI_BLI,_COOLUM_&_NORTH_SHORE_ADVERTISER
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_NOOSA_TODAY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_SOUTHERN_FREE_TIMES_WARWICK
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_BALONNE_BEACON
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_HERVEY_BAY_INDEPENDENT
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_PORT_DOUGLAS_&_MOSSMAN_GAZETTE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_WHITSUNDAY_TIMES
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_AGENT_BOOKLET_-_BRUCE_HARRY_REAL_ESTATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_AGENT_BOOKLET_-_CHINCHILLA_PROPERTY_SALES_&_RENTALS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_PLACE_REAL_ESTATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: WA_AGENT_BOOKLET_-_BURTON_REALTY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: WA_ALBANY_ADVETISER
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: WA_BROOME_ADVERTISER
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: WA_ARMADALE_EXAMINER
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: WA_THE_SOUTH_WESTERN_TIMES
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_THE_WEEKLY_REVIEW_-_CITY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_CRANBOURNE_STAR_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_PAKENHAM_OFFICER_STAR_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_THE_SURF_COAST_TIMES
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_BELLARINE_TIMES
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_AGENT_BOOKLET_-_JELLIS_CRAIG_REAL_ESTATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_AGENT_BOOKLET_-_NOEL_JONES_REAL_ESTATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_DOMAIN_GEELONG
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: TAS_THE_EXAMINER
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: TAS_THE_ADVOCATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_CITY_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: ACT_CITY_NEWS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_CANBERRA_WEEKLY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: ACT_CANBERRA_WEEKLY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_NEWCASTLE_WEEKLY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_PORT_STEPHENS_EXAMINER
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_PORT_STEPHENS_EXAMINER_RAYMOND_TERRACE_REAL_ESTATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_PORT_STEPHENS_EXAMINER_NELSON_BAY_REAL_ESTATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_YOUR_LOCAL_INDEPENDENT_-_THE_HASTINGS_&_MACLEAY_VALLEY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_CENTRAL_COAST_EXPRESS_ADVOCATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_CENTRAL_COAST_EXPRESS_ADVOCATE_-_GOSFORD
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_CENTRAL_COAST_EXPRESS_ADVOCATE_-_WYONG
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_HORNSBY_ADVOCATE
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_NORTH_SHORE_TIMES
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_PENRITH_PRESS
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_REALTOR
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: SA_PORT_LINCOLN_TIMES_(PORT_LINCOLN)
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: SA_THE_MURRAY_VALLEY_STANDARD
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_COMM_COURIER_MAIL
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_COMM_SYDNEY_MORNING_HERALD
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NZ_PROPERTY_PRESS_-_BAY_OF_PLENTY
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NZ_PROPERTY_PRESS_-_CENTRAL_AUCKLAND
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NZ_PROPERTY_PRESS_-_EAST_AUCKLAND
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NZ_PROPERTY_PRESS_-_LAKE_TAUPO
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NZ_PROPERTY_PRESS_-_LAKES_DISTRICT
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NZ_PROPERTY_PRESS_-_NELSON
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NSW_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: QLD_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: SA_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: TAS_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: VIC_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: WA_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: ACT_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NT_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: NZ_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: SA_THE_RECORDER_(PORT_PIRIE)
+Publication Date: 2018-07-26
+Publication State: NSW
+
+Publication Name: TAS_THE_MERCURY
+Publication Date: 2018-07-26
+Publication State: NSW
+

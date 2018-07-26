@@ -143,6 +143,7 @@
                                 {!! Form::model($download,['method'=>'PUT','url' => '/agent/entries/'.$download->id,'class'=>'form-inline']) !!}
                                 {{ csrf_field() }}
                                 {!! Form::hidden('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control input-sm','readonly'=>'true']) !!}
+                                {!! Form::select('state',$download->publication->states->lists('state_code','state_code'),null,['class'=>'form-control input-sm','required'=>'true']) !!}
                                 {!! Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
                                 {!! Form::text('batch_id',null,['class'=>'form-control input-sm','required'=>'true','pattern' => "[0-9]{2}"]) !!}
                                 {!! Form::text('remarks',null,['class'=>'form-control input-sm','placeholder'=>'Remarks']) !!}
@@ -156,6 +157,7 @@
                                     {!! Form::model($download,['method'=>'PUT','url' => '/agent/entries/'.$download->id,'class'=>'form-inline']) !!}
                                     {{ csrf_field() }}
                                     {!! Form::hidden('entry_date',\Carbon\Carbon::now()->format('Y-m-d'),['class'=>'form-control','readonly'=>'true']) !!}
+                                    {!! Form::select('state',$download->publication->states->lists('state_code','state_code'),null,['class'=>'form-control input-sm','required'=>'true']) !!}
                                     {!! Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control','required'=>'true']) !!}
                                     {!! Form::text('batch_id',null,['class'=>'form-control','required'=>'true','pattern' => "[0-9]{2}"]) !!}
                                     {!! Form::text('remarks',null,['class'=>'form-control','placeholder'=>'Remarks']) !!}

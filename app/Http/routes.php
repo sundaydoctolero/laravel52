@@ -326,6 +326,7 @@ Route::delete('/newspaper_reports/{download}', 'NewspaperReportController@destro
 
 Route::get('/newspaper_reports/not_updated_reports', 'NewspaperReportController@not_updated_reports');
 Route::get('/newspaper_reports/delivered_reports', 'NewspaperReportController@delivered_reports');
+Route::get('/newspaper_reports/generate_pub_details', 'NewspaperReportController@generate_pub_details');
 
 /**
  * Publication Type Controller
@@ -413,6 +414,7 @@ Route::group(["prefix" => "api/v1"], function() {
 });
 
 Route::get('/export/not_updated','NewspaperExportController@export_not_updated');
+Route::get('/export/generate_pub_details','NewspaperExportController@generate_pub_details');
 
 
 Route::get('/tests/hello','TestController@sample');
