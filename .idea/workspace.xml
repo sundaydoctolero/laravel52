@@ -99,9 +99,11 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05209513">
-              <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
-              <folding />
+            <state vertical-scroll-proportion="-0.34541336">
+              <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+              <folding>
+                <element signature="e#3925#3950#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -902,9 +904,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05209513">
-          <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
-          <folding />
+        <state vertical-scroll-proportion="-0.34541336">
+          <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+          <folding>
+            <element signature="e#3925#3950#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
