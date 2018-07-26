@@ -7,6 +7,10 @@ use App\User;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Response;
+use App\Download;
+use App\Publication;
+use Carbon\Carbon;
+
 
 class TestController extends Controller
 {
@@ -25,5 +29,14 @@ class TestController extends Controller
             'users' => $users,
             'status_code' => 200
         ));
+    }
+
+    public function sample(){
+
+
+
+
+
+
     }
 }

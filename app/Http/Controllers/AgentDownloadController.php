@@ -65,7 +65,7 @@ class AgentDownloadController extends Controller
         $request['locked_by']= 0;
         if($request->status == 'For Entry'){
             $download->update($request->all() + ['user_id' => auth()->user()->id]);
-            $this->sync_to_offline_db($download,$request);
+            //$this->sync_to_offline_db($download,$request);
         } else {
             $download->update($request->all() + ['checked_by' => auth()->user()->id]);
         }

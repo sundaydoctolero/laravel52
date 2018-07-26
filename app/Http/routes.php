@@ -255,6 +255,8 @@ Route::put('/downloads/{download}', 'DownloadController@update'); //update
 Route::patch('/downloads/{download}', 'DownloadController@update'); //update
 Route::delete('/downloads/{download}', 'DownloadController@destroy'); //delete
 
+Route::get('/downloads/imports', 'DownloadImportController@import_downloads');
+
 
 /**
  * DataEntry Controller
@@ -359,6 +361,15 @@ Route::put('/days/{day}', 'DayController@update'); //update
 Route::patch('/days/{day}', 'DayController@update'); //update
 Route::delete('/days/{day}', 'DayController@destroy'); //delete
 
+Route::get('/site_images','ImagesController@index');
+Route::get('/site_images/create', 'ImagesController@create');
+Route::post('/site_images/create','ImagesController@store'); //store
+Route::get('/site_images/{images}/edit', 'ImagesController@edit'); //edit
+Route::put('/site_images/{images}', 'ImagesController@update'); //update
+Route::patch('/site_images/{images}', 'ImagesController@update'); //update
+Route::delete('/site_images/{images}', 'ImagesController@destroy'); //delete
+
+
 /**
  * Auth Controller
  */
@@ -400,6 +411,13 @@ Route::get('/api/v1/tests','TestController@index');
 Route::group(["prefix" => "api/v1"], function() {
     Route::resource("tests", "TestController");
 });
+
+Route::get('/export/not_updated','NewspaperExportController@export_not_updated');
+
+
+Route::get('/tests/hello','TestController@sample');
+
+
 
 
 

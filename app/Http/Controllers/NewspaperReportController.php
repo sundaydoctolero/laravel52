@@ -57,11 +57,11 @@ class NewspaperReportController extends Controller
 
     public function not_updated_reports(Request $request){
         $downloads = Download::whereIn('status',$request->filter_list)->get();
-        return view('admin.newspaper_reports.not_updated_reports',compact('downloads'));
+        $filters = $request->filter_list;
+        return view('admin.newspaper_reports.not_updated_reports',compact('downloads','filters'));
     }
 
     public function delivered_reports(Request $request){
-
         $downloads = Download::whereHas('output',function($q) use ($request){
             $q->whereBetween('output_date',[$request->date_from,$request->date_to]);
         })->get();

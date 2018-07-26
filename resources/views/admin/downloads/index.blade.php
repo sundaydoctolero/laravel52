@@ -5,7 +5,10 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><a href="/downloads/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Download</button></a></h3>
+                <h3 class="box-title">
+                    <a href="/downloads/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Download</button></a>
+                    <a href="/downloads/imports"><button class="btn btn-success"><i class="fa fa-plus"></i> Batch Import</button></a>
+                </h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

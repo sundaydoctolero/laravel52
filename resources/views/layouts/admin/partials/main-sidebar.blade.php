@@ -130,6 +130,7 @@
                     <ul class="treeview-menu">
                         <li class="{{ setActive('abouts') }}"><a href="/abouts"><i class="fa fa-arrow-down"></i> <span>Organization Information</span></a></li>
                         <li class="{{ setActive('menus') }}"><a href="/abouts"><i class="fa fa-arrow-down"></i> <span>Navigation Menu</span></a></li>
+                        <li class="{{ setActive('images') }}"><a href="/images"><i class="fa fa-arrow-down"></i> <span>Site Images</span></a></li>
                         <li class="{{ setActive('backups') }}"><a href="/backups"><i class="fa fa-arrow-down"></i> <span>Database Backup</span></a></li>
                     </ul>
                 </li>

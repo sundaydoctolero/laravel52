@@ -24,6 +24,18 @@
                         </div>
                     </div>
                     <div class="box-body">
+                            <hr>
+
+                            @if($downloads->count() > 0)
+                                {!! Form::open(['url' => '/export/not_updated','method'=>'GET','class'=>'form-horizontal']) !!}
+                                    <div class="hidden">
+                                        {!! Form::select('filter_list[]',$status_lists, null, ['class'=>'form-control','required'=>'true','id'=>'role_list','multiple'=>'true']) !!}
+                                    </div>
+                                    {!! Form::submit('Export To Excel',['class'=>'btn btn-primary']) !!}
+                                {!! Form::close() !!}
+                            @endif
+                            <br>
+                            <br>
                         <table id="results_table" class="table table-bordered table-hover">
                             <thead>
                             <tr>
