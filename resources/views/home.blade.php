@@ -133,11 +133,13 @@
     <div class="slideshow-container">
         <!-- Full-width images with number and caption text -->
         @foreach($images as $image)
+            <!--
             <div class="mySlides fade">
                 <div class="numbertext">{{ $image->id }} / {{  $images->count() }}</div>
                 <img class=".img-thumbnail" src="{{ asset('/images/background/'.$image->image_name) }}">
                 <div class="text">{{ $image->caption }}</div>
             </div>
+            -->
         @endforeach
         <!-- Next and previous buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
