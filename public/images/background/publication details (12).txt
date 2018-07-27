@@ -1,7 +1,3 @@
-Publication Name: QLD_SOUTH_BURNETT_TIMES
-Publication Date: 2018-07-27
-Publication State: QLD
-
 Publication Name: NSW_AFR_PRESTIGE_PROPERTY
 Publication Date: 2017-07-27
 Publication State: NSW
@@ -12,6 +8,6 @@ Publication State: QLD
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
-			Total Publications : 3
+			Total Publications : 1
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
