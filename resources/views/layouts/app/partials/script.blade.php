@@ -15,6 +15,9 @@
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('bower_components/datatables.net/js/dataTables.buttons.min.js') }}"></script>
 <script src="{{ asset('bower_components/datatables.net/js/buttons.print.min.js') }}"></script>
+<!-- fullCalendar -->
+<script src="{{ asset('bower_components/moment/moment.js') }}"></script>
+<script src="{{ asset('bower_components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
 
 <script>
     $('#flash-overlay-modal').modal();

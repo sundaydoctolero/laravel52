@@ -65,7 +65,7 @@ class AgentDownloadController extends Controller
         $request['locked_by']= 0;
         if($request->status == 'For Entry'){
             $download->update($request->all() + ['user_id' => auth()->user()->id]);
-            //$this->sync_to_offline_db($download,$request);
+            $this->sync_to_offline_db($download,$request);
         } else {
             $download->update($request->all() + ['checked_by' => auth()->user()->id]);
         }
@@ -87,7 +87,7 @@ class AgentDownloadController extends Controller
             $body['job_number'] = $download->publication->job_number_code;
 
             $client = new \GuzzleHttp\Client();
-            $url = "127.0.0.1/api/admin/downloads/process.php?action=save";
+            $url = "192.168.5.57/api/admin/downloads/process.php?action=save";
             $response = $client->createRequest("POST", $url,['body'=>$body]);
             $response = $client->send($response);
         }

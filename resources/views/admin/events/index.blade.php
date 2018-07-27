@@ -15,4 +15,5 @@
 
 @push('scripts')
     {!! $calendar->script() !!}
+
 @endpush

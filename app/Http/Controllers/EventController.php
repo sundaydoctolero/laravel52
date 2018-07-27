@@ -25,13 +25,14 @@ class EventController extends Controller
             foreach ($data as $key => $value) {
                 $events[] = Calendar::event(
                     $value->title.Carbon::now()->format('l'),
-                    true,
-                    Carbon::parse($value->start_date),
+                    false,
+                    Carbon::now(),
                     Carbon::parse($value->end_date)->addDays(1)
                 );
             }
         }
         $calendar = Calendar::addEvents($events);
+
 
         return view('admin.events.index', compact('calendar'));
     }
