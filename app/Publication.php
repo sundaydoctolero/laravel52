@@ -10,7 +10,7 @@ class Publication extends Model
 
     protected $fillable = [
         'publication_name','website','issue','username','password','publication_type','day_due_out','publication_code','download_type',
-        'job_number_code','remarks'
+        'job_number_code','remarks','default_batch'
 
     ];
 

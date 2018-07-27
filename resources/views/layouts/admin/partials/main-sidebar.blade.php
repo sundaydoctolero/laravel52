@@ -41,6 +41,8 @@
 
             <li class="{{ setActive('tsheets') }}"><a href="/tsheets"><i class="fa fa-unlock"></i> <span>Manage Tsheet</span></a></li>
 
+            <li class="{{ setActive('calendars') }}"><a href="/events"><i class="fa fa-unlock"></i> <span>Calendar</span></a></li>
+
             @if(auth()->guard('admin')->user()->hasRole('Newspaper'))
                 <li class="treeview">
                     <a href="#"><i class="fa fa-gear"></i> <span>Manage Newspaper</span>

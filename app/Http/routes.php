@@ -370,6 +370,8 @@ Route::put('/site_images/{images}', 'ImagesController@update'); //update
 Route::patch('/site_images/{images}', 'ImagesController@update'); //update
 Route::delete('/site_images/{images}', 'ImagesController@destroy'); //delete
 
+Route::resource('/events','EventController');
+
 
 /**
  * Auth Controller

@@ -9,7 +9,8 @@ class LogSheet extends Model
     protected $tables = 'log_sheets';
 
     protected $fillable = [
-        'operators','batch_id','start_time','end_time','total_time','records','entry_date','status','remarks','sale_rent','user_id'
+        'operators','batch_id','start_time','end_time','total_time','records','entry_date','status',
+                'remarks','sale_rent','user_id','state'
 
     ];
 
