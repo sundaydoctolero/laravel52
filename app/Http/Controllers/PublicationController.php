@@ -16,9 +16,18 @@ class PublicationController extends Controller
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
-        $publications = Publication::all();
+        if($request){
+            $publications = Publication::whereHas('days',function($q) use ($request){
+                $q->whereIn('id',$request->filter_list);
+            })->get();
+        }else {
+            $publications = Publication::all();
+        }
+
+        $publications->load('states','days');
+
         return view('admin.publications.index',compact('publications'));
     }
 

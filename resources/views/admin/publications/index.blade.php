@@ -5,7 +5,14 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
+                    {!! Form::open(['url' => '/publications','method'=>'GET']) !!}
+                        {!! Form::label('Day Due Out', 'Day Due Out') !!}
+                        {!! Form::select('filter_list[]',\App\Day::lists('day_code','id'), $_GET["filter_list"], ['class'=>'form-control','required'=>'true','id'=>'role_list','multiple'=>'true']) !!}
+                        {!! Form::submit('Filter Results',['class'=>'btn btn-primary']) !!}
+                    {!! Form::close() !!}
+                    <hr>
                     <div class="box-title">
+
                         <h3 class="box-title"><a href="/publications/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Menu</button></a></h3>
                     </div>
                 </div>
@@ -19,8 +26,6 @@
                             <th>Website URL</th>
                             <th>Issue</th>
                             <th>Day Due Out</th>
-                            <th>Username</th>
-                            <th>Password</th>
                             <th>Publication Type</th>
                             <th>Action</th>
 
@@ -46,8 +51,6 @@
                                         <small>{{ $day->day_code.' |'}}</small>
                                     @endforeach
                                 </td>
-                                <td>{{ $publication->username }}</td>
-                                <td>{{ $publication->password }}</td>
                                 <td>{{ $publication->publication_type }}</td>
 
                                 <td>
