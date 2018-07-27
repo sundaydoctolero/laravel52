@@ -18,13 +18,13 @@ class PublicationController extends Controller
 
     public function index(Request $request)
     {
-        //if($request){
-          //  $publications = Publication::whereHas('days',function($q) use ($request){
-            //    $q->whereIn('id',$request->filter_list);
-            //})->get();
-        //}else {
+        if($request->filter_list){
+            $publications = Publication::whereHas('days',function($q) use ($request){
+                $q->whereIn('id',$request->filter_list);
+            })->get();
+        }else {
             $publications = Publication::all();
-        //}
+        }
 
         $publications->load('states','days');
 
