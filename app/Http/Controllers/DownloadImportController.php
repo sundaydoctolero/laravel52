@@ -31,8 +31,8 @@ class DownloadImportController extends Controller
         foreach($publications as $publication){
             $download = new Download();
             $download->publication_id = $publication->id;
-            $download->publication_date = '2018-07-26'; //$today->toDateString(); //'2018-07-26'
-            //$download->no_of_batches = $publication->default_batch;
+            $download->publication_date = $today->toDateString();
+            $download->no_of_batches = $publication->default_batch;
             $download->status = 'For Download';
             $download->save();
             $download->output()->save(new Output());
