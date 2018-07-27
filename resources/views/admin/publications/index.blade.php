@@ -7,7 +7,7 @@
                 <div class="box-header">
                     {!! Form::open(['url' => '/publications','method'=>'GET']) !!}
                         {!! Form::label('Day Due Out', 'Day Due Out') !!}
-                        {!! Form::select('filter_list[]',\App\Day::lists('day_code','id'), $_GET["filter_list"] or null, ['class'=>'form-control','required'=>'true','id'=>'role_list','multiple'=>'true']) !!}
+                        {!! Form::select('filter_list[]',\App\Day::lists('day_code','id'),null, ['class'=>'form-control','required'=>'true','id'=>'role_list','multiple'=>'true']) !!}
                         {!! Form::submit('Filter Results',['class'=>'btn btn-primary']) !!}
                     {!! Form::close() !!}
                     <hr>
