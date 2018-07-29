@@ -38,7 +38,7 @@
             // return false;
         });
 
-        $('#results_table').DataTable({
+        var $dt = $('#results_table').DataTable({
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,

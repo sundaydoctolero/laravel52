@@ -52,9 +52,12 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 @endsection
+
+@push('scripts')
+<script>
+    $.extend( true, $.fn.dataTable.defaults, {
+        "order": [[ 4, "desc" ]]
+    } );
+</script>
+@endpush

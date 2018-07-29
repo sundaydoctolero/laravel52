@@ -27,6 +27,7 @@
                             <th>Issue</th>
                             <th>Day Due Out</th>
                             <th>Publication Type</th>
+                            <th>Number of Batch</th>
                             <th>Action</th>
 
 
@@ -52,6 +53,7 @@
                                     @endforeach
                                 </td>
                                 <td>{{ $publication->publication_type }}</td>
+                                <td>{{ $publication->default_batch }}</td>
 
                                 <td>
                                     <a href="publications/{{ $publication->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>

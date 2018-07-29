@@ -16,7 +16,6 @@ class TaskController extends Controller
         $this->middleware('roles:Admin,Normal Admin');
     }
 
-
     public function index()
     {
         $tasks = Task::orderBy('status','desc')->get();

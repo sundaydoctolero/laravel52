@@ -88,6 +88,15 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="form-group">
+                        <div class = "col-md-3 col-md-offset-3">
+                            {!! Form::label('default_batch', 'Number of Batch') !!}
+                            {!! Form::text('default_batch',null,['class'=>'form-control','required'=>'true']) !!}
+                        </div>
+                    </div>
+                </div>
+
 
                 <br>
                 {!! Form::submit($buttonlabel,['class'=>'btn btn-primary col-md-2 col-md-offset-7']) !!}
