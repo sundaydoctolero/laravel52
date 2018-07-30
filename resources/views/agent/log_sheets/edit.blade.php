@@ -82,7 +82,7 @@
                             <td align="center">{{ $log->entry_date }}</td>
                             <td align="center">{{ $log->sale_rent }}</td>
                             <td align="center"><span class="badge bg-blue">{{ $log->user_id }}</span></td>
-                            <td align="center">{{ $log->state }}td>
+                            <td align="center">{{ $log->state }}</td>
                             <td align="center">{{ $log->batch_id }}</td>
                             <td align="center">{{ $log->start_time }}</td>
                             <td align="center">{{ $log->end_time }}</td>

@@ -36,10 +36,10 @@ class OutputController extends Controller
         $download = Download::create($request->all());
         $download->output()->save(new Output());
 
-        if($request->no_of_batches > 1 ){
-            $random_user = User::inRandomOrder()->limit($request->no_of_batches)->lists('id')->toArray();
-            $download->operators()->attach($random_user);
-        }
+        //if($request->no_of_batches > 1 ){
+          //  $random_user = User::inRandomOrder()->limit($request->no_of_batches)->lists('id')->toArray();
+           // $download->operators()->attach($random_user);
+       // }
         return redirect($this->url_path);
     }
 

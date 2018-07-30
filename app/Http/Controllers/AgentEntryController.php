@@ -78,12 +78,10 @@ class AgentEntryController extends Controller
            $query->where('user_id',auth()->user()->id)->get();
         }]);
 
+
         $log_sheets = Logsheet::where('download_id',$download->id)
                 ->where('user_id','<>',auth()->user()->id)
                 ->get();
-
-
-
 
         //return $log_sheets;
         return view($this->view_path.'.edit',compact('download','log_sheets'));
@@ -129,10 +127,10 @@ class AgentEntryController extends Controller
         $log_sheets = $download->log_sheet;
 
         if($log_sheets->count() == 0){
-            flash('May nagtatype pa!!!')->warning()->important();
+            flash('No Log Found!!!')->warning()->important();
             return redirect()->back();
         } else {
-            if($log_sheets->groupBy('batch_id')->count() != $log_sheets->where('status','Finished')->count()){
+            if($log_sheets->groupBy('state','sale_rent','batch_id')->count() != $log_sheets->where('status','Finished')->groupBy('state','sale_rent','batch_id')->count()){
                 flash('May nagtatype pa!!!')->warning()->important();
                 return redirect()->back();
             }
