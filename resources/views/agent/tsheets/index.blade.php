@@ -51,7 +51,7 @@
                                     <td>{!! Form::number('total_records',$tsheet->total_records,['class'=>'form-control','placeholder'=>'0']) !!}</td>
                                     <td>{!! Form::text('remarks',$tsheet->remarks,['class'=>'form-control','placeholder'=>'--']) !!}</td>
                                     <td>
-                                        <a href="/agent/tsheets/{{ $tsheet->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
+                                        
                                     </td>
 
                                 @endif
