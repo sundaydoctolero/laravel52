@@ -116,7 +116,7 @@
                                     @if($log->end_time != '00:00:00')
                                         <small class="label label-{{ $log->status == 'Finished' ? 'success' : 'danger' }}">{{ $log->status }}</small>
                                     @else
-                                        {!! Form::select('status',['Finished'=>'FIN','Unfinished'=>'UNF'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
+                                        {!! Form::select('status',['Unfinished'=>'UNF','Finished'=>'FIN'],null,['class'=>'form-control input-sm','required'=>'true']) !!}
                                     @endif
                                 </td>
                                 <td>
