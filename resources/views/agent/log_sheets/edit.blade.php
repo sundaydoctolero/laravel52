@@ -37,6 +37,7 @@
                                 ]
                             </li>
                             <li class="list-group-item"><i>download instruction :</i> </li>
+                            <li class="list-group-item"><i>Pages : </i><strong>{{ $download->pages }}</strong></li>
                         </ul>
                     </div>
                 </div>

@@ -24,7 +24,6 @@ class AdminTsheetRequest extends Request
     public function rules()
     {
         return [
-            'user_id' => 'required',
             'jobnumber_id' =>'required',
             'total_records' =>'sometimes',
             'start_time' => 'required',
