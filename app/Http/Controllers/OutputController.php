@@ -47,7 +47,6 @@ class OutputController extends Controller
         //$download->lockForUpdate()->get(); //database level
         $output = Output::findorfail($download->output->first()->id);
         return view($this->view_path.'.edit',compact('download','output'));
-
     }
 
     public function update(Download $download,DownloadRequest $request){

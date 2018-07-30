@@ -34,7 +34,6 @@ class DownloadController extends Controller
     }
 
     public function store(DownloadRequest $request){
-
         $download = Download::create($request->all());
         $download->output()->save(new Output());
 
@@ -48,7 +47,6 @@ class DownloadController extends Controller
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
         return view($this->view_path.'.edit',compact('download'));
-
     }
 
     public function update(Download $download,DownloadRequest $request){

@@ -39,27 +39,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($log_sheets as $log)
-                                <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
-                                    <td align="center">{{ $log->entry_date }}</td>
-                                    <td align="center">{{ $log->sale_rent }}</td>
-                                    <td align="center"><span class="badge bg-blue">{{ $log->user_id }}</span></td>
-                                    <td align="center">{{ $log->batch_id }}</td>
-                                    <td align="center">{{ $log->start_time }}</td>
-                                    <td align="center">{{ $log->end_time }}</td>
-                                    <td align="center">{{ $log->total_time }}</td>
-                                    <td align="center">{{ $log->records }}</td>
-                                    <td align="center"><small class="label label-{{ $log->status == 'Ongoing' ? 'warning' : ($log->status == 'Finished' ? 'success' : 'danger') }}">{{ $log->status }}</small></td>
-                                    <td align="center">{{ $log->remarks }}</td>
-                                    <td></td>
-                                </tr>
-                            @endforeach
-
                             @foreach($download->log_sheet as $log)
                                 <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
                                     <td align="left">{{ $log->entry_date }}</td>
                                     <td align="left">{{ $log->sale_rent }}</td>
-                                    <td align="left"><span class="badge bg-green">{{ $log->user_id }}</span></td>
+                                    <td align="left"><span class="badge bg-green">{{ $log->user->operator_no }}</span></td>
                                     <td align="left"><strong>{{ $log->batch_id }}</strong></td>
                                     <td align="left">{{ $log->start_time }}</td>
                                     <td align="left">{{ $log->end_time }}</td>
