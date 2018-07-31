@@ -24,6 +24,8 @@ class DownloadImportController extends Controller
             return redirect()->back();
         }
 
+        $this->import_publications_monthly();
+
         $publications =  Publication::whereHas('days',function ($query) use ($today) {
             $query->where('day_name',$today->format('l'));
         })->with('days')->get();
@@ -39,5 +41,24 @@ class DownloadImportController extends Controller
         }
         flash('Batch Imports successful!!')->success();
         return redirect()->back();
+    }
+
+    public function import_publications_monthly(){
+        if(Carbon::now()->day == 1){
+            $publications =  Publication::whereHas('days',function ($query) {
+                $query->where('day_name','Monthly');
+            })->with('days')->get();
+
+            foreach($publications as $publication){
+                $download = new Download();
+                $download->publication_id = $publication->id;
+                $download->publication_date = Carbon::now()->toDateString();
+                $download->no_of_batches = $publication->default_batch;
+                $download->status = 'For Download';
+                $download->save();
+                $download->output()->save(new Output());
+            }
+        }
+
     }
 }
