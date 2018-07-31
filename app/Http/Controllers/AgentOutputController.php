@@ -12,6 +12,8 @@ use App\Http\Requests\DownloadRequest;
 
 use App\Http\Requests\OutputRequest;
 use App\Output;
+use App\Logsheet;
+use DB;
 
 class AgentOutputController extends Controller
 {
@@ -33,9 +35,11 @@ class AgentOutputController extends Controller
         //$download->lockForUpdate()->get(); //database level
         $output = Output::findorfail($download->output->first()->id);
 
-
-
-        return view($this->view_path.'.edit',compact('download','output'));
+        $records_summaries =  DB::table('log_sheets')
+            ->select('state','sale_rent','records', DB::raw('SUM(records) as total_records'))
+            ->groupBy('state','sale_rent')
+            ->get();
+        return view($this->view_path.'.edit',compact('download','output','records_summaries'));
     }
 
     public function update(Download $download,OutputRequest $request){

@@ -101,6 +101,7 @@
                     <thead>
                     <tr>
                         <th>Id</th>
+                        <th>State</th>
                         <th>Sale Type</th>
                         <th>Operator</th>
                         <th>Batch ID</th>
@@ -118,8 +119,9 @@
                     @foreach($download->log_sheet as $log)
                         <tr>
                             <td>{{ $log->id }}</td>
+                            <td>{{ $log->state }}</td>
                             <td>{{ $log->sale_rent }}</td>
-                            <td>{{ $log->operators }}</td>
+                            <td><small class="label label-success">{{ $log->user->operator_no }}</small></td>
                             <td>{{ $log->batch_id }}</td>
                             <td>{{ $log->start_time }}</td>
                             <td>{{ $log->end_time }}</td>
@@ -128,13 +130,41 @@
                             <td>{{ $log->entry_date }}</td>
                             <td>{{ $log->status}}</td>
                             <td>{{ $log->remarks }}</td>
-                            <td>[Modify]</td>
+                            <td></td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
     </div>
+
+
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Records Per State Summary</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+            <table class="table table-condensed">
+                <tr>
+                    <th style="width: 100px">State</th>
+                    <th>Task</th>
+                    <th>Progress</th>
+                </tr>
+                @foreach($records_summaries as $summary)
+                <tr>
+                    <td>{{ $summary->state }}</td>
+                    <td>{{ $summary->sale_rent }}</td>
+                    <td>{{ $summary->total_records }}</td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+    </div>
+
 @endsection
 
 @push('scripts')
