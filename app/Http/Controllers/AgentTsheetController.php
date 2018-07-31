@@ -25,8 +25,10 @@ class AgentTsheetController extends Controller
 
     public function index()
     {
-        $tsheets = auth()->user()->tsheets;
-        $tsheet_status = auth()->user()->tsheets->last();
+        $tsheets = Tsheet::where('user_id',auth()->user()->id)
+            ->whereBetween('created_at',[Carbon::now()->startOfDay(),Carbon::now()->endOfDay()])
+            ->get();
+
         return view($this->view_path.'.index',compact('tsheets','tsheet_status'));
     }
 

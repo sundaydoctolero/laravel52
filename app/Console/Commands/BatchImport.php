@@ -37,6 +37,8 @@ class BatchImport extends Command
      */
     public function handle()
     {
-        //
+        $x = new DownloadImportController();
+        $x->import_downloads();
+        echo 'successfull';
     }
 }
