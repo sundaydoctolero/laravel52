@@ -58,6 +58,10 @@ class Download extends Model
         return $this->hasOne('App\User','id','checked_by');
     }
 
+    public function operator_locked(){
+        return $this->hasOne('App\User','id','locked_by');
+    }
+
 
     public function operators(){
         return $this->belongsToMany('App\User');

@@ -41,14 +41,13 @@
                         <td>{{ $download->pages }}</td>
                         <td>{{ $download->remarks }}</td>
                         <td>
-                            @foreach($download->operator_no as $operator)
-                                <small class="label label-success">{{ $operator->operator_no }}</small>
-                            @endforeach
+
+                                <small class="label label-success">{{ $download->operator_locked['operator_no'] }}</small>
+
                         </td>
                         <td>
-                            @foreach($download->operator_no_check as $operator)
-                                <small class="label label-success">{{ $operator->operator_no }}</small>
-                            @endforeach
+                                <small class="label label-success">{{ $download->operator['operator_no'] }}</small>
+
                         </td>
                         <td>
                             <a href="/agent/downloads/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Locked</button></a>
