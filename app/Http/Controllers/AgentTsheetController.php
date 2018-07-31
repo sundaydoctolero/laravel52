@@ -29,6 +29,7 @@ class AgentTsheetController extends Controller
             ->whereBetween('created_at',[Carbon::now()->startOfDay(),Carbon::now()->endOfDay()])
             ->get();
 
+        $tsheet_status = auth()->user()->tsheets->last();
         return view($this->view_path.'.index',compact('tsheets','tsheet_status'));
     }
 
