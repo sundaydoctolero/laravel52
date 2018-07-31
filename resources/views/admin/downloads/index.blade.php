@@ -36,11 +36,7 @@
                         <td>{{ $download->status }}</td>
                         <td>{{ $download->pages }}</td>
                         <td>{{ $download->remarks }}</td>
-                        <td>
-                            @foreach($download->operator_no_check as $operator)
-                                <small class="label label-success">{{ $operator->operator_no }}</small>
-                            @endforeach
-                        </td>
+                        <td>{{ $download->operator['operator_no'] }}</td>
                         <td>
                             <a href="/downloads/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                             {!! Form::model($download,['method'=>'DELETE','url' => '/downloads/'.$download->id,'style'=>'display:inline']) !!}

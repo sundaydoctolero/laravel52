@@ -26,6 +26,7 @@ class DownloadController extends Controller
 
     public function index(){
         $downloads = Download::wherein('status',['For Download','Pending','For Query','Not Updated'])->get();
+        $downloads->load('operator','publication');
         return view($this->view_path.'.index',compact('downloads'));
     }
 

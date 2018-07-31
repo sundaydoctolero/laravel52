@@ -54,6 +54,11 @@ class Download extends Model
         return $this->hasMany('App\Output');
     }
 
+    public function operator(){
+        return $this->hasOne('App\User','id','checked_by');
+    }
+
+
     public function operators(){
         return $this->belongsToMany('App\User');
     }
@@ -69,5 +74,7 @@ class Download extends Model
     public function getOperatorNoCheckAttribute(){
         return User::select('operator_no')->where('id',$this->checked_by)->get();
     }
+
+
 
 }
