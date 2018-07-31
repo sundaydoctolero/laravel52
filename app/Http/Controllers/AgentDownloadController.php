@@ -33,11 +33,6 @@ class AgentDownloadController extends Controller
         return view($this->view_path.'.create');
     }
 
-    public function store(DownloadRequest $request){
-        //auth()->user()->downloads()->create($request->all()); //one to many
-        //return redirect($this->url_path);
-    }
-
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
         if($download->status == 'For Entry' || $download->status == 'For Output'){
@@ -63,9 +58,10 @@ class AgentDownloadController extends Controller
     }
 
     public function update(Download $download,DownloadRequest $request){
+
         $request['locked_by']= 0;
         if($request->status == 'For Entry'){
-            $download->update($request->all() + ['user_id' => auth()->user()->id]);
+            $download->update($request->all() + ['user_id' => auth()->user()->id,'time_downloaded' => Carbon::now()]);
             $this->sync_to_offline_db($download,$request);
         } else {
             $download->update($request->all() + ['checked_by' => auth()->user()->id]);

@@ -25,28 +25,8 @@
       <file leaf-file-name="AgentDownloadController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentDownloadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34615386">
-              <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Download.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Download.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.0">
-              <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/agent/downloads/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.115385">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.49095023">
+              <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -808,26 +788,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Download.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/agent/downloads/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.0">
-          <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.8269231">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agent/downloads/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Download.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.115385">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.61764705">
+          <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentDownloadController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34615386">
-          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.49095023">
+          <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
           <folding />
         </state>
       </provider>
