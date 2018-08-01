@@ -98,7 +98,7 @@
                         <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
                             <td align="center">{{ $log->entry_date }}</td>
                             <td align="center">{{ $log->sale_rent }}</td>
-                            <td align="center"><span class="badge bg-green">{{ $log->user_id }}</span></td>
+                            <td align="center"><span class="badge bg-green">{{ $log->user->operator_no }}</span></td>
                             <td align="center">{{ $log->state }}</td>
                             <td align="center"><strong>{{ $log->batch_id }}</strong></td>
                             <td align="center">{{ $log->start_time }}</td>
