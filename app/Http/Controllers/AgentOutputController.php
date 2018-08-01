@@ -36,6 +36,7 @@ class AgentOutputController extends Controller
         $output = Output::findorfail($download->output->first()->id);
 
         $records_summaries =  DB::table('log_sheets')
+            ->where('download_id',$download->id)
             ->select('state','sale_rent','records', DB::raw('SUM(records) as total_records'))
             ->groupBy('state','sale_rent')
             ->get();
@@ -44,10 +45,8 @@ class AgentOutputController extends Controller
 
     public function update(Download $download,OutputRequest $request){
         $download->update($request->only('status'));
-
         $output = $output = Output::findorfail($download->output->first()->id);
         $output->update($request->all() + ['user_id' => auth()->user()->id]);
-
         return redirect($this->url_path);
     }
 
