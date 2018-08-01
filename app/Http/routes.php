@@ -325,8 +325,8 @@ Route::patch('/newspaper_reports/{download}', 'NewspaperReportController@update'
 Route::delete('/newspaper_reports/{download}', 'NewspaperReportController@destroy'); //delete
 
 Route::get('/newspaper_reports/not_updated_reports', 'NewspaperReportController@not_updated_reports');
-Route::get('/newspaper_reports/delivered_reports', 'NewspaperReportController@delivered_reports');
 Route::get('/newspaper_reports/generate_pub_details', 'NewspaperReportController@generate_pub_details');
+Route::get('/newspaper_reports/download', 'NewspaperReportController@download');
 
 /**
  * Publication Type Controller
@@ -420,6 +420,7 @@ Route::get('/export/generate_pub_details','NewspaperExportController@generate_pu
 
 
 Route::get('/tests/hello','DownloadImportController@import_publications_monthly');
+
 
 
 

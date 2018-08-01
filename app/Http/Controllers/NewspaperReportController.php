@@ -79,4 +79,19 @@ class NewspaperReportController extends Controller
         return view('admin.newspaper_reports.publication_details',compact('downloads'));
     }
 
+    public function download(Request $request){
+
+        if($request->status == 0){
+            $downloads = Download::whereBetween('website_update_at',[$request->date_from,$request->date_to])->get();
+        } elseif($request->status == 1){
+            $downloads = Download::where('status','Closed')
+                ->whereHas('output',function($q) use ($request){
+                    $q->whereBetween('output_date',[$request->date_from,$request->date_to]);
+                })->get();
+        }
+
+        $downloads->load('publication','output2','operator_process');
+        return view('admin.newspaper_reports.download',compact('downloads'));
+    }
+
 }
