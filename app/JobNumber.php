@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class JobNumber extends Model
 {
@@ -16,5 +17,10 @@ class JobNumber extends Model
         return $this->hasMany('App\Tsheet');
     }
 
+    public function getDisplayMonthAttribute(){
+
+        return Carbon::parse($this->attributes['month_of'])->format('F');
+
+    }
 }
 

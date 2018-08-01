@@ -26,7 +26,7 @@
                                 <td>{{ $jobnumber->id }}</td>
                                 <td>{{ $jobnumber->job_number_id }}</td>
                                 <td>{{ $jobnumber->job_number_description }}</td>
-                                <td>{{ $jobnumber->month_of }}</td>
+                                <td>{{ $jobnumber->display_month }}</td>
                                 <td>
                                     <a href="jobnumbers/{{ $jobnumber->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>Modify</button></a>
                                     {!! Form::model($jobnumber,['method'=>'DELETE','url' => '/jobnumbers/'.$jobnumber->id,'style'=>'display:inline']) !!}
