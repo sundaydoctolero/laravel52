@@ -25,6 +25,7 @@ class DataEntryController extends Controller
 
     public function index(){
         $downloads = Download::wherein('status',['For Entry'])->get();
+        $downloads->load('publication','operators','operator_locked');
         return view($this->view_path.'.index',compact('downloads'));
     }
 

@@ -75,6 +75,10 @@ class Download extends Model
         return $this->belongsToMany('App\User');
     }
 
+    public function operators2(){
+        return $this->hasOne('App\User');
+    }
+
     public function getOperatorListAttribute(){
         return $this->operators->lists('id')->toArray();
     }

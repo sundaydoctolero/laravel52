@@ -41,11 +41,7 @@
                                 <small class="label label-success">{{ $operator->operator_no }}</small>
                             @endforeach
                         </td>
-                        <td>
-                            @foreach($download->operator_no as $optr)
-                                <small class="label label-success">{{ $optr->operator_no }}</small>
-                            @endforeach
-                        </td>
+                        <td><small class="label label-success">{{ $download->operator_locked->operator_no }}</small></td>
                         <td>{{ $download->remarks }}</td>
                         <td>
                             <a href="/dataentries/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
