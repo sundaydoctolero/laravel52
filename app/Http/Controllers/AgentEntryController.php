@@ -43,7 +43,9 @@ class AgentEntryController extends Controller
             if(!$download){
                 $download = Download::where('status','For Entry')
                     ->where('locked_by','=',0)
-                    ->where('no_of_batches',1)->first();
+                    ->where('no_of_batches',1)
+                    ->orderBy('time_downloaded')
+                    ->first();
             }
         }
 
