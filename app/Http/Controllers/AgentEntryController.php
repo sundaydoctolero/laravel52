@@ -27,6 +27,9 @@ class AgentEntryController extends Controller
 
     public function index(){
 
+
+
+
         $download = Download::where('status','For Entry')
             ->where('locked_by',auth()->user()->id)->first();
 
@@ -131,8 +134,7 @@ class AgentEntryController extends Controller
             return redirect()->back();
         } else {
             if($log_sheets->groupBy('state','sale_rent','batch_id')->count() != $log_sheets->where('status','Finished')->groupBy('state','sale_rent','batch_id')->count()){
-                flash('May nagtatype pa!!!')->warning()->important();
-                return redirect()->back();
+                flash('May nagtatype pa!!!')->warning()->important();                return redirect()->back();
             }
         }
         $download->update(['status'=>'For Output']);
@@ -142,7 +144,17 @@ class AgentEntryController extends Controller
 
     public function back_to_entry(Download $download){
         $download->update(['locked_by'=>0]);
-        return redirect('/agent/entries');
+
+        $log_sheets = Logsheet::where('user_id',auth()->user()->id)
+                ->where('end_time','00:00:00')->get();
+
+        if($log_sheets->count() == 0){
+            return redirect('/agent/entries');
+        } else {
+            flash('Check your log sheet!!!')->warning()->important();
+            return redirect()->back();
+        }
+
     }
 
 }
