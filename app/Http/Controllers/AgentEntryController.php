@@ -26,10 +26,6 @@ class AgentEntryController extends Controller
     }
 
     public function index(){
-
-
-
-
         $download = Download::where('status','For Entry')
             ->where('locked_by',auth()->user()->id)->first();
 
@@ -48,8 +44,6 @@ class AgentEntryController extends Controller
                     ->first();
             }
         }
-
-
 
         if($download){
             $download->load(['log_sheet' => function($query){

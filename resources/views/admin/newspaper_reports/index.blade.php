@@ -44,20 +44,14 @@
                                 <small class="label label-success">{{ $key->user->operator_no }}</small>
                             @endforeach
                         </td>
-                        <td>
-                            @foreach($download->output as $operator=> $key)
-                                <small class="label label-danger">{{ $key->user['operator_no'] }}</small>
-                            @endforeach
-                        </td>
-                            @foreach($download->output as $operator=> $key)
-                                <td>{{ $key->sale_records }}</td>
-                                <td>{{ $key->rent_records  }}</td>
-                                <td>{{ $key->total_records }}</td>
-                            @endforeach
-                        <td>{{ $download->output->first()->sequence_from }}</td>
-                        <td>{{ $download->output->first()->sequence_to }}</td>
-                        <td>{{ $download->output->first()->output_date }}</td>
-                        <td>{{ $download->output->first()->delivery_time }}</td>
+                        <td><small class="label label-danger">{{ $download->output2->user['operator_no'] }}</small></td>
+                        <td>{{ $download->output2->sale_records }}</td>
+                        <td>{{ $download->output2->rent_records  }}</td>
+                        <td>{{ $download->output2->total_records }}</td>
+                        <td>{{ $download->output2->sequence_from }}</td>
+                        <td>{{ $download->output2->sequence_to }}</td>
+                        <td>{{ $download->output2->output_date }}</td>
+                        <td>{{ $download->output2->delivery_time }}</td>
                         <td>
                             <a href="/newspaper_reports/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                             {!! Form::model($download,['method'=>'DELETE','url' => '/downloads/'.$download->id,'style'=>'display:inline']) !!}
