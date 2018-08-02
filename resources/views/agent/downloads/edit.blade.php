@@ -15,7 +15,9 @@
                 <div class="box-body" style="font-size: 16px">
                     <div class="col-md-5 col-md-offset-1">
                     <ul class="list-group">
-                        <li class="list-group-item"><a target="_blank" href="{{ $download->publication->website }}">{{ $download->publication->website }}</a></li>
+                        @foreach(explode(" ",$download->publication->website) as $key)
+                            <li class="list-group-item"><a target="_blank" href="{{ $key }}">{{ $key }}</a></li>
+                        @endforeach
                         <li class="list-group-item"><i>state : </i>
                             @foreach($download->publication->states as $state)
                                 <small class="label label-info">{{ $state->state_code }}</small>
