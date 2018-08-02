@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Task;
 use App\Download;
 use Carbon\Carbon;
+use App\Logsheet;
 
 class DashboardController extends Controller
 {
@@ -26,6 +27,10 @@ class DashboardController extends Controller
             ->whereHas('output2',function($query){
                 $query->where('output_date',Carbon::now()->toDateString());
             })->get()->count();
-        return view('admin.dashboard',compact('not_updated','for_download','delivered_today','for_entry'));
+
+        $ongoings = Logsheet::where('status','Ongoing')->get();
+        $ongoings->load('user','download.publication');
+
+        return view('admin.dashboard',compact('not_updated','for_download','delivered_today','for_entry','ongoings'));
     }
 }

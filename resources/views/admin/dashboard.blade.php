@@ -61,4 +61,41 @@
 
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Ongoing Entry</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-bordered">
+                        <tbody><tr>
+                            <th>Operator No.</th>
+                            <th>Name</th>
+                            <th>Publication Name</th>
+                            <th>Publication Date</th>
+                            <th>Batch ID</th>
+                            <th>Start Time</th>
+                        </tr>
+                            @foreach($ongoings as $ongoing)
+                                <tr>
+                                <td>{{ $ongoing->user->operator_no }}</td>
+                                <td>{{ $ongoing->user->name }}</td>
+                                <td>{{ $ongoing->download->publication->publication_name }}</td>
+                                <td>{{ $ongoing->download->publication_date }}</td>
+                                <td>{{ $ongoing->batch_id }}</td>
+                                <td>{{ $ongoing->start_time }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody></table>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+
+
+
+
 @endsection
