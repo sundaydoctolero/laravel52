@@ -49,7 +49,9 @@ class HomeController extends Controller
         $weekly = Logsheet::where('user_id',auth()->user()->id)
                 ->whereBetween('entry_date',[Carbon::today()->subDays(Carbon::today()->dayOfWeek),Carbon::today()])->get()->sum('records');
 
+        $log_sheets = Logsheet::where('user_id',auth()->user()->id)->where('end_time','00:00:00')->get();
 
-        return view('home',compact('daily','weekly','monthly','images','calendar'));
+
+        return view('home',compact('daily','weekly','monthly','images','calendar','log_sheets'));
     }
 }

@@ -18,7 +18,7 @@ class DashboardController extends Controller
     }
 
     public function index(Request $request){
-        $not_updated = Download::whereIn('status',['Not Updatsdfed','Pendingsdf','For Querysdf'])->get()->count();
+        $not_updated = Download::whereIn('status',['Not Updated','Pending','For Query'])->get()->count();
         $for_download = Download::whereIn('status',['For Download'])->get()->count();
         $for_entry = Download::whereIn('status',['For Entry'])->get()->count();
 
@@ -26,7 +26,6 @@ class DashboardController extends Controller
             ->whereHas('output2',function($query){
                 $query->where('output_date',Carbon::now()->toDateString());
             })->get()->count();
-
         return view('admin.dashboard',compact('not_updated','for_download','delivered_today','for_entry'));
     }
 }

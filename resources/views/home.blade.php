@@ -28,6 +28,15 @@
                     <span class="info-box-number">{{ $monthly }}</span>
                 </div>
             </div>
+            <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-calculator"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Ongoing Batch</span>
+                    @foreach($log_sheets as $log_sheet)
+                        <span class="info-box-number">{{ $log_sheet->batch_id }}</span>
+                    @endforeach
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="box box-primary">
