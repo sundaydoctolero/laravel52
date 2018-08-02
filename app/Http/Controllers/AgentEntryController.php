@@ -140,15 +140,16 @@ class AgentEntryController extends Controller
                 return redirect()->back();
             }
 
+            $batches = Logsheet::where('download_id',$download->id)->groupBy('batch_id','state','sale_rent')->get();
+            $finished = Logsheet::where('download_id',$download->id)->where('status','Finished')->groupBy('batch_id','state','sale_rent')->get();
 
-            if($log_sheets->groupBy('state','sale_rent','batch_id')->count() != $log_sheets->where('status','Finished')->groupBy('state','sale_rent','batch_id')->count()){
-                flash('There are still unfinished batches!!!')->warning()->important();
+            if($batches->count() != $finished->count()){
+                flash('No of batches does not matched with no. of batch finished!!!')->warning()->important();
                 return redirect()->back();
             }
-
         }
-        $download->update(['status'=>'For Output']);
 
+        $download->update(['status'=>'For Output']);
         return redirect($this->url_path);
     }
 
