@@ -129,14 +129,15 @@ class AgentEntryController extends Controller
             flash('No Log Found!!!')->warning()->important();
             return redirect()->back();
         } else {
-            if($log_sheets->where('status','ongoing')){
-                flash('There are still ongoing batches!!!')->warning()->important();
-            }
+            //if($log_sheets->where('end_time','00:00:00')){
+              //  flash('There are still ongoing batches!!!')->warning()->important();
+               // return redirect()->back();
+            //}
+
             if($log_sheets->groupBy('state','sale_rent','batch_id')->count() != $log_sheets->where('status','Finished')->groupBy('state','sale_rent','batch_id')->count()){
                 flash('There are still unfinished batches!!!')->warning()->important();
-
+                return redirect()->back();
             }
-            return redirect()->back();
 
         }
         $download->update(['status'=>'For Output']);
