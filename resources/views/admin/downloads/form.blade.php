@@ -24,6 +24,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class = "col-md-6 col-md-offset-3">
+                            {!! Form::label('operator_list', 'Operators') !!}
+                            {!! Form::select('operator_list[]', \App\User::lists('operator_no','id'), null, ['class'=>'form-control','id'=>'operator_list','multiple'=>'true']) !!}
+                        </div>
+                    </div>
+                </div>
+
             </font>
         </tt>
     </div>
@@ -80,19 +90,10 @@
 
     </div> <!-- hidden form -->
 
-    <div class="form-group">
-        <div class="row">
-            {!! Form::label('operator_list', 'Operators',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
-            <div class="col-md-3">
-                {!! Form::select('operator_list[]', \App\User::lists('operator_no','id'), null, ['class'=>'form-control','id'=>'operator_list','multiple'=>'true']) !!}
-            </div>
-        </div>
-    </div>
-
     <hr>
         <div class="form-group">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-6 col-md-offset-3">
                     {!! Form::submit($buttonlabel,['class'=>'col-md-1 btn btn-primary form-control ']) !!}
                 </div>
                 {!! Form::close() !!}

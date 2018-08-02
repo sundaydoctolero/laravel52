@@ -35,14 +35,28 @@ class DownloadController extends Controller
     }
 
     public function store(DownloadRequest $request){
-        $download = Download::create($request->all());
-        $download->output()->save(new Output());
+
+
+        $checked_duplicate = Download::where('publication_id',$request->publication_id)
+            ->where('publication_date',$request->publication_date)
+            ->first();
+
+        if($checked_duplicate->count() == 0){
+            $download = Download::create($request->all());
+            $download->output()->save(new Output());
+            return redirect($this->url_path);
+        } else {
+            flash('Publication already exist')->warning();
+            return redirect()->back();
+        }
+
+
 
         //if($request->no_of_batches > 1 ){
         //    $random_user = User::inRandomOrder()->limit($request->no_of_batches)->lists('id')->toArray();
         //    $download->operators()->attach($random_user);
         //}
-        return redirect($this->url_path);
+
     }
 
     public function edit(Download $download){
