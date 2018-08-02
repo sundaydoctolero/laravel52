@@ -43,6 +43,7 @@ class BatchImport extends Command
     public function handle()
     {
         $today = Carbon::now();
+        $advance = Carbon::now()->addDays(7);
 
         $check = Download::where('publication_date',$today->toDateString())->get();
 
@@ -56,7 +57,13 @@ class BatchImport extends Command
             foreach($publications as $publication){
                 $download = new Download();
                 $download->publication_id = $publication->id;
-                $download->publication_date = $today->toDateString();
+
+                if($publication->issue == 'Weekly - Advance'){
+                    $download->publication_date = $advance->toDateString();
+                } else {
+                    $download->publication_date = $today->toDateString();
+                }
+
                 $download->no_of_batches = $publication->default_batch;
                 $download->status = 'For Download';
                 $download->save();
