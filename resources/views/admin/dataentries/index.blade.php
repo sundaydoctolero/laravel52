@@ -14,15 +14,15 @@
                     <tr>
                         <th>ID</th>
                         <th>Publication Name</th>
-                        <th>Publication Date</th>
-                        <th>Pub Type</th>
-                        <th>Status</th>
+                        <th class="text-center">Publication Date</th>
+                        <th class="text-center">Pub Type</th>
+                        <th class="text-center">Status</th>
                         <th>Pages</th>
-                        <th>No. of Batch</th>
-                        <th>Operators</th>
-                        <th>Locked By</th>
+                        <th class="text-center">Batching</th>
+                        <th class="text-center">Assigned To</th>
+                        <th class="text-center">Ongoing</th>
                         <th>Remarks</th>
-                        <th>Action</th>
+                        <th class="text-center">Action</th>
 
                     </tr>
                     </thead>
@@ -31,23 +31,23 @@
                     <tr>
                         <td>{{ $download->id }}</td>
                         <td>{{ $download->publication->publication_name }}</td>
-                        <td>{{ $download->publication_date }}</td>
-                        <td>{{ $download->publication->publication_type }}</td>
-                        <td>{{ $download->status }}</td>
+                        <td class="text-center">{{ $download->publication_date }}</td>
+                        <td class="text-center">{{ $download->publication->publication_type }}</td>
+                        <td class="text-center">{{ $download->status }}</td>
                         <td>{{ $download->pages }}</td>
-                        <td>{{ $download->no_of_batches }}</td>
-                        <td>
+                        <td class="text-center">{!! batching_label($download->no_of_batches) !!}</td>
+                        <td class="text-center">
                             @foreach($download->operators as $operator)
-                                <small class="label label-success">{{ $operator->operator_no }}</small>
+                                <small class="label label-danger">{{ $operator->operator_no }}</small>
                             @endforeach
                         </td>
-                        <td>
+                        <td class="text-center">
                             @foreach($download->operator_no as $optr)
                                 <small class="label label-success">{{ $optr->operator_no }}</small>
                             @endforeach
                         </td>
                         <td>{{ $download->remarks }}</td>
-                        <td>
+                        <td class="text-center">
                             <a href="/dataentries/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                         </td>
                     </tr>
@@ -61,3 +61,12 @@
     </div>
     </div>
 @endsection
+
+@push('scripts')
+<script>
+    $.extend( true, $.fn.dataTable.defaults, {
+        "order": [[ 8, "desc" ]],
+        "pageLength": 50
+    } );
+</script>
+@endpush

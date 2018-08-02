@@ -17,13 +17,12 @@
                     <tr>
                         <th>ID</th>
                         <th>Publication Name</th>
-                        <th>Publication Date</th>
-                        <th>Pub Type</th>
-                        <th>Status</th>
-                        <th>Pages</th>
+                        <th class="text-center">Publication Date</th>
+                        <th class="text-center">Pub Type</th>
+                        <th class="text-center">Status</th>
                         <th>Remarks</th>
-                        <th>Check By</th>
-                        <th>Action</th>
+                        <th class="text-center">Check By</th>
+                        <th class="text-center">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,13 +30,12 @@
                     <tr>
                         <td>{{ $download->id }}</td>
                         <td>{{ $download->publication->publication_name }}</td>
-                        <td>{{ $download->publication_date }}</td>
-                        <td>{{ $download->publication->publication_type }}</td>
-                        <td>{{ $download->status }}</td>
-                        <td>{{ $download->pages }}</td>
+                        <td class="text-center">{{ $download->publication_date }}</td>
+                        <td class="text-center">{{ $download->publication->publication_type }}</td>
+                        <td class="text-center">{{ $download->status }}</td>
                         <td>{{ $download->remarks }}</td>
-                        <td>{{ $download->operator['operator_no'] }}</td>
-                        <td>
+                        <td class="text-center">{{ $download->operator['username'] }}</td>
+                        <td class="text-center">
                             <a href="/downloads/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                             {!! Form::model($download,['method'=>'DELETE','url' => '/downloads/'.$download->id,'style'=>'display:inline']) !!}
                             {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
@@ -55,3 +53,12 @@
 
 
 @endsection
+
+@push('scripts')
+<script>
+    $.extend( true, $.fn.dataTable.defaults, {
+        "order": [[ 4, "asc" ]],
+        "pageLength": 50
+    } );
+</script>
+@endpush

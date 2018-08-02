@@ -14,6 +14,15 @@ function status_color($status){
     }
 }
 
+function batching_label($count){
+
+    if($count == 1) {
+        return "<span class='badge bg-aqua'>"."Auto"."</span>";
+    } else {
+        return "<span class='badge bg-red'>"."Manual"."</span>";
+    }
+}
+
 
 
 

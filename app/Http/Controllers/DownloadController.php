@@ -25,7 +25,7 @@ class DownloadController extends Controller
     }
 
     public function index(){
-        $downloads = Download::wherein('status',['For Download','Pending','For Query','Not Updated'])->get();
+        $downloads = Download::wherein('status',['For Download','Pending','For Query','Not Updated'])->orderBy('status')->get();
         $downloads->load('operator','publication');
         return view($this->view_path.'.index',compact('downloads'));
     }
@@ -35,7 +35,6 @@ class DownloadController extends Controller
     }
 
     public function store(DownloadRequest $request){
-
 
         $checked_duplicate = Download::where('publication_id',$request->publication_id)
             ->where('publication_date',$request->publication_date)
