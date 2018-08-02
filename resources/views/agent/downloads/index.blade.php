@@ -29,7 +29,6 @@
                         <th>Publication Name</th>
                         <th>Publication Date</th>
                         <th>Status</th>
-                        <th>Pages</th>
                         <th>Remarks</th>
                         <th>Downloader</th>
                         <th>Checked By</th>
@@ -40,7 +39,6 @@
                         <td>{{ $download->publication->publication_name }}</td>
                         <td class="text-center">{{ $download->publication_date }}</td>
                         <td class="text-center">{{ $download->status }}</td>
-                        <td>{{ $download->pages }}</td>
                         <td>{{ $download->remarks }}</td>
                         <td class="text-center"><small class="label label-success">{{ $download->operator_locked['operator_no'] }}</small></td>
                         <td class="text-center"><small class="label label-info">{{ $download->operator['operator_no'] }}</small></td>
