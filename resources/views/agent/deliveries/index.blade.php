@@ -41,13 +41,13 @@
                             <td>{{ $download->publication->publication_name }}</td>
                             <td>{{ $download->publication_date }}</td>
                             <td>{{ $download->status }}</td>
-                            <td>{{ $download->output->first()->sale_records }}</td>
-                            <td>{{ $download->output->first()->rent_records }}</td>
-                            <td>{{ $download->output->first()->sequence_from }}</td>
-                            <td>{{ $download->output->first()->sequence_to }}</td>
+                            <td>{{ $download->output2->sale_records }}</td>
+                            <td>{{ $download->output2->rent_records }}</td>
+                            <td>{{ $download->output2->sequence_from }}</td>
+                            <td>{{ $download->output2->sequence_to }}</td>
                             <td>{{ $download->remarks }}</td>
-                            <td>{{ substr($download->output->first()->created_at,0,10) }}</td>
-                            <td>{{ $download->output->first()->delivery_time }}</td>
+                            <td>{{ $download->output2->output_date }}</td>
+                            <td>{{ $download->output2->delivery_time }}</td>
 
                         </tr>
                     @endforeach

@@ -21,6 +21,7 @@ class AgentDeliveryController extends Controller
 
     public function index(){
         $downloads = Download::where('status','Closed')->get();
+        $downloads->load('publication','output2');
         return view($this->view_path.'.index',compact('downloads'));
     }
 }
