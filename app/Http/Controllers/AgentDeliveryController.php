@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Download;
-
+use Carbon\Carbon;
 
 class AgentDeliveryController extends Controller
 {
@@ -20,7 +20,11 @@ class AgentDeliveryController extends Controller
     }
 
     public function index(){
-        $downloads = Download::where('status','Closed')->get();
+        $downloads = Download::where('status','Closed')
+            ->whereHas('output2',function($query){
+                $query->where('output_date',Carbon::now()->toDateString());
+            })->get();
+
         $downloads->load('publication','output2');
         return view($this->view_path.'.index',compact('downloads'));
     }
