@@ -41,7 +41,8 @@ class DownloadController extends Controller
             ->where('publication_date',$request->publication_date)
             ->first();
 
-        if($checked_duplicate->count() == 0){
+
+        if(!$checked_duplicate){
             $download = Download::create($request->all());
             $download->output()->save(new Output());
             return redirect($this->url_path);
