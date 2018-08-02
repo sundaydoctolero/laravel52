@@ -18,6 +18,7 @@ use Carbon\Carbon;
 use App\Day;
 use App\Download;
 use App\PublicationType;
+use App\PublicationIssue;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -64,15 +65,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('admin.publications.form',function($view){
-            $issues = ['Daily'=>'Daily',
-                        'Weekly'=>'Weekly',
-                        'Monthly'=>'Monthly',
-                        'Bi-Weekly'=>'Bi-Weekly',
-                        'Fornightly'=>'Fornightly',
-                        'Quarterly'=>'Quarterly',
-                        'Annualy'=>'Annualy'
-                        ];
-            $view->with('pub_issues',$issues);
+            $view->with('pub_issues',PublicationIssue::lists('issue_name','issue_name'));
             $view->with('pub_types',PublicationType::lists('publication_type','publication_type'));
             $view->with('state_lists',State::lists('state_code','id'));
             $view->with('day_lists',Day::lists('day_name','id'));

@@ -15,7 +15,11 @@ class DownloadImportController extends Controller
 {
     public function import_downloads(){
 
+
+
         $today = Carbon::now();
+        $advance = Carbon::now()->addDays(7);
+
 
         $check = Download::where('publication_date',$today->toDateString())->get();
 
@@ -30,9 +34,11 @@ class DownloadImportController extends Controller
             $query->where('day_name',$today->format('l'));
         })->with('days')->get();
 
+
         foreach($publications as $publication){
             $download = new Download();
             $download->publication_id = $publication->id;
+
             $download->publication_date = $today->toDateString();
             $download->no_of_batches = $publication->default_batch;
             $download->status = 'For Download';
@@ -61,4 +67,9 @@ class DownloadImportController extends Controller
         }
 
     }
+
+    public function import_property_press(){
+
+    }
+
 }
