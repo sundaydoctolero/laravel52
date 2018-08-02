@@ -24,7 +24,7 @@ class AgentDownloadController extends Controller
 
     public function index(){
 
-        $downloads = Download::whereIn('status', ['For Download','Pending', 'Not Updated','For Query'])->get();
+        $downloads = Download::whereIn('status', ['For Download','Pending', 'Not Updated','For Query'])->orderBy('status')->get();
         $downloads->load('publication','operator','operator_locked');
         return view($this->view_path.'.index',compact('downloads'));
     }
