@@ -17,6 +17,7 @@ use App\JobNumber;
 use Carbon\Carbon;
 use App\Day;
 use App\Download;
+use App\PublicationType;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -72,14 +73,7 @@ class AppServiceProvider extends ServiceProvider
                         'Annualy'=>'Annualy'
                         ];
             $view->with('pub_issues',$issues);
-            $types = ['Tier1'=>'Tier1',
-                        'Tier2'=>'Tier2',
-                        'Tier3'=>'Tier3',
-                        'Regular'=>'Regular',
-                        'Email'=>'Email',
-                        'Hard Copy'=>'Hard Copy'
-                    ];
-            $view->with('pub_types',$types);
+            $view->with('pub_types',PublicationType::lists('publication_type','publication_type'));
             $view->with('state_lists',State::lists('state_code','id'));
             $view->with('day_lists',Day::lists('day_name','id'));
         });
