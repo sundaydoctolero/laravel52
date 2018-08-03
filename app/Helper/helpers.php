@@ -18,13 +18,12 @@ function batching_label($count){
 
     if($count == 1) {
         return "<span class='badge bg-aqua'>"."Auto"."</span>";
-    } else {
+    } else if($count == 0){
+        return "<span class='badge bg-blue'>"."Pending"."</span>";
+    }else {
         return "<span class='badge bg-red'>"."Manual"."</span>";
     }
 }
-
-
-
 
 function hello_world(){
     return "hello";

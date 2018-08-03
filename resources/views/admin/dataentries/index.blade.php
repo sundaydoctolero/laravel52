@@ -16,7 +16,6 @@
                         <th>Publication Name</th>
                         <th class="text-center">Publication Date</th>
                         <th class="text-center">Pub Type</th>
-                        <th class="text-center">Status</th>
                         <th>Pages</th>
                         <th class="text-center">Batching</th>
                         <th class="text-center">Assigned To</th>
@@ -33,7 +32,6 @@
                         <td>{{ $download->publication->publication_name }}</td>
                         <td class="text-center">{{ $download->publication_date }}</td>
                         <td class="text-center">{{ $download->publication->publication_type }}</td>
-                        <td class="text-center">{{ $download->status }}</td>
                         <td>{{ $download->pages }}</td>
                         <td class="text-center">{!! batching_label($download->no_of_batches) !!}</td>
                         <td class="text-center">
@@ -65,8 +63,8 @@
 @push('scripts')
 <script>
     $.extend( true, $.fn.dataTable.defaults, {
-        "order": [[ 8, "desc" ]],
-        "pageLength": 50
+        "order": [[ 5, "desc" ]],
+        "pageLength": 50,
     } );
 </script>
 @endpush

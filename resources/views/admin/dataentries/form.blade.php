@@ -18,10 +18,6 @@
                             {!! Form::label('publication_date', 'Publication Date :') !!}
                             {!! Form::date('publication_date',null,['class'=>'form-control','required'=>'true']) !!}
                         </div>
-                        <div class = "col-md-3">
-                            {!! Form::label('no_of_batches', 'Batches') !!}
-                            {!! Form::text('no_of_batches',null,['class'=>'form-control','required'=>'true']) !!}
-                        </div>
                     </div>
                 </div>
             </font>
@@ -33,11 +29,11 @@
     <div id="hide-form">
         <div class="form-group">
             <div class="row">
-                {!! Form::label('dop_on_website', 'Publication Date on Web',['class'=>'col-md-2 control-label col-md-offset-1']) !!}
-                <div class="col-md-3">
+                {!! Form::label('dop_on_website', 'Pub Date on Web',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
+                <div class="col-md-2">
                     {!! Form::date('dop_on_website',null,['class'=>'form-control']) !!}
                 </div>
-                {!! Form::label('website_update_at', 'Website Updated',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
+                {!! Form::label('website_update_at', 'Download Date',['class'=>'col-md-1 control-label']) !!}
                 <div class="col-md-3">
                     {!! Form::date('website_update_at',null,['class'=>'form-control']) !!}
                 </div>
@@ -82,8 +78,13 @@
 
     <div class="form-group">
         <div class="row">
-            {!! Form::label('operator_list', 'Operators',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
-            <div class="col-md-3">
+            {!! Form::label('no_of_batches', 'Batching',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
+            <div class = "col-md-2">
+                {!! Form::select('no_of_batches',['0'=>'Pending','1'=>'Auto','2'=>'Manual'],null,['class'=>'form-control','required'=>'true']) !!}
+            </div>
+
+            {!! Form::label('operator_list', 'Operators',['class'=>'col-md-1 control-label']) !!}
+            <div class="col-md-4">
                 {!! Form::select('operator_list[]', \App\User::lists('operator_no','id'), null, ['class'=>'form-control','id'=>'operator_list','multiple'=>'true']) !!}
             </div>
         </div>
@@ -92,15 +93,16 @@
     <hr>
     <div class="form-group">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                {!! Form::submit($buttonlabel,['class'=>'col-md-1 btn btn-primary form-control ']) !!}
+            <div class="col-md-5 col-md-offset-1">
+                {!! Form::submit($buttonlabel,['class'=>'col-md-1 btn btn-success form-control ']) !!}
+            </div>
+            <div class="col-md-5">
+                <a href="{{ redirect()->getUrlGenerator()->previous() }}" class="form-control btn btn-primary">Cancel</a>
             </div>
             {!! Form::close() !!}
         </div>
     </div>
     </div>
-
-
 
     @include('errors.error')
 
