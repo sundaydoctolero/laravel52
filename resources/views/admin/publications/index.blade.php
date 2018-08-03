@@ -26,9 +26,9 @@
                             <th>Website URL</th>
                             <th>Issue</th>
                             <th>Day Due Out</th>
-                            <th>Publication Type</th>
-                            <th>Number of Batch</th>
-                            <th>Action</th>
+                            <th class="text-center">Publication Type</th>
+                            <th class="text-center">Batching</th>
+                            <th class="text-center">Action</th>
 
 
 
@@ -52,10 +52,9 @@
                                         <small>{{ $day->day_code.' |'}}</small>
                                     @endforeach
                                 </td>
-                                <td>{{ $publication->publication_type }}</td>
-                                <td>{{ $publication->default_batch }}</td>
-
-                                <td>
+                                <td class="text-center">{{ $publication->publication_type }}</td>
+                                <td class="text-center">{!! batching_label($publication->default_batch) !!}</td>
+                                <td class="tex-center">
                                     <a href="publications/{{ $publication->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                                     {!! Form::model($publication,['method'=>'DELETE','url' => '/publications/'.$publication->id,'style'=>'display:inline']) !!}
                                     {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
