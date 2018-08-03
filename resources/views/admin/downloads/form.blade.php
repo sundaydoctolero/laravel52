@@ -20,7 +20,7 @@
                         </div>
                         <div class = "col-md-3">
                             {!! Form::label('no_of_batches', 'Batches') !!}
-                            {!! Form::text('no_of_batches',null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::select('no_of_batches',['1'=>'Auto','2'=>'Manual','0'=>'Pending'],null,['class'=>'form-control','required'=>'true']) !!}
                         </div>
                     </div>
                 </div>
