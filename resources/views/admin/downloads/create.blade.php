@@ -9,8 +9,8 @@
                     </div>
                     <div class="box-body">
                         {!! Form::open(['url' => '/downloads/create']) !!}
-
-                        @include('admin.downloads.form',['buttonlabel' => 'Add Download'])
+                            @include('admin.downloads.form',['buttonlabel' => 'Add Download'])
+                        {!! Form::close() !!}
                     </div>
                     <div class="box-footer">
 
@@ -23,7 +23,7 @@
 @push('scripts')
     <script>
         $( document ).ready(function() {
-            $('#hide-form').hide();
+            $('.hide-form').hide();
         });
     </script>
 @endpush

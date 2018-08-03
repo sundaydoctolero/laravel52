@@ -46,7 +46,7 @@ class DownloadController extends Controller
             $download->output()->save(new Output());
 
             if($request->status == 'For Entry'){
-                $download->update(['user_id' => auth()->guard('admin')->user()->id]);
+                $download->update(['user_id' => auth()->guard('admin')->user()->id,'website_update_at'=>Carbon::now()->toDateString(),'time_downloaded'=>Carbon::now()]);
                 $this->sync_to_offline_db($download,$request);
             }
 
@@ -55,7 +55,7 @@ class DownloadController extends Controller
                 $download->operators()->attach($request->operator_list);
             }
 
-            
+
             return redirect($this->url_path);
         } else {
             flash('Publication already exist')->warning();

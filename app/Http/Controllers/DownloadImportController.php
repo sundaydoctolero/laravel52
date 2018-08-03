@@ -45,7 +45,16 @@ class DownloadImportController extends Controller
                 $download->publication_date = $today->toDateString();
             }
             $download->no_of_batches = $publication->default_batch;
-            $download->status = 'For Download';
+
+            if($publication->publication_type == 'Direct Capture'){
+                $download->status = 'For Entry';
+                /**
+                 * sync offline code here
+                 */
+            } else {
+                $download->status = 'For Download';
+            }
+
 
             $download->save();
             $download->output()->save(new Output());

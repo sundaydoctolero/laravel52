@@ -8,12 +8,12 @@
 
                         <div class = "col-md-6">
                             {!! Form::label('publication_id', 'Publication Name :') !!}
-                            {!! Form::select('publication_id',$publication_lists,null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::select('publication_id',$publication_lists,null,['class'=>'form-control','required'=>'true','disabled'=>'true']) !!}
                         </div>
 
                         <div class = "col-md-2">
                             {!! Form::label('publication_date', 'Publication Date :') !!}
-                            {!! Form::date('publication_date',null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::date('publication_date',null,['class'=>'form-control','required'=>'true','disabled'=>'true']) !!}
                         </div>
 
                     </div>
