@@ -11,7 +11,7 @@ class Download extends Model
 
     protected $fillable = [
         'publication_id','publication_date','dop_on_website','website_update_at','time_downloaded','remarks','status','locked','locked_by',
-        're_pages','paper_pages','glossy_pages','classifieds_pages','user_id','checked_by','no_of_batches','added_by'
+        're_pages','paper_pages','glossy_pages','classifieds_pages','user_id','checked_by','no_of_batches','added_by','user_id'
 
     ];
 

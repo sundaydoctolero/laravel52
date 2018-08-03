@@ -42,20 +42,25 @@ class DownloadController extends Controller
 
 
         if(!$checked_duplicate){
-            $download = Download::create($request->all());
+            $download = Download::create($request->all() + ['added_by' => auth()->guard('admin')->user()->id]);
             $download->output()->save(new Output());
+
+            if($request->status == 'For Entry'){
+                $download->update(['user_id' => auth()->guard('admin')->user()->id]);
+                $this->sync_to_offline_db($download,$request);
+            }
+
+            if($request->no_of_batches > 1 ){
+                //$random_user = User::inRandomOrder()->limit($request->no_of_batches)->lists('id')->toArray();
+                $download->operators()->attach($request->operator_list);
+            }
+
+            
             return redirect($this->url_path);
         } else {
             flash('Publication already exist')->warning();
             return redirect()->back();
         }
-
-
-
-        //if($request->no_of_batches > 1 ){
-        //    $random_user = User::inRandomOrder()->limit($request->no_of_batches)->lists('id')->toArray();
-        //    $download->operators()->attach($random_user);
-        //}
 
     }
 
@@ -78,5 +83,27 @@ class DownloadController extends Controller
         $download->delete();
         return redirect($this->url_path);
     }
+
+    public function sync_to_offline_db($download,$request){
+        foreach($download->publication->states as $state){
+            $body['state'] = $state->state_code;
+            $body['publication_name'] = $download->publication->publication_name;
+            $body['publication_date'] = $download->australian_format;
+            $body['pages'] = $download->pages;
+            $body['remarks'] = $download->remarks;
+            $body['status'] = 'OPEN';
+            $body['download_id'] = $download->user['operator_no'];
+            $body['code'] = $download->publication->publication_code;
+            $body['job_number'] = $download->publication->job_number_code;
+
+            $client = new \GuzzleHttp\Client();
+            $url = "192.168.5.57/api/admin/downloads/process.php?action=save";
+            $response = $client->createRequest("POST", $url,['body'=>$body]);
+            $response = $client->send($response);
+        }
+
+    }
+
+
 
 }

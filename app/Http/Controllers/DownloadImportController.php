@@ -44,9 +44,9 @@ class DownloadImportController extends Controller
             } else {
                 $download->publication_date = $today->toDateString();
             }
-
             $download->no_of_batches = $publication->default_batch;
             $download->status = 'For Download';
+
             $download->save();
             $download->output()->save(new Output());
         }

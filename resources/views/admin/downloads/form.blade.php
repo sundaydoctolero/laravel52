@@ -27,6 +27,15 @@
 
                 <div class="row">
                     <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                            {!! Form::label('status', 'Status') !!}
+                            {!! Form::select('status',['For Download'=>'For Download','For Entry'=>'For Entry'],null,['class'=>'form-control','required'=>'true']) !!}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
                         <div class = "col-md-6 col-md-offset-3">
                             {!! Form::label('operator_list', 'Operators') !!}
                             {!! Form::select('operator_list[]', \App\User::lists('operator_no','id'), null, ['class'=>'form-control','id'=>'operator_list','multiple'=>'true']) !!}
@@ -63,10 +72,6 @@
                 {!! Form::label('paper_pages', 'Paper Pages',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
                 <div class="col-md-1">
                     {!! Form::text('paper_pages',null,['class'=>'form-control']) !!}
-                </div>
-                {!! Form::label('status', 'Status',['class'=>'col-md-1 control-label col-md-offset-1']) !!}
-                <div class="col-md-3">
-                    {!! Form::select('status',$status_lists,null,['class'=>'form-control','required'=>'true']) !!}
                 </div>
             </div>
         </div>
