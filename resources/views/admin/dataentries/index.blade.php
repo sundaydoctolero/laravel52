@@ -5,7 +5,11 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"></h3>
+                <h3 class="box-title">
+                    For Entry : [ <strong>{{ $downloads->where('locked_by','>','0')->count() }} </strong>] &nbsp;
+                    Ongoing : [ <strong>{{ $downloads->count() - $downloads->where('locked_by','>','0')->count() }} </strong>] &nbsp;
+                    Pending : [ <strong>{{ $downloads->where('no_of_batches',0)->count() }} </strong>] &nbsp;
+                </h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
