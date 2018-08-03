@@ -91,8 +91,8 @@
                 <div class="row">
                     <div class="form-group">
                         <div class = "col-md-3 col-md-offset-3">
-                            {!! Form::label('default_batch', 'Number of Batch') !!}
-                            {!! Form::text('default_batch',null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::label('default_batch', 'Batching') !!}
+                            {!! Form::select('default_batch',['0'=>'Pending','1'=>'Auto','2'=>'Manual'],null,['class'=>'form-control','required'=>'true']) !!}
                         </div>
                     </div>
                 </div>
