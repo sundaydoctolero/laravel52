@@ -10,6 +10,7 @@ use App\Download;
 use App\User;
 use App\Http\Requests\DownloadRequest;
 use App\Output;
+use App\LogSheet;
 
 class OutputController extends Controller
 {
@@ -24,23 +25,8 @@ class OutputController extends Controller
 
     public function index(){
         $downloads = Download::wherein('status',['For Output'])->get();
+        $downloads->load('user','publication','log_sheet.user');
         return view($this->view_path.'.index',compact('downloads'));
-    }
-
-    public function create(){
-        return view($this->view_path.'.create');
-    }
-
-    public function store(DownloadRequest $request){
-
-        $download = Download::create($request->all());
-        $download->output()->save(new Output());
-
-        //if($request->no_of_batches > 1 ){
-          //  $random_user = User::inRandomOrder()->limit($request->no_of_batches)->lists('id')->toArray();
-           // $download->operators()->attach($random_user);
-       // }
-        return redirect($this->url_path);
     }
 
     public function edit(Download $download){
@@ -56,6 +42,11 @@ class OutputController extends Controller
         } else {
             $download->operators()->detach();
         }
+
+        if($request->status = 'For Entry'){
+            return redirect('/dataentries');
+        }
+
         return redirect($this->url_path);
     }
 

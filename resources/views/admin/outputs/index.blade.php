@@ -17,12 +17,10 @@
                         <th>Publication Date</th>
                         <th>Pub Type</th>
                         <th>Status</th>
-                        <th>Pages</th>
-                        <th>No. of Batch</th>
+                        <th>Downloader</th>
                         <th>Operators</th>
                         <th>Remarks</th>
-                        <th>Locked By</th>
-                        <th>Action</th>
+                        <th class="text-center">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -30,26 +28,21 @@
                     <tr>
                         <td>{{ $download->id }}</td>
                         <td>{{ $download->publication->publication_name }}</td>
-                        <td>{{ $download->publication_date }}</td>
-                        <td>{{ $download->publication->publication_type }}</td>
+                        <td class="text-center">{{ $download->publication_date }}</td>
+                        <td class="text-center">{{ $download->publication->publication_type }}</td>
                         <td>{{ $download->status }}</td>
-                        <td>{{ $download->pages }}</td>
-                        <td>{{ $download->no_of_batches }}</td>
+                        <td class="text-center"><small class="label label-info">{{ $download->user['operator_no'] }}</small></td>
                         <td>
-                            @foreach($download->operators as $operator)
-                                <small class="label label-success">{{ $operator->operator_no }}</small>
-                            @endforeach
+                            @foreach($download->log_sheet as $operator)
+                                  <small class="label label-success">{{ $operator->user->operator_no }}</small>
+                             @endforeach
                         </td>
                         <td>{{ $download->remarks }}</td>
-                        <td>
-                            @foreach($download->operator_no as $optr)
-                                <small class="label label-success">{{ $optr->operator_no }}</small>
-                            @endforeach
-                        </td>
-                        <td>
+                        <td class="text-center">
                             <a href="/outputs/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                             {!! Form::model($download,['method'=>'DELETE','url' => '/downloads/'.$download->id,'style'=>'display:inline']) !!}
-                            {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+                                {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+                            {!! Form::close() !!}
                         </td>
                     </tr>
                     @endforeach
@@ -62,3 +55,11 @@
     </div>
     </div>
 @endsection
+
+@push('scripts')
+<script>
+    $.extend( true, $.fn.dataTable.defaults, {
+        "pageLength": 50,
+    } );
+</script>
+@endpush

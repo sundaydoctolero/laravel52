@@ -9,16 +9,13 @@
                         <h1><b>{{ $download->publication->publication_name.' | '.$download->publication_date.' | '
                                     .$download->publication->publication_code }}</b></h1>
                     </div>
-
                 </div>
+
                 <div class="box-body">
                     {!! Form::model($download,['method'=>'PATCH','url' => '/dataentries/'.$download->id]) !!}
-                    @include('admin.dataentries.form',['buttonlabel'=>'Update Entries'])
+                        @include('admin.dataentries.form',['buttonlabel'=>'Update Entries'])
+                    {!! Form::close() !!}
                 </div>
-
-
-                <!--log_sheets-->
-
 
                 <div class="box box-solid box-info">
                     <div class="box-body table-responsive">
