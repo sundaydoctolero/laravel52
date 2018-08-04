@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-6">
                         {!! Form::model($download,['method'=>'PATCH','url' => '/agent/entries/'.$download->id.'/closed_pub','class'=>'form-horizontal']) !!}
-                        {{ Form::button('<i class="fa fa-rotate-left"></i> Closed Entry', ['type' => 'submit', 'class' => 'form-control btn btn-danger'] )  }}
+                        {{ Form::button('<i class="fa fa-rotate-left"></i> For Output', ['type' => 'submit', 'class' => 'form-control btn btn-danger'] )  }}
                         {!! Form::close() !!}
                     </div>
                 </div>
