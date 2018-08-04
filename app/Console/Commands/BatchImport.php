@@ -58,7 +58,7 @@ class BatchImport extends Command
          */
         $check = Download::where('publication_date',$today->toDateString())->get();
 
-        if($check->count() > 3000){
+        if($check->count() > 0){
             echo "failed";
         } else {
             /**
@@ -91,8 +91,8 @@ class BatchImport extends Command
                     $download->status = 'For Download';
                 }
 
-                //$download->save();
-               // $download->output()->save(new Output());
+                $download->save();
+                $download->output()->save(new Output());
             }
 
             /**
@@ -122,8 +122,8 @@ class BatchImport extends Command
                         $download->status = 'For Download';
                     }
 
-                   // $download->save();
-                    //$download->output()->save(new Output());
+                    $download->save();
+                    $download->output()->save(new Output());
                 }
             }
 
@@ -162,8 +162,8 @@ class BatchImport extends Command
                     $download->status = 'For Download';
                 }
 
-                //$download->save();
-                //$download->output()->save(new Output());
+                $download->save();
+                $download->output()->save(new Output());
             }
 
             /**
@@ -207,8 +207,8 @@ class BatchImport extends Command
                     $download->status = 'For Download';
                 }
 
-               // $download->save();
-                //$download->output()->save(new Output());
+                $download->save();
+                $download->output()->save(new Output());
             }
 
             if($weekly){
@@ -229,9 +229,16 @@ class BatchImport extends Command
              */
             Mail::send(['html'=>'mail.autoimport'],
                 ['data'=>$publications,'weekly'=>$weekly,'monthly'=>$monthly,'bi_weekly'=>$bi_weekly,'quarterly'=>$quarterly,'total'=>$total,'today'=>$today],
-                function($message){
+                function($message) use ($today){
                     $message->to('sysadmin@cccdms.com','CCC Data Management Services Inc.')
-                        ->subject('Publication Import '.Carbon::today()->toDateString());
+                        ->subject('Publication Import '.$today->toDateString());
+                });
+
+            Mail::send(['html'=>'mail.autoimport'],
+                ['data'=>$publications,'weekly'=>$weekly,'monthly'=>$monthly,'bi_weekly'=>$bi_weekly,'quarterly'=>$quarterly,'total'=>$total,'today'=>$today],
+                function($message) use ($today){
+                    $message->to('garrys@cccdms.com','CCC Data Management Services Inc.')
+                        ->subject('Publication Import '.$today->toDateString());
                 });
 
             echo "successful!!";
