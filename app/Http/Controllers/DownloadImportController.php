@@ -11,15 +11,23 @@ use App\Publication;
 use App\Download;
 use App\Output;
 use Mail;
-use Swift_SmtpTransport;
 
 class DownloadImportController extends Controller
 {
+    public $weekly = 0;
+
+    public $bi_weekly = 0;
+
+    public $quarterly = 0;
+
+    public $monthly = 0;
+
     public function import_downloads(){
         $today = Carbon::now();
         /**
          * Check first if imports already run!!
          */
+
 
         $check = Download::where('publication_date',$today->toDateString())->get();
 
@@ -34,9 +42,13 @@ class DownloadImportController extends Controller
         $this->import_bi_weekly();
         $this->import_weekly_weekly_advance_daily();
 
-        //$this->sendEmail();
 
-        flash('Batch Imports successful!!')->success();
+        $total = $this->weekly + $this->monthly + $this->bi_weekly + $this->quarterly;
+
+        $this->sendEmail($this->weekly,$this->monthly,$this->bi_weekly,$this->quarterly,$total);
+
+
+        flash('Batch Imports successful!!<br>'.'Weekly : '.$this->weekly.'<br>Bi-Weekly : '.$this->bi_weekly.'<br>Quarterly : '.$this->quarterly.'<br>Monthly : '.$this->monthly.'<br>Total : '.$total)->success();
         return redirect()->back();
     }
 
@@ -49,6 +61,7 @@ class DownloadImportController extends Controller
                 $query->where('day_name',$today->format('l'));
             })->with('days')->get();
 
+        $this->weekly = $publications->count();
 
         foreach($publications as $publication){
             $download = new Download();
@@ -73,7 +86,6 @@ class DownloadImportController extends Controller
             $download->save();
             $download->output()->save(new Output());
         }
-
     }
 
     public function import_publications_monthly(){
@@ -84,6 +96,8 @@ class DownloadImportController extends Controller
                 ->whereHas('days',function ($query) {
                 $query->where('day_name','Monthly');
             })->with('days')->get();
+
+            $this->monthly = $publications->count();
 
             foreach($publications as $publication){
                 $download = new Download();
@@ -109,7 +123,7 @@ class DownloadImportController extends Controller
 
     public function import_bi_weekly(){
         $today = Carbon::now();
-        $advance = Carbon::now()->addDays(14);
+        $advance_two_weeks = Carbon::now()->addDays(14);
 
         if($today->weekOfYear % 2 == 0){
             $issue = ['Bi-Weekly Even','Bi-Weekly Advance Even'];
@@ -122,6 +136,7 @@ class DownloadImportController extends Controller
             $query->where('day_name',$today->format('l'));
         })->with('days')->get();
 
+        $this->bi_weekly = $publications->count();
 
         foreach($publications as $publication){
             $download = new Download();
@@ -130,9 +145,9 @@ class DownloadImportController extends Controller
             if($publication->issue == 'Bi-Weekly Even'){
                 $download->publication_date = $today->toDateString();
             } elseif($publication->issue == 'Bi-Weekly Advance Even'){
-                $download->publication_date = $advance->toDateString();
+                $download->publication_date = $advance_two_weeks->toDateString();
             } elseif($publication->issue == 'Bi-Weekly Advance Odd'){
-                $download->publication_date = $advance->toDateString();
+                $download->publication_date = $advance_two_weeks->toDateString();
             } else {
                 $download->publication_date = $today->toDateString();
             }
@@ -171,6 +186,8 @@ class DownloadImportController extends Controller
                 }
             })->with('days')->get();
 
+        $this->quarterly = $publications->count();
+
         foreach($publications as $publication){
             $download = new Download();
             $download->publication_id = $publication->id;
@@ -196,13 +213,12 @@ class DownloadImportController extends Controller
     }
 
     public function sendEmail(){
-        $publications = Publication::first();
-
+        $publications = 1;
         Mail::send(['html'=>'mail.autoimport'],
             ['data'=>$publications],
             function($message){
-                $message->to('sundaydoctolero2010@gmail.com','CCC Data Management Services Inc.')
+                $message->to('sysadmin@cccdms.com','CCC Data Management Services Inc.')
                     ->subject('Publication Import '.Carbon::today()->toDateString());
-            });
+        });
     }
 }

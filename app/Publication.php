@@ -30,6 +30,10 @@ class Publication extends Model
         return $this->hasMany('App\Download');
     }
 
+    public function download(){
+        return $this->hasOne('App\Download');
+    }
+
     public function getdayListAttribute(){
         return $this->days->lists('id')->toArray();
     }
