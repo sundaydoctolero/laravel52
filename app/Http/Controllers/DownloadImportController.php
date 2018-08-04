@@ -10,12 +10,13 @@ use Carbon\Carbon;
 use App\Publication;
 use App\Download;
 use App\Output;
+use Mail;
+use Swift_SmtpTransport;
 
 class DownloadImportController extends Controller
 {
     public function import_downloads(){
         $today = Carbon::now();
-
         /**
          * Check first if imports already run!!
          */
@@ -32,6 +33,8 @@ class DownloadImportController extends Controller
         $this->import_publications_monthly();
         $this->import_bi_weekly();
         $this->import_weekly_weekly_advance_daily();
+
+        //$this->sendEmail();
 
         flash('Batch Imports successful!!')->success();
         return redirect()->back();
@@ -192,4 +195,14 @@ class DownloadImportController extends Controller
 
     }
 
+    public function sendEmail(){
+        $publications = Publication::first();
+
+        Mail::send(['html'=>'mail.autoimport'],
+            ['data'=>$publications],
+            function($message){
+                $message->to('sundaydoctolero2010@gmail.com','CCC Data Management Services Inc.')
+                    ->subject('Publication Import '.Carbon::today()->toDateString());
+            });
+    }
 }
