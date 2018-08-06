@@ -266,7 +266,7 @@ Route::get('/dataentries/{download}/edit', 'DataEntryController@edit'); //edit
 Route::put('/dataentries/{download}', 'DataEntryController@update'); //update
 Route::patch('/dataentries/{download}', 'DataEntryController@update'); //update
 Route::delete('/dataentries/{download}', 'DataEntryController@destroy'); //delete
-
+Route::patch('/data_entries/{log_sheet}/edit_log_sheet', 'DataEntryController@edit_log_sheet'); //edit
 /**
  * Output Controller
  */

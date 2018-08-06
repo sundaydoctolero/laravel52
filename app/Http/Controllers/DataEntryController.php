@@ -11,6 +11,7 @@ use App\User;
 use App\Http\Requests\DownloadRequest;
 use App\Output;
 use App\Logsheet;
+use Carbon\Carbon;
 
 class DataEntryController extends Controller
 {
@@ -45,4 +46,20 @@ class DataEntryController extends Controller
         }
         return redirect($this->url_path);
     }
+
+    public function edit_log_sheet(Logsheet $log_sheet,Request $request){
+        //$download->lockForUpdate()->get(); //database level
+
+        $startTime = Carbon::parse($request->start_time);
+        $finishTime = Carbon::parse($request->end_time);
+        $totalDuration = $finishTime->diff($startTime);
+        $request['total_time'] = $totalDuration->h.':'.$totalDuration->i.':'.$totalDuration->s;
+
+        $request['batch_id'] = substr_replace($request->batch_id,substr($request->sale_rent,0,1),13,1);
+        $log_sheet->update(request()->except(['_method','_token']));
+        flash('Log sheet updated')->success();
+        return redirect()->back();
+    }
+
+
 }

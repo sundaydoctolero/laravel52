@@ -238,7 +238,7 @@ class BatchImport extends Command
                     $message->to(['sysadmin@cccdms.com','garrys@cccdms.com','ccc.news@cccdms.com','tessb@cccdms.com'],'LinkMe Systems')
                         ->subject('Publication Import '.$today->toDateString());
                 });
-        
+
             echo "successful!!".$today;
     }
 }
