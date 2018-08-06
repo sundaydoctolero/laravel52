@@ -28,6 +28,7 @@ class AgentOutputController extends Controller
 
     public function index(){
         $downloads = Download::where('status','For Output')->get();
+        $downloads->load('publication');
         return view($this->view_path.'.index',compact('downloads'));
     }
 
