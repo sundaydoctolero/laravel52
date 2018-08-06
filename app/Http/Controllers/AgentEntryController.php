@@ -32,7 +32,7 @@ class AgentEntryController extends Controller
         if($open_batches){
             return redirect('/agent/entries/'.$open_batches->download_id.'/edit');
         }
-        
+
         $download = Download::where('status','For Entry')
             ->where('locked_by',auth()->user()->id)->first();
 
