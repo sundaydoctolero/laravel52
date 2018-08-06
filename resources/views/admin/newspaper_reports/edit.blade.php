@@ -78,12 +78,11 @@
                                 <th align="center">Sequence From</th>
                                 <th align="center">Sequence To</th>
                                 <th class="text-center">Folder</th>
-                                <th>Remarks</th>
                             </tr>
                             </thead>
                             <tbody>
                                 @foreach($outputs as $output)
-                                    {!! Form::model($output,['method'=>'PATCH','url' => '/delivered/'.$output->id.'/edit_output_details','class'=>'output-form']) !!}
+                                    {!! Form::model($output,['method'=>'PATCH','url' => '/newspaper_reports/'.$output->id.'/edit_output_details','class'=>'output-form']) !!}
                                     {{ csrf_field() }}
                                     <tr>
                                         <td align="left">{{ $output->output_date }}</td>
@@ -93,7 +92,6 @@
                                         <td><strong>{{ Form::text('sequence_from',null,['class'=>'form-control text-center','id'=>'sequence_from','required'=>'true']) }}</strong></td>
                                         <td><strong>{{ Form::text('sequence_to',null,['class'=>'form-control text-center','id'=>'sequence_to','required'=>'true']) }}</strong></td>
                                         <td><strong>{{ Form::text('delivery_time',null,['class'=>'form-control text-center']) }}</strong></td>
-                                        <td><strong>{{ Form::text('remarks',null,['class'=>'form-control']) }}</strong></td>
                                         <td class="text-center">{!! Form::submit('Update Output',['class'=>'form-control btn btn-success']) !!}</td>
                                     </tr>
                                     {!! Form::close() !!}

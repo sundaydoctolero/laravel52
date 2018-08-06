@@ -324,6 +324,9 @@ Route::put('/newspaper_reports/{download}', 'NewspaperReportController@update');
 Route::patch('/newspaper_reports/{download}', 'NewspaperReportController@update'); //update
 Route::delete('/newspaper_reports/{download}', 'NewspaperReportController@destroy'); //delete
 
+Route::patch('/newspaper_reports/{output}/edit_output_details', 'NewspaperReportController@edit_output_details'); //update
+
+
 Route::get('/newspaper_reports/not_updated_reports', 'NewspaperReportController@not_updated_reports');
 Route::get('/newspaper_reports/generate_pub_details', 'NewspaperReportController@generate_pub_details');
 Route::get('/newspaper_reports/download', 'NewspaperReportController@download');

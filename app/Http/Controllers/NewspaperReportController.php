@@ -45,7 +45,6 @@ class NewspaperReportController extends Controller
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
         $outputs = Output::where('download_id',$download->id)->get();
-
         return view($this->view_path.'.edit',compact('download','outputs'));
 
     }
@@ -98,5 +97,12 @@ class NewspaperReportController extends Controller
         $downloads->load('publication','output2','operator_process');
         return view('admin.newspaper_reports.download',compact('downloads'));
     }
+
+
+    public function edit_output_details(Output $output,Request $request){
+        $output->update($request->all());
+        return redirect()->back();
+    }
+
 
 }

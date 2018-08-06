@@ -149,7 +149,7 @@
                 <tr>
                     <th style="width: 100px">State</th>
                     <th>Task</th>
-                    <th>Progress</th>
+                    <th>Records</th>
                 </tr>
                 @foreach($records_summaries as $summary)
                 <tr>

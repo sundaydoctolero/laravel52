@@ -1,11 +1,11 @@
-@extends('layouts.admin.admin',['page_header' => 'Newspaper Reports'])
+@extends('layouts.admin.admin',['page_header' => 'Delivered'])
 
 @section('main-content')
     <div class="row">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><i class="fa fa-list"></i> Reports</h3>
+                <h3 class="box-title"><i class="fa fa-list"></i> Delivery Records</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
