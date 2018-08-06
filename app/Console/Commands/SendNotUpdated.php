@@ -48,7 +48,7 @@ class SendNotUpdated extends Command
             ['downloads'=>$downloads],
             function($message){
                 $message->to(['sysadmin@cccdms.com','ccc.news@cccdms.com','garrys@cccdms.com','tessb@cccdms.com'],'LinkMe Systems')
-                    ->subject('Not Updated Report as of '.Carbon::now()->toDateString());
+                    ->subject('Not Updated Report as of '.Carbon::now());
             });
 
         echo "Successfull!!";
