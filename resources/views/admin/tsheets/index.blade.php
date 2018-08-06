@@ -6,7 +6,7 @@
             <div class="box">
                 <div class="box-header">
                     <div class="box-title">
-                        <h3 class="box-title"><a href="/tsheets/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Menu</button></a></h3>
+                        <h3 class="box-title"><a href="/tsheets/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Tsheet</button></a></h3>
                     </div>
                 </div>
                 <div class="box-body">
@@ -30,8 +30,8 @@
                             <tr>
                                 <td>{{ $i++ + 1 }}</td>
                                 <td>{{ $tsheet->user['name'] }}</td>
-                                <td>{{ $tsheet->job_number['job_number_id'] }}</td>
-                                <td>{{ $tsheet->job_number['job_number_description'] }}</td>
+                                <td>{{ $tsheet->job_number->job_number_id }}</td>
+                                <td>{{ $tsheet->job_number->job_number_description }}</td>
                                 <td>{{ $tsheet->start_time }}</td>
                                 <td>{{ $tsheet->end_time }}</td>
                                 <td>{{ $tsheet->total_hours }}</td>
@@ -50,9 +50,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 @endsection

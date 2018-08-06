@@ -27,6 +27,7 @@ class TsheetController extends Controller
     public function index()
     {
         $agent_tsheets = Tsheet::all();
+        $agent_tsheets->load('job_number','user');
         return view($this->view_path.'.index',compact('agent_tsheets'));
     }
 
