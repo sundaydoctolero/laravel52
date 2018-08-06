@@ -26,6 +26,13 @@ class AgentEntryController extends Controller
     }
 
     public function index(){
+
+        $open_batches = LogSheet::where('status','Ongoing')->where('user_id',auth()->user()->id)->first();
+
+        if($open_batches){
+            return redirect('/agent/entries/'.$open_batches->download_id.'/edit');
+        }
+        
         $download = Download::where('status','For Entry')
             ->where('locked_by',auth()->user()->id)->first();
 
