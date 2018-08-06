@@ -55,28 +55,11 @@
                                 {!! Form::close() !!}
                             @endforeach
                             </tbody>
-                            <tfoot>
-                            <tr>
-                                @if($download->log_sheet->count() == 0)
-                                    <td colspan="11">
-
-                                    </td>
-                                @else
-                                    @if($log->end_time != '00:00:00')
-                                        <td colspan="11">
-                                            <div class="form-group pull-right">
-
-                                            </div>
-                                        </td>
-                                    @endif
-                                @endif
-                            </tr>
-                            </tfoot>
                         </table>
-                    </div>
-
                 </div>
+
             </div>
         </div>
-
+    </div>
+    </div>
 @endsection

@@ -10,6 +10,7 @@ use App\Download;
 use App\User;
 use App\Http\Requests\DownloadRequest;
 use App\Http\Requests\NewspaperReportRequest;
+use App\Output;
 
 class NewspaperReportController extends Controller
 {
@@ -43,8 +44,9 @@ class NewspaperReportController extends Controller
 
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
+        $outputs = Output::where('download_id',$download->id)->get();
 
-        return view($this->view_path.'.edit',compact('download'));
+        return view($this->view_path.'.edit',compact('download','outputs'));
 
     }
 

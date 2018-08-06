@@ -113,6 +113,21 @@ class AppServiceProvider extends ServiceProvider
             $view->with('status_lists',$status);
         });
 
+        view()->composer('admin.newspaper_reports.edit',function($view){
+            $status = ['Closed'=>'Closed',
+                'For Download'=>'For Download',
+                'Pending'=>'Pending',
+                'Not Updated'=>'Not Updated',
+                'For Query'=>'For Query',
+                'For Entry'=>'For Entry',
+                'For Output' => 'For Output'
+            ];
+
+            $view->with('publication_lists',Publication::lists('publication_name','id'));
+            $view->with('status_lists',$status);
+        });
+
+
         view()->composer('agent.downloads.form',function($view){
             $status = ['For Download'=>'For Download',
                 'Pending'=>'Pending',
