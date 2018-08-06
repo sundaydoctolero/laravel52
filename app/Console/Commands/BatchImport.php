@@ -53,21 +53,13 @@ class BatchImport extends Command
         $quarterly = [];
         $total = 0;
 
-        /**
-         * Check if Run Already!!
-         */
-        $check = Download::where('publication_date',$today->toDateString())->get();
-
-        if($check->count() > 0){
-            echo "failed";
-        } else {
             /**
              * Import Weekly, Daily, Weekly Advance
              */
             $publications =  Publication::whereIn('issue',['Weekly','Weekly - Advance','Daily'])
                 ->whereHas('days',function ($query) use ($today) {
                     $query->where('day_name',$today->format('l'));
-                })->with('days')->get();
+                })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
 
             $weekly = $publications;
 
@@ -103,7 +95,7 @@ class BatchImport extends Command
                 $publications =  Publication::whereIn('issue',['Monthly'])
                     ->whereHas('days',function ($query) {
                         $query->where('day_name','Monthly');
-                    })->with('days')->get();
+                    })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
 
                 $monthly = $publications;
 
@@ -143,7 +135,7 @@ class BatchImport extends Command
                     }else{
                         $query->where('day_name','xxxxx');
                     }
-                })->with('days')->get();
+                })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
 
             $quarterly = $publications;
 
@@ -178,7 +170,7 @@ class BatchImport extends Command
             $publications =  Publication::whereIn('issue',$issue)
                 ->whereHas('days',function ($query) use ($today) {
                     $query->where('day_name',$today->format('l'));
-                })->with('days')->get();
+                })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
 
             $bi_weekly = $publications;
 
@@ -212,17 +204,30 @@ class BatchImport extends Command
             }
 
             if($weekly){
-                $weekly->load('download');
+                $weekly->load(['downloads' => function($query) use($today,$advance){
+                    $query->latest();
+                }]);
+                $total += $weekly->count();
             }
             if($monthly){
-                $monthly->load('download');
+                $monthly->load(['downloads' => function($query) use($today,$advance){
+                    $query->latest();
+                }]);
+                $total += $monthly->count();
             }
             if($bi_weekly){
-                $bi_weekly->load('download');
+                $bi_weekly->load(['downloads' => function($query) use($today,$advance){
+                    $query->latest();
+                }]);
+                $total += $bi_weekly->count();
             }
             if($quarterly){
-                $quarterly->load('download');
+                $quarterly->load(['downloads' => function($query) use($today,$advance){
+                    $query->latest();
+                }]);
+                $total += $quarterly->count();
             }
+
 
             /**
              * Sends Email
@@ -230,20 +235,17 @@ class BatchImport extends Command
             Mail::send(['html'=>'mail.autoimport'],
                 ['data'=>$publications,'weekly'=>$weekly,'monthly'=>$monthly,'bi_weekly'=>$bi_weekly,'quarterly'=>$quarterly,'total'=>$total,'today'=>$today],
                 function($message) use ($today){
-                    $message->to('sysadmin@cccdms.com','CCC Data Management Services Inc.')
+                    $message->to('sysadmin@cccdms.com','LinkMe Systems')
                         ->subject('Publication Import '.$today->toDateString());
                 });
 
             Mail::send(['html'=>'mail.autoimport'],
                 ['data'=>$publications,'weekly'=>$weekly,'monthly'=>$monthly,'bi_weekly'=>$bi_weekly,'quarterly'=>$quarterly,'total'=>$total,'today'=>$today],
                 function($message) use ($today){
-                    $message->to('garrys@cccdms.com','CCC Data Management Services Inc.')
+                    $message->to('garrys@cccdms.com','LinkMe Systems')
                         ->subject('Publication Import '.$today->toDateString());
                 });
 
-            echo "successful!!";
-
-        }
-
+            echo "successful!!".$today;
     }
 }

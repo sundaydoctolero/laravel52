@@ -419,7 +419,7 @@ Route::get('/export/not_updated','NewspaperExportController@export_not_updated')
 Route::get('/export/generate_pub_details','NewspaperExportController@generate_pub_details');
 
 
-Route::get('/tests/hello','DownloadImportController@import_publications_monthly');
+Route::get('/tests/hello','TestController@import');
 
 
 

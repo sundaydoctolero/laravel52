@@ -31,6 +31,22 @@ class TestController extends Controller
         ));
     }
 
+    public function import(){
+        $today = Carbon::now();
+        $advance = Carbon::now()->addDays(7);
+        $advance_two_weeks = Carbon::now()->addDays(14);
+        $publications =  Publication::whereIn('issue',['Weekly','Weekly - Advance','Daily'])
+            ->whereHas('days',function ($query) use ($today) {
+                $query->where('day_name',$today->format('l'));
+            })->with('days')->get();
+
+        return $publications->load(['downloads' => function($query){
+            $query->latest();
+        }]);
+
+    }
+
+
     public function sample(){
 
         $closed = Download::where('status','For Download')->get();

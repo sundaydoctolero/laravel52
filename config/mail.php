@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'sysadmin@cccdms.com', 'name' => 'CCC Data Management Services Inc.'],
+    'from' => ['address' => 'sysadmin@cccdms.com', 'name' => 'LinkMe Systems'],
 
     /*
     |--------------------------------------------------------------------------
