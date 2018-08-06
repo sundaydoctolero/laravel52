@@ -93,7 +93,7 @@
                             {!! Form::submit($buttonlabel,['class'=>'col-md-1 btn btn-success form-control ']) !!}
                         </div>
                         <div class="col-md-5">
-                            <a href="{{ redirect()->getUrlGenerator()->previous() }}" class="form-control btn btn-primary">Cancel</a>
+                            <a href="{{ url('/outputs') }}" class="form-control btn btn-primary">Cancel</a>
                         </div>
                     </div>
                 </div>

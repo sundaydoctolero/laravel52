@@ -39,7 +39,7 @@
                             @foreach($download->log_sheet as $log)
                                 {!! Form::model($log,['method'=>'PATCH','url' => '/data_entries/'.$log->id.'/edit_log_sheet']) !!}
                                     {{ csrf_field() }}
-                                    <tr class="table-success">
+                                <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
                                         <td align="left">{{ $log->entry_date }}</td>
                                         <td>{{ Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control input-sm']) }}</td>
                                         <td class="text-center"><span class="badge bg-green">{{ $log->user->operator_no }}</span></td>
