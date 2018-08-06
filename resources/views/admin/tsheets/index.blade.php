@@ -15,14 +15,15 @@
                         <tr>
                             <th>ID</th>
                             <th>Employee Name</th>
-                            <th>Job Number</th>
+                            <th class="text-center">Job Number</th>
                             <th>Description</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
-                            <th>Total Hours</th>
-                            <th>Total Records</th>
+                            <th class="text-center">Start Time</th>
+                            <th class="text-center">End Time</th>
+                            <th class="text-center">Total Hours</th>
+                            <th class="text-right">Total Records</th>
                             <th>Remarks</th>
-                            <th>Action</th>
+                            <th class="text-center">Action</th>
+                            <th class="text-right">Created At</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,16 +31,17 @@
                             <tr>
                                 <td>{{ $i++ + 1 }}</td>
                                 <td>{{ $tsheet->user['name'] }}</td>
-                                <td>{{ $tsheet->job_number->job_number_id }}</td>
+                                <td class="text-center">{{ $tsheet->job_number->job_number_id }}</td>
                                 <td>{{ $tsheet->job_number->job_number_description }}</td>
-                                <td>{{ $tsheet->start_time }}</td>
-                                <td>{{ $tsheet->end_time }}</td>
-                                <td>{{ $tsheet->total_hours }}</td>
-                                <td>{{ $tsheet->total_records}}</td>
+                                <td class="text-center">{{ $tsheet->start_time }}</td>
+                                <td class="text-center">{{ $tsheet->end_time }}</td>
+                                <td class="text-center">{{ $tsheet->total_hours }}</td>
+                                <td class="text-right">{{ $tsheet->total_records}}</td>
                                 <td>{{ $tsheet->remarks}}</td>
-                                <td>
+                                <td class="text-center">
                                     <a href="/tsheets/{{ $tsheet->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                                 </td>
+                                <td class="text-right">{{ $tsheet->created_at }}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -51,3 +53,12 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+<script>
+    $.extend( true, $.fn.dataTable.defaults, {
+        "pageLength": 50,
+        "order": [[ 10, "desc" ]],
+    } );
+</script>
+@endpush
