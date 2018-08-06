@@ -235,17 +235,10 @@ class BatchImport extends Command
             Mail::send(['html'=>'mail.autoimport'],
                 ['data'=>$publications,'weekly'=>$weekly,'monthly'=>$monthly,'bi_weekly'=>$bi_weekly,'quarterly'=>$quarterly,'total'=>$total,'today'=>$today],
                 function($message) use ($today){
-                    $message->to('sysadmin@cccdms.com','LinkMe Systems')
+                    $message->to(['sysadmin@cccdms.com','garrys@cccdms.com','ccc.news@cccdms.com','tessb@cccdms.com'],'LinkMe Systems')
                         ->subject('Publication Import '.$today->toDateString());
                 });
-
-            Mail::send(['html'=>'mail.autoimport'],
-                ['data'=>$publications,'weekly'=>$weekly,'monthly'=>$monthly,'bi_weekly'=>$bi_weekly,'quarterly'=>$quarterly,'total'=>$total,'today'=>$today],
-                function($message) use ($today){
-                    $message->to('garrys@cccdms.com','LinkMe Systems')
-                        ->subject('Publication Import '.$today->toDateString());
-                });
-
+        
             echo "successful!!".$today;
     }
 }
