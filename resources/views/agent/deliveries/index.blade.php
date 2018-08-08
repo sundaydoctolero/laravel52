@@ -31,25 +31,26 @@
                         <th>Rent</th>
                         <th>Sequence From</th>
                         <th>Sequence To</th>
+                        <th>Output Date</th>
+                        <th>Folder</th>
                         <th>Remarks</th>
-                        <th>Date Delivered</th>
-                        <th>Time Delivered</th>
                     </tr>
-                    @foreach($downloads as $download)
-                        <tr>
-                            <td>{{ $download->id }}</td>
-                            <td>{{ $download->publication->publication_name }}</td>
-                            <td>{{ $download->publication_date }}</td>
-                            <td>{{ $download->status }}</td>
-                            <td>{{ $download->output2->sale_records }}</td>
-                            <td>{{ $download->output2->rent_records }}</td>
-                            <td>{{ $download->output2->sequence_from }}</td>
-                            <td>{{ $download->output2->sequence_to }}</td>
-                            <td>{{ $download->remarks }}</td>
-                            <td>{{ $download->output2->output_date }}</td>
-                            <td>{{ $download->output2->delivery_time }}</td>
-
-                        </tr>
+                    @foreach($downloads as $count => $delivered)
+                            @foreach($delivered->output as $count => $row)
+                                <tr>
+                                    <td>{{ $count++ + 1 }}</td>
+                                    <td>{{ $delivered->publication->publication_name }}</td>
+                                    <td>{{ $delivered->publication_date }}</td>
+                                    <td>{{ $delivered->status }}</td>
+                                    <td>{{ $row->sale_records }}</td>
+                                    <td>{{ $row->rent_records }}</td>
+                                    <td>{{ $row->sequence_from }}</td>
+                                    <td>{{ $row->sequence_to }}</td>
+                                    <td>{{ $row->output_date }}</td>
+                                    <td>{{ $row->delivery_time }}</td>
+                                    <td>{{ $row->remarks }}</td>
+                                </tr>
+                            @endforeach
                     @endforeach
                     </tbody></table>
             </div>

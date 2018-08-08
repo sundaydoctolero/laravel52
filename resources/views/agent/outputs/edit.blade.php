@@ -17,7 +17,7 @@
                     <h3 class="box-title"><strong>{{ $download->publication->publication_name.' '.$download->publication_date.'  ['.$download->publication->publication_code.']' }}</strong></h3>
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <button id="btn-add" name="btn-add" class="btn btn-success btn-md addbutton pull-right"><span class="glyphicon glyphicon-plus"></span> Add New</button>
+                            <button id="btn-add" name="btn-add" class="btn btn-success btn-md addbutton pull-right"><span class="glyphicon glyphicon-plus"></span> Additional</button>
                         </div>
                     </div>
                 </div>

@@ -21,11 +21,12 @@ class AgentDeliveryController extends Controller
 
     public function index(){
         $downloads = Download::where('status','Closed')
-            ->whereHas('output2',function($query){
+            ->whereHas('output',function($query){
                 $query->where('output_date',Carbon::now()->toDateString());
             })->get();
 
-        $downloads->load('publication','output2');
+        $downloads->load('publication','output');
+
         return view($this->view_path.'.index',compact('downloads'));
     }
 }
