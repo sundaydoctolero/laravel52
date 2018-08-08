@@ -5,9 +5,35 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <div class="box-title">
-                        <h3 class="box-title"><a href="/tasks/create"><button class="btn btn-success"><i class="fa fa-plus"></i> Add New Menu</button></a></h3>
+
+                    {!! Form::open(['url' => '/tasks','class' => 'form-inline', 'method' => 'GET']) !!}
+
+                    <div class="form-group">
+                        <h3 class="box-title"><a href="/tasks/create" class="btn btn-success"><i class="fa fa-plus"></i> Add New Task</a></h3>
                     </div>
+
+                    <div class="pull-right">
+                        <div class="form-group">
+                            {!! Form::label('user_id', 'User :') !!}
+                            {!! Form::select('user_id',\App\User::lists('name','id'),null,['class'=>'form-control','placeholder'=>'--']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('status', 'Status :') !!}
+                            {!! Form::select('status',['Open'=>'Open','Pending'=>'Pending','Closed'=>'Closed'],null,['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('date_from', 'Date From :') !!}
+                            {!! Form::date('date_from',\Carbon\Carbon::now(),['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('date_to', 'To :') !!}
+                            {!! Form::date('date_to',\Carbon\Carbon::now(),['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::submit('Filter Task',['class'=>'btn btn-primary']) !!}
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
                 </div>
                 <div class="box-body">
                     <table id="results_table" class="table table-bordered table-hover">

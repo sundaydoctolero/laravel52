@@ -7,7 +7,7 @@
 
                     </div>
                     <div class="box-body" style=background-color:ghostwhite>
-                        {!! Form::open(['url' => '/tasks/create']) !!}
+                        {!! Form::open(['url' => '/tsheets/create']) !!}
                         <div class = "col-md-offset-1">
                             <font size = "16" face = "microsoft sans serif"> <h1 class = "fa fa-plus-circle">&nbsp<tt>Add Tsheet</tt></h1></font>
                         </div>

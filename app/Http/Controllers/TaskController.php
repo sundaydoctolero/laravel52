@@ -16,9 +16,18 @@ class TaskController extends Controller
         $this->middleware('roles:Admin,Normal Admin');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $tasks = Task::orderBy('status','desc')->get();
+        if($request->user_id == ""){
+            if($request->status == ""){
+                $tasks = Task::where('status','Open')->get();
+            } else {
+                $tasks = Task::where('status',$request->status)->get();
+            }
+        }else{
+            $tasks = Task::where('user_id',$request->user_id)->where('status',$request->status)->whereBetween('created_at',[$request->date_from.' 00:00:01',$request->date_to.' 23:59:59'])->get();
+        }
+
         return view('admin.tasks.index',compact('tasks'));
     }
 

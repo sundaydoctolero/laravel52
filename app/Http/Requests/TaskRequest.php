@@ -26,7 +26,7 @@ class TaskRequest extends Request
         return [
             'task_name' =>'required',
             'description' =>'required',
-            'completion_date' =>'sometimes|required',
+            'completion_date' =>'sometimes',
             'comments'=>'sometimes'
         ];
     }

@@ -24,9 +24,18 @@ class TsheetController extends Controller
         $this->middleware('admin');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $agent_tsheets = Tsheet::all();
+
+        if($request->all() == null){
+            $agent_tsheets = Tsheet::whereBetween('created_at',[Carbon::now()->startOfDay(),Carbon::now()->endOfDay()])->get();
+        } else {
+            if($request->user_id == ""){
+                $agent_tsheets = Tsheet::whereBetween('created_at',[$request->date_from.' 00:00:00',$request->date_to.' 23:59:59'])->get();
+            } else {
+                $agent_tsheets = Tsheet::where('user_id',$request->user_id)->whereBetween('created_at',[$request->date_from.' 00:00:01',$request->date_to.' 23:59:59'])->get();
+            }
+        }
         $agent_tsheets->load('job_number','user');
         return view($this->view_path.'.index',compact('agent_tsheets'));
     }
