@@ -9,15 +9,161 @@
 @endsection
 
 @section('main-content')
+    @include('agent.outputs.modal_form')
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"><strong>{{ $download->publication->publication_name.' '.$download->publication_date.'  ['.$download->publication->publication_code.']' }}</strong></h3>
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <button id="btn-add" name="btn-add" class="btn btn-success btn-md addbutton pull-right"><span class="glyphicon glyphicon-plus"></span> Add New</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    <table id="data_table" class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Output Date</th>
+                            <th>State</th>
+                            <th class="text-right">Sale</th>
+                            <th class="text-right">Rent</th>
+                            <th class="text-right">Total</th>
+                            <th class="text-center">Sequence From</th>
+                            <th class="text-center">Sequence To</th>
+                            <th class="text-center">Folder Name</th>
+                            <th>Remarks</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        @foreach($records as $record)
+                            @if($outputs->where('state',$record->state)->count() >= 1 )
+                                @foreach($outputs->where('state',$record->state) as $output)
+                                    {!! Form::model($output,['url' => '/agent/output/'.$download->id.'/create']) !!}
+                                    <tr id="batch{{$output->id}}">
+                                        <td class="text-center">{{ $output->output_date }}</td>
+                                        <td>{{ $output->state }}</td>
+                                        <td class="text-right">{{ $output->sale_records }}</td>
+                                        <td class="text-right">{{ $output->rent_records }}</td>
+                                        <td class="text-right">{{ $output->total_records }}</td>
+                                        <td class="text-center">{{ $output->sequence_from }}</td>
+                                        <td class="text-center">{{ $output->sequence_to}}</td>
+                                        <td class="text-center">{{ $output->delivery_time }}</td>
+                                        <td>{{ $output->remarks }}</td>
+                                        <td></td>
+                                    </tr>
+                                    {!! Form::close() !!}
+                                @endforeach
+                            @else
+                                {!! Form::open(['url' => '/agent/output/'.$download->id.'/create']) !!}
+                                <tr>
+                                    <td class="text-center">
+                                        {{ today() }}
+                                        {{ Form::hidden('output_date',today()) }}
+                                    </td>
+                                    <td>
+                                        {{ $record->state }}
+                                        {!! Form::hidden('state',$record->state) !!}
+                                    </td>
+                                    <td class="text-right">
+                                        {{ $record->sale }}
+                                        {!! Form::hidden('sale_records',$record->sale) !!}
+                                    </td>
+                                    <td class="text-right">
+                                        {{ $record->rent == null ? 0 : $record->rent }}
+                                        {!! Form::hidden('rent_records',$record->rent) !!}
+                                    </td>
+                                    <td class="text-right">{{ $record->total }}</td>
+                                    <td>{!! Form::text('sequence_from',null,['class'=>'form-control input-sm text-center']) !!}</td>
+                                    <td>{!! Form::text('sequence_to',null,['class'=>'form-control input-sm text-center' ]) !!}</td>
+                                    <td>{!! Form::text('delivery_time',null,['class'=>'form-control input-sm' ]) !!}</td>
+                                    <td>{!! Form::text('remarks',null,['class'=>'form-control input-sm']) !!}</td>
+
+                                    <td>{!! Form::submit('UPDATE',['class'=>'form-control input-sm btn btn-warning']) !!}</td>
+                                </tr>
+                                {!! Form::close() !!}
+                            @endif
+                        @endforeach
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="10">
+                                    @if($outputs->groupBy('state')->count() == $download->log_sheet->groupBy('state')->count())
+                                        {!! Form::model($download,['method'=>'PATCH','url' => '/agent/outputs/'.$download->id,'class'=>'form-horizontal']) !!}
+                                        {{ Form::button('<span class="glyphicon glyphicon-plus"></span> Closed Publication', ['type' => 'submit', 'class' => 'form-control btn btn-danger'] )  }}
+                                        {!! Form::close() !!}
+                                    @endif
+
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box box-solid box-info">
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>State</th>
+                        <th>Sale Type</th>
+                        <th>Operator</th>
+                        <th>Batch ID</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Total Hours</th>
+                        <th>Records</th>
+                        <th>Entry Date</th>
+                        <th>Status</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($download->log_sheet as $log)
+                        {!! Form::model($log,['method'=>'PATCH','url' => '/agent/output/'.$log->id.'/modify_log','class'=>'form-horizontal']) !!}
+                            <tr>
+                                <td>{{ $log->id }}</td>
+                                <td>{{ $log->state }}</td>
+                                <td>{{ $log->sale_rent }}</td>
+                                <td><small class="label label-success">{{ $log->user->operator_no }}</small></td>
+                                <td>{{ $log->batch_id }}</td>
+                                <td>{{ $log->start_time }}</td>
+                                <td>{{ $log->end_time }}</td>
+                                <td>{{ $log->total_time }}</td>
+                                <td class="text-right">{!! Form::text('records',null,['class'=>'form-control input-sm text-right']) !!}</td>
+                                <td>{{ $log->entry_date }}</td>
+                                <td>{{ $log->status}}</td>
+                                <td>{{ $log->remarks }}</td>
+                                @unless($outputs->groupBy('state')->count() == $download->log_sheet->groupBy('state')->count())
+                                    <td>{!! Form::submit("Update",['class' => 'form-control btn btn-danger btn-sm'] ) !!}</td>
+                                @endunless
+                            </tr>
+                        {!! Form::close() !!}
+                    @endforeach
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+    </div>
+
     <div class="row">
         <div class="col-xs-12">
             <div class="box box-solid box-primary">
                 <div class="box-header">
                     <div class="col-md-offset-1">
-                        <h1>
-                            <strong>{{ $download->publication->publication_name}}</strong>
-                            <small class="label label-info"> {{$download->publication->publication_code }}{{ ' '.$download->publication_date }}</small>
-                        </h1>
                     </div>
                 </div>
                 <div class="box-body" style="font-size: 16px">
@@ -43,126 +189,13 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        {!! Form::model($output,['method'=>'PATCH','url' => '/agent/outputs/'.$download->id,'class'=>'form-inline','id'=>'frmClosed']) !!}
-                        {{ csrf_field() }}
-                        <ul class="list-group">
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('sale_records', 'Sale ',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::number('sale_records',$download->log_sheet->where('sale_rent','Sale')->sum('records'),['class'=>'form-control control-label','required'=>'true']) !!}
-                            </li>
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('rent_records', 'Rent :',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::number('rent_records',$download->log_sheet->where('sale_rent','Rent')->sum('records'),['class'=>'form-control control-label','required'=>'true']) !!}
-                            </li>
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('total_records', 'Total',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::text('total_records',null,['class'=>'form-control control-label','readonly'=>'true']) !!}
-                            </li>
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('sequence_from', 'Sequence',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::number('sequence_from',null,['class'=>'form-control','required'=>'true']) !!}
-                                {!! Form::number('sequence_to',null,['class'=>'form-control','required'=>'true','id'=>'sequence_to']) !!}
-                            </li>
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('output_date', 'Output Date',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::date('output_date',\Carbon\Carbon::now()->toDateString(),['class'=>'form-control']) !!}
-                                {!! Form::hidden('status','Closed',['class'=>'form-control','required'=>'true']) !!}
-                            </li>
 
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('delivery_time', 'Folder',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::text('delivery_time',null,['class'=>'form-control','required'=>'true']) !!}
-                            </li>
-
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('remarks', 'Remarks',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::text('remarks',null,['class'=>'form-control']) !!}
-                            </li>
-
-                            <li class="list-group-item custom-list">
-                                {!! Form::label('', '',['class'=>'col-md-3 control-label']) !!}
-                                {!! Form::submit('Closed Publication',['class'=>'btn btn-danger form-control']) !!}
-                            </li>
-                        </ul>
-                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
-
-        <div class="box box-solid box-info">
-
-            <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>State</th>
-                        <th>Sale Type</th>
-                        <th>Operator</th>
-                        <th>Batch ID</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Total Hours</th>
-                        <th>Records</th>
-                        <th>Entry Date</th>
-                        <th>Status</th>
-                        <th>Remarks</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($download->log_sheet as $log)
-                        <tr>
-                            <td>{{ $log->id }}</td>
-                            <td>{{ $log->state }}</td>
-                            <td>{{ $log->sale_rent }}</td>
-                            <td><small class="label label-success">{{ $log->user->operator_no }}</small></td>
-                            <td>{{ $log->batch_id }}</td>
-                            <td>{{ $log->start_time }}</td>
-                            <td>{{ $log->end_time }}</td>
-                            <td>{{ $log->total_time }}</td>
-                            <td>{{ $log->records }}</td>
-                            <td>{{ $log->entry_date }}</td>
-                            <td>{{ $log->status}}</td>
-                            <td>{{ $log->remarks }}</td>
-                            <td></td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-    </div>
-
-
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Records Per State Summary</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body no-padding">
-            <table class="table table-condensed">
-                <tr>
-                    <th style="width: 100px">State</th>
-                    <th>Task</th>
-                    <th>Records</th>
-                </tr>
-                @foreach($records_summaries as $summary)
-                <tr>
-                    <td>{{ $summary->state }}</td>
-                    <td>{{ $summary->sale_rent }}</td>
-                    <td>{{ $summary->total_records }}</td>
-                </tr>
-                @endforeach
-            </table>
-        </div>
-        <!-- /.box-body -->
-    </div>
-    <!-- /.box -->
     </div>
 
 @endsection
@@ -170,6 +203,35 @@
 @push('scripts')
    <script>
        $( document ).ready(function() {
+           // ADD button ::
+           $('#btn-add').click(function(){
+               $("#frmBatch").attr("action", "/agent/output/" + {{ $download->id }} +"/create" );
+               $('#frmBatch').trigger("reset");
+               $('.modal-title').html('Add New Output Record');
+               $('#output_date').val();
+               $('#btn-save').html("Save");
+               $('#myModal').modal('show');
+           });
+
+           // UPDATE button ::
+           $('.open-modal').click(function(){
+               $("#frmBatch").attr("action", "/agent/output/" + $(this).val()  );
+               $.get('/agent/output/' + $(this).val() + '/edit_output', function (data) {
+                   console.log(data);
+                   $('#state').val(data.state);
+                   $('#output_date').val(data.output_date);
+                   $('#sale_records').val(data.sale_records);
+                   $('#rent_records').val(data.rent_records);
+                   $('#total_records').val(data.sale_records + data.rent_records);
+                   $('#sequence_from').val(data.sequence_from);
+                   $('#sequence_to').val(data.sequence_to);
+                   $('#delivery_time').val(data.delivery_time);
+                   $('.modal-title').html('Update Record');
+                   $('#btn-save').html("Update");
+                   $('#jobnumber').focus();
+               })
+           });
+
 
            total_records();
 
@@ -183,12 +245,12 @@
 
            $("#sale_records").focus().select();
 
-           $("#frmClosed").submit(function(e){
+           $("#frmBatch").submit(function(e){
                var sequence_total;
                var total;
-               total = parseInt($('#sale_records').val()) + parseInt($('#rent_records').val());
-               sequence_total =  parseInt(parseInt($('#sequence_to').val()) -  parseInt($('#sequence_from').val()) + 1) ;
 
+               total = parseInt($('#sale_records').val()) + parseInt($('#rent_records').val());
+               sequence_total =  (parseInt(parseInt($('#sequence_to').val()) -  parseInt($('#sequence_from').val()) + 1));
 
                if(total === sequence_total){
                    return true;
@@ -200,7 +262,7 @@
                        e.preventDefault();
                    }
                } else {
-                   alert('Total Records does not match with sequence numbers.!!!')
+                   alert('Total Records does not match with sequence numbers.!!!' + sequence_total)
                    e.preventDefault();
                }
            });

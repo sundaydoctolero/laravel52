@@ -25,8 +25,11 @@ function batching_label($count){
     }
 }
 
+function today(){
+    return \Carbon\Carbon::now()->toDateString();
+}
+
+
 function hello_world(){
     return "hello";
-
-
 }

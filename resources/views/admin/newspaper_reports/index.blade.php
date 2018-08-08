@@ -44,14 +44,42 @@
                                 <small class="label label-success">{{ $key->user->operator_no }}</small>
                             @endforeach
                         </td>
-                        <td><small class="label label-danger">{{ $download->output2->user['operator_no'] }}</small></td>
-                        <td>{{ $download->output2->sale_records }}</td>
-                        <td>{{ $download->output2->rent_records  }}</td>
-                        <td>{{ $download->output2->total_records }}</td>
-                        <td>{{ $download->output2->sequence_from }}</td>
-                        <td>{{ $download->output2->sequence_to }}</td>
-                        <td>{{ $download->output2->output_date }}</td>
-                        <td>{{ $download->output2->delivery_time }}</td>
+                        <td>    @foreach($download->output as $out)
+                                    <small class="label label-success">{{ $out->user->operator_no }}</small>
+                                @endforeach
+                        </td>
+                        <td>
+                            @foreach($download->output as $out)
+                                <small class="label label-success">{{ $out->sale_records }}</small>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($download->output as $out)
+                                <small class="label label-success">{{ $out->rent_records }}</small>
+                            @endforeach
+                        </td>
+                        <td></td>
+                        <td>
+                            @foreach($download->output as $out)
+                                <small class="label label-success">{{ $out->sequence_from }}</small>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($download->output as $out)
+                                <small class="label label-success">{{ $out->sequence_to }}</small>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($download->output as $out)
+                                <small class="label label-success">{{ $out->output_date }}</small>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($download->output as $out)
+                                <small class="label label-success">{{ $out->delivery_time }}</small>
+                            @endforeach
+                        </td>
+
                         <td>
                             <a href="/newspaper_reports/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                         </td>

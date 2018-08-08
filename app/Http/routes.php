@@ -313,6 +313,13 @@ Route::patch('/agent/outputs/{download}', 'AgentOutputController@update'); //upd
 Route::delete('/agent/outputs/{download}', 'AgentOutputController@destroy'); //delete
 
 
+Route::post('/agent/output/{output}', 'AgentOutputController@update_output'); //update
+Route::post('/agent/output/{download}/create','AgentOutputController@store_output'); //store output details
+Route::get('/agent/output/{output}/edit_output', 'AgentOutputController@edit_output'); //edit
+Route::get('/agent/output/{download}/log_sheet', 'AgentOutputController@log_sheet'); //get log sheet records
+Route::patch('/agent/output/{log_sheet}/modify_log', 'AgentOutputController@modify_log'); //modify log sheet record
+
+
 /**
  * Newspaper Report Controller
  */

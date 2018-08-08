@@ -25,7 +25,7 @@ class NewspaperReportController extends Controller
 
     public function index(){
         $downloads = Download::wherein('status',['Closed'])->get();
-        $downloads->load('output2.user','publication','user','log_sheet.user');
+        $downloads->load('output.user','publication','user','log_sheet.user');
        //$downloads->load(['log_sheet.user' => function($query){
         //   $query->groupBy('operator_no')->get();
         //}]);

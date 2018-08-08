@@ -9,7 +9,7 @@ class Output extends Model
     protected $tables = 'outputs';
 
     protected $fillable = [
-        'sale_records','rent_records','sequence_from','sequence_to','output_date','delivery_time','user_id'
+        'sale_records','rent_records','sequence_from','sequence_to','output_date','delivery_time','user_id','state','remarks'
 
     ];
 

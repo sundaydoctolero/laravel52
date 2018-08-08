@@ -9,8 +9,8 @@
                     </div>
                     <div class="box-body">
                         {!! Form::open(['url' => '/agent/entries/create']) !!}
-
-                        @include('agent.log_sheets.form',['buttonlabel' => 'Add Log-Sheet'])
+                            @include('agent.log_sheets.form',['buttonlabel' => 'Add Log-Sheet'])
+                        {!! Form::close() !!}
                     </div>
                     <div class="box-footer">
 

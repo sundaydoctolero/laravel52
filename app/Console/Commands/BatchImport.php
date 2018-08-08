@@ -84,7 +84,7 @@ class BatchImport extends Command
                 }
 
                 $download->save();
-                $download->output()->save(new Output());
+                //$download->output()->save(new Output());
             }
 
             /**
@@ -115,7 +115,7 @@ class BatchImport extends Command
                     }
 
                     $download->save();
-                    $download->output()->save(new Output());
+                    //$download->output()->save(new Output());
                 }
             }
 
@@ -155,7 +155,7 @@ class BatchImport extends Command
                 }
 
                 $download->save();
-                $download->output()->save(new Output());
+                //$download->output()->save(new Output());
             }
 
             /**
@@ -200,7 +200,7 @@ class BatchImport extends Command
                 }
 
                 $download->save();
-                $download->output()->save(new Output());
+               // $download->output()->save(new Output());
             }
 
             if($weekly){
