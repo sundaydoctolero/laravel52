@@ -1,5 +1,6 @@
 @extends('layouts.admin.admin',['logo' => 'fa fa-pencil','page_header' => 'Tsheet'])
 
+
 @section('main-content')
     <div class="row">
         <div class="col-xs-12">
@@ -17,11 +18,11 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('date_from', 'Date From :') !!}
-                            {!! Form::date('date_from',\Carbon\Carbon::now(),['class'=>'form-control']) !!}
+                            {!! Form::date('date_from',\Carbon\Carbon::yesterday(),['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('date_to', 'To :') !!}
-                            {!! Form::date('date_to',\Carbon\Carbon::now(),['class'=>'form-control']) !!}
+                            {!! Form::date('date_to',\Carbon\Carbon::yesterday(),['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::submit('Filter User',['class'=>'btn btn-primary']) !!}

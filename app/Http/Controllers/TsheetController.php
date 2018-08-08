@@ -26,9 +26,8 @@ class TsheetController extends Controller
 
     public function index(Request $request)
     {
-
-        if($request->all() == null){
-            $agent_tsheets = Tsheet::whereBetween('created_at',[Carbon::now()->startOfDay(),Carbon::now()->endOfDay()])->get();
+          if($request->all() == null){
+            $agent_tsheets = Tsheet::whereBetween('created_at',[Carbon::yesterday()->startOfDay(),Carbon::yesterday()->endOfDay()])->get();
         } else {
             if($request->user_id == ""){
                 $agent_tsheets = Tsheet::whereBetween('created_at',[$request->date_from.' 00:00:00',$request->date_to.' 23:59:59'])->get();
