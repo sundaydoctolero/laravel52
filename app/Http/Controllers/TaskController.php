@@ -18,9 +18,9 @@ class TaskController extends Controller
 
     public function index(Request $request)
     {
-        if($request->user_id == ""){
+        if($request->all() == null){
             if($request->status == ""){
-                $tasks = Task::where('status','Open')->get();
+                $tasks = Task::whereIn('status',['Open','Pending'])->get();
             } else {
                 $tasks = Task::where('status',$request->status)->get();
             }

@@ -36,7 +36,7 @@
             <li class="{{ setActive('admin') }}"><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
 
             @if(auth()->guard('admin')->user()->hasRole('Tech'))
-                <li class="{{ setActive('tasks') }}"><a href="/tasks"><i class="fa fa-flag-o"></i> <span>Task &nbsp &nbsp</span><span class="label label-danger pull-right">{{ $tasks_pending }}</span><span class="label label-success pull-right">{{ $tasks_pending }}</span></a></li>
+                <li class="{{ setActive('tasks') }}"><a href="/tasks"><i class="fa fa-flag-o"></i> <span>Task &nbsp &nbsp</span><span class="label label-danger pull-right">{{ $tasks_pending }}</span><span class="label label-success pull-right">{{ $tasks_open }}</span></a></li>
             @endif
 
             <li class="{{ setActive('tsheets') }}"><a href="/tsheets"><i class="fa fa-unlock"></i> <span>Manage Tsheet</span></a></li>
