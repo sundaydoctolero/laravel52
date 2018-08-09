@@ -19,6 +19,7 @@ use App\Day;
 use App\Download;
 use App\PublicationType;
 use App\PublicationIssue;
+use App\Output;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -151,13 +152,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('agent.deliveries.index',function($view){
-            $folders = ['9AM'=>'9AM',
-                '12PM'=>'12PM',
-                '3PM'=>'3PM',
-                'CHINESE'=>'CHINESE',
-                'GUMTREE'=>'GUMTREE',
-                'NZ'=>'NZ'];
-            $view->with('delivery_time',$folders);
+            $view->with('delivery_time',Output::groupBy('delivery_time')->lists('delivery_time','delivery_time'));
         });
 
     }

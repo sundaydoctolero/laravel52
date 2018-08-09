@@ -142,6 +142,108 @@ class NewspaperExportController extends Controller
 
     public function generate_pub_details(Request $request){
 
+        if($request->date_from == "" AND $request->delivery_time == ""){
+            $downloads = Download::where('status','Closed')
+                ->whereHas('output',function($query){
+                    $query->where('output_date',Carbon::now()->toDateString());
+                })->get();
+        } else {
+            if($request->delivery_time == ""){
+                $downloads = Download::where('status','Closed')
+                    ->whereHas('output',function($query) use ($request){
+                        $query->where('output_date',$request->date_from);
+                    })->get();
+            } else {
+                $downloads = Download::where('status','Closed')
+                    ->whereHas('output',function($query) use ($request){
+                        $query->where('output_date',$request->date_from)->where('delivery_time',$request->delivery_time);
+                    })->get();
+            }
+
+        }
+        $downloads->load('publication','output');
+
+        /**
+         * Open a Text File
+         */
+        $filename = 'publication details.txt';
+        $file = fopen('publication details.txt','w+');
+
+        /**
+         * Write on Text File
+         *
+         */
+
+        foreach($downloads as $count => $delivered){
+            foreach($delivered->output as $row){
+                if(strtoupper($delivered->publication->publication_name) == strtoupper('Gum Tree - SR') || strtoupper($delivered->publication->publication_name) == strtoupper('Gum Tree - LAND')){
+                   $pub_name = 'GUM TREE';
+                } else {
+                    $pub_name = $delivered->publication->publication_name;
+                }
+                $count++ + 1;
+                fwrite($file,'Publication Name: '.$row->state.'_'.str_replace(' ','_',strtoupper($pub_name))."\r\n");
+                fwrite($file,'Publication Date: '.$delivered->publication_date."\r\n");
+                fwrite($file,'Publication State: '.$row->state."\r\n\r\n");
+            }
+        }
+
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,"\t\t\t".'Total Publications : '.$count."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+
+
+
+
+        /**
+         * Close Text File
+         */
+         fclose($file);
+
+        /**
+         * Download Text File
+         */
+
+            $headers = array('Content-Type' => 'text/csv');
+            return response()->download('publication details.txt',$filename,$headers);
+
+
+
+
+
+
+
+        $filename = 'publication details.txt';
+        $file = fopen('publication details.txt','w+');
+
+        foreach($downloads as $count => $download){
+            fwrite($file,'Publication Name: '.$download->output->first()->state.'_'.str_replace(' ','_',strtoupper($download->publication->publication_name))."\r\n");
+            fwrite($file,'Publication Date: '.$download->publication_date."\r\n");
+            fwrite($file,'Publication State: '.$download->output->first()->state."\r\n\r\n");
+            $count++ + 1;
+        }
+
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,"\t\t\t".'Total Publications : '.$count."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+
+        fclose($file);
+
+        $headers = array('Content-Type' => 'text/csv');
+        return response()->download('publication details.txt',$filename,$headers);
+
+
+        return "hello";
+
+
+
+
+
+
         $closed = Download::where('status','Closed')
             ->whereHas('output',function($q) use ($request){
             $q->where('output_date',$request->output_date)
@@ -231,7 +333,96 @@ class NewspaperExportController extends Controller
         return response()->download('publication details.txt',$filename,$headers);
     }
 
+    public function generate_pub_details_backup(Request $request){
 
+        $closed = Download::where('status','Closed')
+            ->whereHas('output',function($q) use ($request){
+                $q->where('output_date',$request->output_date)
+                    ->where('delivery_time',$request->delivery_time);
+            })->orderBy('updated_at')->get();
+
+
+        $outputs = Output::where('output_date',$request->output_date)
+            ->orderBy('sequence_from')->get();
+
+
+        //return $outputs->load('download.publication');
+
+
+        $closed->load(['log_sheet' => function($query){
+            $query->groupBy('download_id','state')->get();
+        }]);
+
+        $filename = 'publication details.txt';
+
+        $file = fopen('publication details.txt','w+');
+
+
+        $y = 0;
+        foreach($outputs as $output){
+
+            $logsheets = Logsheet::where('download_id',$output->download->id)
+                ->groupBy('download_id','state')->get();
+            foreach($logsheets as $logsheet) {
+                $y++;
+                fwrite($file,'Publication Name: '.$logsheet->state.'_'.str_replace(' ','_',strtoupper($output->download->publication->publication_name))."\r\n");
+                fwrite($file,'Publication Date: '.$output->download->publication_date."\r\n");
+                fwrite($file,'Publication State: '.$logsheet->state."\r\n\r\n");
+
+            }
+        }
+
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,"\t\t\t".'Total Publications : '.$y."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+
+        fclose($file);
+
+        $headers = array('Content-Type' => 'text/csv');
+        return response()->download('publication details.txt',$filename,$headers);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $x = 0;
+        foreach($closed as $close){
+            foreach($close->log_sheet as $state){
+                $x++;
+                fwrite($file,'Publication Name: '.$state->state.'_'.str_replace(' ','_',strtoupper($close->publication->publication_name))."\r\n");
+                fwrite($file,'Publication Date: '.$close->publication_date."\r\n");
+                fwrite($file,'Publication State: '.$state->state."\r\n\r\n");
+            }
+        }
+
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,"\t\t\t".'Total Publications : '.$x."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+        fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
+
+        fclose($file);
+
+        $headers = array('Content-Type' => 'text/csv');
+        return response()->download('publication details.txt',$filename,$headers);
+    }
 
 
 

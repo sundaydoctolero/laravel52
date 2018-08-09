@@ -37,9 +37,6 @@ class AgentOutputController extends Controller
         //$download->lockForUpdate()->get(); //database level
         $outputs = Output::where('download_id',$download->id)->get();
 
-
-
-
         $sql = "select id,state,
                 (select sum(records) from log_sheets as sale where download_id = tl.download_id and sale.state = tl.state and sale_rent = 'Sale' group by state,sale_rent) as sale,
                 (select sum(records) from log_sheets as sale where download_id = tl.download_id and sale.state = tl.state and sale_rent = 'Rent' group by state,sale_rent) as rent,
@@ -81,7 +78,16 @@ class AgentOutputController extends Controller
     }
 
     public function store_output(Download $download,Request $request){
-        $download->output()->create($request->all() + ['user_id'=>auth()->user()->id]);
+
+        $total = $request->sale_records + $request->rent_records;
+        $sequence = ($request->sequence_to - $request->sequence_from) + 1;
+
+        if($total == $sequence){
+            $download->output()->create($request->all() + ['user_id'=>auth()->user()->id]);
+        } else {
+            flash()->message('Total records does not matched with sequence number')->warning()->important();
+        }
+
         return redirect()->back();
     }
 

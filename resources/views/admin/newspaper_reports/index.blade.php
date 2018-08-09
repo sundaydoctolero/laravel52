@@ -13,6 +13,7 @@
                     <thead>
                     <tr>
                         <th>ID</th>
+                        <th>State</th>
                         <th>Publication Name</th>
                         <th>Publication Date</th>
                         <th>Status</th>
@@ -30,9 +31,10 @@
                     </thead>
                     <tbody>
                     @foreach($downloads as $count => $delivered)
-                        @foreach($delivered->output as $row)
+                        @foreach($delivered->output as $row_count => $row)
                             <tr>
                                 <td>{{ $count++ + 1 }}</td>
+                                <td>{{ $row->state }}</td>
                                 <td>{{ $delivered->publication->publication_name }}</td>
                                 <td>{{ $delivered->publication_date }}</td>
                                 <td>{{ $delivered->status }}</td>

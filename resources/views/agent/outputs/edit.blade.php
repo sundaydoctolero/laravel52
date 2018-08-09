@@ -78,9 +78,9 @@
                                         {!! Form::hidden('rent_records',$record->rent) !!}
                                     </td>
                                     <td class="text-right">{{ $record->total }}</td>
-                                    <td>{!! Form::text('sequence_from',null,['class'=>'form-control input-sm text-center']) !!}</td>
-                                    <td>{!! Form::text('sequence_to',null,['class'=>'form-control input-sm text-center' ]) !!}</td>
-                                    <td>{!! Form::text('delivery_time',null,['class'=>'form-control input-sm' ]) !!}</td>
+                                    <td>{!! Form::text('sequence_from',null,['class'=>'form-control input-sm text-center','required']) !!}</td>
+                                    <td>{!! Form::text('sequence_to',null,['class'=>'form-control input-sm text-center','required' ]) !!}</td>
+                                    <td>{!! Form::text('delivery_time',null,['class'=>'form-control input-sm','required' ]) !!}</td>
                                     <td>{!! Form::text('remarks',null,['class'=>'form-control input-sm']) !!}</td>
 
                                     <td>{!! Form::submit('UPDATE',['class'=>'form-control input-sm btn btn-warning']) !!}</td>
