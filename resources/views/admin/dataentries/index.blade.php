@@ -25,9 +25,9 @@
                         <th class="text-center">Assigned To</th>
                         <th class="text-center">Ongoing</th>
                         <th>Remarks</th>
+                        <th class="text-center">Download By</th>
                         <th class="text-center">Time Downloaded</th>
                         <th class="text-center">Action</th>
-
                     </tr>
                     </thead>
                     <tbody>
@@ -50,6 +50,7 @@
                             @endforeach
                         </td>
                         <td>{{ $download->remarks }}</td>
+                        <td class="text-center">{{ $download->user ? $download->user->operator_no : '' }}</td>
                         <td class="text-center">{{ $download->time_downloaded ? \Carbon\Carbon::parse($download->time_downloaded)->diffForHumans() : $download->created_at->diffForHumans() }}</td>
                         <td class="text-center">
                             <a href="/dataentries/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
