@@ -25,9 +25,7 @@ class OutputController extends Controller
 
     public function index(){
         $downloads = Download::wherein('status',['For Output'])->get();
-        $downloads->load(['user','publication','log_sheet.user']);
-
-
+        $downloads->load('user','publication','log_sheet.user');
         return view($this->view_path.'.index',compact('downloads'));
     }
 

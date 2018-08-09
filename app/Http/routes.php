@@ -337,6 +337,7 @@ Route::patch('/newspaper_reports/{output}/edit_output_details', 'NewspaperReport
 Route::get('/newspaper_reports/not_updated_reports', 'NewspaperReportController@not_updated_reports');
 Route::get('/newspaper_reports/generate_pub_details', 'NewspaperReportController@generate_pub_details');
 Route::get('/newspaper_reports/download', 'NewspaperReportController@download');
+Route::get('/newspaper_reports/productivity', 'NewspaperReportController@productivity');
 
 /**
  * Publication Type Controller

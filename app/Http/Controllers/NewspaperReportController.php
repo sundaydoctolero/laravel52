@@ -104,5 +104,27 @@ class NewspaperReportController extends Controller
         return redirect()->back();
     }
 
+    public function productivity(Request $request){
+
+        if($request->all() == null){
+            $downloads = [];
+        } else {
+            if($request->productivity == 'Download'){
+                if($request->user_id == ""){
+                    $downloads = Download::whereBetween('time_downloaded',[$request->date_from.' 00:00:00',$request->date_to.' 23:59:59'])
+                        ->get();
+                } else {
+                    $downloads = Download::where('user_id',$request->user_id)
+                        ->whereBetween('time_downloaded',[$request->date_from.' 00:00:00',$request->date_to.' 23:59:59'])
+                        ->get();
+                }
+            }
+            $downloads->load('publication');
+        }
+
+
+        return view('admin.newspaper_reports.productivity_reports',compact('downloads'));
+    }
+
 
 }
