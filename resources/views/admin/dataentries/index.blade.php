@@ -25,14 +25,15 @@
                         <th class="text-center">Assigned To</th>
                         <th class="text-center">Ongoing</th>
                         <th>Remarks</th>
+                        <th class="text-center">Time Downloaded</th>
                         <th class="text-center">Action</th>
 
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($downloads as $download)
+                    @foreach($downloads as $count => $download)
                     <tr>
-                        <td>{{ $download->id }}</td>
+                        <td>{{ $count++ + 1 }}</td>
                         <td>{{ $download->publication->publication_name }}</td>
                         <td class="text-center">{{ $download->publication_date }}</td>
                         <td class="text-center">{{ $download->publication->publication_type }}</td>
@@ -49,6 +50,7 @@
                             @endforeach
                         </td>
                         <td>{{ $download->remarks }}</td>
+                        <td class="text-center">{{ $download->time_downloaded ? \Carbon\Carbon::parse($download->time_downloaded)->diffForHumans() : $download->created_at->diffForHumans() }}</td>
                         <td class="text-center">
                             <a href="/dataentries/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
                         </td>
@@ -67,7 +69,9 @@
 @push('scripts')
 <script>
     $.extend( true, $.fn.dataTable.defaults, {
-        "order": [[ 5, "desc" ]],
+        /* Disable initial sort */
+        /* No ordering applied by DataTables during initialisation */
+        "order": [],
         "pageLength": 50,
     } );
 </script>
