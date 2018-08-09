@@ -5,18 +5,27 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h1 class="box-title"><i class="fa fa-arrow-up"></i><b> Deliveries</b> </h1>
-
-                <div class="box-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                        </div>
+                {!! Form::open(['url' => '/agent/deliveries','class' => 'form-inline', 'method' => 'GET']) !!}
+                <div class="form-group">
+                    <h3 class="box-title"><i class="fa fa-arrow-up"></i><b> Deliveries</b> </h3>
+                </div>
+                <div class="pull-right">
+                    <div class="form-group">
+                        {!! Form::label('date_from', 'Date :') !!}
+                        {!! Form::date('date_from',\Carbon\Carbon::now(),['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('delivery_time', 'Folder :') !!}
+                        {!! Form::select('delivery_time', $delivery_time,null,['class'=>'form-control','placeholder'=>'--']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::submit('Filter Delivery',['class'=>'btn btn-primary']) !!}
+                    </div>
+                    <div class="form-group">
+                        <h1 class="box-title"><a href="/export/generate_pub_details" class="btn btn-warning"><i class="fa fa-download"></i> Download Publication Details</a></h1>
                     </div>
                 </div>
+                {!! Form::close() !!}
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">

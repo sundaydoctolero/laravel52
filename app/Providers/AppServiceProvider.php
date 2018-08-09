@@ -150,8 +150,15 @@ class AppServiceProvider extends ServiceProvider
             $view->with('job_numbers',JobNumber::where('month_of',Carbon::now()->startOfMonth()->toDateString())->lists('job_number_description','id'));
         });
 
-
-
+        view()->composer('agent.deliveries.index',function($view){
+            $folders = ['9AM'=>'9AM',
+                '12PM'=>'12PM',
+                '3PM'=>'3PM',
+                'CHINESE'=>'CHINESE',
+                'GUMTREE'=>'GUMTREE',
+                'NZ'=>'NZ'];
+            $view->with('delivery_time',$folders);
+        });
 
     }
 
