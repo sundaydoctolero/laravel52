@@ -25,13 +25,14 @@ class OutputController extends Controller
 
     public function index(){
         $downloads = Download::wherein('status',['For Output'])->get();
-        $downloads->load('user','publication','log_sheet.user');
+        $downloads->load(['user','publication','log_sheet.user']);
+
+
         return view($this->view_path.'.index',compact('downloads'));
     }
 
     public function edit(Download $download){
         //$download->lockForUpdate()->get(); //database level
-        //$output = Output::findorfail($download->output->first()->id);
         return view($this->view_path.'.edit',compact('download'));
     }
 

@@ -16,9 +16,6 @@
                         <th>Publication Name</th>
                         <th>Publication Date</th>
                         <th>Status</th>
-                        <th>Remarks</th>
-                        <th>Downloader</th>
-                        <th>Keyers</th>
                         <th>Processor</th>
                         <th>Sale</th>
                         <th>Rent</th>
@@ -27,63 +24,30 @@
                         <th>Seq. To</th>
                         <th>Date Delivered</th>
                         <th>Delivery Folder</th>
+                        <th>Remarks</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($downloads as $download)
-                    <tr>
-                        <td>{{ $download->id }}</td>
-                        <td>{{ $download->publication->publication_name }}</td>
-                        <td>{{ $download->publication_date }}</td>
-                        <td>{{ $download->status }}</td>
-                        <td>{{ $download->remarks }}</td>
-                        <td><small class="label label-info">{{ $download->user['operator_no'] }}</small></td>
-                        <td>
-                            @foreach($download->log_sheet as $operator=> $key)
-                                <small class="label label-success">{{ $key->user->operator_no }}</small>
-                            @endforeach
-                        </td>
-                        <td>    @foreach($download->output as $out)
-                                    <small class="label label-success">{{ $out->user->operator_no }}</small>
-                                @endforeach
-                        </td>
-                        <td>
-                            @foreach($download->output as $out)
-                                <small class="label label-success">{{ $out->sale_records }}</small>
-                            @endforeach
-                        </td>
-                        <td>
-                            @foreach($download->output as $out)
-                                <small class="label label-success">{{ $out->rent_records }}</small>
-                            @endforeach
-                        </td>
-                        <td></td>
-                        <td>
-                            @foreach($download->output as $out)
-                                <small class="label label-success">{{ $out->sequence_from }}</small>
-                            @endforeach
-                        </td>
-                        <td>
-                            @foreach($download->output as $out)
-                                <small class="label label-success">{{ $out->sequence_to }}</small>
-                            @endforeach
-                        </td>
-                        <td>
-                            @foreach($download->output as $out)
-                                <small class="label label-success">{{ $out->output_date }}</small>
-                            @endforeach
-                        </td>
-                        <td>
-                            @foreach($download->output as $out)
-                                <small class="label label-success">{{ $out->delivery_time }}</small>
-                            @endforeach
-                        </td>
-
-                        <td>
-                            <a href="/newspaper_reports/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
-                        </td>
-                    </tr>
+                    @foreach($downloads as $count => $delivered)
+                        @foreach($delivered->output as $row)
+                            <tr>
+                                <td>{{ $count++ + 1 }}</td>
+                                <td>{{ $delivered->publication->publication_name }}</td>
+                                <td>{{ $delivered->publication_date }}</td>
+                                <td>{{ $delivered->status }}</td>
+                                <td>{{ $row->user->operator_no }}</td>
+                                <td>{{ $row->sale_records }}</td>
+                                <td>{{ $row->rent_records }}</td>
+                                <td>{{ $row->sale_records + $row->rent_records }}</td>
+                                <td>{{ $row->sequence_from }}</td>
+                                <td>{{ $row->sequence_to }}</td>
+                                <td>{{ $row->output_date }}</td>
+                                <td>{{ $row->delivery_time }}</td>
+                                <td>{{ $row->remarks }}</td>
+                                <td><a href="/newspaper_reports/{{ $delivered->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a></td>
+                            </tr>
+                        @endforeach
                     @endforeach
                     </tbody>
                     <tfoot>

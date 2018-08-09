@@ -24,11 +24,11 @@ class NewspaperReportController extends Controller
     }
 
     public function index(){
-        $downloads = Download::wherein('status',['Closed'])->get();
-        $downloads->load('output.user','publication','user','log_sheet.user');
-       //$downloads->load(['log_sheet.user' => function($query){
-        //   $query->groupBy('operator_no')->get();
-        //}]);
+        $downloads = Download::where('status','Closed')->get();
+        //->whereHas('output',function($query){
+        //    $query->where('output_date',Carbon::now()->toDateString());
+        //})->get();
+        $downloads->load('publication','output');
 
         return view($this->view_path.'.index',compact('downloads'));
     }

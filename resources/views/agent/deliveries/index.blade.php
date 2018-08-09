@@ -36,7 +36,7 @@
                         <th>Remarks</th>
                     </tr>
                     @foreach($downloads as $count => $delivered)
-                            @foreach($delivered->output as $count => $row)
+                            @foreach($delivered->output as $row)
                                 <tr>
                                     <td>{{ $count++ + 1 }}</td>
                                     <td>{{ $delivered->publication->publication_name }}</td>
@@ -51,6 +51,7 @@
                                     <td>{{ $row->remarks }}</td>
                                 </tr>
                             @endforeach
+
                     @endforeach
                     </tbody></table>
             </div>
