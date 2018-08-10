@@ -22,16 +22,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="monitoring.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4892412">
-              <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+            <state vertical-scroll-proportion="-10.527778">
+              <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgentOutputController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6738392">
+              <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
               <folding>
-                <element signature="e#1870#1903#0#HTML" expanded="true" />
-                <element signature="e#2014#2103#0#HTML" expanded="true" />
-                <element signature="e#2811#2992#0#HTML" expanded="true" />
-                <element signature="e#3055#3097#0#HTML" expanded="true" />
+                <marker date="1533875260804" expanded="true" signature="885:1417" placeholder="select id,st..log_sheets..." />
+                <marker date="1533875260804" expanded="true" signature="919:1071" placeholder="select sum(r..log_sheets..." />
+                <marker date="1533875260804" expanded="true" signature="1099:1251" placeholder="select sum(r..log_sheets..." />
               </folding>
             </state>
           </provider>
@@ -95,12 +104,12 @@
         <option value="$PROJECT_DIR$/resources/views/agent/deliveries/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app/partials/script.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin/partials/script.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Publication.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php" />
       </list>
     </option>
   </component>
@@ -309,7 +318,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="agent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="outputs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,10 +367,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newspaper_reports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,7 +510,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.228125" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.228125" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36219642" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -925,16 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.9722223">
-          <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding>
-            <element signature="e#8690#10626#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Publication.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.93884486">
@@ -953,18 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5594563">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <marker date="1533869155128" expanded="true" signature="-1:-1" placeholder="select id,st..log_sheets..." />
-            <marker date="1533869155128" expanded="true" signature="-1:-1" placeholder="select sum(r..log_sheets..." />
-            <marker date="1533869155128" expanded="true" signature="-1:-1" placeholder="select sum(r..log_sheets..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4892412">
@@ -974,6 +983,26 @@
             <element signature="e#2014#2103#0#HTML" expanded="true" />
             <element signature="e#2811#2992#0#HTML" expanded="true" />
             <element signature="e#3055#3097#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.527778">
+          <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6738392">
+          <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+          <folding>
+            <marker date="1533875260804" expanded="true" signature="885:1417" placeholder="select id,st..log_sheets..." />
+            <marker date="1533875260804" expanded="true" signature="919:1071" placeholder="select sum(r..log_sheets..." />
+            <marker date="1533875260804" expanded="true" signature="1099:1251" placeholder="select sum(r..log_sheets..." />
           </folding>
         </state>
       </provider>

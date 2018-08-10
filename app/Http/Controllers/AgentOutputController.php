@@ -34,6 +34,7 @@ class AgentOutputController extends Controller
     }
 
     public function edit(Download $download){
+
         //$download->lockForUpdate()->get(); //database level
         $outputs = Output::where('download_id',$download->id)->get();
 
@@ -46,6 +47,11 @@ class AgentOutputController extends Controller
                 group by state";
 
         $records = DB::select(DB::raw($sql),array('download_id'=>$download->id));
+
+
+        $download->load(['log_sheet.user','log_sheet'=>function($query){
+            $query->orderBy('sale_rent','desc')->orderBy('batch_id');
+        }]);
 
         return view($this->view_path.'.edit',compact('download','outputs','records'));
     }
