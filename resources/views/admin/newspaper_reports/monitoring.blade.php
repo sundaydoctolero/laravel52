@@ -28,9 +28,9 @@
                         </div>
                         {!! Form::close() !!}
                     </div>
-                    <div class="box-body">
+                    <div class="box-body" style="background-color: #494949">
                         @foreach($publications as $publication)
-                            <div class="row" style="background-color: #494949;border:solid 1px #f4f4f4;margin:0;padding:0;color:white" >
+                            <div class="row" style="background-color: #494949;border:solid 2px #f4f4f4;margin:0;padding:0;color:white" >
                                 <div class="col-md-3">
                                     <h5>
                                         @foreach($publication->states as $state)
@@ -41,7 +41,7 @@
                                     <small class="label label-success">({{ $publication->issue }})</small>
                                 </div>
                                 @foreach($publication->downloads as $download)
-                                    <div class="col-md-1" style="background-color: {{ $download->output->count() > 0 ? 'white' : '#494949' }};padding:0px">
+                                    <div class="col-md-1" style="background-color: {{ $download->output->count() > 0 ? '#5cb85c' : '#494949' }};color: {{ $download->output->count() > 0 ? 'white' : 'white' }};padding:0px">
                                         <table class="table" style="border:1px solid #f4f4f4;margin:0">
                                             <thead>
                                             <tr>

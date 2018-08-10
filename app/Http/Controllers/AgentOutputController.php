@@ -87,7 +87,7 @@ class AgentOutputController extends Controller
         } else {
             $sequence = ($request->sequence_to - $request->sequence_from) + 1;
         }
-        
+
 
         if($total == $sequence){
             $download->output()->create($request->all() + ['user_id'=>auth()->user()->id]);
