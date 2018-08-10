@@ -111,7 +111,7 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>#</th>
                         <th>State</th>
                         <th>Sale Type</th>
                         <th>Operator</th>

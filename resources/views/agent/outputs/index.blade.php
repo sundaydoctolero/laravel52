@@ -31,9 +31,9 @@
                         <th>Remarks</th>
                         <th>Action</th>
                     </tr>
-                    @foreach($downloads as $download)
+                    @foreach($downloads as $count => $download)
                         <tr>
-                            <td>{{ $download->id }}</td>
+                            <td>{{ $count++ + 1 }}</td>
                             <td>{{ $download->publication->publication_name }}</td>
                             <td>{{ $download->publication_date }}</td>
                             <td>{{ $download->status }}</td>

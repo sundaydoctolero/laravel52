@@ -22,26 +22,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.527778">
-              <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AgentOutputController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AgentOutputController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6738392">
+            <state vertical-scroll-proportion="-16.527779">
               <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
               <folding>
                 <marker date="1533875260804" expanded="true" signature="885:1417" placeholder="select id,st..log_sheets..." />
                 <marker date="1533875260804" expanded="true" signature="919:1071" placeholder="select sum(r..log_sheets..." />
                 <marker date="1533875260804" expanded="true" signature="1099:1251" placeholder="select sum(r..log_sheets..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5809739">
+              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/resources/views/mail/autoimport.blade.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DownloadImportController.php" />
@@ -108,8 +107,9 @@
         <option value="$PROJECT_DIR$/app/Publication.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php" />
+        <option value="$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agent/outputs/index.blade.php" />
       </list>
     </option>
   </component>
@@ -561,13 +561,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/downloads/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26651737">
@@ -989,21 +982,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.527778">
-          <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.36806342">
+          <caret line="133" column="58" selection-start-line="133" selection-start-column="58" selection-end-line="133" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6738392">
+        <state vertical-scroll-proportion="-16.527779">
           <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
           <folding>
             <marker date="1533875260804" expanded="true" signature="885:1417" placeholder="select id,st..log_sheets..." />
             <marker date="1533875260804" expanded="true" signature="919:1071" placeholder="select sum(r..log_sheets..." />
             <marker date="1533875260804" expanded="true" signature="1099:1251" placeholder="select sum(r..log_sheets..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5809739">
+          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
