@@ -14,7 +14,9 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title"><strong>{{ $download->publication->publication_name.' '.$download->publication_date.'  ['.$download->publication->publication_code.']' }}</strong></h3>
+                    <h3 class="box-title"><strong>{{ $download->publication->publication_name.' '.$download->publication_date.'  ['.$download->publication->publication_code.']' }}</strong>
+                        <small class="label label-danger">{{ $download->publication->publication_type }}</small>
+                    </h3>
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
                             <button id="btn-add" name="btn-add" class="btn btn-success btn-md addbutton pull-right"><span class="glyphicon glyphicon-plus"></span> Additional</button>
@@ -131,7 +133,8 @@
                         {!! Form::model($log,['method'=>'PATCH','url' => '/agent/output/'.$log->id.'/modify_log','class'=>'form-horizontal']) !!}
                             <tr>
                                 <td>{{ $log->id }}</td>
-                                <td>{{ $log->state }}</td>
+                                <td>{!! Form::select('state',$download->publication->states->lists('state_code','state_code'),null,['class'=>'form-control input-sm text-right']) !!}
+                                </td>
                                 <td>{{ $log->sale_rent }}</td>
                                 <td><small class="label label-success">{{ $log->user->operator_no }}</small></td>
                                 <td>{{ $log->batch_id }}</td>
