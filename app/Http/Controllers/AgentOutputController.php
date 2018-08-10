@@ -79,8 +79,15 @@ class AgentOutputController extends Controller
 
     public function store_output(Download $download,Request $request){
 
+
         $total = $request->sale_records + $request->rent_records;
-        $sequence = ($request->sequence_to - $request->sequence_from) + 1;
+
+        if($request->sequence_to == 0 AND $request->sequence_to == 0){
+            $sequence = 0;
+        } else {
+            $sequence = ($request->sequence_to - $request->sequence_from) + 1;
+        }
+        
 
         if($total == $sequence){
             $download->output()->create($request->all() + ['user_id'=>auth()->user()->id]);
