@@ -32,13 +32,14 @@
                         @foreach($publications as $publication)
                             <div class="row" style="background-color: #494949;border:solid 2px #f4f4f4;margin:0;padding:0;color:white" >
                                 <div class="col-md-3">
+                                    <small class="label label-success">({{ $publication->issue }})</small>
+                                    <br>
                                     <h5>
                                         @foreach($publication->states as $state)
                                             {{ $state->state_code }}
                                         @endforeach
                                     </h5>
                                     <h4>{{ $publication->publication_name}}</h4>
-                                    <small class="label label-success">({{ $publication->issue }})</small>
                                 </div>
                                 @foreach($publication->downloads as $download)
                                     <div class="col-md-1" style="background-color: {{ $download->output->count() > 0 ? '#5cb85c' : '#494949' }};color: {{ $download->output->count() > 0 ? 'white' : 'white' }};padding:0px">
