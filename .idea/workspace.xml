@@ -22,31 +22,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DataEntryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DataEntryController.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.611111">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state vertical-scroll-proportion="3.9722223">
+              <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+              <folding>
+                <element signature="e#8690#10626#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewspaperReportController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.277778">
+              <caret line="142" column="25" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="25" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.972222">
+              <caret line="340" column="41" selection-start-line="340" selection-start-column="41" selection-end-line="340" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/dataentries/index.blade.php">
+      <file leaf-file-name="monitoring.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26387316">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-              <folding />
+            <state vertical-scroll-proportion="0.42808607">
+              <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="37" selection-end-column="51" />
+              <folding>
+                <element signature="e#1986#2075#0#HTML" expanded="true" />
+                <element signature="e#2782#2878#0#HTML" expanded="true" />
+                <element signature="e#2941#2982#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/index.blade.php">
+      <file leaf-file-name="Publication.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Publication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0277777">
-              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            <state vertical-scroll-proportion="-23.027779">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,10 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DownloadController.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/Batch Import.url" />
-        <option value="$PROJECT_DIR$/resources/views/agent/log_sheets/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Publication.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/resources/views/mail/autoimport.blade.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
@@ -89,33 +113,37 @@
         <option value="$PROJECT_DIR$/resources/views/agent/outputs/modal_form.blade.php" />
         <option value="$PROJECT_DIR$/app/Helper/helpers.php" />
         <option value="$PROJECT_DIR$/resources/views/agent/log_sheets/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/agent/deliveries/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tasks/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/TaskRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tsheets/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TsheetController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/tsheets/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Download.php" />
         <option value="$PROJECT_DIR$/app/LogSheet.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AgentDeliveryController.php" />
-        <option value="$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/agent/deliveries/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OutputController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/outputs/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/publications/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/productivity_reports.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperExportController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DataEntryController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dataentries/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/tsheets/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agent/deliveries/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app/partials/script.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin/partials/script.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Publication.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php" />
       </list>
     </option>
   </component>
@@ -164,8 +192,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,7 +274,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,10 +333,6 @@
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -324,85 +378,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel52" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="outputs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel52" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="downloads" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel52" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataentries" />
+              <option name="myItemId" value="newspaper_reports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,24 +407,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel52" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Providers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -560,11 +518,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.228125" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.228125" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36219642" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -615,35 +573,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dataentries/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7267637">
-          <caret line="95" column="57" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/NewspaperReport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28555432">
-          <caret line="15" column="128" selection-start-line="15" selection-start-column="128" selection-end-line="15" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/downloads/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90481526">
-          <caret line="82" column="102" selection-start-line="82" selection-start-column="102" selection-end-line="82" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/downloads/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -749,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09518477">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0862262">
           <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.51399773">
           <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,7 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14798695">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,10 +762,7 @@
         <state vertical-scroll-proportion="0.33635333">
           <caret line="85" column="91" selection-start-line="85" selection-start-column="91" selection-end-line="85" selection-end-column="91" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-            <marker date="1533791123884" expanded="true" signature="-1:-1" placeholder="select id,st..log_sheets..." />
-            <marker date="1533791123884" expanded="true" signature="-1:-1" placeholder="select sum(r..log_sheets..." />
-            <marker date="1533791123884" expanded="true" signature="-1:-1" placeholder="select sum(r..log_sheets..." />
+            <element signature="e#40#68#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -864,27 +785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38844848">
-          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agent/deliveries/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.030577576">
-          <caret line="106" column="30" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0702152">
           <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,23 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2446206">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/tsheets/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73386186">
-          <caret line="30" column="41" selection-start-line="8" selection-start-column="20" selection-end-line="30" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5854801">
-          <caret line="339" column="67" selection-start-line="339" selection-start-column="67" selection-end-line="339" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3975085">
           <caret line="58" column="159" selection-start-line="58" selection-start-column="159" selection-end-line="58" selection-end-column="159" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,14 +814,6 @@
             <element signature="e#316#2777#0#PHP" expanded="false" />
             <element signature="e#2783#5169#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66364664">
-          <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +832,7 @@
         <state vertical-scroll-proportion="-6.646154">
           <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
           <folding>
-            <element signature="e#33#72#0#PHP" expanded="true" />
+            <element signature="e#33#72#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -965,51 +843,43 @@
           <caret line="133" column="28" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
           <folding>
             <element signature="e#2427#3868#0#HTML" expanded="false" />
-            <element signature="e#4558#4627#0#HTML" expanded="true" />
-            <element signature="e#4777#4836#0#HTML" expanded="true" />
-            <element signature="e#4872#4926#0#HTML" expanded="true" />
-            <element signature="e#4995#5049#0#HTML" expanded="true" />
-            <element signature="e#5203#5338#0#HTML" expanded="true" />
-            <element signature="e#5407#5461#0#HTML" expanded="true" />
-            <element signature="e#5615#5669#0#HTML" expanded="true" />
-            <element signature="e#5823#5958#0#HTML" expanded="true" />
-            <element signature="e#6027#6081#0#HTML" expanded="true" />
-            <element signature="e#6239#6293#0#HTML" expanded="true" />
-            <element signature="e#6447#6582#0#HTML" expanded="true" />
-            <element signature="e#6651#6705#0#HTML" expanded="true" />
-            <element signature="e#6863#6917#0#HTML" expanded="true" />
-            <element signature="e#7070#7205#0#HTML" expanded="true" />
-            <element signature="e#7274#7328#0#HTML" expanded="true" />
-            <element signature="e#7485#7539#0#HTML" expanded="true" />
-            <element signature="e#7692#7827#0#HTML" expanded="true" />
-            <element signature="e#7896#7950#0#HTML" expanded="true" />
-            <element signature="e#8109#8163#0#HTML" expanded="true" />
-            <element signature="e#8330#8468#0#HTML" expanded="true" />
-            <element signature="e#8569#8623#0#HTML" expanded="true" />
-            <element signature="e#8837#8975#0#HTML" expanded="true" />
-            <element signature="e#9076#9130#0#HTML" expanded="true" />
-            <element signature="e#10155#10209#0#HTML" expanded="true" />
-            <element signature="e#10338#10392#0#HTML" expanded="true" />
-            <element signature="e#10532#10586#0#HTML" expanded="true" />
-            <element signature="e#10726#10780#0#HTML" expanded="true" />
-            <element signature="e#10920#10974#0#HTML" expanded="true" />
-            <element signature="e#11112#11166#0#HTML" expanded="true" />
-            <element signature="e#11304#11358#0#HTML" expanded="true" />
-            <element signature="e#11496#11550#0#HTML" expanded="true" />
-            <element signature="e#11687#11741#0#HTML" expanded="true" />
-            <element signature="e#11890#11944#0#HTML" expanded="true" />
-            <element signature="e#12081#12135#0#HTML" expanded="true" />
-            <element signature="e#12248#12299#0#HTML" expanded="true" />
-            <element signature="e#12439#12461#0#HTML" expanded="true" />
+            <element signature="e#4558#4627#0#HTML" expanded="false" />
+            <element signature="e#4777#4836#0#HTML" expanded="false" />
+            <element signature="e#4872#4926#0#HTML" expanded="false" />
+            <element signature="e#4995#5049#0#HTML" expanded="false" />
+            <element signature="e#5203#5338#0#HTML" expanded="false" />
+            <element signature="e#5407#5461#0#HTML" expanded="false" />
+            <element signature="e#5615#5669#0#HTML" expanded="false" />
+            <element signature="e#5823#5958#0#HTML" expanded="false" />
+            <element signature="e#6027#6081#0#HTML" expanded="false" />
+            <element signature="e#6239#6293#0#HTML" expanded="false" />
+            <element signature="e#6447#6582#0#HTML" expanded="false" />
+            <element signature="e#6651#6705#0#HTML" expanded="false" />
+            <element signature="e#6863#6917#0#HTML" expanded="false" />
+            <element signature="e#7070#7205#0#HTML" expanded="false" />
+            <element signature="e#7274#7328#0#HTML" expanded="false" />
+            <element signature="e#7485#7539#0#HTML" expanded="false" />
+            <element signature="e#7692#7827#0#HTML" expanded="false" />
+            <element signature="e#7896#7950#0#HTML" expanded="false" />
+            <element signature="e#8109#8163#0#HTML" expanded="false" />
+            <element signature="e#8330#8468#0#HTML" expanded="false" />
+            <element signature="e#8569#8623#0#HTML" expanded="false" />
+            <element signature="e#8837#8975#0#HTML" expanded="false" />
+            <element signature="e#9076#9130#0#HTML" expanded="false" />
+            <element signature="e#10155#10209#0#HTML" expanded="false" />
+            <element signature="e#10338#10392#0#HTML" expanded="false" />
+            <element signature="e#10532#10586#0#HTML" expanded="false" />
+            <element signature="e#10726#10780#0#HTML" expanded="false" />
+            <element signature="e#10920#10974#0#HTML" expanded="false" />
+            <element signature="e#11112#11166#0#HTML" expanded="false" />
+            <element signature="e#11304#11358#0#HTML" expanded="false" />
+            <element signature="e#11496#11550#0#HTML" expanded="false" />
+            <element signature="e#11687#11741#0#HTML" expanded="false" />
+            <element signature="e#11890#11944#0#HTML" expanded="false" />
+            <element signature="e#12081#12135#0#HTML" expanded="false" />
+            <element signature="e#12248#12299#0#HTML" expanded="false" />
+            <element signature="e#12439#12461#0#HTML" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3657984">
-          <caret line="38" column="189" selection-start-line="38" selection-start-column="189" selection-end-line="38" selection-end-column="189" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2751982">
           <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,9 +916,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0277777">
+        <state vertical-scroll-proportion="0.28652322">
           <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,6 +926,94 @@
         <state vertical-scroll-proportion="0.26387316">
           <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21404304">
+          <caret line="65" column="119" selection-start-line="65" selection-start-column="119" selection-end-line="65" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/tsheets/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.021517554">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agent/deliveries/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69422424">
+          <caret line="156" column="14" selection-start-line="156" selection-start-column="14" selection-end-line="156" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/script.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5503964">
+          <caret line="18" column="94" selection-start-line="18" selection-start-column="94" selection-end-line="18" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app/partials/script.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29671574">
+          <caret line="21" column="94" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.972222">
+          <caret line="340" column="41" selection-start-line="340" selection-start-column="41" selection-end-line="340" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.9722223">
+          <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+          <folding>
+            <element signature="e#8690#10626#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Publication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.027779">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.277778">
+          <caret line="142" column="25" selection-start-line="142" selection-start-column="25" selection-end-line="142" selection-end-column="25" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42808607">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="37" selection-end-column="51" />
+          <folding>
+            <element signature="e#1986#2075#0#HTML" expanded="true" />
+            <element signature="e#2782#2878#0#HTML" expanded="true" />
+            <element signature="e#2941#2982#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

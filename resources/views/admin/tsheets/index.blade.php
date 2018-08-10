@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header">
+                <div class="box-header" style="background-color: #ACADAD">
                     {!! Form::open(['url' => '/tsheets','class' => 'form-inline', 'method' => 'GET']) !!}
                     <div class="form-group">
                         <h3 class="box-title"><a href="/tsheets/create" class="btn btn-success"><i class="fa fa-plus"></i> Add New Tsheet</a></h3>

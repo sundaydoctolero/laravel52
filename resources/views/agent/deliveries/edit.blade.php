@@ -21,12 +21,11 @@
                                     <div class="col-md-6">
                                         {!! Form::model($output,['method'=>'PATCH','url' => '/agent/outputs/'.$download->id,'class'=>'form-horizontal']) !!}
                                         {{ csrf_field() }}
-
                                             <div class="row">
                                                 <div class="form-group">
                                                         {!! Form::label('sale_records', 'Sale ',['class'=>'col-md-4 control-label']) !!}
                                                     <div class="col-md-3">
-                                                        {!! Form::text('sale_records',null,['class'=>'form-control control-label','required'=>'true']) !!}
+                                                        {!! Form::text('sale_records',null,['class'=>'form-control control-label','required']) !!}
                                                     </div>
                                                 </div>
                                             </div>

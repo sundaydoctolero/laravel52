@@ -43,7 +43,6 @@
                         @foreach($records as $record)
                             @if($outputs->where('state',$record->state)->count() >= 1 )
                                 @foreach($outputs->where('state',$record->state) as $output)
-                                    {!! Form::model($output,['url' => '/agent/output/'.$download->id.'/create']) !!}
                                     <tr id="batch{{$output->id}}">
                                         <td class="text-center">{{ $output->output_date }}</td>
                                         <td>{{ $output->state }}</td>
@@ -56,10 +55,9 @@
                                         <td>{{ $output->remarks }}</td>
                                         <td></td>
                                     </tr>
-                                    {!! Form::close() !!}
                                 @endforeach
                             @else
-                                {!! Form::open(['url' => '/agent/output/'.$download->id.'/create']) !!}
+                                {!! Form::open(['url' => '/agent/output/'.$download->id.'/create','class'=>'output']) !!}
                                 <tr>
                                     <td class="text-center">
                                         {{ today() }}
@@ -78,7 +76,7 @@
                                         {!! Form::hidden('rent_records',$record->rent) !!}
                                     </td>
                                     <td class="text-right">{{ $record->total }}</td>
-                                    <td>{!! Form::text('sequence_from',null,['class'=>'form-control input-sm text-center','required']) !!}</td>
+                                    <td>{!! Form::text('sequence_from',null,['class'=>'sequence_from form-control input-sm text-center']) !!}</td>
                                     <td>{!! Form::text('sequence_to',null,['class'=>'form-control input-sm text-center','required' ]) !!}</td>
                                     <td>{!! Form::text('delivery_time',null,['class'=>'form-control input-sm','required' ]) !!}</td>
                                     <td>{!! Form::text('remarks',null,['class'=>'form-control input-sm']) !!}</td>
@@ -201,6 +199,31 @@
 @endsection
 
 @push('scripts')
+   <script>
+       //$( document ).ready(function() {
+        //   $('form.output').each(function () {
+          //     $(this).validate({
+           //        submitHandler : function(event) {
+
+                        //sequence_from = $(this > '.sequence-from').val();
+
+                        //alert(sequence_from);
+
+
+
+                       //event.preventDefault();
+                       //form.submit();
+                   //}
+               //});
+           ///});
+
+
+
+
+
+       //});
+   </script>
+
    <script>
        $( document ).ready(function() {
            // ADD button ::

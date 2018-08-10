@@ -15,6 +15,8 @@
 <!-- fullCalendar -->
 <script src="{{ asset('bower_components/moment/moment.js') }}"></script>
 <script src="{{ asset('bower_components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
+<!-- Jquery Validation -->
+<script src="{{ asset('bower_components/jquery-validate/jquery.validate.min.js') }}"></script>
 
 <script>
     $(document).ready(function(){

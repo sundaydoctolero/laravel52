@@ -11,6 +11,8 @@ use App\User;
 use App\Http\Requests\DownloadRequest;
 use App\Http\Requests\NewspaperReportRequest;
 use App\Output;
+use App\Publication;
+use Carbon\Carbon;
 
 class NewspaperReportController extends Controller
 {
@@ -124,6 +126,26 @@ class NewspaperReportController extends Controller
 
 
         return view('admin.newspaper_reports.productivity_reports',compact('downloads'));
+    }
+
+    public function monitoring(Request $request){
+        $publications = Publication::whereNotIn('publication_type',['Inactive'])
+            ->orderBy('publication_name')
+            ->where('issue',$request->issue)
+            ->get();
+
+
+        if($request->all() == null){
+           $publications->load(['states','downloads.output','downloads'=>function($query){
+               $query->whereBetween('publication_date',[Carbon::now()->startOfMonth()->toDateString(),Carbon::now()->toDateString()]);
+           }]);
+        } else {
+            $publications->load(['states','downloads.output','downloads'=>function($query) use ($request){
+                $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+            }]);
+        }
+
+        return view('admin.newspaper_reports.monitoring',compact('publications'));
     }
 
 
