@@ -25,12 +25,12 @@
       <file leaf-file-name="AgentOutputController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.527779">
-              <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+            <state vertical-scroll-proportion="-13.527778">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
               <folding>
-                <marker date="1533875260804" expanded="true" signature="885:1417" placeholder="select id,st..log_sheets..." />
-                <marker date="1533875260804" expanded="true" signature="919:1071" placeholder="select sum(r..log_sheets..." />
-                <marker date="1533875260804" expanded="true" signature="1099:1251" placeholder="select sum(r..log_sheets..." />
+                <marker date="1533878176459" expanded="true" signature="1009:1541" placeholder="select id,st..log_sheets..." />
+                <marker date="1533878176459" expanded="true" signature="1043:1195" placeholder="select sum(r..log_sheets..." />
+                <marker date="1533878176459" expanded="true" signature="1223:1375" placeholder="select sum(r..log_sheets..." />
               </folding>
             </state>
           </provider>
@@ -39,8 +39,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5809739">
-              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.20498301">
+              <caret line="7" column="102" selection-start-line="7" selection-start-column="102" selection-end-line="7" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -107,8 +107,8 @@
         <option value="$PROJECT_DIR$/app/Publication.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/monitoring.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php" />
         <option value="$PROJECT_DIR$/resources/views/agent/outputs/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php" />
         <option value="$PROJECT_DIR$/resources/views/agent/outputs/index.blade.php" />
       </list>
     </option>
@@ -990,20 +990,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgentOutputController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.527779">
-          <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+        <state vertical-scroll-proportion="-13.527778">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
           <folding>
-            <marker date="1533875260804" expanded="true" signature="885:1417" placeholder="select id,st..log_sheets..." />
-            <marker date="1533875260804" expanded="true" signature="919:1071" placeholder="select sum(r..log_sheets..." />
-            <marker date="1533875260804" expanded="true" signature="1099:1251" placeholder="select sum(r..log_sheets..." />
+            <marker date="1533878176459" expanded="true" signature="1009:1541" placeholder="select id,st..log_sheets..." />
+            <marker date="1533878176459" expanded="true" signature="1043:1195" placeholder="select sum(r..log_sheets..." />
+            <marker date="1533878176459" expanded="true" signature="1223:1375" placeholder="select sum(r..log_sheets..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agent/outputs/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5809739">
-          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.20498301">
+          <caret line="7" column="102" selection-start-line="7" selection-start-column="102" selection-end-line="7" selection-end-column="102" />
           <folding />
         </state>
       </provider>

@@ -5,7 +5,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h1 class="box-title"><i class="fa fa-arrow-up"></i><b> Outputs</b> </h1>
+                <h1 class="box-title"><i class="fa fa-arrow-up"></i><b> Outputs [{{$downloads->count()}}]</b> </h1>
 
                 <div class="box-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -26,6 +26,7 @@
                         <th>#</th>
                         <th>Publication Name</th>
                         <th>Publication Date</th>
+                        <th>Pub Type</th>
                         <th>Status</th>
                         <th>Pages</th>
                         <th>Remarks</th>
@@ -36,6 +37,7 @@
                             <td>{{ $count++ + 1 }}</td>
                             <td>{{ $download->publication->publication_name }}</td>
                             <td>{{ $download->publication_date }}</td>
+                            <td>{{ $download->publication->publication_type }}</td>
                             <td>{{ $download->status }}</td>
                             <td>{{ $download->pages }}</td>
                             <td>{{ $download->remarks }}</td>

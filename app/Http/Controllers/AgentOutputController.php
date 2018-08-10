@@ -28,8 +28,10 @@ class AgentOutputController extends Controller
     }
 
     public function index(){
-        $downloads = Download::where('status','For Output')->get();
-        $downloads->load('publication');
+        $downloads = Download::where('status','For Output')->orderBy('publication_date')->get();
+        $downloads->load(['log_sheet','publication' => function ($query){
+            $query->orderBy('publication_type');
+        }]);
         return view($this->view_path.'.index',compact('downloads'));
     }
 
