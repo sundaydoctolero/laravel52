@@ -71,17 +71,20 @@
                                     </td>
                                     <td class="text-right">
                                         {{ $record->sale }}
-                                        {!! Form::hidden('sale_records',$record->sale) !!}
+                                        {!! Form::hidden('sale_records',$record->sale == null ? 0 : $record->sale) !!}
                                     </td>
                                     <td class="text-right">
                                         {{ $record->rent == null ? 0 : $record->rent }}
-                                        {!! Form::hidden('rent_records',$record->rent) !!}
+                                        {!! Form::hidden('rent_records',$record->rent == null ? 0 : $record->rent) !!}
                                     </td>
-                                    <td class="text-right">{{ $record->total }}</td>
+                                    <td class="text-right">
+                                        {{ $record->total }}
+                                        {!! Form::hidden('total_records',$record->total == null ? 0 :$record->total,['class'=>'total_records']) !!}
+                                    </td>
                                     <td>{!! Form::text('sequence_from',null,['class'=>'sequence_from form-control input-sm text-center']) !!}</td>
-                                    <td>{!! Form::text('sequence_to',null,['class'=>'form-control input-sm text-center','required' ]) !!}</td>
-                                    <td>{!! Form::text('delivery_time',null,['class'=>'form-control input-sm','required' ]) !!}</td>
-                                    <td>{!! Form::text('remarks',null,['class'=>'form-control input-sm']) !!}</td>
+                                    <td>{!! Form::text('sequence_to',null,['class'=>'sequence_to form-control input-sm text-center','required' ]) !!}</td>
+                                    <td>{!! Form::text('delivery_time',null,['class'=>'delivery_time form-control input-sm','required' ]) !!}</td>
+                                    <td>{!! Form::text('remarks',null,['class'=>'remarks form-control input-sm']) !!}</td>
 
                                     <td>{!! Form::submit('UPDATE',['class'=>'form-control input-sm btn btn-warning']) !!}</td>
                                 </tr>
@@ -203,28 +206,47 @@
 
 @push('scripts')
    <script>
-       //$( document ).ready(function() {
-        //   $('form.output').each(function () {
-          //     $(this).validate({
-           //        submitHandler : function(event) {
+       $(document).on('submit', 'form.output', function(event) {
+           var $form = $(this);
+           var index = $( "form.output" ).index( this );
+           var sequence_from = $(".sequence_from");
+           var sequence_to = $(".sequence_to");
+           var total_records = $(".total_records");
 
-                        //sequence_from = $(this > '.sequence-from').val();
-
-                        //alert(sequence_from);
-
-
-
-                       //event.preventDefault();
-                       //form.submit();
-                   //}
-               //});
-           ///});
+           if(parseInt($(total_records[index]).val()) == 0){
+               sequence_total = 0;
+           } else {
+               sequence_total =  (parseInt($(sequence_to[index]).val()) - parseInt($(sequence_from[index]).val())) +  1;
+           }
 
 
+           if(parseInt($(total_records[index]).val()) == sequence_total){
+               return true;
+           } else {
+               alert('Sequence number does not match total records');
+               $(sequence_from[index]).css({'background-color' : '#DAF7A6'});
+               $(sequence_to[index]).css({'background-color' : '#DAF7A6'});
+               event.preventDefault();
+           }
+       });
 
+       $(document).on('keyup', 'input.sequence_to', function(event) {
+           var $sequence_to = $(this);
+           var index = $( "input.sequence_to" ).index( this );
+           var sequence_from = $(".sequence_from");
+           var sequence_to = $(".sequence_to");
+           var total_records = $(".total_records");
 
+           sequence_total =  (parseInt($(sequence_to[index]).val()) - parseInt($(sequence_from[index]).val())) +  1;
 
-       //});
+           if(parseInt($(total_records[index]).val()) == sequence_total){
+               $(sequence_from[index]).css({'background-color' : '#FFFFFF'});
+               $(sequence_to[index]).css({'background-color' : '#FFFFFF'});
+           } else {
+               $(sequence_from[index]).css({'background-color' : '#DAF7A6'});
+               $(sequence_to[index]).css({'background-color' : '#DAF7A6'});
+           }
+       });
    </script>
 
    <script>
