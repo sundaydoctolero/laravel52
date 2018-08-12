@@ -38,7 +38,7 @@
                                 <td>{{ $delivered->publication->publication_name }}</td>
                                 <td>{{ $delivered->publication_date }}</td>
                                 <td>{{ $delivered->status }}</td>
-                                <td>{{ $row->user->operator_no }}</td>
+                                <td>{{ $row->user == '' ? '' : $row->user->operator_no }}</td>
                                 <td>{{ $row->sale_records }}</td>
                                 <td>{{ $row->rent_records }}</td>
                                 <td>{{ $row->sale_records + $row->rent_records }}</td>
