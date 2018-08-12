@@ -28,6 +28,7 @@
                     <tbody><tr>
                         <th>Publication Name</th>
                         <th>Publication Date</th>
+                        <th class="text-center">Publication Type</th>
                         <th>Status</th>
                         <th>Remarks</th>
                         <th>Downloader</th>
@@ -38,6 +39,7 @@
                     <tr>
                         <td>{{ $download->publication->publication_name }}</td>
                         <td class="text-center">{{ $download->publication_date }}</td>
+                        <td class="text-center">{{ $download->publication->publication_type }}</td>
                         <td class="text-center">{{ $download->status }}</td>
                         <td>{{ $download->remarks }}</td>
                         <td class="text-center"><small class="label label-success">{{ $download->operator_locked['operator_no'] }}</small></td>
