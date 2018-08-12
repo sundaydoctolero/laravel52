@@ -43,7 +43,7 @@ class DownloadController extends Controller
 
         if(!$checked_duplicate){
             $download = Download::create($request->all() + ['added_by' => auth()->guard('admin')->user()->id]);
-            $download->output()->save(new Output());
+            //$download->output()->save(new Output());
 
             if($request->status == 'For Entry'){
                 $download->update(['user_id' => auth()->guard('admin')->user()->id,'website_update_at'=>Carbon::now()->toDateString(),'time_downloaded'=>Carbon::now()]);
