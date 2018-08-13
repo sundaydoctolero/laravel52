@@ -25,13 +25,23 @@ class NewspaperReportController extends Controller
         $this->middleware('admin');
     }
 
-    public function index(){
-        $downloads = Download::where('status','Closed')->get();
-        //->whereHas('output',function($query){
-        //    $query->where('output_date',Carbon::now()->toDateString());
-        //})->get();
-        $downloads->load('publication','output');
+    public function index(Request $request){
 
+
+        if($request->all() == null) {
+            $downloads = Download::where('status','Closed')
+                ->whereHas('output',function ($query){
+                    $query->whereBetween('output_date',[Carbon::today(),Carbon::today()])->orderBy('sequence_from');
+                })->get();
+        } else {
+            $downloads = Download::where('status','Closed')
+                ->whereHas('output',function ($query) use ($request){
+                    $query->where('delivery_time',$request->delivery_time)
+                    ->whereBetween('output_date',[$request->date_from,$request->date_to])->orderBy('sequence_from');
+                })->get();
+        }
+
+        $downloads->load('publication','output.user');
         return view($this->view_path.'.index',compact('downloads'));
     }
 

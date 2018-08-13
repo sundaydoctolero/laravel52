@@ -5,7 +5,29 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
+
+                {!! Form::open(['url' => '/newspaper_reports','class' => 'form-inline', 'method' => 'GET']) !!}
                 <h3 class="box-title"><i class="fa fa-list"></i> Delivery Records</h3>
+                <div class="pull-right">
+                    <div class="form-group">
+                        {!! Form::label('Folder', 'Folder :') !!}
+                        {!! Form::select('delivery_time',\App\Output::groupBy('delivery_time')->lists('delivery_time','delivery_time'),null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('date_from', 'Date From :') !!}
+                        {!! Form::date('date_from',\Carbon\Carbon::today(),['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('date_to', 'To :') !!}
+                        {!! Form::date('date_to',\Carbon\Carbon::today(),['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::submit('Filter User',['class'=>'btn btn-primary']) !!}
+                    </div>
+                </div>
+                {!! Form::close() !!}
+
+
             </div>
             <!-- /.box-header -->
             <div class="box-body">
