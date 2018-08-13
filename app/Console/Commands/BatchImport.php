@@ -47,11 +47,14 @@ class BatchImport extends Command
         $advance = Carbon::now()->addDays(7);
         $advance_two_weeks = Carbon::now()->addDays(14);
 
+
         $weekly = [];
         $monthly = [];
         $bi_weekly = [];
         $quarterly = [];
         $total = 0;
+
+        $sync = 0;
 
             /**
              * Import Weekly, Daily, Weekly Advance
@@ -79,6 +82,28 @@ class BatchImport extends Command
                     /**
                      * sync offline code here
                      */
+                    if($publication->publication_name == 'Gum Tree - SR' || $publication->publication_name == 'Gum Tree - LAND'){
+                        echo "gum";
+                    } else {
+                        foreach($publication->states as $state){
+                            $sync++;
+                            $body['state'] = $state->state_code;
+                            $body['publication_name'] = $download->publication->publication_name;
+                            $body['publication_date'] = $download->australian_format;
+                            $body['pages'] = $download->pages;
+                            $body['remarks'] = $download->remarks;
+                            $body['status'] = 'OPEN';
+                            $body['download_id'] = 999;
+                            $body['code'] = $download->publication->publication_code;
+                            $body['job_number'] = $download->publication->job_number_code;
+
+                            $client = new \GuzzleHttp\Client();
+                            $url = "192.168.5.57/api/admin/downloads/process.php?action=save";
+                            $response = $client->createRequest("POST", $url,['body'=>$body]);
+                            $response = $client->send($response);
+                        }
+                    }
+
                 } else {
                     $download->status = 'For Download';
                 }
@@ -110,6 +135,27 @@ class BatchImport extends Command
                         /**
                          * sync offline code here
                          */
+                        if($publication->publication_name == 'Gum Tree - SR' || $publication->publication_name == 'Gum Tree - LAND'){
+                            echo "gum";
+                        } else {
+                            foreach($publication->states as $state){
+                                $sync++;
+                                $body['state'] = $state->state_code;
+                                $body['publication_name'] = $download->publication->publication_name;
+                                $body['publication_date'] = $download->australian_format;
+                                $body['pages'] = $download->pages;
+                                $body['remarks'] = $download->remarks;
+                                $body['status'] = 'OPEN';
+                                $body['download_id'] = 999;
+                                $body['code'] = $download->publication->publication_code;
+                                $body['job_number'] = $download->publication->job_number_code;
+
+                                $client = new \GuzzleHttp\Client();
+                                $url = "192.168.5.57/api/admin/downloads/process.php?action=save";
+                                $response = $client->createRequest("POST", $url,['body'=>$body]);
+                                $response = $client->send($response);
+                            }
+                        }
                     } else {
                         $download->status = 'For Download';
                     }
@@ -150,6 +196,27 @@ class BatchImport extends Command
                     /**
                      * sync offline code here
                      */
+                    if($publication->publication_name == 'Gum Tree - SR' || $publication->publication_name == 'Gum Tree - LAND'){
+                        echo "gum";
+                    } else {
+                        foreach($publication->states as $state){
+                            $sync++;
+                            $body['state'] = $state->state_code;
+                            $body['publication_name'] = $download->publication->publication_name;
+                            $body['publication_date'] = $download->australian_format;
+                            $body['pages'] = $download->pages;
+                            $body['remarks'] = $download->remarks;
+                            $body['status'] = 'OPEN';
+                            $body['download_id'] = 999;
+                            $body['code'] = $download->publication->publication_code;
+                            $body['job_number'] = $download->publication->job_number_code;
+
+                            $client = new \GuzzleHttp\Client();
+                            $url = "192.168.5.57/api/admin/downloads/process.php?action=save";
+                            $response = $client->createRequest("POST", $url,['body'=>$body]);
+                            $response = $client->send($response);
+                        }
+                    }
                 } else {
                     $download->status = 'For Download';
                 }
@@ -195,6 +262,27 @@ class BatchImport extends Command
                     /**
                      * sync offline code here
                      */
+                    if($publication->publication_name == 'Gum Tree - SR' || $publication->publication_name == 'Gum Tree - LAND'){
+                        echo "gum";
+                    } else {
+                        foreach($publication->states as $state){
+                            $sync++;
+                            $body['state'] = $state->state_code;
+                            $body['publication_name'] = $download->publication->publication_name;
+                            $body['publication_date'] = $download->australian_format;
+                            $body['pages'] = $download->pages;
+                            $body['remarks'] = $download->remarks;
+                            $body['status'] = 'OPEN';
+                            $body['download_id'] = 999;
+                            $body['code'] = $download->publication->publication_code;
+                            $body['job_number'] = $download->publication->job_number_code;
+
+                            $client = new \GuzzleHttp\Client();
+                            $url = "192.168.5.57/api/admin/downloads/process.php?action=save";
+                            $response = $client->createRequest("POST", $url,['body'=>$body]);
+                            $response = $client->send($response);
+                        }
+                    }
                 } else {
                     $download->status = 'For Download';
                 }
@@ -239,6 +327,6 @@ class BatchImport extends Command
                         ->subject('Publication Import '.$today->toDateString());
                 });
 
-            echo "successful!!".$today;
+            echo "successful!!".$today.'Offline Program Auto Download '.$sync;
     }
 }
