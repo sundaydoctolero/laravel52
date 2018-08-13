@@ -13,7 +13,11 @@
                         <div class="form-group">
                             {!! Form::label('issue', 'Issue :') !!}
                             {!! Form::select('pub_group',['Monday'=>'Monday',
-                            'Tuesday'=>'Tuesday','Wednesday'=>'Wednesday','Thursday'=>'Thursday','Friday'=>'Friday']
+                            'Tuesday'=>'Tuesday','Wednesday'=>'Wednesday','Thursday'=>'Thursday','Friday'=>'Friday',
+                            'Saturday'=>'Saturday','Sunday'=>'Sunday','Comm'=>'Comm','Tier 1'=>'Tier 1','Chinese'=>'Chinese',
+                            'Hard Copy'=>'Hard Copy','Gum Tree'=>'Gum Tree','Monthly'=>'Monthly','Email'=>'Email'
+
+                            ]
                             ,null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">

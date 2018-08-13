@@ -37,6 +37,7 @@
         </tr>
         @if($downloads)
             @foreach($downloads as $count => $download)
+                @if($no_re->download->publication->publication_type == 'Inactive')
                 <tr>
                     <td>{{ $count++ + 1 }}</td>
                     <td>{{ $download->publication->publication_name }}</td>
@@ -45,6 +46,7 @@
                     <td>{{ $download->remarks }}</td>
                     <td>{{ $download->checked_by == 0 ? '' : $download->operator->operator_no }}</td>
                 </tr>
+                @endif
             @endforeach
         @endif
         <tr bgcolor="#FF0000">
