@@ -15,6 +15,7 @@ use App\Output;
 use App\Logsheet;
 use DB;
 use Response;
+use Carbon\Carbon;
 
 class AgentOutputController extends Controller
 {
@@ -71,6 +72,15 @@ class AgentOutputController extends Controller
             ->get();
 
         if($output_records == $log_sheet_records){
+            if($output_records && $log_sheet_records){
+                $download->output()->save(new Output([
+                    'user_id' => auth()->user()->id,
+                    'output_date' => Carbon::now()->toDateString(),
+                    'delivery_time' => 'n/a',
+                    'remarks' => $download->remarks
+                ]));
+            }
+            
             $download->update(['status'=>'Closed']);
             return redirect($this->url_path);
         } else {
