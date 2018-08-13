@@ -34,11 +34,18 @@ class NewspaperReportController extends Controller
                     $query->whereBetween('output_date',[Carbon::today(),Carbon::today()])->orderBy('sequence_from');
                 })->get();
         } else {
-            $downloads = Download::where('status','Closed')
-                ->whereHas('output',function ($query) use ($request){
-                    $query->where('delivery_time',$request->delivery_time)
-                    ->whereBetween('output_date',[$request->date_from,$request->date_to])->orderBy('sequence_from');
-                })->get();
+            if($request->delivery_time == ''){
+                $downloads = Download::where('status','Closed')
+                    ->whereHas('output',function ($query) use ($request){
+                        $query->whereBetween('output_date',[$request->date_from,$request->date_to])->orderBy('sequence_from');
+                    })->get();
+            }else {
+                $downloads = Download::where('status','Closed')
+                    ->whereHas('output',function ($query) use ($request){
+                        $query->where('delivery_time',$request->delivery_time)
+                        ->whereBetween('output_date',[$request->date_from,$request->date_to])->orderBy('sequence_from');
+                    })->get();
+            }
         }
 
         $downloads->load('publication','output.user');

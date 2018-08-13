@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NewspaperReportController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewspaperReportController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.903226">
-              <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.48986486">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewspaperExportController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewspaperExportController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperExportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24774775">
+            <state vertical-scroll-proportion="-7.096774">
               <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding>
                 <element signature="e#351#2812#0#PHP" expanded="false" />
@@ -130,8 +130,8 @@
         <option value="$PROJECT_DIR$/resources/views/agent/downloads/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OutputController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperExportController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
       </list>
     </option>
   </component>
@@ -1049,24 +1049,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.903226">
-          <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperExportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24774775">
+        <state vertical-scroll-proportion="-7.096774">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding>
             <element signature="e#351#2812#0#PHP" expanded="false" />
             <element signature="e#2818#5204#0#PHP" expanded="false" />
             <element signature="e#5210#9342#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48986486">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
