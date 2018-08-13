@@ -238,6 +238,19 @@ class NewspaperReportController extends Controller
                 break;
 
             default:
+                $publications = Publication::whereIn('issue',['Weekly','Daily'])
+                    ->where('publication_type','<>','Tier 1')
+                    ->where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('days',function($q) use ($request){
+                        $q->where('day_name',$request->pub_group);
+                    })
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','<>','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+                break;
+
         }
 
 
