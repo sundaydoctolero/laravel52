@@ -151,7 +151,6 @@ class NewspaperReportController extends Controller
             ->where('issue',$request->issue)
             ->get();
 
-
         if($request->all() == null){
            $publications->load(['states','downloads.output','downloads'=>function($query){
                $query->whereBetween('publication_date',[Carbon::now()->startOfMonth()->toDateString(),Carbon::now()->toDateString()]);
@@ -165,5 +164,83 @@ class NewspaperReportController extends Controller
         return view('admin.newspaper_reports.monitoring',compact('publications'));
     }
 
+    public function quality_control(Request $request){
 
+        switch($request->pub_group){
+            case 'Monday':
+                $publications = Publication::whereIn('issue',['Weekly','Daily'])
+                    ->where('publication_type','<>','Tier 1')
+                    ->where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('days',function($q) use ($request){
+                        $q->where('day_name',$request->pub_group);
+                    })
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','<>','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+                break;
+
+            case 'Tuesday':
+                $publications = Publication::whereIn('issue',['Weekly','Daily'])
+                    ->where('publication_type','<>','Tier 1')
+                    ->where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('days',function($q) use ($request){
+                        $q->where('day_name',$request->pub_group);
+                    })
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','<>','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+                break;
+
+            case 'Wednesday':
+                $publications = Publication::whereIn('issue',['Weekly','Daily'])
+                    ->where('publication_type','<>','Tier 1')
+                    ->where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('days',function($q) use ($request){
+                        $q->where('day_name',$request->pub_group);
+                    })
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','<>','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+                break;
+
+            case 'Thursday':
+                $publications = Publication::whereIn('issue',['Weekly','Daily'])
+                    ->where('publication_type','<>','Tier 1')
+                    ->where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('days',function($q) use ($request){
+                        $q->where('day_name',$request->pub_group);
+                    })
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','<>','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+                break;
+
+            case 'Friday':
+                $publications = Publication::whereIn('issue',['Weekly','Daily'])
+                    ->where('publication_type','<>','Tier 1')
+                    ->where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('days',function($q) use ($request){
+                        $q->where('day_name',$request->pub_group);
+                    })
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','<>','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+                break;
+
+            default:
+        }
+
+
+        return view('admin.newspaper_reports.qualitycontrol',compact('publications'));
+    }
 }

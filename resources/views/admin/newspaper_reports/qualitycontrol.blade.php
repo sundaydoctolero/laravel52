@@ -1,0 +1,103 @@
+@extends('layouts.admin.admin',['page_header' => 'Reports'])
+
+@section('main-content')
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header" style="background-color: lightblue">
+                    {!! Form::open(['url' => '/newspaper_reports/quality_control','class' => 'form-inline', 'method' => 'GET']) !!}
+                    <div class="form-group">
+                        <h3 class="box-title"><a href="#" class="btn btn-success"><i class="fa fa-plus"></i> Export To Excel</a></h3>
+                    </div>
+                    <div class="pull-right">
+                        <div class="form-group">
+                            {!! Form::label('issue', 'Issue :') !!}
+                            {!! Form::select('pub_group',['Monday'=>'Monday',
+                            'Tuesday'=>'Tuesday','Wednesday'=>'Wednesday','Thursday'=>'Thursday','Friday'=>'Friday']
+                            ,null,['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('date_from', 'Date From :') !!}
+                            {!! Form::date('date_from',\Carbon\Carbon::now()->startOfMonth(),['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('date_to', 'To :') !!}
+                            {!! Form::date('date_to',\Carbon\Carbon::now(),['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::submit('Filter User',['class'=>'btn btn-primary']) !!}
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+                <div class="box-body" style="background-color: #494949">
+                    @foreach($publications as $count => $publication)
+                        <div class="row" style="background-color: #494949;border:solid 2px #f4f4f4;margin:0;padding:0;color:white" >
+                            <div class="col-md-3">
+                                <h5>
+                                    {{ $count++ + 1 }}.)&nbsp;
+                                    @foreach($publication->states as $state)
+                                        {{ $state->state_code }}
+                                    @endforeach
+                                </h5>
+                                <h4>{{ $publication->publication_name}}</h4>
+
+                                <small class="label label-success" >[{{ $publication->issue }}</small>
+                            </div>
+                            <div class="col-md-9">
+                                @foreach($publication->downloads as $count => $download)
+                                    <div class="hidden" {{ $count++   }}></div>
+                                    @if($count %6 == 0)
+                                        <div class="row">
+                                            @endif
+                                            <div class="col-md-2" style="margin:3px 0 3px 0;background-color: {{ $download->output->count() > 0 ? '#5cb85c' : '#494949' }};color: {{ $download->output->count() > 0 ? 'white' : 'white' }};padding:0px">
+                                                <table class="table" style="border:2px solid #f4f4f4;margin:0;">
+                                                    <thead>
+                                                    <tr>
+                                                        <th colspan="3" class="text-center">{{ $download->publication_date }}</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">From</th>
+                                                        <th class="text-center">To</th>
+                                                        <th class="text-center">Total</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach($download->output as $out)
+                                                        <tr>
+                                                            <td class="text-center">{{ $out->sequence_from }}</td>
+                                                            <td class="text-center">{{ $out->sequence_to }}</td>
+                                                            <td class="text-center">{{ $out->total_records }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                    <tr>
+                                                        <td rowspan="2"  colspan="3" class="text-center">{{ $download->status.' '.$download->remarks }}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            @if($count %6 == 0)
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="box-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+@push('scripts')
+<script>
+    $.extend( true, $.fn.dataTable.defaults, {
+        "order": [[ 6, "asc" ]],
+        "pageLength": 50,
+    } );
+</script>
+@endpush

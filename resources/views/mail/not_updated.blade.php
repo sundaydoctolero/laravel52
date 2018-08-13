@@ -47,6 +47,22 @@
                 </tr>
             @endforeach
         @endif
+        <tr bgcolor="#FF0000">
+            <th colspan="6">No Record</th>
+        </tr>
+        @if($no_records)
+            @foreach($no_records as $count => $no_re)
+                <tr>
+                    <td>{{ $count++ + 1 }}</td>
+                    <td>{{ $no_re->download->publication->publication_name }}</td>
+                    <td align="center">{{ $no_re->download->publication_date }}</td>
+                    <td>{{ $no_re->download->status }}</td>
+                    <td>{{ $no_re->download->remarks }}</td>
+                    <td></td>
+                </tr>
+            @endforeach
+        @endif
+
     </table>
 
     <p>This is an auto generated email. Please do not reply.</p>

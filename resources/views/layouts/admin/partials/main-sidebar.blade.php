@@ -64,6 +64,7 @@
                                 <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/download"><i class="fa fa-arrow-down"></i> <span>Publication Reports</span></a></li>
                                 <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/productivity"><i class="fa fa-arrow-down"></i> <span>Productivity Report</span></a></li>
                                 <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monitoring"><i class="fa fa-arrow-down"></i> <span>Monitoring</span></a></li>
+                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/quality_control"><i class="fa fa-arrow-down"></i> <span>Sequence No</span></a></li>
                             </ul>
                         </li>
                     </ul>

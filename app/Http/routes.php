@@ -339,6 +339,7 @@ Route::get('/newspaper_reports/generate_pub_details', 'NewspaperReportController
 Route::get('/newspaper_reports/download', 'NewspaperReportController@download');
 Route::get('/newspaper_reports/productivity', 'NewspaperReportController@productivity');
 Route::get('/newspaper_reports/monitoring', 'NewspaperReportController@monitoring');
+Route::get('/newspaper_reports/quality_control', 'NewspaperReportController@quality_control');
 
 /**
  * Publication Type Controller

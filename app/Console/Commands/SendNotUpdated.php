@@ -7,6 +7,7 @@ use Illuminate\Console\Command;
 use App\Download;
 use Mail;
 use Carbon\Carbon;
+use App\Output;
 
 class SendNotUpdated extends Command
 {
@@ -44,11 +45,19 @@ class SendNotUpdated extends Command
         $downloads = Download::whereIn('status',['For Download','Not Updated','For Query','Pending'])->orderBy('status')->orderBy('publication_date')->get();
         $downloads->load('publication','operator');
 
+
+        $no_records = Output::where('output_date',Carbon::now()->toDateString())
+            where('sale_records',0)->where('rent_records',0)
+            ->get();
+
+        $no_records->load('download');
+
+
         Mail::send(['html'=>'mail.not_updated'],
-            ['downloads'=>$downloads],
+            ['downloads'=>$downloads,'no_records'=>$no_records],
             function($message){
                 $message->to(['ccc.news@cccdms.com','garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com','dotc@cccdms.com'],'LinkMe Systems')
-                    ->subject('Not Updated Report as of '.Carbon::now());
+                    ->subject('Publication Report as of '.Carbon::now());
             });
 
         echo "Successfull!!";
