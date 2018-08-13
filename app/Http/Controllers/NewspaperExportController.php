@@ -15,7 +15,7 @@ class NewspaperExportController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('admin',['except'=>'generate_pub_details']);
     }
 
     public function export_not_updated(Request $request){
