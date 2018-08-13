@@ -328,5 +328,6 @@ class BatchImport extends Command
                 });
 
             echo "successful!!".$today.'Offline Program Auto Download '.$sync;
+
     }
 }
