@@ -72,7 +72,7 @@ class AgentOutputController extends Controller
             ->get();
 
         if($output_records == $log_sheet_records){
-            if($output_records && $log_sheet_records){
+            if($download->output->count() == 0){
                 $download->output()->save(new Output([
                     'user_id' => auth()->user()->id,
                     'output_date' => Carbon::now()->toDateString(),
@@ -80,7 +80,6 @@ class AgentOutputController extends Controller
                     'remarks' => $download->remarks
                 ]));
             }
-            
             $download->update(['status'=>'Closed']);
             return redirect($this->url_path);
         } else {
