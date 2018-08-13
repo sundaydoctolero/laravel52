@@ -23,6 +23,7 @@
                             <thead>
                             <tr>
                                 <th>Entry Date</th>
+                                <th>State</th>
                                 <th>S / R</th>
                                 <th align="center">Operator</th>
                                 <th align="center">Batch ID</th>
@@ -41,6 +42,9 @@
                                 {{ csrf_field() }}
                                 <tr class="{{ $log->status == 'Finished' ? 'success' : '' }}">
                                     <td align="left">{{ $log->entry_date }}</td>
+                                    <td>
+                                        {!! Form::select('state',$download->publication->states->lists('state_code','state_code'),null,['class'=>'form-control input-sm','required'=>'true']) !!}
+                                    </td>
                                     <td>{{ Form::select('sale_rent',['Sale'=>'Sale','Rent'=>'Rent'],null,['class'=>'form-control input-sm']) }}</td>
                                     <td class="text-center"><span class="badge bg-green">{{ $log->user->operator_no }}</span></td>
                                     <td align="left"><strong>{{ Form::text('batch_id',null,['class'=>'form-control input-sm']) }}</strong></td>

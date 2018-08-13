@@ -22,48 +22,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NewspaperReportController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.709677">
-              <caret line="335" column="53" selection-start-line="335" selection-start-column="53" selection-end-line="335" selection-end-column="53" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BatchImport.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/BatchImport.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="104.064514">
-              <caret line="152" column="67" selection-start-line="152" selection-start-column="67" selection-end-line="152" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.6880631">
+              <caret line="45" column="193" selection-start-line="45" selection-start-column="193" selection-end-line="45" selection-end-column="193" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qualitycontrol.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/qualitycontrol.blade.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/agent/log_sheets/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="38.774193">
-              <caret line="17" column="112" selection-start-line="17" selection-start-column="112" selection-end-line="17" selection-end-column="112" />
-              <folding>
-                <marker date="1534203778158" expanded="true" signature="779:1275" placeholder="..." />
-                <marker date="1534203778158" expanded="true" signature="793:1273" placeholder="..." />
-                <marker date="1534203778158" expanded="true" signature="806:941" placeholder="..." />
-                <marker date="1534203778158" expanded="true" signature="806:1212" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.2635135">
-              <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
+            <state vertical-scroll-proportion="-17.225807">
+              <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="185" />
               <folding />
             </state>
           </provider>
@@ -87,7 +60,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/dataentries/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dataentries/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/outputs/form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/edit.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_08_07_130851_add_state_remarks_column.php" />
@@ -133,6 +105,7 @@
         <option value="$PROJECT_DIR$/resources/views/mail/not_updated.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/qualitycontrol.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -234,7 +207,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mail" />
+              <option name="myItemId" value="agent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log_sheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="outputs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agent/log_sheets/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5809739">
-          <caret line="149" column="119" selection-start-line="149" selection-start-column="57" selection-end-line="149" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agent/log_sheets/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -717,13 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42117116">
           <caret line="17" column="74" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5133877">
-          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -823,17 +856,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BatchImport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="104.064514">
-          <caret line="152" column="67" selection-start-line="152" selection-start-column="67" selection-end-line="152" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.709677">
+        <state vertical-scroll-proportion="0.6531532">
           <caret line="335" column="53" selection-start-line="335" selection-start-column="53" selection-end-line="335" selection-end-column="53" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
@@ -843,13 +868,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/qualitycontrol.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="38.774193">
+        <state vertical-scroll-proportion="-1.3536036">
           <caret line="17" column="112" selection-start-line="17" selection-start-column="112" selection-end-line="17" selection-end-column="112" />
           <folding>
-            <marker date="1534203778158" expanded="true" signature="779:1275" placeholder="..." />
-            <marker date="1534203778158" expanded="true" signature="793:1273" placeholder="..." />
-            <marker date="1534203778158" expanded="true" signature="806:941" placeholder="..." />
-            <marker date="1534203778158" expanded="true" signature="806:1212" placeholder="..." />
+            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -858,6 +883,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.2635135">
           <caret line="378" column="0" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BatchImport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6328828">
+          <caret line="152" column="67" selection-start-line="152" selection-start-column="67" selection-end-line="152" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agent/log_sheets/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.225807">
+          <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="185" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6880631">
+          <caret line="45" column="193" selection-start-line="45" selection-start-column="193" selection-end-line="45" selection-end-column="193" />
           <folding />
         </state>
       </provider>
