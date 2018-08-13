@@ -52,6 +52,7 @@
         </tr>
         @if($no_records)
             @foreach($no_records as $count => $no_re)
+                @if($no_re->download->publication->publication_type == 'Inactive')
                 <tr>
                     <td>{{ $count++ + 1 }}</td>
                     <td>{{ $no_re->download->publication->publication_name }}</td>
@@ -60,6 +61,7 @@
                     <td>{{ $no_re->download->remarks }}</td>
                     <td></td>
                 </tr>
+                @endif
             @endforeach
         @endif
 
