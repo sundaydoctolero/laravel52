@@ -100,6 +100,10 @@
                                         <td>{{ $count + 1 }}</td>
                                         <td>{{ ucwords($publication->publication_name) }}&nbsp;&nbsp;<small class="label label-success pull-right" >[{{ $publication->issue }}</small></td>
                                         <td></td>
+                                        @foreach($publication->downloads as $down)
+                                            <td>{{ $down->publication_date }}</td>
+                                            <td colspan="3">{{ $down->status  }}</td>
+                                        @endforeach
                                     </tr>
                                 @endif
                             @endif
