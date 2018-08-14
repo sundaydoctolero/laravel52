@@ -32,6 +32,14 @@ class TestController extends Controller
     }
 
     public function import(){
+
+
+        $no_records = \App\Output::where('output_date',Carbon::now()->toDateString())
+            ->where('id','<>',718)
+            ->where('sale_records',0)->where('rent_records',0)
+            ->get();
+
+
         $today = Carbon::now();
         $advance = Carbon::now()->addDays(7);
         $advance_two_weeks = Carbon::now()->addDays(14);

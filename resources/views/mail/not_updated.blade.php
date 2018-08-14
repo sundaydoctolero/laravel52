@@ -37,7 +37,9 @@
         </tr>
         @if($downloads)
             @foreach($downloads as $count => $download)
-                @if($no_re->download->publication->publication_type == 'Inactive')
+                @if($download->publication->publication_type == 'Inactive')
+
+                @else
                 <tr>
                     <td>{{ $count++ + 1 }}</td>
                     <td>{{ $download->publication->publication_name }}</td>
@@ -52,17 +54,19 @@
         <tr bgcolor="#FF0000">
             <th colspan="6">No Record</th>
         </tr>
-        @if($no_records)
-            @foreach($no_records as $count => $no_re)
+        @if($records)
+            @foreach($records as $count => $no_re)
                 @if($no_re->download->publication->publication_type == 'Inactive')
-                <tr>
-                    <td>{{ $count++ + 1 }}</td>
-                    <td>{{ $no_re->download->publication->publication_name }}</td>
-                    <td align="center">{{ $no_re->download->publication_date }}</td>
-                    <td>{{ $no_re->download->status }}</td>
-                    <td>{{ $no_re->download->remarks }}</td>
-                    <td></td>
-                </tr>
+
+                @else
+                    <tr>
+                        <td>{{ $count++ + 1 }}</td>
+                        <td>{{ $no_re->download->publication->publication_name }}</td>
+                        <td align="center">{{ $no_re->download->publication_date }}</td>
+                        <td>{{ $no_re->download->status }}</td>
+                        <td>{{ $no_re->download->remarks }}</td>
+                        <td></td>
+                    </tr>
                 @endif
             @endforeach
         @endif

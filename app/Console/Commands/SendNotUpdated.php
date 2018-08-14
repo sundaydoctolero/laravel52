@@ -47,14 +47,14 @@ class SendNotUpdated extends Command
 
 
         $no_records = Output::where('output_date',Carbon::now()->toDateString())
+            ->where('id','<>',718)
             ->where('sale_records',0)->where('rent_records',0)
             ->get();
 
         $no_records->load('download');
 
-
         Mail::send(['html'=>'mail.not_updated'],
-            ['downloads'=>$downloads,'no_records'=>$no_records],
+            ['downloads'=>$downloads,'records'=>$no_records],
             function($message){
                 $message->to(['ccc.news@cccdms.com','garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com','dotc@cccdms.com'],'LinkMe Systems')
                     ->subject('Publication Report as of '.Carbon::now());
