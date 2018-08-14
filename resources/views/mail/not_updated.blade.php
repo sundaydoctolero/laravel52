@@ -58,6 +58,8 @@
             @foreach($records as $count => $no_re)
                 @if($no_re->download->publication->publication_type == 'Inactive')
 
+                @elseif($no_re->download->publication->publication_type == 'Overlap')
+
                 @else
                     <tr>
                         <td>{{ $count++ + 1 }}</td>
