@@ -60,6 +60,7 @@ class BatchImport extends Command
              * Import Weekly, Daily, Weekly Advance
              */
             $publications =  Publication::whereIn('issue',['Weekly','Weekly - Advance','Daily'])
+                ->where('issue','<>','Inactive')
                 ->whereHas('days',function ($query) use ($today) {
                     $query->where('day_name',$today->format('l'));
                 })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
@@ -118,6 +119,7 @@ class BatchImport extends Command
 
             if($today->day == 1){
                 $publications =  Publication::whereIn('issue',['Monthly'])
+                    ->where('issue','<>','Inactive')
                     ->whereHas('days',function ($query) {
                         $query->where('day_name','Monthly');
                     })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
@@ -169,6 +171,7 @@ class BatchImport extends Command
              * Import Quarterly
              */
             $publications =  Publication::whereIn('issue',['Quarterly'])
+                ->where('issue','<>','Inactive')
                 ->whereHas('days',function ($query) use ($today){
                     if($today->toDateString() == '2018-03-01'){
                         $query->where('day_name','Autumn');
@@ -235,6 +238,7 @@ class BatchImport extends Command
             }
 
             $publications =  Publication::whereIn('issue',$issue)
+                ->where('issue','<>','Inactive')
                 ->whereHas('days',function ($query) use ($today) {
                     $query->where('day_name',$today->format('l'));
                 })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
