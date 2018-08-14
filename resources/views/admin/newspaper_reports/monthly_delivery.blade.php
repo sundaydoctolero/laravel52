@@ -70,11 +70,16 @@
                                             <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') + collect($download->output)->sum('rent_records') }}</td>
                                         @endforeach
                                     @else
-                                        @foreach($publication->downloads()->whereBetween('publication_date',['2018-08-01','2018-08-30'])->where(\DB::raw("WEEKDAY(publication_date)"),day_int($day->day_code))->get() as $download)
-                                            <td class="text-center" style="background-color:#5cb85c;color:white">{{ $download->publication_date }}</td>
-                                            <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') }}</td>
-                                            <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('rent_records') }}</td>
-                                            <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') + collect($download->output)->sum('rent_records') }}</td>
+                                        @foreach($publication->downloads()->whereBetween('publication_date',[request('date_from'),request('date_to')])->where(\DB::raw("WEEKDAY(publication_date)"),day_int($day->day_code))->get() as $download)
+                                            @if($download->status == 'Closed')
+                                                <td class="text-center" style="background-color:#5cb85c;color:white">{{ $download->publication_date }}</td>
+                                                <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') }}</td>
+                                                <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('rent_records') }}</td>
+                                                <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') + collect($download->output)->sum('rent_records') }}</td>
+                                            @else
+                                                <td class="text-center" style="background-color:indianred;color:white">{{ $download->publication_date }}</td>
+                                                <td colspan="3" style="background-color:indianred;color:white">{{ $download->status }}</td>
+                                            @endif
                                         @endforeach
                                     @endif
                                 </tr>
