@@ -1,5 +1,15 @@
 @extends('layouts.admin.admin',['page_header' => 'Reports'])
 
+@section('css')
+    <style>
+        .table-fixed{
+            width: 100%;
+        }
+        tbody{
+            height:500px;
+        }
+    </style>
+@endsection
 @section('main-content')
     <div class="row">
         <div class="col-xs-12">
@@ -29,7 +39,7 @@
                     {!! Form::close() !!}
                 </div>
                 <div class="box-body" style="background-color: #494949">
-                    <table class="table table-bordered" style="color:white;border:2px solid" >
+                    <table class="table table-bordered table-fixed" style="color:white;border:2px solid" >
                         <thead>
                             <tr>
                                 <th rowspan="2">#</th>
@@ -37,22 +47,35 @@
                                 <th rowspan="2">Publication Name</th>
                                 <th rowspan="2" class="text-center">Pub Type</th>
                                 <th rowspan="2" class="text-center">Publication Day</th>
-                                <th colspan="4" class="text-center">1st Week</th>
-                                <th colspan="4" class="text-center">2nd Week</th>
-                                <th colspan="4" class="text-center">3rd Week</th>
-                                <th colspan="4" class="text-center">4th Week</th>
+                                <th colspan="5" class="text-center">1st Week</th>
+                                <th colspan="5" class="text-center">2nd Week</th>
+                                <th colspan="5" class="text-center">3rd Week</th>
+                                <th colspan="5" class="text-center">4th Week</th>
                             </tr>
                             <tr>
                                 <th class="text-center">Date</th>
                                 <th class="text-center">Sale</th>
                                 <th class="text-center">Rent</th>
                                 <th class="text-center">Total</th>
+                                <th class="text-center">Output Date</th>
                                 <th class="text-center">Date</th>
                                 <th class="text-center">Sale</th>
                                 <th class="text-center">Rent</th>
                                 <th class="text-center">Total</th>
+                                <th class="text-center">Output Date</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Sale</th>
+                                <th class="text-center">Rent</th>
+                                <th class="text-center">Total</th>
+                                <th class="text-center">Output Date</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Sale</th>
+                                <th class="text-center">Rent</th>
+                                <th class="text-center">Total</th>
+                                <th class="text-center">Output Date</th>
                             </tr>
                         </thead>
+                        <tbody>
                         @foreach($publications as $count => $publication)
                             @foreach($publication->days as $row => $day)
                                 <tr>
@@ -68,6 +91,7 @@
                                             <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') }}</td>
                                             <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('rent_records') }}</td>
                                             <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') + collect($download->output)->sum('rent_records') }}</td>
+                                            <td class="text-center" style="background-color:#5cb85c;color:white">{{ substr(collect($download->output)->last()['output_date'],5,10)}}</td>
                                         @endforeach
                                     @else
                                         @foreach($publication->downloads()->whereBetween('publication_date',[request('date_from'),request('date_to')])->where(\DB::raw("WEEKDAY(publication_date)"),day_int($day->day_code))->get() as $download)
@@ -76,15 +100,17 @@
                                                 <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') }}</td>
                                                 <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('rent_records') }}</td>
                                                 <td class="text-center" style="background-color:#5cb85c;color:white">{{ collect($download->output)->sum('sale_records') + collect($download->output)->sum('rent_records') }}</td>
+                                                <td class="text-center" style="background-color:#5cb85c;color:white">{{ substr(collect($download->output)->last()['output_date'],5,10)}}</td>
                                             @else
                                                 <td class="text-center" style="background-color:indianred;color:white">{{ $download->publication_date }}</td>
-                                                <td colspan="3" style="background-color:indianred;color:white">{{ $download->status }}</td>
+                                                <td colspan="4" style="background-color:indianred;color:white">{{ $download->status }}</td>
                                             @endif
                                         @endforeach
                                     @endif
                                 </tr>
                             @endforeach
                         @endforeach
+                        </tbody>
                     </table>
                 </div>
                 <div class="box-footer">
