@@ -170,6 +170,7 @@ class NewspaperReportController extends Controller
             case 'Monday':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -189,6 +190,7 @@ class NewspaperReportController extends Controller
             case 'Tuesday':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -208,6 +210,7 @@ class NewspaperReportController extends Controller
             case 'Wednesday':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -228,6 +231,7 @@ class NewspaperReportController extends Controller
             case 'Thursday':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -247,6 +251,7 @@ class NewspaperReportController extends Controller
             case 'Friday':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -266,6 +271,7 @@ class NewspaperReportController extends Controller
             case 'Saturday':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -285,6 +291,7 @@ class NewspaperReportController extends Controller
             case 'Sunday':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -304,6 +311,7 @@ class NewspaperReportController extends Controller
             case 'Comm':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('states',function ($q){
@@ -320,6 +328,7 @@ class NewspaperReportController extends Controller
             case 'Tier 1':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('states',function ($q){
@@ -336,6 +345,7 @@ class NewspaperReportController extends Controller
             case 'Chinese':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','Chinese')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('states',function ($q){
@@ -352,6 +362,7 @@ class NewspaperReportController extends Controller
             case 'Hard Copy':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','Hard Copy')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('states',function ($q){
@@ -368,6 +379,7 @@ class NewspaperReportController extends Controller
             case 'Gum Tree':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','LIKE','Gum %')
                     ->whereHas('states',function ($q){
@@ -384,6 +396,7 @@ class NewspaperReportController extends Controller
             case 'Monthly':
                 $publications = Publication::whereIn('issue',['Monthly'])
                     ->where('publication_type','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('states',function ($q){
@@ -400,6 +413,7 @@ class NewspaperReportController extends Controller
             case 'Email':
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','Email')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('states',function ($q){
@@ -417,6 +431,7 @@ class NewspaperReportController extends Controller
                 $publications = Publication::whereIn('issue',['Bi-Weekly','Bi-Weekly Advance Event','Bi-Weekly Odd','Bi-Weekly Even','Bi-Weekly Advance Odd'])
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('states',function ($q){
                         $q->where('state_code','<>','NZ');
