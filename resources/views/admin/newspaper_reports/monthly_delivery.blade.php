@@ -11,8 +11,8 @@
                     </div>
                     <div class="pull-right">
                         <div class="form-group">
-                            {!! Form::label('publication_date', 'Day of Publication :') !!}
-                            {!! Form::select('publication_date',\App\Day::lists('day_name','day_code'),null,['class'=>'form-control']) !!}
+                            {!! Form::label('publication_day', 'Day of Publication :') !!}
+                            {!! Form::select('publication_day',\App\Day::lists('day_name','day_code'),null,['class'=>'form-control','placeholder'=>'---']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('date_from', 'Date From :') !!}

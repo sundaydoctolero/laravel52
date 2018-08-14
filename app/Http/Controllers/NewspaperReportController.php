@@ -473,15 +473,24 @@ class NewspaperReportController extends Controller
         if($request->all() == null){
             $publications = [];
         }else {
-            $publications = Publication::where('publication_type','<>','Inactive')
-                ->orderBy('publication_name')
-                ->orderBy('publication_type')
-                ->get();
-            $publications->load(['downloads.output','states','days','downloads'=>function ($query){
-                $query->whereBetween('publication_date',['2018-08-01','2018-08-31']);
+            if($request->publication_day == ''){
+                $publications = Publication::where('publication_type','<>','Inactive')
+                    ->orderBy('publication_name')
+                    ->orderBy('publication_type')
+                    ->get();
+            } else {
+                $publications = Publication::where('publication_type','<>','Inactive')
+                    ->orderBy('publication_name')
+                    ->orderBy('publication_type')
+                    ->whereHas('days',function($q) use ($request){
+                        $q->where('day_code',$request->publication_day);
+                    })
+                    ->get();
+            }
+            $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
+                $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
             }]);
         }
-
         return view('admin.newspaper_reports.monthly_delivery',compact('publications'));
     }
 
