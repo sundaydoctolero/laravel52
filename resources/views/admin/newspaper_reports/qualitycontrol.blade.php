@@ -39,8 +39,8 @@
                         <thead>
                             <tr>
                                 <th rowspan="2">#</th>
-                                <th rowspan="2">Publication Name</th>
                                 <th rowspan="2">State</th>
+                                <th rowspan="2">Publication Name</th>
                                 <th colspan="4" class="text-center">1st Week</th>
                                 <th colspan="4" class="text-center">2nd Week</th>
                                 <th colspan="4" class="text-center">3rd Week</th>
@@ -69,8 +69,8 @@
                             @if($publication->states->count() == 1)
                                 <tr>
                                     <td>{{ $count + 1 }}</td>
-                                    <td>{{ ucwords($publication->publication_name) }}&nbsp;&nbsp;<small class="label label-success pull-right" >[{{ $publication->issue }}</small></td>
                                     <td class="text-center">{{ $publication->states->first()->state_code }}</td>
+                                    <td>{{ ucwords($publication->publication_name) }}&nbsp;&nbsp;<small class="label label-success pull-right" >[{{ $publication->issue }}</small></td>
                                     @foreach($publication->downloads as $count => $download)
                                         @foreach($download->output as $out)
                                             <td class="text-center" style="background-color:#5cb85c;color:white">{{ $download->publication_date }}</td>
@@ -98,8 +98,8 @@
                                 @else
                                     <tr>
                                         <td>{{ $count + 1 }}</td>
-                                        <td>{{ ucwords($publication->publication_name) }}&nbsp;&nbsp;<small class="label label-success pull-right" >[{{ $publication->issue }}</small></td>
                                         <td></td>
+                                        <td>{{ ucwords($publication->publication_name) }}&nbsp;&nbsp;<small class="label label-success pull-right" >[{{ $publication->issue }}</small></td>
                                         @foreach($publication->downloads as $down)
                                             <td>{{ $down->publication_date }}</td>
                                             <td colspan="3">{{ $down->status  }}</td>
