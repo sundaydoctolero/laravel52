@@ -181,7 +181,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                    $publications->load(['downloads'=>function ($query) use ($request){
+                    $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                         $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
                               ->where(\DB::raw("WEEKDAY(publication_date)"),0);
                     }]);
@@ -201,7 +201,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                    $publications->load(['downloads'=>function ($query) use ($request){
+                    $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                         $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
                             ->where(\DB::raw("WEEKDAY(publication_date)"),1);
                     }]);
@@ -221,7 +221,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                    $publications->load(['downloads'=>function ($query) use ($request){
+                    $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                         $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
                             ->where(\DB::raw("WEEKDAY(publication_date)"),2);
                     }]);
@@ -242,7 +242,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                    $publications->load(['downloads'=>function ($query) use ($request){
+                    $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                         $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
                             ->where(\DB::raw("WEEKDAY(publication_date)"),3);
                     }]);
@@ -262,7 +262,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                    $publications->load(['downloads'=>function ($query) use ($request){
+                    $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                         $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
                             ->where(\DB::raw("WEEKDAY(publication_date)"),4);
                     }]);
@@ -282,7 +282,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                    $publications->load(['downloads'=>function ($query) use ($request){
+                    $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                         $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
                             ->where(\DB::raw("WEEKDAY(publication_date)"),5);
                     }]);
@@ -302,7 +302,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                    $publications->load(['downloads'=>function ($query) use ($request){
+                    $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                         $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
                             ->where(\DB::raw("WEEKDAY(publication_date)"),6);
                     }]);
@@ -319,7 +319,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -336,7 +336,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -353,7 +353,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -370,7 +370,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -387,7 +387,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -404,7 +404,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -421,7 +421,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -438,7 +438,7 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
@@ -458,17 +458,28 @@ class NewspaperReportController extends Controller
                     })
                     ->orderBy('publication_name')->get();
 
-                $publications->load(['downloads'=>function ($query) use ($request){
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                     $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
                 }]);
 
                 break;
 
-        }
-
-        ;
-
+        };
 
         return view('admin.newspaper_reports.qualitycontrol',compact('publications'));
     }
+
+    public function monthly_delivery(){
+        $publications = Publication::where('publication_type','<>','Inactive')
+            ->orderBy('publication_name')
+            ->orderBy('publication_type')
+            ->get();
+
+        $publications->load(['downloads.output','states','days','downloads'=>function ($query){
+            $query->whereBetween('publication_date',['2018-08-01','2018-08-31']);
+        }]);
+
+        return view('admin.newspaper_reports.monthly_delivery',compact('publications'));
+    }
+
 }

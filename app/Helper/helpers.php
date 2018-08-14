@@ -29,6 +29,24 @@ function today(){
     return \Carbon\Carbon::now()->toDateString();
 }
 
+function day_int($day_code){
+    if($day_code == "Mon"){
+        return 0;
+    }elseif($day_code == 'Tue'){
+        return 1;
+    }elseif($day_code == 'Wed'){
+        return 2;
+    }elseif($day_code == 'Thu'){
+        return 3;
+    }elseif($day_code == 'Fri'){
+        return 4;
+    }elseif($day_code == 'Sat'){
+        return 5;
+    }elseif($day_code == 'Sun'){
+        return 6;
+    }
+}
+
 
 function hello_world(){
     return "hello";
