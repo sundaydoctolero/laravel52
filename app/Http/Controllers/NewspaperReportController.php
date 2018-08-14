@@ -179,6 +179,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                    $publications->load(['downloads'=>function ($query) use ($request){
+                        $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
+                              ->where(\DB::raw("WEEKDAY(publication_date)"),0);
+                    }]);
                 break;
 
             case 'Tuesday':
@@ -193,6 +198,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                    $publications->load(['downloads'=>function ($query) use ($request){
+                        $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
+                            ->where(\DB::raw("WEEKDAY(publication_date)"),1);
+                    }]);
                 break;
 
             case 'Wednesday':
@@ -207,6 +217,12 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                    $publications->load(['downloads'=>function ($query) use ($request){
+                        $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
+                            ->where(\DB::raw("WEEKDAY(publication_date)"),2);
+                    }]);
+
                 break;
 
             case 'Thursday':
@@ -221,6 +237,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                    $publications->load(['downloads'=>function ($query) use ($request){
+                        $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
+                            ->where(\DB::raw("WEEKDAY(publication_date)"),3);
+                    }]);
                 break;
 
             case 'Friday':
@@ -235,6 +256,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                    $publications->load(['downloads'=>function ($query) use ($request){
+                        $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
+                            ->where(\DB::raw("WEEKDAY(publication_date)"),4);
+                    }]);
                 break;
 
             case 'Saturday':
@@ -249,6 +275,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                    $publications->load(['downloads'=>function ($query) use ($request){
+                        $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
+                            ->where(\DB::raw("WEEKDAY(publication_date)"),5);
+                    }]);
                 break;
 
             case 'Sunday':
@@ -263,6 +294,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                    $publications->load(['downloads'=>function ($query) use ($request){
+                        $query->whereBetween('publication_date',[$request->date_from,$request->date_to])
+                            ->where(\DB::raw("WEEKDAY(publication_date)"),6);
+                    }]);
                 break;
 
             case 'Comm':
@@ -274,6 +310,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
             case 'Tier 1':
@@ -285,6 +326,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
             case 'Chinese':
@@ -296,6 +342,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
             case 'Hard Copy':
@@ -307,6 +358,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
             case 'Gum Tree':
@@ -318,6 +374,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
             case 'Monthly':
@@ -329,6 +390,11 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
             case 'Email':
@@ -340,6 +406,27 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
+                break;
+
+            case 'Bi-Weekly':
+                $publications = Publication::whereIn('issue',['Bi-Weekly','Bi-Weekly Advance Event','Bi-Weekly Odd','Bi-Weekly Even','Bi-Weekly Advance Odd'])
+                    ->where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','<>','Tier 1')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','<>','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
 
@@ -355,10 +442,16 @@ class NewspaperReportController extends Controller
                         $q->where('state_code','<>','NZ');
                     })
                     ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
                 break;
 
         }
 
+        ;
 
 
         return view('admin.newspaper_reports.qualitycontrol',compact('publications'));

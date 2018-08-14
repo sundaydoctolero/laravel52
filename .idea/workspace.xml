@@ -22,22 +22,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php">
+      <file leaf-file-name="NewspaperReportController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6880631">
-              <caret line="45" column="193" selection-start-line="45" selection-start-column="193" selection-end-line="45" selection-end-column="193" />
-              <folding />
+            <state vertical-scroll-proportion="0.5292793">
+              <caret line="418" column="59" selection-start-line="418" selection-start-column="59" selection-end-line="418" selection-end-column="59" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/agent/log_sheets/edit.blade.php">
+      <file leaf-file-name="qualitycontrol.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/qualitycontrol.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.225807">
-              <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="185" />
-              <folding />
+            <state vertical-scroll-proportion="-12.064516">
+              <caret line="17" column="137" selection-start-line="17" selection-start-column="137" selection-end-line="17" selection-end-column="137" />
+              <folding>
+                <element signature="e#2171#2204#0#HTML" expanded="true" />
+                <element signature="e#2262#2298#0#HTML" expanded="true" />
+                <element signature="e#4839#4883#0#HTML" expanded="true" />
+                <element signature="e#4991#5035#0#HTML" expanded="true" />
+                <element signature="e#5135#5179#0#HTML" expanded="true" />
+                <element signature="e#5277#5321#0#HTML" expanded="true" />
+                <marker date="1534213511519" expanded="true" signature="779:1300" placeholder="..." />
+                <marker date="1534213511519" expanded="true" signature="793:1298" placeholder="..." />
+                <marker date="1534213511519" expanded="true" signature="806:1237" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,9 +115,9 @@
         <option value="$PROJECT_DIR$/app/Console/Commands/BatchImport.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/SendNotUpdated.php" />
         <option value="$PROJECT_DIR$/resources/views/mail/not_updated.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/qualitycontrol.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -281,7 +293,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="outputs" />
+              <option name="myItemId" value="newspaper_reports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -573,6 +585,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3617021">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -580,6 +593,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4568869">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -692,14 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29671574">
           <caret line="21" column="94" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Publication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93884486">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,29 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6531532">
-          <caret line="335" column="53" selection-start-line="335" selection-start-column="53" selection-end-line="335" selection-end-column="53" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/qualitycontrol.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3536036">
-          <caret line="17" column="112" selection-start-line="17" selection-start-column="112" selection-end-line="17" selection-end-column="112" />
-          <folding>
-            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1534203778158" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.2635135">
@@ -895,19 +878,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4403153">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agent/log_sheets/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.225807">
+        <state vertical-scroll-proportion="0.6013514">
           <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="185" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/outputs/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Publication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6880631">
-          <caret line="45" column="193" selection-start-line="45" selection-start-column="193" selection-end-line="45" selection-end-column="193" />
+        <state vertical-scroll-proportion="0.5788288">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/qualitycontrol.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="17" column="137" selection-start-line="17" selection-start-column="137" selection-end-line="17" selection-end-column="137" />
+          <folding>
+            <element signature="e#2171#2204#0#HTML" expanded="true" />
+            <element signature="e#2262#2298#0#HTML" expanded="true" />
+            <element signature="e#4839#4883#0#HTML" expanded="true" />
+            <element signature="e#4991#5035#0#HTML" expanded="true" />
+            <element signature="e#5135#5179#0#HTML" expanded="true" />
+            <element signature="e#5277#5321#0#HTML" expanded="true" />
+            <marker date="1534213511519" expanded="true" signature="779:1300" placeholder="..." />
+            <marker date="1534213511519" expanded="true" signature="793:1298" placeholder="..." />
+            <marker date="1534213511519" expanded="true" signature="806:1237" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5292793">
+          <caret line="418" column="59" selection-start-line="418" selection-start-column="59" selection-end-line="418" selection-end-column="59" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
