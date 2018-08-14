@@ -45,6 +45,22 @@
 
             @if(auth()->guard('admin')->user()->hasRole('Newspaper'))
                 <li class="treeview">
+                    <a href="#"><i class="fa fa-circle-o"></i> Reports
+                                <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/not_updated_reports"><i class="fa fa-arrow-down"></i> <span>Not Updated</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/download"><i class="fa fa-arrow-down"></i> <span>Publication Reports</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/productivity"><i class="fa fa-arrow-down"></i> <span>Productivity Report</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monitoring"><i class="fa fa-arrow-down"></i> <span>Monitoring</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/quality_control"><i class="fa fa-arrow-down"></i> <span>Sequence No</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monthly_delivery"><i class="fa fa-arrow-down"></i> <span>Monthly Delivery Report</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
                     <a href="#"><i class="fa fa-gear"></i> <span>Manage Newspaper</span>
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>    </span>
                     </a>
@@ -53,21 +69,6 @@
                         <li class="{{ setActive('dataentries') }}"><a href="/dataentries"><i class="fa fa-arrow-down"></i> <span>Data Entry</span></a></li>
                         <li class="{{ setActive('outputs') }}"><a href="/outputs"><i class="fa fa-arrow-down"></i> <span>Output</span></a></li>
                         <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Delivered</span></a></li>
-                        <li class="treeview">
-                            <a href="#"><i class="fa fa-circle-o"></i> Reports
-                                <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/not_updated_reports"><i class="fa fa-arrow-down"></i> <span>Not Updated</span></a></li>
-                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/download"><i class="fa fa-arrow-down"></i> <span>Publication Reports</span></a></li>
-                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/productivity"><i class="fa fa-arrow-down"></i> <span>Productivity Report</span></a></li>
-                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monitoring"><i class="fa fa-arrow-down"></i> <span>Monitoring</span></a></li>
-                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/quality_control"><i class="fa fa-arrow-down"></i> <span>Sequence No</span></a></li>
-                                <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monthly_delivery"><i class="fa fa-arrow-down"></i> <span>Monthly Delivery Report</span></a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
             @endif
