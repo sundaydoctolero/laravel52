@@ -22,44 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NewspaperReportController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php">
+      <file leaf-file-name="main-sidebar.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8513514">
-              <caret line="513" column="73" selection-start-line="513" selection-start-column="73" selection-end-line="513" selection-end-column="73" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-                <element signature="e#6203#7268#0#PHP" expanded="false" />
-                <element signature="e#7282#8346#0#PHP" expanded="false" />
-                <element signature="e#8360#9427#0#PHP" expanded="false" />
-                <element signature="e#9441#10506#0#PHP" expanded="false" />
-                <element signature="e#10520#11583#0#PHP" expanded="false" />
-                <element signature="e#11597#12662#0#PHP" expanded="false" />
-                <element signature="e#12676#13739#0#PHP" expanded="false" />
-                <element signature="e#13753#14565#0#PHP" expanded="false" />
-                <element signature="e#14579#15392#0#PHP" expanded="false" />
-                <element signature="e#15406#16221#0#PHP" expanded="false" />
-                <element signature="e#16235#17054#0#PHP" expanded="false" />
-                <element signature="e#17068#17884#0#PHP" expanded="false" />
-                <element signature="e#17898#18710#0#PHP" expanded="false" />
-                <element signature="e#18724#19535#0#PHP" expanded="false" />
-                <element signature="e#19549#20448#0#PHP" expanded="false" />
-                <element signature="e#20463#21368#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monthly_delivery.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/monthly_delivery.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.612904">
-              <caret line="25" column="86" selection-start-line="25" selection-start-column="86" selection-end-line="25" selection-end-column="86" />
-              <folding>
-                <marker date="1534374032793" expanded="true" signature="957:1220" placeholder="..." />
-                <marker date="1534374032793" expanded="true" signature="971:1218" placeholder="..." />
-                <marker date="1534374032793" expanded="true" signature="983:1136" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.7027027">
+              <caret line="84" column="89" selection-start-line="84" selection-start-column="89" selection-end-line="84" selection-end-column="89" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,7 +88,6 @@
         <option value="$PROJECT_DIR$/app/Console/Commands/BatchImport.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Helper/helpers.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AgentDownloadController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/resources/views/mail/not_updated.blade.php" />
@@ -128,6 +95,7 @@
         <option value="$PROJECT_DIR$/app/Console/Commands/SendNotUpdated.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/newspaper_reports/monthly_delivery.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewspaperReportController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php" />
       </list>
     </option>
   </component>
@@ -232,6 +200,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -254,11 +248,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="newspaper_reports" />
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -720,13 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5292793">
-          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Helper/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9256757">
@@ -792,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8761261">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendNotUpdated.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45495495">
@@ -809,12 +815,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/newspaper_reports/monthly_delivery.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.612904">
+        <state vertical-scroll-proportion="0.545045">
           <caret line="25" column="86" selection-start-line="25" selection-start-column="86" selection-end-line="25" selection-end-column="86" />
           <folding>
-            <marker date="1534374032793" expanded="true" signature="957:1220" placeholder="..." />
-            <marker date="1534374032793" expanded="true" signature="971:1218" placeholder="..." />
-            <marker date="1534374032793" expanded="true" signature="983:1136" placeholder="..." />
+            <marker date="1534374032793" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1534374032793" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1534374032793" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -824,7 +830,7 @@
         <state vertical-scroll-proportion="0.8513514">
           <caret line="513" column="73" selection-start-line="513" selection-start-column="73" selection-end-line="513" selection-end-column="73" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#40#68#0#PHP" expanded="false" />
             <element signature="e#6203#7268#0#PHP" expanded="false" />
             <element signature="e#7282#8346#0#PHP" expanded="false" />
             <element signature="e#8360#9427#0#PHP" expanded="false" />
@@ -842,6 +848,22 @@
             <element signature="e#19549#20448#0#PHP" expanded="false" />
             <element signature="e#20463#21368#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8423423">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7027027">
+          <caret line="84" column="89" selection-start-line="84" selection-start-column="89" selection-end-line="84" selection-end-column="89" />
+          <folding />
         </state>
       </provider>
     </entry>

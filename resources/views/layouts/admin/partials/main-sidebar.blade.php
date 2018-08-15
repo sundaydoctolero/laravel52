@@ -36,19 +36,17 @@
             <li class="{{ setActive('admin') }}"><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
 
             @if(auth()->guard('admin')->user()->hasRole('Tech'))
-                <li class="{{ setActive('tasks') }}"><a href="/tasks"><i class="fa fa-flag-o"></i> <span>Task &nbsp &nbsp</span><span class="label label-danger pull-right">{{ $tasks_pending }}</span><span class="label label-success pull-right">{{ $tasks_open }}</span></a></li>
+                <li class="{{ setActive('tasks') }}"><a href="/tasks"><i class="fa fa-tasks"></i> <span>Task &nbsp &nbsp</span><span class="label label-danger pull-right">{{ $tasks_pending }}</span><span class="label label-success pull-right">{{ $tasks_open }}</span></a></li>
             @endif
 
-            <li class="{{ setActive('tsheets') }}"><a href="/tsheets"><i class="fa fa-unlock"></i> <span>Manage Tsheet</span></a></li>
+            <li class="{{ setActive('tsheets') }}"><a href="/tsheets"><i class="fa fa-file-excel-o"></i> <span>Manage Tsheet</span></a></li>
 
-            <li class="{{ setActive('calendars') }}"><a href="/events"><i class="fa fa-unlock"></i> <span>Calendar</span></a></li>
+            <li class="{{ setActive('calendars') }}"><a href="/events"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
 
             @if(auth()->guard('admin')->user()->hasRole('Newspaper'))
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-circle-o"></i> Reports
-                                <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                                </span>
+                    <a href="#"><i class="fa fa-line-chart"></i> <span>Newspaper Reports</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>    </span>
                     </a>
                     <ul class="treeview-menu">
                         <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/not_updated_reports"><i class="fa fa-arrow-down"></i> <span>Not Updated</span></a></li>
@@ -61,20 +59,20 @@
                 </li>
 
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-gear"></i> <span>Manage Newspaper</span>
+                    <a href="#"><i class="fa fa-newspaper-o"></i> <span>Manage Newspaper</span>
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>    </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="{{ setActive('downloads') }}"><a href="/downloads"><i class="fa fa-arrow-down"></i> <span>Download</span></a></li>
-                        <li class="{{ setActive('dataentries') }}"><a href="/dataentries"><i class="fa fa-arrow-down"></i> <span>Data Entry</span></a></li>
-                        <li class="{{ setActive('outputs') }}"><a href="/outputs"><i class="fa fa-arrow-down"></i> <span>Output</span></a></li>
-                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-arrow-down"></i> <span>Delivered</span></a></li>
+                        <li class="{{ setActive('downloads') }}"><a href="/downloads"><i class="fa fa-download"></i> <span>Download</span></a></li>
+                        <li class="{{ setActive('dataentries') }}"><a href="/dataentries"><i class="fa fa-keyboard-o"></i> <span>Data Entry</span></a></li>
+                        <li class="{{ setActive('outputs') }}"><a href="/outputs"><i class="fa fa-file-text-o"></i> <span>Output</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports"><i class="fa fa-money"></i> <span>Delivered</span></a></li>
                     </ul>
                 </li>
             @endif
 
-            <li class="{{ setActive('departments') }}"><a href="/departments"><i class="fa fa-arrow-down"></i> <span>Departments</span></a></li>
-            <li class="{{ setActive('employees') }}"><a href="/departments"><i class="fa fa-arrow-down"></i> <span>Employees</span></a></li>
+            <li class="{{ setActive('departments') }}"><a href="/departments"><i class="fa fa-users"></i> <span>Departments</span></a></li>
+            <li class="{{ setActive('employees') }}"><a href="/departments"><i class="fa fa-user"></i> <span>Employees</span></a></li>
 
             @if(auth()->guard('admin')->user()->hasRole('Newspaper'))
                 <li class="treeview">
@@ -82,12 +80,12 @@
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>    </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ url('/states') }}"><i class="fa fa-anchor"></i> <span>States</span></a></li>
-                        <li><a href="{{ url('/publications') }}"><i class="fa fa-anchor"></i> <span>Publications</span></a></li>
-                        <li><a href="{{ url('/jobnumbers') }}"><i class="fa fa-anchor"></i> <span>Job Numbers</span></a></li>
-                        <li><a href="{{ url('/publicationtypes') }}"><i class="fa fa-anchor"></i> <span>Publication Type Lookup</span></a></li>
-                        <li><a href="{{ url('/publicationissues') }}"><i class="fa fa-anchor"></i> <span>Publication Issues Lookup</span></a></li>
-                        <li><a href="{{ url('/days') }}"><i class="fa fa-anchor"></i> <span>Publication Day Lookup</span></a></li>
+                        <li><a href="{{ url('/states') }}"><i class="fa fa-asterisk"></i> <span>States</span></a></li>
+                        <li><a href="{{ url('/publications') }}"><i class="fa fa-newspaper-o"></i> <span>Publications</span></a></li>
+                        <li><a href="{{ url('/jobnumbers') }}"><i class="fa fa-calculator"></i> <span>Job Numbers</span></a></li>
+                        <li><a href="{{ url('/publicationtypes') }}"><i class="fa fa-list-alt"></i> <span>Publication Type Lookup</span></a></li>
+                        <li><a href="{{ url('/publicationissues') }}"><i class="fa fa-indent"></i> <span>Publication Issues Lookup</span></a></li>
+                        <li><a href="{{ url('/days') }}"><i class="fa fa-calendar-plus-o"></i> <span>Publication Day Lookup</span></a></li>
                     </ul>
                 </li>
             @endif
@@ -96,7 +94,7 @@
 
             @if(auth()->guard('admin')->user()->hasRole('Tech'))
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-gear"></i> <span>Tech</span>
+                    <a href="#"><i class="fa fa-server"></i> <span>Tech</span>
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                     </a>
                     <ul class="treeview-menu">
@@ -108,7 +106,7 @@
             @endif
             @if(auth()->guard('admin')->user()->hasRole('Admin'))
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-gear"></i> <span>System Users</span>
+                    <a href="#"><i class="fa fa-user-plus"></i> <span>System Users</span>
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                     </a>
                     <ul class="treeview-menu">
@@ -122,7 +120,7 @@
             @endif
             @if(auth()->guard('admin')->user()->hasRole('Developer'))
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-gear"></i> <span>Site Settings</span>
+                    <a href="#"><i class="fa fa-sitemap"></i> <span>Site Settings</span>
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                     </a>
                     <ul class="treeview-menu">
