@@ -21,8 +21,10 @@
                     </div>
                     <div class="pull-right">
                         <div class="form-group">
-                            {!! Form::label('publication_day', 'Day of Publication :') !!}
-                            {!! Form::select('publication_day',\App\Day::lists('day_name','day_code'),null,['class'=>'form-control','placeholder'=>'---']) !!}
+                            {!! Form::label('pub_type', 'Day of Publication :') !!}
+                            {!! Form::select('pub_type',['Regular'=>'Regular','Overlap'=>'Overlap','Gum Tree'=>'Gum Tree',
+                            'RP Pro'=>'RP Pro','Place Real Estate'=>'Place Real Estate'],
+                            null,['class'=>'form-control','placeholder'=>'---']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('date_from', 'Date From :') !!}

@@ -473,21 +473,61 @@ class NewspaperReportController extends Controller
         if($request->all() == null){
             $publications = [];
         }else {
-
-            if($request->publication_day == ''){
+            if($request->pub_type == ''){
                 $publications = Publication::where('publication_type','<>','Inactive')
                     ->orderBy('publication_name')
                     ->orderBy('publication_type')
                     ->get();
             } else {
-                $publications = Publication::where('publication_type','<>','Inactive')
-                    ->orderBy('publication_name')
-                    ->orderBy('publication_type')
-                    ->whereHas('days',function($q) use ($request){
-                        $q->where('day_code',$request->publication_day);
-                    })
-                    ->get();
+
+                switch($request->pub_type){
+                    case 'Overlap':
+                        $publications = Publication::where('publication_type','<>','Inactive')
+                            ->where('publication_type',$request->pub_type)
+                            ->where('publication_name','<>','RP Pro')
+                            ->where('publication_name','<>','Place Real Estate')
+                            ->orderBy('publication_name')
+                            ->orderBy('publication_type')
+                            ->get();
+                        break;
+
+                    case 'Gum Tree':
+                        $publications = Publication::where('publication_type','<>','Inactive')
+                            ->where('publication_name','LIKE','Gum%')
+                            ->where('publication_name','<>','RP Pro')
+                            ->where('publication_name','<>','Place Real Estate')
+                            ->orderBy('publication_name')
+                            ->orderBy('publication_type')
+                            ->get();
+                        break;
+
+                    case 'RP Pro':
+                        $publications = Publication::where('publication_type','<>','Inactive')
+                            ->where('publication_name','RP Pro')
+                            ->orderBy('publication_name')
+                            ->orderBy('publication_type')
+                            ->get();
+                        break;
+
+                    case 'Place Real Estate':
+                        $publications = Publication::where('publication_type','<>','Inactive')
+                            ->where('publication_name','Place Real Estate')
+                            ->orderBy('publication_name')
+                            ->orderBy('publication_type')
+                            ->get();
+                        break;
+
+                    default :
+                        $publications = Publication::where('publication_type','<>','Inactive')
+                            ->where('publication_type','<>','Overlap')
+                            ->where('publication_name','<>','RP Pro')
+                            ->orderBy('publication_name')
+                            ->orderBy('publication_type')
+                            ->get();
+                        break;
+                }
             }
+
             $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
                 $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
             }]);
