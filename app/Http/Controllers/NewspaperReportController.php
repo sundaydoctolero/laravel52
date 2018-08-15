@@ -473,6 +473,7 @@ class NewspaperReportController extends Controller
         if($request->all() == null){
             $publications = [];
         }else {
+
             if($request->publication_day == ''){
                 $publications = Publication::where('publication_type','<>','Inactive')
                     ->orderBy('publication_name')
