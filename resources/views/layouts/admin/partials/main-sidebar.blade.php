@@ -49,12 +49,12 @@
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>    </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/not_updated_reports"><i class="fa fa-arrow-down"></i> <span>Not Updated</span></a></li>
-                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/download"><i class="fa fa-arrow-down"></i> <span>Publication Reports</span></a></li>
-                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/productivity"><i class="fa fa-arrow-down"></i> <span>Productivity Report</span></a></li>
-                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monitoring"><i class="fa fa-arrow-down"></i> <span>Monitoring</span></a></li>
-                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/quality_control"><i class="fa fa-arrow-down"></i> <span>Sequence No</span></a></li>
-                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monthly_delivery"><i class="fa fa-arrow-down"></i> <span>Monthly Delivery Report</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/not_updated_reports"><i class="fa fa-circle-o"></i> <span>Not Updated</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/download"><i class="fa fa fa-circle-o"></i> <span>Publication Reports</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/productivity"><i class="fa fa fa-circle-o"></i> <span>Productivity Report</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monitoring"><i class="fa fa fa-circle-o"></i> <span>Monitoring</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/quality_control"><i class="fa fa fa-circle-o"></i> <span>Sequence No</span></a></li>
+                        <li class="{{ setActive('newspaper_reports') }}"><a href="/newspaper_reports/monthly_delivery"><i class="fa fa fa-circle-o"></i> <span>Monthly Delivery Report</span></a></li>
                     </ul>
                 </li>
 
