@@ -37,23 +37,23 @@
                             <thead>
                             @if(request('productivity') == 'Download')
                             <tr>
-                                <th>#</th>
-                                <th class="text-center">Downloader</th>
-                                <th>Publication Name</th>
-                                <th class="text-center">Publication Date</th>
-                                <th>Pages</th>
-                                <th class="text-center">Status</th>
-                                <th class="text-center">Download Date</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">#</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Downloader</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Publication Name</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Publication Date</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Pages</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Status</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Download Date</th>
                             </tr>
                             @else
                             <tr>
-                                <th>#</th>
-                                <th class="text-center">Operator</th>
-                                <th>Publication Name</th>
-                                <th class="text-center">Publication Date</th>
-                                <th class="text-center">Status</th>
-                                <th>Sale</th>
-                                <th>Rent</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">#</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Operator</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Publication Name</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Publication Date</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Status</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Sale</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Rent</th>
                             </tr>
                             @endif
                             </thead>
@@ -61,13 +61,13 @@
                                 @if(request('productivity') == 'Download')
                                     @foreach($downloads as $count => $download)
                                         <tr>
-                                            <td>{{ $count++ + 1 }}</td>
+                                            <td class="text-center">{{ $count++ + 1 }}</td>
                                             <td class="text-center">
                                                 {{ $download->user->operator_no ? $download->user->operator_no : ''  }}
                                             </td>
                                             <td>{{ $download->publication->publication_name }}</td>
                                             <td class="text-center">{{ $download->publication_date }}</td>
-                                            <td>{{ $download->pages }}</td>
+                                            <td class="text-center">{{ $download->pages }}</td>
                                             <td class="text-center">{{ $download->status }}</td>
                                             <td class="text-center">{{ $download->time_downloaded }}</td>
                                         </tr>
