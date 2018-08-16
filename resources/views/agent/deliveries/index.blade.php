@@ -47,27 +47,25 @@
                         <th>Folder</th>
                         <th>Remarks</th>
                     </tr>
-                    @foreach($downloads as $count => $delivered)
-                            @foreach($delivered->output as $row)
-                                <tr>
-                                    <td>{{ $count++ + 1 }}</td>
-                                    <td>{{ $row->state }}</td>
-                                    <td>{{ $delivered->publication->publication_name }}</td>
-                                    <td class="text-center">{{ $delivered->publication_date }}</td>
-                                    <td class="text-center">{{ $delivered->status }}</td>
-                                    <td class="text-right">{{ $row->sale_records }}</td>
-                                    <td class="text-right">{{ $row->rent_records }}</td>
-                                    <td class="text-center">{{ $row->sequence_from }}</td>
-                                    <td class="text-center">{{ $row->sequence_to }}</td>
-                                    <td class="text-center">{{ $row->output_date }}</td>
-                                    <td>{{ $row->delivery_time }}</td>
-                                    <td>{{ $row->remarks }}</td>
-                                </tr>
-                            @endforeach
+                    @foreach($outputs as $count => $output)
+                            <tr>
+                                <td>{{ $count + 1 }}</td>
+                                <td>{{ $output->state }}</td>
+                                <td>{{ $output->download->publication->publication_name }}</td>
+                                <td class="text-center">{{ $output->download->publication_date }}</td>
+                                <td class="text-center">{{ $output->download->status }}</td>
+                                <td class="text-center">{{ $output->sale_records }}</td>
+                                <td class="text-center">{{ $output->rent_records }}</td>
+                                <td class="text-center">{{ $output->sequence_from }}</td>
+                                <td class="text-center">{{ $output->sequence_to }}</td>
+                                <td class="text-center">{{ $output->output_date }}</td>
+                                <td class="text-center">{{ $output->delivery_time }}</td>
+                                <td>{{ $output->remarks }}</td>
+                            </tr>
                     @endforeach
                     </tbody>
                     <tfoot>
-                        @if($downloads->count() > 0)
+                        @if($outputs->count() > 0)
                             <tr>
                                 <td colspan="12">
                                     <a href="/export/generate_pub_details?date_from={{request('date_from')}}&delivery_time={{request('delivery_time')}}" class="btn-block btn btn-warning"><i class="fa fa-download"></i> Download Publication Details</a>

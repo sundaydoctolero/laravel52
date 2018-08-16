@@ -2,6 +2,18 @@ Publication Name: NSW_SOUTH_COAST_REGISTER
 Publication Date: 2018-08-15
 Publication State: NSW
 
+Publication Name: VIC_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-08-16
+Publication State: VIC
+
+Publication Name: QLD_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-08-16
+Publication State: QLD
+
+Publication Name: WA_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-08-16
+Publication State: WA
+
 Publication Name: NSW_AUSTRALIAN_FINANCIAL_REVIEW
 Publication Date: 2018-08-16
 Publication State: NSW
@@ -9,18 +21,6 @@ Publication State: NSW
 Publication Name: NT_AUSTRALIAN_FINANCIAL_REVIEW
 Publication Date: 2018-08-16
 Publication State: NT
-
-Publication Name: QLD_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
-Publication State: QLD
-
-Publication Name: VIC_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
-Publication State: VIC
-
-Publication Name: WA_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
-Publication State: WA
 
 Publication Name: VIC_THE_SURF_COAST_TIMES
 Publication Date: 2018-08-16
@@ -30,13 +30,13 @@ Publication Name: VIC_BELLARINE_TIMES
 Publication Date: 2018-08-16
 Publication State: VIC
 
-Publication Name: WA_BROOME_ADVERTISER
-Publication Date: 2018-08-16
-Publication State: WA
-
 Publication Name: NSW_HORNSBY_ADVOCATE
 Publication Date: 2018-08-16
 Publication State: NSW
+
+Publication Name: WA_BROOME_ADVERTISER
+Publication Date: 2018-08-16
+Publication State: WA
 
 Publication Name: NSW_COMM_SYDNEY_MORNING_HERALD
 Publication Date: 2018-08-16
@@ -48,6 +48,6 @@ Publication State: QLD
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
-			Total Publications : 8
+			Total Publications : 12
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------

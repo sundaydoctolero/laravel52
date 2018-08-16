@@ -143,25 +143,22 @@ class NewspaperExportController extends Controller
     public function generate_pub_details(Request $request){
 
         if($request->date_from == "" AND $request->delivery_time == ""){
-            $downloads = Download::where('status','Closed')
-                ->whereHas('output',function($query){
-                    $query->where('output_date',Carbon::now()->toDateString());
-                })->get();
+            $outputs = Output::where('output_date',Carbon::now()->toDateString())
+                ->orderBy('sequence_from')
+                ->get();
         } else {
             if($request->delivery_time == ""){
-                $downloads = Download::where('status','Closed')
-                    ->whereHas('output',function($query) use ($request){
-                        $query->where('output_date',$request->date_from)->orderBy('sequence_from');
-                    })->get();
+                $outputs = Output::where('output_date',$request->date_from)
+                    ->orderBy('sequence_from')
+                    ->get();
             } else {
-                $downloads = Download::where('status','Closed')
-                    ->whereHas('output',function($query) use ($request){
-                        $query->where('output_date',$request->date_from)->where('delivery_time',$request->delivery_time)->orderBy('sequence_from');
-                    })->get();
-            }
+                $outputs = Output::where('output_date',$request->date_from)
+                    ->where('delivery_time',$request->delivery_time)->orderBy('sequence_from')
+                    ->get();
 
+            }
         }
-        $downloads->load('publication','output');
+        $outputs->load('download.publication');
 
         /**
          * Open a Text File
@@ -174,18 +171,18 @@ class NewspaperExportController extends Controller
          *
          */
 
-        foreach($downloads as $count => $delivered){
-            foreach($delivered->output as $row){
-                if(strtoupper($delivered->publication->publication_name) == strtoupper('Gum Tree - SR') || strtoupper($delivered->publication->publication_name) == strtoupper('Gum Tree - LAND')){
-                   $pub_name = 'GUM TREE';
-                } else {
-                    $pub_name = $delivered->publication->publication_name;
-                }
-                $count++ + 1;
-                fwrite($file,'Publication Name: '.$row->state.'_'.str_replace(' ','_',strtoupper($pub_name))."\r\n");
-                fwrite($file,'Publication Date: '.$delivered->publication_date."\r\n");
-                fwrite($file,'Publication State: '.$row->state."\r\n\r\n");
+        foreach($outputs as $count => $output){
+            if(strtoupper($output->download->publication->publication_name) == strtoupper('Gum Tree - SR') || strtoupper($output->download->publication->publication_name) == strtoupper('Gum Tree - LAND')){
+                $pub_name = 'GUM TREE';
+            } else {
+                $pub_name = $output->download->publication->publication_name;
             }
+
+            $count++ + 1;
+            fwrite($file,'Publication Name: '.$output->state.'_'.str_replace(' ','_',strtoupper($pub_name))."\r\n");
+            fwrite($file,'Publication Date: '.$output->download->publication_date."\r\n");
+            fwrite($file,'Publication State: '.$output->state."\r\n\r\n");
+
         }
 
         fwrite($file,'------------------------------------------------------------------------------------'."\r\n");
