@@ -173,7 +173,7 @@ class NewspaperExportController extends Controller
 
         foreach($outputs as $count => $output){
             if(strtoupper($output->download->publication->publication_name) == strtoupper('Gum Tree - SR') || strtoupper($output->download->publication->publication_name) == strtoupper('Gum Tree - LAND')){
-                $pub_name = 'GUM TREE';
+                $pub_name = 'GUMTREE.COM.AU';
             } else {
                 $pub_name = $output->download->publication->publication_name;
             }
