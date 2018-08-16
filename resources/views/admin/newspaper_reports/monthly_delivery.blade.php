@@ -23,7 +23,7 @@
                         <div class="form-group">
                             {!! Form::label('pub_type', 'Day of Publication :') !!}
                             {!! Form::select('pub_type',['Regular'=>'Regular','Overlap'=>'Overlap','Gum Tree'=>'Gum Tree',
-                            'RP Pro'=>'RP Pro','Place Real Estate'=>'Place Real Estate'],
+                            'RP Pro'=>'RP Pro','Place Real Estate'=>'Place Real Estate','NZ'=>'NZ'],
                             null,['class'=>'form-control','placeholder'=>'---']) !!}
                         </div>
                         <div class="form-group">

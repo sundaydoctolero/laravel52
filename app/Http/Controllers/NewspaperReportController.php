@@ -155,7 +155,6 @@ class NewspaperReportController extends Controller
 
         }
 
-
         return view('admin.newspaper_reports.productivity_reports',compact('downloads','dataentries'));
     }
 
@@ -507,6 +506,9 @@ class NewspaperReportController extends Controller
                             ->where('publication_type',$request->pub_type)
                             ->where('publication_name','<>','RP Pro')
                             ->where('publication_name','<>','Place Real Estate')
+                            ->whereHas('states',function ($q){
+                                $q->where('state_code','<>','NZ');
+                            })
                             ->orderBy('publication_name')
                             ->orderBy('publication_type')
                             ->get();
@@ -517,6 +519,9 @@ class NewspaperReportController extends Controller
                             ->where('publication_name','LIKE','Gum%')
                             ->where('publication_name','<>','RP Pro')
                             ->where('publication_name','<>','Place Real Estate')
+                            ->whereHas('states',function ($q){
+                                $q->where('state_code','<>','NZ');
+                            })
                             ->orderBy('publication_name')
                             ->orderBy('publication_type')
                             ->get();
@@ -525,6 +530,9 @@ class NewspaperReportController extends Controller
                     case 'RP Pro':
                         $publications = Publication::where('publication_type','<>','Inactive')
                             ->where('publication_name','RP Pro')
+                            ->whereHas('states',function ($q){
+                                $q->where('state_code','<>','NZ');
+                            })
                             ->orderBy('publication_name')
                             ->orderBy('publication_type')
                             ->get();
@@ -533,6 +541,19 @@ class NewspaperReportController extends Controller
                     case 'Place Real Estate':
                         $publications = Publication::where('publication_type','<>','Inactive')
                             ->where('publication_name','Place Real Estate')
+                            ->whereHas('states',function ($q){
+                                $q->where('state_code','<>','NZ');
+                            })
+                            ->orderBy('publication_name')
+                            ->orderBy('publication_type')
+                            ->get();
+                        break;
+
+                    case 'NZ':
+                        $publications = Publication::where('publication_type','<>','Inactive')
+                            ->whereHas('states',function ($q){
+                                $q->where('state_code','NZ');
+                            })
                             ->orderBy('publication_name')
                             ->orderBy('publication_type')
                             ->get();
@@ -542,6 +563,9 @@ class NewspaperReportController extends Controller
                         $publications = Publication::where('publication_type','<>','Inactive')
                             ->where('publication_type','<>','Overlap')
                             ->where('publication_name','<>','RP Pro')
+                            ->whereHas('states',function ($q){
+                                $q->where('state_code','<>','NZ');
+                            })
                             ->orderBy('publication_name')
                             ->orderBy('publication_type')
                             ->get();
