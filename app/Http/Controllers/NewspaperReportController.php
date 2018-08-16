@@ -13,6 +13,8 @@ use App\Http\Requests\NewspaperReportRequest;
 use App\Output;
 use App\Publication;
 use Carbon\Carbon;
+use App\Logsheet;
+
 
 class NewspaperReportController extends Controller
 {
@@ -137,12 +139,24 @@ class NewspaperReportController extends Controller
                         ->whereBetween('time_downloaded',[$request->date_from.' 00:00:00',$request->date_to.' 23:59:59'])
                         ->get();
                 }
+
+                $downloads->load('publication','output');
+
+            }elseif($request->productivity == 'Data Entry'){
+                if($request->user_id == ""){
+                    $dataentries = Logsheet::whereBetween('entry_date',[$request->date_from,$request->date_to])->get();
+                } else {
+                    $dataentries = Logsheet::where('user_id',$request->user_id)
+                        ->whereBetween('entry_date',[$request->date_from,$request->date_to])->get();
+                }
+
+                $dataentries->load('download.publication','user');
             }
-            $downloads->load('publication');
+
         }
 
 
-        return view('admin.newspaper_reports.productivity_reports',compact('downloads'));
+        return view('admin.newspaper_reports.productivity_reports',compact('downloads','dataentries'));
     }
 
     public function monitoring(Request $request){

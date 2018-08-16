@@ -1,273 +1,53 @@
-Publication Name: VIC_DANDENONG_STAR_JOURNAL
-Publication Date: 2018-07-30
-Publication State: VIC
-
-Publication Name: VIC_FRANKSTON_TIMES
-Publication Date: 2018-07-30
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_FRANKSTON_STANDARD
-Publication Date: 2018-07-30
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_MORELAND
-Publication Date: 2018-07-30
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_MANNINGHAM
-Publication Date: 2018-07-30
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_WHITEHORSE
-Publication Date: 2018-07-30
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_WHITEHORSE
-Publication Date: 2018-07-30
-Publication State: VIC
-
-Publication Name: SA_ADELAIDE'S_DAILY_INDEPENDENT_NEWS
-Publication Date: 2018-07-30
-Publication State: SA
-
-Publication Name: QLD_COMM_COURIER_MAIL
-Publication Date: 2018-07-30
-Publication State: QLD
-
-Publication Name: QLD_COMM_GOLD_COAST_BULLETIN
-Publication Date: 2018-07-30
-Publication State: QLD
+Publication Name: NSW_SOUTH_COAST_REGISTER
+Publication Date: 2018-08-15
+Publication State: NSW
 
 Publication Name: NSW_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-07-30
+Publication Date: 2018-08-16
 Publication State: NSW
 
-Publication Name: ACT_GUM_TREE
-Publication Date: 2018-07-30
-Publication State: ACT
-
-Publication Name: NT_GUM_TREE
-Publication Date: 2018-07-30
+Publication Name: NT_AUSTRALIAN_FINANCIAL_REVIEW
+Publication Date: 2018-08-16
 Publication State: NT
-
-Publication Name: TAS_GUM_TREE
-Publication Date: 2018-07-30
-Publication State: TAS
-
-Publication Name: SA_GUM_TREE
-Publication Date: 2018-07-30
-Publication State: SA
-
-Publication Name: ACT_GUM_TREE
-Publication Date: 2018-07-30
-Publication State: ACT
-
-Publication Name: NT_GUM_TREE
-Publication Date: 2018-07-30
-Publication State: NT
-
-Publication Name: TAS_GUM_TREE
-Publication Date: 2018-07-30
-Publication State: TAS
-
-Publication Name: SA_GUM_TREE
-Publication Date: 2018-07-30
-Publication State: SA
-
-Publication Name: NSW_REAL_ESTATE_PRESS_MANNING_VALLEY
-Publication Date: 2018-07-30
-Publication State: NSW
-
-Publication Name: QLD_NEWS_MAIL_(BUNDABERG)
-Publication Date: 2018-07-28
-Publication State: QLD
-
-Publication Name: QLD_SUNSHINE_COAST_DAILY
-Publication Date: 2018-07-28
-Publication State: QLD
-
-Publication Name: QLD_GYMPIE_TIMES
-Publication Date: 2018-07-28
-Publication State: QLD
-
-Publication Name: QLD_THE_QUEENSLAND_TIMES
-Publication Date: 2018-07-28
-Publication State: QLD
-
-Publication Name: QLD_THE_GLADSTONE_OBSERVER
-Publication Date: 2018-07-28
-Publication State: QLD
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_PORT_PHILLIP
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_CAULFIELD_GLEN_EIRA
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_MAROONDAH
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_LILYDALE_&_YARRA_VALLEY
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_BAYSIDE
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_KNOX
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_MONASH
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_PRESTON
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_SUNBURY
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_LEADER_NEWSPAPER_-_WHITTLESEA
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_FERNTREE_GULLY_BELGRAVE_MAIL
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_MOUNT_EVELYN_MAIL
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_MORNINGTON_NEWS
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_SOUTHERN_PENINSULA_NEWS
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_BRIMBANK_&_NORTHWEST_STAR_WEEKLY
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_MELTON_&_MOORABOOL_STAR_WEEKLY
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: VIC_SUNBURY_&_MACEDON_RANGES_STAR_WEEKLY
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: NSW_CANTERBURY_BANKSTOWN_EXPRESS
-Publication Date: 2018-07-31
-Publication State: NSW
-
-Publication Name: NSW_HILLS_SHIRE_TIMES
-Publication Date: 2018-07-31
-Publication State: NSW
-
-Publication Name: NSW_INNER_WEST_COURIER_-_INNER_CITY
-Publication Date: 2018-07-31
-Publication State: NSW
-
-Publication Name: NSW_INNER_WEST_COURIER_-_INNER_WEST
-Publication Date: 2018-07-31
-Publication State: NSW
-
-Publication Name: NSW_MACARTHUR_CHRONICLE_-_CAMPBELLTOWN
-Publication Date: 2018-07-31
-Publication State: NSW
-
-Publication Name: NSW_AUBURN_REVIEW
-Publication Date: 2018-07-31
-Publication State: NSW
-
-Publication Name: NSW_SOUTHERN_COURIER
-Publication Date: 2018-07-31
-Publication State: NSW
-
-Publication Name: WA_COMMUNITY_RESIDENTIAL_NORTH
-Publication Date: 2018-07-31
-Publication State: WA
-
-Publication Name: WA_MELVILLE_TIMES
-Publication Date: 2018-07-31
-Publication State: WA
-
-Publication Name: WA_COMMUNITY_RESIDENTIAL_WEST
-Publication Date: 2018-07-31
-Publication State: WA
-
-Publication Name: SA_ADELAIDE'S_DAILY_INDEPENDENT_NEWS
-Publication Date: 2018-07-31
-Publication State: SA
-
-Publication Name: QLD_COMM_COURIER_MAIL
-Publication Date: 2018-07-31
-Publication State: QLD
-
-Publication Name: QLD_COMM_GOLD_COAST_BULLETIN
-Publication Date: 2018-07-31
-Publication State: QLD
-
-Publication Name: SA_COMM_THE_ADVERTISER
-Publication Date: 2018-07-31
-Publication State: SA
 
 Publication Name: QLD_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-07-31
+Publication Date: 2018-08-16
 Publication State: QLD
 
 Publication Name: VIC_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-07-31
+Publication Date: 2018-08-16
 Publication State: VIC
-
-Publication Name: NSW_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-07-31
-Publication State: NSW
 
 Publication Name: WA_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-07-31
+Publication Date: 2018-08-16
 Publication State: WA
 
-Publication Name: VIC_LEADER_NEWSPAPER_-_NORTHERN
-Publication Date: 2018-07-31
+Publication Name: VIC_THE_SURF_COAST_TIMES
+Publication Date: 2018-08-16
 Publication State: VIC
 
-Publication Name: VIC_WESTERN_PORT_NEWS
-Publication Date: 2018-07-31
+Publication Name: VIC_BELLARINE_TIMES
+Publication Date: 2018-08-16
 Publication State: VIC
 
-Publication Name: VIC_GUM_TREE
-Publication Date: 2018-07-31
-Publication State: VIC
+Publication Name: WA_BROOME_ADVERTISER
+Publication Date: 2018-08-16
+Publication State: WA
 
-Publication Name: VIC_GUM_TREE
-Publication Date: 2018-07-31
-Publication State: VIC
-
-Publication Name: NSW_CHINESE_SYDNEY_PROPERTY_WEEKLY
-Publication Date: 2018-07-27
+Publication Name: NSW_HORNSBY_ADVOCATE
+Publication Date: 2018-08-16
 Publication State: NSW
 
-Publication Name: QLD_FRASER_COAST_CHRONICLE
-Publication Date: 2018-08-02
-Publication State: QLD
+Publication Name: NSW_COMM_SYDNEY_MORNING_HERALD
+Publication Date: 2018-08-16
+Publication State: NSW
 
-Publication Name: QLD_BRISBANE_&_GOLD_COAST_PROPERTY_WEEKLY
-Publication Date: 2018-08-10
+Publication Name: QLD_AGENT_BOOKLET_-_BRUCE_HARRY_REAL_ESTATE
+Publication Date: 2018-08-16
 Publication State: QLD
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
-			Total Publications : 57
+			Total Publications : 8
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------

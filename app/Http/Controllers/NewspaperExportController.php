@@ -156,7 +156,7 @@ class NewspaperExportController extends Controller
             } else {
                 $downloads = Download::where('status','Closed')
                     ->whereHas('output',function($query) use ($request){
-                        $query->where('output_date',$request->date_from)->where('delivery_time',$request->delivery_time);
+                        $query->where('output_date',$request->date_from)->where('delivery_time',$request->delivery_time)->orderBy('sequence_from');
                     })->get();
             }
 
