@@ -29,7 +29,7 @@ class AgentDeliveryController extends Controller
             if($request->delivery_time == ""){
                 $downloads = Download::where('status','Closed')
                     ->whereHas('output',function($query) use ($request){
-                        $query->where('output_date',$request->date_from);
+                        $query->where('output_date',$request->date_from)->orderBy('sequence_from');
                     })->get();
             } else {
                 $downloads = Download::where('status','Closed')
