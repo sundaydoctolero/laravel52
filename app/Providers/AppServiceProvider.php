@@ -81,7 +81,7 @@ class AppServiceProvider extends ServiceProvider
                 'For Output' => 'For Output'
             ];
 
-            $view->with('publication_lists',Publication::orderBy('publication_name')->lists('publication_name','id'));
+            $view->with('publication_lists',Publication::where('publication_type','<>','Inactive')->orderBy('publication_name')->lists('publication_name','id'));
             $view->with('status_lists',$status);
             $view->with('operator_lists',User::lists('operator_no','id'));
         });
