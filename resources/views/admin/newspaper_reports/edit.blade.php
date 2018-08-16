@@ -78,6 +78,7 @@
                                 <th align="center">Sequence From</th>
                                 <th align="center">Sequence To</th>
                                 <th class="text-center">Folder</th>
+                                <th class="text-center">Remarks</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -92,6 +93,7 @@
                                         <td><strong>{{ Form::text('sequence_from',null,['class'=>'form-control text-center','id'=>'sequence_from','required'=>'true']) }}</strong></td>
                                         <td><strong>{{ Form::text('sequence_to',null,['class'=>'form-control text-center','id'=>'sequence_to','required'=>'true']) }}</strong></td>
                                         <td><strong>{{ Form::text('delivery_time',null,['class'=>'form-control text-center']) }}</strong></td>
+                                        <td><strong>{{ Form::text('remarks',null,['class'=>'form-control text-center']) }}</strong></td>
                                         <td class="text-center">{!! Form::submit('Update Output',['class'=>'form-control btn btn-success']) !!}</td>
                                     </tr>
                                     {!! Form::close() !!}
