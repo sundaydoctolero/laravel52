@@ -97,7 +97,7 @@ class DownloadController extends Controller
             $body['job_number'] = $download->publication->job_number_code;
 
             $client = new \GuzzleHttp\Client();
-            $url = "192.168.5.57/api/admin/downloads/process.php?action=save";
+            $url = "192.168.5.8/api/admin/downloads/process.php?action=save";
             $response = $client->createRequest("POST", $url,['body'=>$body]);
             $response = $client->send($response);
         }

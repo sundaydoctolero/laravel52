@@ -500,7 +500,6 @@ class NewspaperReportController extends Controller
                 break;
 
         };
-
         return view('admin.newspaper_reports.qualitycontrol',compact('publications'));
     }
 
@@ -592,6 +591,7 @@ class NewspaperReportController extends Controller
                 $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
             }]);
         }
+
         return view('admin.newspaper_reports.monthly_delivery',compact('publications'));
     }
 

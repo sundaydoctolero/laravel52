@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('date_to', 'To :') !!}
-                            {!! Form::date('date_to',\Carbon\Carbon::now(),['class'=>'form-control']) !!}
+                            {!! Form::date('date_to',\Carbon\Carbon::now()->endOfMonth(),['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::submit('Filter User',['class'=>'btn btn-primary']) !!}
