@@ -173,6 +173,7 @@ class NewspaperReportController extends Controller
                     ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
+                    ->where('publication_type','<>','Chinese')
                     ->whereHas('days',function($q) use ($request){
                         $q->where('day_name',$request->pub_group);
                     })
@@ -193,6 +194,7 @@ class NewspaperReportController extends Controller
                     ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
+                    ->where('publication_type','<>','Chinese')
                     ->whereHas('days',function($q) use ($request){
                         $q->where('day_name',$request->pub_group);
                     })
@@ -213,6 +215,7 @@ class NewspaperReportController extends Controller
                     ->where('publication_type','<>','Inactive')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
+                    ->where('publication_type','<>','Chinese')
                     ->whereHas('days',function($q) use ($request){
                         $q->where('day_name',$request->pub_group);
                     })
@@ -232,6 +235,7 @@ class NewspaperReportController extends Controller
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
                     ->where('publication_type','<>','Inactive')
+                    ->where('publication_type','<>','Chinese')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -252,6 +256,7 @@ class NewspaperReportController extends Controller
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
                     ->where('publication_type','<>','Inactive')
+                    ->where('publication_type','<>','Chinese')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -272,6 +277,7 @@ class NewspaperReportController extends Controller
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
                     ->where('publication_type','<>','Inactive')
+                    ->where('publication_type','<>','Chinese')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
@@ -292,6 +298,7 @@ class NewspaperReportController extends Controller
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])
                     ->where('publication_type','<>','Tier 1')
                     ->where('publication_type','<>','Inactive')
+                    ->where('publication_type','<>','Chinese')
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','NOT LIKE','Gum %')
                     ->whereHas('days',function($q) use ($request){
