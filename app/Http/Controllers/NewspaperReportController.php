@@ -448,7 +448,7 @@ class NewspaperReportController extends Controller
                 break;
 
             case 'Bi-Weekly':
-                $publications = Publication::whereIn('issue',['Bi-Weekly','Bi-Weekly Advance Event','Bi-Weekly Odd','Bi-Weekly Even','Bi-Weekly Advance Odd'])
+                $publications = Publication::whereIn('issue',['Bi-Weekly','Bi-Weekly Advance Even','Bi-Weekly Odd','Bi-Weekly Even','Bi-Weekly Advance Odd'])
                     ->where('publication_name','NOT LIKE','Comm %')
                     ->where('publication_name','<>','Tier 1')
                     ->where('publication_type','<>','Inactive')
@@ -464,6 +464,21 @@ class NewspaperReportController extends Controller
 
                 break;
 
+            case 'NZ':
+                $publications = Publication::where('publication_name','NOT LIKE','Comm %')
+                    ->where('publication_name','<>','Tier 1')
+                    ->where('publication_type','<>','Inactive')
+                    ->where('publication_name','NOT LIKE','Gum %')
+                    ->whereHas('states',function ($q){
+                        $q->where('state_code','NZ');
+                    })
+                    ->orderBy('publication_name')->get();
+
+                $publications->load(['downloads.output','states','days','downloads'=>function ($query) use ($request){
+                    $query->whereBetween('publication_date',[$request->date_from,$request->date_to]);
+                }]);
+
+                break;
 
             default:
                 $publications = Publication::whereIn('issue',['Weekly','Daily'])

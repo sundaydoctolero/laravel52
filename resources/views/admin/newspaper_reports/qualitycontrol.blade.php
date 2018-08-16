@@ -15,10 +15,8 @@
                             {!! Form::select('pub_group',['Monday'=>'Monday',
                             'Tuesday'=>'Tuesday','Wednesday'=>'Wednesday','Thursday'=>'Thursday','Friday'=>'Friday',
                             'Saturday'=>'Saturday','Sunday'=>'Sunday','Comm'=>'Comm','Tier 1'=>'Tier 1','Chinese'=>'Chinese',
-                            'Hard Copy'=>'Hard Copy','Gum Tree'=>'Gum Tree','Monthly'=>'Monthly','Email'=>'Email','Bi-Weekly'=>'Bi-Weekly'
-
-                            ]
-                            ,null,['class'=>'form-control']) !!}
+                            'Hard Copy'=>'Hard Copy','Gum Tree'=>'Gum Tree','Monthly'=>'Monthly','Email'=>'Email','Bi-Weekly'=>'Bi-Weekly',
+                            'NZ'=>'NZ'],null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('date_from', 'Date From :') !!}
