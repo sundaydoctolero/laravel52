@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['logo' => 'fa fa-pencil','page_header' => 'Tsheet'])
+@extends('layouts.admin.admin',['logo' => 'fa fa-file-excel-o','page_header' => 'Tsheet'])
 
 
 @section('main-content')

@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Events', 'logo' => 'fa fa-link'])
+@extends('layouts.admin.admin',['page_header' => 'Events', 'logo' => 'fa fa-calendar-check-o'])
 
 @section('main-content')
     <div class="row">

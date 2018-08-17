@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Reports'])
+@extends('layouts.admin.admin',['page_header' => 'Monitoring Publications', 'logo'=>'fa fa-eye'])
 
 @section('main-content')
     <div class="row">

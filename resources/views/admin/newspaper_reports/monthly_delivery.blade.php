@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Reports'])
+@extends('layouts.admin.admin',['page_header' => 'Monthly Reports', 'logo'=>'fa fa-bar-chart'])
 
 @section('css')
     <style>
@@ -17,7 +17,7 @@
                 <div class="box-header" style="background-color: lightblue">
                     {!! Form::open(['url' => '/newspaper_reports/monthly_delivery','class' => 'form-inline', 'method' => 'GET']) !!}
                     <div class="form-group">
-                        <h3 class="box-title"><a href="#" class="btn btn-success"><i class="fa fa-plus"></i> Export To Excel</a></h3>
+                        <h3 class="box-title"><a href="#" class="btn btn-success"><i class="fa fa-download"></i> Export To Excel</a></h3>
                     </div>
                     <div class="pull-right">
                         <div class="form-group">

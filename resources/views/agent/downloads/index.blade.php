@@ -11,21 +11,12 @@
                     <small class="label label-info">{{ $downloads->where('status','For Query')->count() }}</small>
                     <small class="label label-warning">{{ $downloads->where('status','Pending')->count() }}</small>
                 </h1>
-
-                <div class="box-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
             </div>
+
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
-                    <tbody><tr>
+                    <tbody>
+                    <tr>
                         <th>Publication Name</th>
                         <th>Publication Date</th>
                         <th class="text-center">Publication Type</th>

@@ -1,4 +1,4 @@
-@extends('layouts.admin.admin',['page_header' => 'Reports'])
+@extends('layouts.admin.admin',['page_header' => 'Not Updated Reports', 'logo' => 'fa fa-newspaper-o'])
 
 @section('main-content')
         <div class="row">
