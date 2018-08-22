@@ -47,6 +47,7 @@ class SendNotUpdated extends Command
 
 
         $no_records = Output::where('output_date',Carbon::now()->toDateString())
+            ->where('remarks','<>','Invalid')
             ->where('sale_records',0)->where('rent_records',0)
             ->get();
 
