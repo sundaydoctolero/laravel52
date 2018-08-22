@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('delivery_time', 'Folder :') !!}
-                        {!! Form::select('delivery_time', $delivery_time,null,['class'=>'form-control','placeholder'=>'--']) !!}
+                        {!! Form::select('delivery_time', \App\Output::where('output_date',request('date_from'))->groupBy('delivery_time')->lists('delivery_time','delivery_time'),null,['class'=>'form-control','placeholder'=>'--']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::submit('Filter Delivery',['class'=>'btn btn-primary']) !!}
@@ -81,3 +81,12 @@
     </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $("input[name='date_from']").on('change', function() {
+            this.form.submit();
+        });
+
+    </script>
+@endpush
