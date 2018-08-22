@@ -47,9 +47,9 @@ class SendNotUpdated extends Command
 
 
         $no_records = Output::where('output_date',Carbon::now()->toDateString())
-            ->where('id','<>',986)
             ->where('sale_records',0)->where('rent_records',0)
             ->get();
+
 
         $no_records->load('download');
 

@@ -56,6 +56,7 @@ class AgentOutputController extends Controller
             $query->orderBy('sale_rent','desc')->orderBy('batch_id');
         }]);
 
+
         return view($this->view_path.'.edit',compact('download','outputs','records'));
     }
 

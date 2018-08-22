@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Response;
 use App\Download;
 use App\Publication;
 use Carbon\Carbon;
+use App\Output;
 
 
 class TestController extends Controller
@@ -34,10 +35,13 @@ class TestController extends Controller
     public function import(){
 
 
-        $no_records = \App\Output::where('output_date',Carbon::now()->toDateString())
-            ->where('id','<>',718)
+        $no_records = Output::where('output_date','2018-08-21')
+            ->where('id','<>',986)
             ->where('sale_records',0)->where('rent_records',0)
             ->get();
+
+
+        return $no_records;
 
 
         $today = Carbon::now();

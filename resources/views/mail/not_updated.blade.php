@@ -63,7 +63,7 @@
                 @else
                     <tr>
                         <td>{{ $count++ + 1 }}</td>
-                        <td>{{ $no_re->download->publication->publication_name }}</td>
+                        <td>{{ $no_re->state.' - '.$no_re->download->publication->publication_name }}</td>
                         <td align="center">{{ $no_re->download->publication_date }}</td>
                         <td>{{ $no_re->download->status }}</td>
                         <td>{{ $no_re->download->remarks }}</td>
