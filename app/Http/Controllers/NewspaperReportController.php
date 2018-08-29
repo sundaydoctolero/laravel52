@@ -516,6 +516,7 @@ class NewspaperReportController extends Controller
 
                 switch($request->pub_type){
                     case 'Overlap':
+
                         $publications = Publication::where('publication_type','<>','Inactive')
                             ->where('publication_type',$request->pub_type)
                             ->where('publication_name','<>','RP Pro')
@@ -523,9 +524,10 @@ class NewspaperReportController extends Controller
                             ->whereHas('states',function ($q){
                                 $q->where('state_code','<>','NZ');
                             })
-                            ->orderBy('publication_name')
-                            ->orderBy('publication_type')
+                            ->orderBy('state_id')
                             ->get();
+
+                        //return $publications;
                         break;
 
                     case 'Gum Tree':
