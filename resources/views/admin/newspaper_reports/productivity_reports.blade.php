@@ -16,7 +16,7 @@
                             </div>
                             <div class="form-group">
                                 {!! Form::label('productivity', 'Productivity :') !!}
-                                {!! Form::select('productivity',['Download'=>'Download','Data Entry'=>'Data Entry'],null,['class'=>'form-control']) !!}
+                                {!! Form::select('productivity',['Download'=>'Download','Data Entry'=>'Data Entry','Output'=>'Output'],null,['class'=>'form-control']) !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::label('date_from', 'Date From :') !!}
@@ -45,6 +45,16 @@
                                 <th class="text-center" style="background-color:#5e5d5d;color:white">Status</th>
                                 <th class="text-center" style="background-color:#5e5d5d;color:white">Download Date</th>
                             </tr>
+                            @elseif(request('productivity') == 'Output')
+                            <tr>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">#</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Operator</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Publication Name</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Publication Date</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Sequence</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Status</th>
+                                <th class="text-center" style="background-color:#5e5d5d;color:white">Output Date</th>
+                            </tr>
                             @else
                             <tr>
                                 <th class="text-center" style="background-color:#5e5d5d;color:white">#</th>
@@ -70,6 +80,18 @@
                                             <td class="text-center">{{ $download->pages }}</td>
                                             <td class="text-center">{{ $download->status }}</td>
                                             <td class="text-center">{{ $download->time_downloaded }}</td>
+                                        </tr>
+                                    @endforeach
+                                @elseif(request('productivity') == 'Output')
+                                    @foreach($outputs as $count => $output)
+                                        <tr>
+                                            <td class="text-center">{{ $count++ + 1 }}</td>
+                                            <td class="text-center">{{ $output->user->operator_no  }}</td>
+                                            <td>{{ $output->download->publication->publication_name }}</td>
+                                            <td class="text-center">{{ $output->download->publication_date }}</td>
+                                            <td class="text-center">{{ $output->sequence_from.' - '.$output->sequence_to }}</td>
+                                            <td class="text-center">{{ $output->download->status }}</td>
+                                            <td class="text-center">{{ $output->output_date }}</td>
                                         </tr>
                                     @endforeach
                                 @endif
