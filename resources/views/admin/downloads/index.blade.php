@@ -37,8 +37,10 @@
                         <td class="text-center">{{ $download->operator['username'] }}</td>
                         <td class="text-center">
                             <a href="/downloads/{{ $download->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
+                            <div class="hidden">
                             {!! Form::model($download,['method'=>'DELETE','url' => '/downloads/'.$download->id,'style'=>'display:inline']) !!}
                             {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+                            </div>
                         </td>
                     </tr>
                     @endforeach

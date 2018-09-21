@@ -55,7 +55,6 @@ class DownloadController extends Controller
                 $download->operators()->attach($request->operator_list);
             }
 
-
             return redirect($this->url_path);
         } else {
             flash('Publication already exist')->warning();
