@@ -59,10 +59,11 @@
                 </div>
                 <div id="list" class="tab-pane fade">
                     <div class="container-fluid" style="margin: 20px;">
-                        <form class="form-inline">
-                            <input type="text" class="form-control" name="title" />
-                            <input type="datetime-local" class="form-control" name="sdate" />
-                            <input type="datetime-local" class="form-control" name="edate" />
+                        <form class="form-inline" action="events/create">
+                            <input type="text" class="form-control" name="title" placeholder="Title"/>
+                            <input type="date" class="form-control" name="sdate" />
+                            <input type="date" class="form-control" name="edate" />
+                            <input type="text" class="form-control" name="description" placeholder="Remarks"/>
                             <input type="submit" value="Add" class="btn btn-primary" />
                         </form>
                     </div>
@@ -80,10 +81,13 @@
                             <tr>
                                 <td>{{ $count + 1 }}</td>
                                 <td>{{ $event->title }}</td>
-                                <td>{{ $event->start_date }}</td>
-                                <td>{{ $event->end_date }}</td>
+                                <td>{{ $event->sdate }}</td>
+                                <td>{{ $event->edate }}</td>
                                 <td>{{ $event->description }}</td>
-                                <td><a href="agent/events/delete">Delete</a></td>
+                                <td>
+                                    {!! Form::model($event,['method'=>'DELETE','url' => '/events/'.$event->id,'style'=>'display:inline']) !!}
+                                    {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

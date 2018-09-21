@@ -54,6 +54,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Download');
     }
 
+    public function events(){
+        return $this->hasMany('App\Event');
+    }
 
 
 

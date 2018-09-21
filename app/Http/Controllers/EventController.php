@@ -24,7 +24,7 @@ class EventController extends Controller
         if($data->count()){
             foreach ($data as $key => $value) {
                 $events[] = Calendar::event(
-                    $value->title.Carbon::now()->format('l'),
+                    $value->title,
                     false,
                     Carbon::now(),
                     Carbon::parse($value->end_date)->addDays(1)
@@ -42,9 +42,10 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        auth()->user()->events()->create($request->all());
+        return redirect('/');
     }
 
     /**
@@ -100,6 +101,8 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Event::find($id);
+        $event->delete();
+        return redirect('/');
     }
 }

@@ -50,10 +50,15 @@ class HomeController extends Controller
         if($data->count()){
             foreach ($data as $key => $value) {
                 $events[] = Calendar::event(
-                    $value->title.Carbon::now()->format('l'),
-                    false,
-                    Carbon::now(),
-                    Carbon::parse($value->end_date)->addDays(1)
+                    $value->title,
+                    true,
+                    Carbon::parse($value->sdate),
+                    Carbon::parse($value->edate)->addDays(1),
+                    null,
+                    [
+                        'color' => '#f05050',
+                        'url' => '/events/'.$value->id
+                    ]
                 );
             }
         }
