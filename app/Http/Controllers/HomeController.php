@@ -10,6 +10,7 @@ use App\Image;
 use Calendar;
 use App\Event;
 use DB;
+use App\User;
 
 
 class HomeController extends Controller
@@ -86,6 +87,7 @@ class HomeController extends Controller
     }
 
     public function generate_calendar(){
+        Calendar::addEvents($this->generate_birthday());
         Calendar::addEvents($this->generate_events());
         return Calendar::addEvents($this->generate_dtr());
     }
@@ -98,6 +100,27 @@ class HomeController extends Controller
     public function daily_records(){
         return Logsheet::where('entry_date',Carbon::today())
             ->where('user_id',auth()->user()->id)->get()->sum('records');
+    }
+
+    public function generate_birthday(){
+        $events = [];
+        $data = User::with('employee')->get();
+        if($data){
+            foreach ($data as $key => $value) {
+                $events[] = Calendar::event(
+                    $value->employee['firstname'].'\'s Birthday!',
+                    true,
+                    Carbon::parse(Carbon::now()->year.substr($value->employee['birthdate'],4,6)),
+                    Carbon::parse(Carbon::now()->year.substr($value->employee['birthdate'],4,6))->addDays(1),
+                    null,
+                    [
+                        'color' => '#EB0BEE',
+                        'url' => '/events/'.$value->id
+                    ]
+                );
+            }
+        }
+        return $events;
     }
 
     public function show_dtr(){
