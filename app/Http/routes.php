@@ -386,6 +386,17 @@ Route::delete('/site_images/{images}', 'ImagesController@destroy'); //delete
 
 Route::resource('/events','EventController');
 
+Route::get('/daily_time_records','DailyTimeRecordController@index');
+//Route::get('/site_images/create', 'ImagesController@create');
+//Route::post('/site_images/create','ImagesController@store'); //store
+//Route::get('/site_images/{images}/edit', 'ImagesController@edit'); //edit
+//Route::put('/site_images/{images}', 'ImagesController@update'); //update
+//Route::patch('/site_images/{images}', 'ImagesController@update'); //update
+//Route::delete('/site_images/{images}', 'ImagesController@destroy'); //delete
+
+Route::post('/daily_time_records','DailyTimeRecordController@upload');
+Route::get('/daily_time_records/test','DailyTimeRecordController@test');
+
 
 /**
  * Auth Controller

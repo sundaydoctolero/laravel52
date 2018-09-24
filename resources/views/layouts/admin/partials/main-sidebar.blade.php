@@ -100,6 +100,7 @@
                     <ul class="treeview-menu">
                         <li class="{{ setActive('passwords') }}"><a href="/passwords"><i class="fa fa-unlock"></i> <span>Passwords</span></a></li>
                         <li class="{{ setActive('workstations') }}"><a href="/workstations"><i class="fa fa-tv"></i> <span>Workstations</span></a></li>
+                        <li class="{{ setActive('daily_time_records') }}"><a href="/daily_time_records"><i class="fa fa-diamond"></i> <span>Daily Time Records</span></a></li>
                         <li class="{{ setActive('assets') }}"><a href="/assets"><i class="fa fa-diamond"></i> <span>Manage Assets</span></a></li>
                     </ul>
                 </li>
