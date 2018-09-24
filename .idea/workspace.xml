@@ -37,8 +37,8 @@
       <file leaf-file-name="DailyTimeRecordController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DailyTimeRecordController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.75">
-              <caret line="75" column="14" selection-start-line="73" selection-start-column="26" selection-end-line="75" selection-end-column="14" />
+            <state vertical-scroll-proportion="-10.5">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
                 <marker date="1537759645325" expanded="true" signature="1550:2018" placeholder="select id,op..daily_time_records..." />
@@ -52,18 +52,13 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41902605">
-              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.57191396">
+              <caret line="105" column="166" selection-start-line="105" selection-start-column="166" selection-end-line="105" selection-end-column="166" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
-                <element signature="e#1784#2456#0#PHP" expanded="false" />
-                <element signature="e#2919#3674#0#PHP" expanded="false" />
-                <marker date="1537767812994" expanded="true" signature="2963:3567" placeholder="select id,op..*..." />
-                <marker date="1537767812994" expanded="true" signature="3016:3180" placeholder="select dtr_t..*..." />
-                <marker date="1537767812994" expanded="true" signature="3038:3083" placeholder="select * fro..daily_time_records..." />
-                <marker date="1537767812994" expanded="true" signature="3216:3383" placeholder="select dtr_t..*..." />
-                <marker date="1537767812994" expanded="true" signature="3238:3283" placeholder="select * fro..daily_time_records..." />
-                <marker date="1537767812994" expanded="true" signature="3420:3465" placeholder="select * fro..daily_time_records..." />
+                <marker date="1537768810749" expanded="true" signature="2963:3494" placeholder="select id,op..daily_time_records..." />
+                <marker date="1537768810749" expanded="true" signature="3016:3151" placeholder="select dtr_t..daily_time_records..." />
+                <marker date="1537768810749" expanded="true" signature="3194:3332" placeholder="select dtr_t..daily_time_records..." />
               </folding>
             </state>
           </provider>
@@ -429,7 +424,7 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -799,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DailyTimeRecordController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.75">
-          <caret line="75" column="14" selection-start-line="73" selection-start-column="26" selection-end-line="75" selection-end-column="14" />
+        <state vertical-scroll-proportion="-10.5">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
             <marker date="1537759645325" expanded="true" signature="1550:2018" placeholder="select id,op..daily_time_records..." />
@@ -812,18 +807,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41902605">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.57191396">
+          <caret line="105" column="166" selection-start-line="105" selection-start-column="166" selection-end-line="105" selection-end-column="166" />
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
-            <element signature="e#1784#2456#0#PHP" expanded="false" />
-            <element signature="e#2919#3674#0#PHP" expanded="false" />
-            <marker date="1537767812994" expanded="true" signature="2963:3567" placeholder="select id,op..*..." />
-            <marker date="1537767812994" expanded="true" signature="3016:3180" placeholder="select dtr_t..*..." />
-            <marker date="1537767812994" expanded="true" signature="3038:3083" placeholder="select * fro..daily_time_records..." />
-            <marker date="1537767812994" expanded="true" signature="3216:3383" placeholder="select dtr_t..*..." />
-            <marker date="1537767812994" expanded="true" signature="3238:3283" placeholder="select * fro..daily_time_records..." />
-            <marker date="1537767812994" expanded="true" signature="3420:3465" placeholder="select * fro..daily_time_records..." />
+            <marker date="1537768810749" expanded="true" signature="2963:3494" placeholder="select id,op..daily_time_records..." />
+            <marker date="1537768810749" expanded="true" signature="3016:3151" placeholder="select dtr_t..daily_time_records..." />
+            <marker date="1537768810749" expanded="true" signature="3194:3332" placeholder="select dtr_t..daily_time_records..." />
           </folding>
         </state>
       </provider>

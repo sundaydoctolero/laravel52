@@ -102,9 +102,9 @@ class HomeController extends Controller
 
     public function show_dtr(){
         $sql = "select id,operator_no,dtr_date,
-                MIN((select dtr_time from (select * from daily_time_records limit 100000) as tin where dtr_code = 1 and tin.operator_no = tl.operator_no and (tin.dtr_time = tl.dtr_time))) as time_in,
-                MAX((select dtr_time from (select * from daily_time_records limit 100000) as tout where dtr_code = 2 and tout.operator_no = tl.operator_no and (tout.dtr_time = tl.dtr_time))) as time_out
-                from (select * from daily_time_records limit 100000) as tl
+                MIN((select dtr_time from daily_time_records as tin where dtr_code = 1 and tin.operator_no = tl.operator_no and (tin.dtr_time = tl.dtr_time)limit 1)) as time_in,
+                MAX((select dtr_time from daily_time_records as tout where dtr_code = 2 and tout.operator_no = tl.operator_no and (tout.dtr_time = tl.dtr_time)limit 1)) as time_out
+                from daily_time_records as tl
                 where operator_no = :operator_no
                 group by operator_no,dtr_date ";
 
