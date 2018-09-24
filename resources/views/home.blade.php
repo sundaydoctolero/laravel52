@@ -1,7 +1,22 @@
 @extends('layouts.app.app',['page_header'=>'Dashboard'])
 
 @section('css')
+<style>
+    .fillup-form {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #13c9f7;
+    }
 
+    .table {
+        background-color: #848484;
+        color: white;
+    }
+
+    .table:hover {
+        color: black;
+    }
+</style>
 @endsection
 
 @section('main-content')
@@ -58,7 +73,7 @@
                     </div>
                 </div>
                 <div id="list" class="tab-pane fade">
-                    <div class="container-fluid" style="margin: 20px;">
+                    <div class="container-fluid fillup-form">
                         <form class="form-inline" action="events/create">
                             <input type="text" class="form-control" name="title" placeholder="Title"/>
                             <input type="date" class="form-control" name="sdate" />
