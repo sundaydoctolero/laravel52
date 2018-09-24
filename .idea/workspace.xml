@@ -52,15 +52,15 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.596829">
-              <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.1993205">
+              <caret line="106" column="64" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
                 <element signature="e#1798#2470#0#PHP" expanded="false" />
                 <element signature="e#2476#2689#0#PHP" expanded="false" />
-                <marker date="1537771024454" expanded="true" signature="3802:4333" placeholder="select id,op..daily_time_records..." />
-                <marker date="1537771024454" expanded="true" signature="3855:3990" placeholder="select dtr_t..daily_time_records..." />
-                <marker date="1537771024454" expanded="true" signature="4033:4171" placeholder="select dtr_t..daily_time_records..." />
+                <marker date="1537771731035" expanded="true" signature="3828:4359" placeholder="select id,op..daily_time_records..." />
+                <marker date="1537771731035" expanded="true" signature="3881:4016" placeholder="select dtr_t..daily_time_records..." />
+                <marker date="1537771731035" expanded="true" signature="4059:4197" placeholder="select dtr_t..daily_time_records..." />
               </folding>
             </state>
           </provider>
@@ -895,15 +895,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.596829">
-          <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.1993205">
+          <caret line="106" column="64" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
             <element signature="e#1798#2470#0#PHP" expanded="false" />
             <element signature="e#2476#2689#0#PHP" expanded="false" />
-            <marker date="1537771024454" expanded="true" signature="3802:4333" placeholder="select id,op..daily_time_records..." />
-            <marker date="1537771024454" expanded="true" signature="3855:3990" placeholder="select dtr_t..daily_time_records..." />
-            <marker date="1537771024454" expanded="true" signature="4033:4171" placeholder="select dtr_t..daily_time_records..." />
+            <marker date="1537771731035" expanded="true" signature="3828:4359" placeholder="select id,op..daily_time_records..." />
+            <marker date="1537771731035" expanded="true" signature="3881:4016" placeholder="select dtr_t..daily_time_records..." />
+            <marker date="1537771731035" expanded="true" signature="4059:4197" placeholder="select dtr_t..daily_time_records..." />
           </folding>
         </state>
       </provider>

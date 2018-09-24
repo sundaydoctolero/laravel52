@@ -104,7 +104,7 @@ class HomeController extends Controller
 
     public function generate_birthday(){
         $events = [];
-        $data = User::with('employee')->get();
+        $data = User::with('employee')->where('status','Active')->get();
         if($data){
             foreach ($data as $key => $value) {
                 $events[] = Calendar::event(
