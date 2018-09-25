@@ -61,6 +61,10 @@ return [
             'region' => 'your-region',
             'bucket' => 'your-bucket',
         ],
+        'c' => [
+            'driver'   => 'local',
+            'root' => 'C:\\ftp\\DTR',
+        ],
 
     ],
 

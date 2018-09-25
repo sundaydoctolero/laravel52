@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\DailyTimeRecord;
+use Carbon\Carbon;
+
 
 class ImportDTR extends Command
 {
@@ -38,9 +40,10 @@ class ImportDTR extends Command
      */
     public function handle()
     {
-        $storage_path = base_path().'/storage/dtr_upload';
+        $storage_path = 'C:/ftp/DTR';
+        $file = Carbon::now()->subDay(1)->format('Ymd').'-'.Carbon::now()->subDay(1)->format('Ymd').'.txt';
 
-        if(($handle = fopen($storage_path.'/'.'20180924-20180924.txt','r')) !== false  ){
+        if(($handle = fopen($storage_path.'/'.$file,'r')) !== false  ){
             while(($data= fgetcsv($handle,100000,"\t")) !== false){
                 $dtr = new DailyTimeRecord();
                 $dtr->operator_no = substr($data[0],0,3);
