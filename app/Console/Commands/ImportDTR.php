@@ -40,7 +40,9 @@ class ImportDTR extends Command
      */
     public function handle()
     {
-        $storage_path = 'C:/ftp/DTR';
+        //$storage_path = 'C:/ftp/DTR'; development server
+        $storage_path = 'D:/db/ftp/DTR'; //live server
+
         $file = Carbon::now()->subDay(1)->format('Ymd').'-'.Carbon::now()->subDay(1)->format('Ymd').'.txt';
 
         if(($handle = fopen($storage_path.'/'.$file,'r')) !== false  ){
