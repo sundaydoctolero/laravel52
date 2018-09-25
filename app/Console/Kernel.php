@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
          Commands\BatchImport::class,
          Commands\SendNotUpdated::class,
+        Commands\ImportDTR::class,
     ];
 
     /**
