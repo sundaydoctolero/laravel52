@@ -91,6 +91,16 @@
             @endif
 
 
+            @if(auth()->guard('admin')->user()->hasRole('Tech'))
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-server"></i> <span>Payroll</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="{{ setActive('holidays') }}"><a href="/holidays"><i class="fa fa-unlock"></i> <span>Manage Holiday</span></a></li>
+                    </ul>
+                </li>
+            @endif
 
             @if(auth()->guard('admin')->user()->hasRole('Tech'))
                 <li class="treeview">
