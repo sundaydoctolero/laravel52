@@ -365,6 +365,20 @@ Route::put('/publicationissues/{publicationissue}', 'PublicationIssueController@
 Route::patch('/publicationissues/{publicationissue}', 'PublicationIssueController@update'); //update
 Route::delete('/publicationissues/{publicationissue}', 'PublicationIssueController@destroy'); //delete
 
+
+/**
+ * Holidays
+ */
+Route::get('/holidays', 'HolidayController@index');
+Route::get('/holidays/create', 'HolidayController@create');
+Route::post('/holidays/create','HolidayController@store'); //store
+Route::get('/holidays/{holiday}/edit', 'HolidayController@edit'); //edit
+Route::put('/holidays/{holiday}', 'HolidayController@update'); //update
+Route::patch('/holidays/{holiday}', 'HolidayController@update'); //update
+Route::delete('/holidays/{holiday}', 'HolidayController@destroy'); //delete
+
+
+
 /**
  *Days Controller
  */

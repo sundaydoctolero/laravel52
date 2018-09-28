@@ -155,6 +155,15 @@ class AppServiceProvider extends ServiceProvider
             $view->with('delivery_time',Output::groupBy('delivery_time')->lists('delivery_time','delivery_time'));
         });
 
+        view()->composer('admin.holidays.form',function($view){
+            $holiday_types = ['Regular'=>'Regular',
+                'Special'=>'Special',
+                'Declared'=>'Declared'
+            ];
+
+            $view->with('type_list',$holiday_types);
+        });
+
     }
 
     /**
