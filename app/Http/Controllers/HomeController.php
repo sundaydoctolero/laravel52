@@ -11,7 +11,7 @@ use Calendar;
 use App\Event;
 use DB;
 use App\User;
-
+use App\Holiday;
 
 class HomeController extends Controller
 {
@@ -89,7 +89,29 @@ class HomeController extends Controller
     public function generate_calendar(){
         Calendar::addEvents($this->generate_birthday());
         Calendar::addEvents($this->generate_events());
+        Calendar::addEvents($this->generate_holidays());
         return Calendar::addEvents($this->generate_dtr());
+    }
+
+    public function generate_holidays(){
+        $events = [];
+        $data = Holiday::all();
+        if($data->count()){
+            foreach ($data as $key => $value) {
+                $events[] = Calendar::event(
+                    $value->holiday_name.' ('.$value->holiday_code.')',
+                    true,
+                    Carbon::parse($value->holiday_date),
+                    Carbon::parse($value->holiday_date)->addDays(1),
+                    null,
+                    [
+                        'color' => '#f05050',
+                        'url' => '/events/'.$value->id
+                    ]
+                );
+            }
+        }
+        return $events;
     }
 
 

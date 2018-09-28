@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Calendar;
 use App\Event;
 use Carbon\Carbon;
+use App\Holiday;
 
 
 class EventController extends Controller
@@ -19,22 +20,34 @@ class EventController extends Controller
      */
     public function index()
     {
+        $calendar = $this->generate_calendar();
+        return view('admin.events.index', compact('calendar'));
+    }
+
+    public function generate_calendar(){
+        $events = $this->generate_holidays();
+        return $events;
+    }
+
+    public function generate_holidays(){
         $events = [];
-        $data = Event::all();
+        $data = Holiday::all();
         if($data->count()){
             foreach ($data as $key => $value) {
                 $events[] = Calendar::event(
-                    $value->title,
-                    false,
-                    Carbon::now(),
-                    Carbon::parse($value->end_date)->addDays(1)
+                    $value->holiday_name.' ('.$value->holiday_code.')',
+                    true,
+                    Carbon::parse($value->holiday_date),
+                    Carbon::parse($value->holiday_date)->addDays(1),
+                    null,
+                    [
+                        'color' => '#f05050',
+                        'url' => '/events/'.$value->id
+                    ]
                 );
             }
         }
-        $calendar = Calendar::addEvents($events);
-
-
-        return view('admin.events.index', compact('calendar'));
+        return Calendar::addEvents($events);
     }
 
     /**

@@ -22,12 +22,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main-sidebar.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41304347">
-              <caret line="99" column="133" selection-start-line="99" selection-start-column="133" selection-end-line="99" selection-end-column="133" />
+            <state vertical-scroll-proportion="-4.3230767">
+              <caret line="400" column="35" selection-start-line="400" selection-start-column="35" selection-end-line="400" selection-end-column="35" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EventController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.75">
+              <caret line="49" column="44" selection-start-line="32" selection-start-column="8" selection-end-line="49" selection-end-column="44" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49427918">
+              <caret line="91" column="56" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
+              <folding>
+                <element signature="e#40#62#0#PHP" expanded="true" />
+                <marker date="1538093814055" expanded="true" signature="4586:5117" placeholder="select id,op..daily_time_records..." />
+                <marker date="1538093814055" expanded="true" signature="4639:4774" placeholder="select dtr_t..daily_time_records..." />
+                <marker date="1538093814055" expanded="true" signature="4817:4955" placeholder="select dtr_t..daily_time_records..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,12 +104,10 @@
         <option value="$PROJECT_DIR$/resources/views/admin/downloads/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Event.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EventController.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/DailyTimeRecord.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_09_24_083422_create_daily_time_records_table.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/daily_time_records/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DailyTimeRecordController.php" />
         <option value="$PROJECT_DIR$/config/filesystems.php" />
@@ -101,6 +126,8 @@
         <option value="$PROJECT_DIR$/resources/views/admin/holidays/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/HolidayRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin/partials/main-sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EventController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       </list>
     </option>
   </component>
@@ -356,6 +383,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel52" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -509,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EventController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1396396">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/downloads/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28153154">
@@ -608,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2751982">
-          <caret line="130" column="48" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DailyTimeRecordController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44960362">
@@ -684,6 +719,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33981693">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -806,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41304347">
-          <caret line="371" column="49" selection-start-line="371" selection-start-column="49" selection-end-line="371" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HolidayController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55606407">
@@ -867,6 +895,37 @@
         <state vertical-scroll-proportion="0.41304347">
           <caret line="99" column="133" selection-start-line="99" selection-start-column="133" selection-end-line="99" selection-end-column="133" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3230767">
+          <caret line="400" column="35" selection-start-line="400" selection-start-column="35" selection-end-line="400" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EventController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75">
+          <caret line="49" column="44" selection-start-line="32" selection-start-column="8" selection-end-line="49" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49427918">
+          <caret line="91" column="56" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+            <marker date="1538093814055" expanded="true" signature="4586:5117" placeholder="select id,op..daily_time_records..." />
+            <marker date="1538093814055" expanded="true" signature="4639:4774" placeholder="select dtr_t..daily_time_records..." />
+            <marker date="1538093814055" expanded="true" signature="4817:4955" placeholder="select dtr_t..daily_time_records..." />
+          </folding>
         </state>
       </provider>
     </entry>
