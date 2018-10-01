@@ -20,6 +20,7 @@ use App\Download;
 use App\PublicationType;
 use App\PublicationIssue;
 use App\Output;
+use App\Admin;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -107,7 +108,7 @@ class AppServiceProvider extends ServiceProvider
                 'Not Updated'=>'Not Updated',
                 'For Query'=>'For Query',
                 'For Entry'=>'For Entry',
-                'For Output' => 'For Output'
+                'For Output' => 'For Output',
             ];
 
             $view->with('publication_lists',Publication::lists('publication_name','id'));
@@ -162,6 +163,28 @@ class AppServiceProvider extends ServiceProvider
             ];
 
             $view->with('type_list',$holiday_types);
+        });
+
+        view()->composer('admin.exceptions.form',function($view){
+            $exception_types = ['VL'=>'Vacation Leave',
+                    'SL' => 'Sick Leave',
+                    'ML' => 'Maternity Leave',
+                    'SPL' => 'Single Parent Leave',
+                    'PL' => 'Paternity Leave',
+                    'BL' => 'Bonus Leave',
+                    'OT' => 'Overtime',
+                    'UA'=>'Unauthorized Absent'
+            ];
+
+            $status = ['Pending'=>'Pending','Approved'=>'Approved','Disapproved'=>'Disapproved'];
+
+            $approver =  Admin::whereHas('roles',function ($query){
+                    $query->where('name','Payroll');
+                })->lists('username','id');
+
+            $view->with('exception_list',$exception_types);
+            $view->with('approver',$approver);
+            $view->with('status',$status);
         });
 
     }

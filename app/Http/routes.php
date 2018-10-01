@@ -408,6 +408,19 @@ Route::get('/daily_time_records','DailyTimeRecordController@index');
 //Route::patch('/site_images/{images}', 'ImagesController@update'); //update
 //Route::delete('/site_images/{images}', 'ImagesController@destroy'); //delete
 
+/**
+ * Exceptions
+ */
+Route::get('/exceptions', 'ExceptionController@index');
+Route::get('/exceptions/create', 'ExceptionController@create');
+Route::post('/exceptions/create','ExceptionController@store'); //store
+Route::get('/exceptions/{exception}/edit', 'ExceptionController@edit'); //edit
+Route::put('/exceptions/{exception}', 'ExceptionController@update'); //update
+Route::patch('/exceptions/{exception}', 'ExceptionController@update'); //update
+Route::delete('/exceptions/{exception}', 'ExceptionController@destroy'); //delete
+
+
+
 Route::post('/daily_time_records','DailyTimeRecordController@upload');
 Route::get('/daily_time_records/test','DailyTimeRecordController@test');
 
