@@ -30,7 +30,7 @@
                         </div>
                         <div class = "col-md-3" hidden="true">
                             {!! Form::label('date_to', 'Date To') !!}
-                            {!! Form::date('date_to',null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::date('date_to',null,['class'=>'form-control']) !!}
                         </div>
                     </div>
                 </div>
@@ -91,14 +91,13 @@
                     <div class="form-group">
                         <div class = "col-md-6 col-md-offset-3">
                             {!! Form::label('remarks', 'Remarks') !!}
-                            {!! Form::text('remarks',null,['class'=>'form-control','required'=>'true']) !!}
+                            {!! Form::text('remarks',null,['class'=>'form-control']) !!}
                         </div>
                     </div>
                 </div>
                 <br>
 
                 {!! Form::submit($buttonlabel,['class'=>'btn btn-primary col-md-2 col-md-offset-7']) !!}
-
                 {!! Form::close() !!}
             </font>
         </tt>

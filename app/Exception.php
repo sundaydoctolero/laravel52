@@ -16,4 +16,15 @@ class Exception extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function setTimeFromAttribute($value){
+        if($value == '00:00:00'){
+            $this->attributes['time_from'] = null;
+        }
+    }
+
+    public function setTimeToAttribute($value){
+        if($value == '00:00:00'){
+            $this->attributes['time_to'] = null;
+        }
+    }
 }

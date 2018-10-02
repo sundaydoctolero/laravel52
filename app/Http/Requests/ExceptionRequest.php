@@ -26,7 +26,6 @@ class ExceptionRequest extends Request
         return [
             'exception_type'=>'required',
             'date_from'=>'required',
-            'date_to'=>'required',
             'description'=>'required',
             'paid'=>'required',
             'status'=>'required'

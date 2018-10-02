@@ -24,13 +24,10 @@ class ExceptionController extends Controller
     public function index(){
 
         $exceptions = Exception::with('user.employee')->orderBy('exception_type')->get();
-
-
         return view($this->view_path.'.index',compact('exceptions'));
     }
 
     public function create() {
-
         return view($this->view_path.'.create');
     }
 

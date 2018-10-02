@@ -31,23 +31,23 @@
                     </thead>
                     <tbody>
                     @foreach($exceptions as $key => $exception)
-                    <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{ $exception->user->operator_no }}</td>
-                        <td>{{ $exception->user->employee->firstname.' '.$exception->user->employee->lastname }}</td>
-                        <td class="text-center">{{ $exception->exception_type }}</td>
-                        <td class="text-center">{{ $exception->date_from }}</td>
-                        <td class="text-center">{{ $exception->time_from }}</td>
-                        <td class="text-center">{{ $exception->time_to }}</td>
-                        <td>{{ $exception->description }}</td>
-                        <td>{{ $exception->paid == 1 ? "Yes" : "No" }}</td>
-                        <td><span class="label label-{{ $exception->status == 'Approved' ? 'success' : 'danger' }}">{{ $exception->status }}</span></td>
-                        <td>{{ $exception->approver }}</td>
-                        <td>{{ $exception->created_at->diffforHumans() }}</td>
-                        <td class="text-center">
-                            <a href="exceptions/{{ $exception->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $exception->user->operator_no }}</td>
+                            <td>{{ $exception->user->employee->firstname.' '.$exception->user->employee->lastname }}</td>
+                            <td class="text-center">{{ $exception->exception_type }}</td>
+                            <td class="text-center">{{ $exception->date_from }}</td>
+                            <td class="text-center">{{ $exception->time_from }}</td>
+                            <td class="text-center">{{ $exception->time_to }}</td>
+                            <td>{{ $exception->description }}</td>
+                            <td>{{ $exception->paid == 1 ? "Yes" : "No" }}</td>
+                            <td><span class="label label-{{ $exception->status == 'Approved' ? 'success' : 'danger' }}">{{ $exception->status }}</span></td>
+                            <td>{{ $exception->approver }}</td>
+                            <td>{{ $exception->created_at->diffforHumans() }}</td>
+                            <td class="text-center">
+                                <a href="exceptions/{{ $exception->id }}/edit"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Modify</button></a>
+                            </td>
+                        </tr>
                     @endforeach
                     </tbody>
                     <tfoot>

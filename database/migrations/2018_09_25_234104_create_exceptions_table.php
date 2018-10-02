@@ -18,8 +18,8 @@ class CreateExceptionsTable extends Migration
             $table->date('date_from');
             $table->date('date_to');
             $table->string('description');
-            $table->time('time_from');
-            $table->time('time_to');
+            $table->time('time_from')->nullable();
+            $table->time('time_to')->nullable();
             $table->boolean('paid');
             $table->integer('approver_id')->unsigned();
             $table->integer('user_id')->unsigned();
