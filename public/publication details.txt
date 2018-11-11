@@ -1,53 +1,45 @@
-Publication Name: NSW_SOUTH_COAST_REGISTER
-Publication Date: 2018-08-15
-Publication State: NSW
-
-Publication Name: VIC_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
-Publication State: VIC
-
-Publication Name: QLD_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
+Publication Name: QLD_THE_MORNING_BULLETIN_(ROCKHAMPTON)
+Publication Date: 2018-09-22
 Publication State: QLD
 
-Publication Name: WA_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
-Publication State: WA
-
-Publication Name: NSW_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
-Publication State: NSW
-
-Publication Name: NT_AUSTRALIAN_FINANCIAL_REVIEW
-Publication Date: 2018-08-16
-Publication State: NT
-
-Publication Name: VIC_THE_SURF_COAST_TIMES
-Publication Date: 2018-08-16
+Publication Name: VIC_LEADER_NEWSPAPER_-_BAYSIDE
+Publication Date: 2018-09-25
 Publication State: VIC
 
-Publication Name: VIC_BELLARINE_TIMES
-Publication Date: 2018-08-16
+Publication Name: VIC_LEADER_NEWSPAPER_-_KNOX
+Publication Date: 2018-09-25
 Publication State: VIC
 
-Publication Name: NSW_HORNSBY_ADVOCATE
-Publication Date: 2018-08-16
-Publication State: NSW
+Publication Name: VIC_LEADER_NEWSPAPER_-_PRESTON
+Publication Date: 2018-09-25
+Publication State: VIC
 
-Publication Name: WA_BROOME_ADVERTISER
-Publication Date: 2018-08-16
-Publication State: WA
+Publication Name: VIC_LEADER_NEWSPAPER_-_WHITTLESEA
+Publication Date: 2018-09-25
+Publication State: VIC
 
-Publication Name: NSW_COMM_SYDNEY_MORNING_HERALD
-Publication Date: 2018-08-16
-Publication State: NSW
+Publication Name: VIC_LEADER_NEWSPAPER_-_MORNINGTON_PENINSULA
+Publication Date: 2018-09-25
+Publication State: VIC
 
-Publication Name: QLD_AGENT_BOOKLET_-_BRUCE_HARRY_REAL_ESTATE
-Publication Date: 2018-08-16
-Publication State: QLD
+Publication Name: VIC_LEADER_NEWSPAPER_-_SUNBURY
+Publication Date: 2018-09-25
+Publication State: VIC
+
+Publication Name: VIC_SUNBURY_&_MACEDON_RANGES_STAR_WEEKLY
+Publication Date: 2018-09-25
+Publication State: VIC
+
+Publication Name: VIC_LEADER_NEWSPAPER_-_MONASH
+Publication Date: 2018-09-25
+Publication State: VIC
+
+Publication Name: VIC_LEADER_NEWSPAPER_-_NORTHERN
+Publication Date: 2018-09-25
+Publication State: VIC
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
-			Total Publications : 12
+			Total Publications : 10
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
