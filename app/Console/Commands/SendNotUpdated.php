@@ -57,7 +57,7 @@ class SendNotUpdated extends Command
         Mail::send(['html'=>'mail.not_updated'],
             ['downloads'=>$downloads,'records'=>$no_records],
             function($message){
-                $message->to(['ccc.news@cccdms.com','garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com','dotc@cccdms.com'],'LinkMe Systems')
+                $message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com','dotc@cccdms.com'],'LinkMe Systems')
                 //$message->to(['sysadmin@cccdms.com'],'Link|Me Systems')
                     ->subject('Publication Report as of '.Carbon::now());
             });

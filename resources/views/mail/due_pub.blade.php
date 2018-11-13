@@ -19,12 +19,8 @@
     </style>
 </head>
 <body>
-    <h1>Status as of {{ \Carbon\Carbon::now() }}</h1>
-    <h2>For Download : {{ $downloads->where('status','For Download')->count() }}</h2>
-    <h2>Not Updated : {{ $downloads->where('status','Not Updated')->count() }}</h2>
-    <h2>For Query : {{ $downloads->where('status','For Query')->count() }}</h2>
-    <h2>Pending : {{ $downloads->where('status','Pending')->count() }}</h2>
-    <h2>Total : {{ $downloads->count() }}</h2>
+
+    Test Mail Only
 
     <table>
         <tr bgcolor="#FF0000">

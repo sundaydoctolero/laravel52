@@ -48,9 +48,9 @@ class SendDuePublications extends Command
         Mail::send(['html'=>'mail.due_pub'],
             ['downloads'=>$downloads],
             function($message){
-                    //$message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com'],'LinkMe Systems')
-                    $message->to(['sysadmin@cccdms.com'],'Link|Me Systems')
-                    ->subject('Due Publication as of '.Carbon::now());
+                    $message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com'],'LinkMe Systems')
+                    //$message->to(['sysadmin@cccdms.com'],'Link|Me Systems')
+                    ->subject('Publication on due '.Carbon::now()->toDateString());
             });
 
         echo "Successfull!!";
