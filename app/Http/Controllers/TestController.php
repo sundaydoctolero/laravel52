@@ -80,4 +80,30 @@ class TestController extends Controller
         $headers = array('Content-Type' => 'text/csv');
         return response()->download('publication_details.txt',$filename,$headers);
     }
+
+
+    public function test_import(){
+        $today = Carbon::now();
+        $advance = Carbon::now()->addDays(7);
+        $advance_two_weeks = Carbon::now()->addDays(14);
+
+
+        $weekly = [];
+        $monthly = [];
+        $bi_weekly = [];
+        $quarterly = [];
+        $total = 0;
+
+        $sync = 0;
+
+        $publications =  \App\Publication::whereIn('issue',['Weekly','Weekly - Advance','Daily'])
+            ->where('issue','<>','Inactive')
+            ->whereHas('days',function ($query) use ($today) {
+                $query->where('day_name',$today->format('l'));
+            })->with('days')->orderBy('issue')->orderBy('publication_type')->get();
+
+        $weekly = $publications;
+
+        return view('test.import',compact('weekly'));
+    }
 }
