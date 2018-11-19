@@ -51,8 +51,7 @@ class SendNotUpdated extends Command
             ->where('sale_records',0)->where('rent_records',0)
             ->get();
 
-
-        $no_records->load('download');
+        $no_records->load('download.publication');
 
         Mail::send(['html'=>'mail.not_updated'],
             ['downloads'=>$downloads,'records'=>$no_records],

@@ -19,9 +19,6 @@
     </style>
 </head>
 <body>
-
-    Test Mail Only
-
     <table>
         <tr bgcolor="#FF0000">
             <th>ID</th>
@@ -29,7 +26,6 @@
             <th align="center">Publication Date</th>
             <th>Status</th>
             <th>Remarks</th>
-            <th>Last Checked By</th>
         </tr>
         @if($downloads)
             @foreach($downloads as $count => $download)
@@ -42,7 +38,6 @@
                     <td align="center">{{ $download->publication_date }}</td>
                     <td>{{ $download->status }}</td>
                     <td>{{ $download->remarks }}</td>
-                    <td>{{ $download->checked_by == 0 ? '' : $download->operator->operator_no }}</td>
                 </tr>
                 @endif
             @endforeach

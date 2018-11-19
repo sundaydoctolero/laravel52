@@ -471,7 +471,7 @@ Route::get('/export/not_updated','NewspaperExportController@export_not_updated')
 Route::get('/export/generate_pub_details','NewspaperExportController@generate_pub_details');
 
 
-Route::get('/tests/hello','TestController@test_import');
+Route::get('/tests/hello','TestController@test_not_updated');
 
 
 

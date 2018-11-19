@@ -45,13 +45,19 @@ class SendDuePublications extends Command
         $downloads = Download::whereIn('status',['For Entry'])
                             ->where('publication_date','<',$due_date->toDateString())
                             ->orderBy('publication_date')->get();
-        Mail::send(['html'=>'mail.due_pub'],
-            ['downloads'=>$downloads],
-            function($message){
-                    //$message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com'],'LinkMe Systems')
-                    $message->to(['sysadmin@cccdms.com'],'Link|Me Systems')
-                    ->subject('Publication on due '.Carbon::now()->toDateString());
-            });
+
+        $downloads->load('download.publication');
+
+        if($downloads->count() > 0){
+            Mail::send(['html'=>'mail.due_pub'],
+                ['downloads'=>$downloads],
+                function($message){
+                        $message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com'],'LinkMe Systems')
+            //            $message->to(['sysadmin@cccdms.com'],'Link|Me Systems')
+                        ->subject('Publication on due '.Carbon::now()->toDateString());
+                });
+        }
+
 
         echo "Successfull!!";
 

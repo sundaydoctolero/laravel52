@@ -106,4 +106,16 @@ class TestController extends Controller
 
         return view('test.import',compact('weekly'));
     }
+
+
+    public function test_not_updated(){
+        $no_records = \App\Output::where('output_date','2018-11-13')
+            ->where('remarks','<>','Invalid')
+            ->where('sale_records',0)->where('rent_records',0)
+            ->get();
+
+        $no_records->load('download');
+
+        return $no_records;
+    }
 }
