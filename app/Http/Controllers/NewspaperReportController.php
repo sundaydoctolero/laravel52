@@ -14,6 +14,7 @@ use App\Output;
 use App\Publication;
 use Carbon\Carbon;
 use App\Logsheet;
+use Mail;
 
 
 class NewspaperReportController extends Controller
@@ -81,9 +82,48 @@ class NewspaperReportController extends Controller
     }
 
     public function not_updated_reports(Request $request){
-        $downloads = Download::whereIn('status',$request->filter_list)->get();
-        $filters = $request->filter_list;
-        return view('admin.newspaper_reports.not_updated_reports',compact('downloads','filters'));
+        $downloads = $this->get_download_report($request->date_added);
+        $records = $this->get_no_record_report($request->date_added);
+        return view('admin.newspaper_reports.not_updated_reports',compact('downloads','records'));
+    }
+
+    public function get_download_report($date_created = null){
+        if($date_created == null){
+            $date_created = Carbon::today()->endOfDay();
+        }
+        $downloads = Download::whereIn('status',['For Download','Not Updated','For Query','Pending'])
+                    ->where('created_at','<',$date_created)
+                    ->orderBy('status')
+                    ->orderBy('publication_date')->get();
+        return $downloads->load('publication','operator');
+    }
+
+    public function get_no_record_report($date_created = null){
+        if($date_created == null){
+            $date_created = Carbon::now()->toDateString();
+        }
+
+        $no_records = Output::where('output_date',$date_created)
+            ->where('remarks','<>','Invalid')
+            ->where('sale_records',0)->where('rent_records',0)
+            ->get();
+
+        return $no_records->load('download.publication');
+    }
+
+    public function send_email_notification(Request $request){
+        $downloads = $this->get_download_report($request->date_added);
+        $no_records = $this->get_no_record_report($request->date_added);
+        $status_date = $request->date_added;
+
+        Mail::send(['html'=>'mail.not_updated'],
+            ['downloads'=>$downloads,'records'=>$no_records],
+            function($message) use ($status_date){
+                    //$message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com','dotc@cccdms.com'],'LinkMe Systems')
+                    $message->to(['sysadmin@cccdms.com','garrys@cccdms.com'],'Link|Me Systems')
+                    ->subject('Publication Report as of '. $status_date);
+            });
+        return redirect()->back();
     }
 
     public function delivered_reports(Request $request){

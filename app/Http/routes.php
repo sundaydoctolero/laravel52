@@ -341,6 +341,7 @@ Route::get('/newspaper_reports/productivity', 'NewspaperReportController@product
 Route::get('/newspaper_reports/monitoring', 'NewspaperReportController@monitoring');
 Route::get('/newspaper_reports/quality_control', 'NewspaperReportController@quality_control');
 Route::get('/newspaper_reports/monthly_delivery', 'NewspaperReportController@monthly_delivery');
+Route::get('/newspaper_reports/not_updated_reports/email', 'NewspaperReportController@send_email_notification');
 
 /**
  * Publication Type Controller
