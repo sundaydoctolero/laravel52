@@ -19,7 +19,7 @@
                         {!! Form::close() !!}
                     </div>
                     <div class="box-body">
-                            @if($downloads->count() > 0)
+                            @if($downloads->count() > 0 OR $records->count() > 0)
                                 <form action="/newspaper_reports/not_updated_reports/email">
                                     <input type="hidden" name="date_added" value="{{ request()->get('date_added') }}" />
                                     <input type="submit" class="btn btn-success" value="Send To Email" />
