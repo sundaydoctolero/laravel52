@@ -119,8 +119,8 @@ class NewspaperReportController extends Controller
         Mail::send(['html'=>'mail.not_updated'],
             ['downloads'=>$downloads,'records'=>$no_records],
             function($message) use ($status_date){
-                    //$message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com','dotc@cccdms.com'],'LinkMe Systems')
-                    $message->to(['sysadmin@cccdms.com','garrys@cccdms.com'],'Link|Me Systems')
+                    $message->to(['garrys@cccdms.com','tessb@cccdms.com','sysadmin@cccdms.com','dotc@cccdms.com'],'LinkMe Systems')
+                    //$message->to(['sysadmin@cccdms.com','garrys@cccdms.com'],'Link|Me Systems')
                     ->subject('Publication Report as of '. $status_date);
             });
         return redirect()->back();
